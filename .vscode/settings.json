@@ -1,0 +1,55 @@
+{
+    "sqf.enableCBA": true,
+    "sqf.enableACE3": true,
+    "files.associations": {
+        "*.hpp": "ext"
+    },
+    "sqflint.ignoredVariables": [
+        "_input0",
+        "_thisArgs",
+        "_thisId",
+        "_thisType",
+    ],
+    "sqflint.exclude": [],
+    "psi-header.lang-config": [
+        {
+            "license": "Custom",
+            "language": "sqf",
+            "rootDirFileName": "hemtt.toml",
+            "begin": "/*",
+            "prefix": "    ",
+            "end": "*/",
+            "forceToTop": true
+        }
+    ],
+    "sqflint.includePrefixes": {
+        // Dokan PBO\P drive
+        "\\A3\\": "P:/a3/",
+        "\\a3\\": "P:/a3/",
+        "\\x\\": "P:/x/",
+        "\\z\\": "P:/z/",
+    },
+    "psi-header.changes-tracking": {
+        "include": ["sqf"],
+        "autoHeader": "manualSave"
+    },
+    "psi-header.templates": [
+        {
+            "language": "sqf",
+            "template": [
+                "Author: <author>",
+                "Function description",
+                "",
+                "Arguments:",
+                " 0: Objects <ARRAY>",
+                " 1: All <BOOL>",
+                "",
+                "Return Value:",
+                " None",
+                "",
+                "Example:",
+                " [[bob, ted], false] call afm_main_fnc_example"
+            ]
+        }
+    ]
+}

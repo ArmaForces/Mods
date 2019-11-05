@@ -1,0 +1,11 @@
+# Build output
+addons/*.pbo
+
+# Releases
+releases/*
+hemtt
+hemtt.exe
+symbols/*
+
+# Bikey
+*.biprivatekey
