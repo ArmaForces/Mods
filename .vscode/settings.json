@@ -16,9 +16,11 @@
             "license": "Custom",
             "language": "sqf",
             "rootDirFileName": "hemtt.toml",
+            "beforeHeader": ["#include \"script_component.hpp\""],
             "begin": "/*",
-            "prefix": "    ",
-            "end": "*/",
+            "prefix": " *",
+            "end": " */",
+            "blankLinesAfter": 1,
             "forceToTop": true
         }
     ],
@@ -37,18 +39,20 @@
         {
             "language": "sqf",
             "template": [
-                "Author: <author>",
-                "Function description",
+                " Author: <author>",
+                " Function description",
                 "",
-                "Arguments:",
+                " Arguments:",
                 " 0: Objects <ARRAY>",
                 " 1: All <BOOL>",
                 "",
-                "Return Value:",
+                " Return Value:",
                 " None",
                 "",
-                "Example:",
-                " [[bob, ted], false] call afm_main_fnc_example"
+                " Example:",
+                " [[bob, ted], false] call afm_main_fnc_example",
+                "",
+                " Public: No"
             ]
         }
     ]
