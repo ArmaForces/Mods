@@ -1,3 +1,4 @@
+#include "script_component.hpp"
 /*
  * Author: 3Mydlo3
  * Function creates BFT marker on vehicle's position
