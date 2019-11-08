@@ -1,58 +1,49 @@
 [
-	QGVAR(enabled), // Global var name
-	"CHECKBOX", // Setting type
-	[LSTRING(Enabled), LSTRING(Enabled_Description)], // Title, Tooltip
-	LSTRING(DisplayName),
-	true, // Extra params, depending on settings type
-	true, // Is global
-	{
+    QGVAR(enabled), // Unique setting name. Matches resulting variable name <STRING>
+    "CHECKBOX", // Type of setting. Can be "CHECKBOX", "EDITBOX", "LIST", "SLIDER" or "COLOR" <STRING>
+    [LSTRING(Enabled), LSTRING(Enabled_Description)], // Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
+    LSTRING(DisplayName), // Category for the settings menu + optional sub-category <STRING, ARRAY>
+    true, // Extra properties of the setting depending of _settingType. <ANY>
+    true, // 1: all clients share the same setting, 2: setting can't be overwritten (optional, default: 0) <NUMBER>
+    {
 		if (_this) exitWith {
 			[] call FUNC(init);
 		};
-	}, // Init/Stop script
-	false // Needs mission restart
-] call CBA_Settings_fnc_init;
+	} // Script to execute when setting is changed. (optional) <CODE>
+] call CBA_fnc_addSetting;
 
 [
-	QGVAR(showAllGroups), // Global var name
-	"CHECKBOX", // Setting type
-	[LSTRING(ShowAllGroups), LSTRING(ShowAllGroups_Description)], // Title, Tooltip
-	LSTRING(DisplayName),
-	true, // Extra params, depending on settings type
-	true, // Is global
-	{}, // Init/Stop script
-	false // Needs mission restart
-] call CBA_Settings_fnc_init;
+    QGVAR(showAllGroups), // Unique setting name. Matches resulting variable name <STRING>
+    "CHECKBOX", // Type of setting. Can be "CHECKBOX", "EDITBOX", "LIST", "SLIDER" or "COLOR" <STRING>
+    [LSTRING(ShowAllGroups), LSTRING(ShowAllGroups_Description)], // Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
+    LSTRING(DisplayName), // Category for the settings menu + optional sub-category <STRING, ARRAY>
+    true, // Extra properties of the setting depending of _settingType. <ANY>
+    true // 1: all clients share the same setting, 2: setting can't be overwritten (optional, default: 0) <NUMBER>
+] call CBA_fnc_addSetting;
 
 [
-	QGVAR(showUnconc), // Global var name
-	"CHECKBOX", // Setting type
-	[LSTRING(ShowUnconc), LSTRING(ShowUnconc_Description)], // Title, Tooltip
-	LSTRING(DisplayName),
-	false, // Extra params, depending on settings type
-	true, // Is global
-	{}, // Init/Stop script
-	false // Needs mission restart
-] call CBA_Settings_fnc_init;
+    QGVAR(showUnconc), // Unique setting name. Matches resulting variable name <STRING>
+    "CHECKBOX", // Type of setting. Can be "CHECKBOX", "EDITBOX", "LIST", "SLIDER" or "COLOR" <STRING>
+    [LSTRING(ShowUnconc), LSTRING(ShowUnconc_Description)], // Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
+    LSTRING(DisplayName), // Category for the settings menu + optional sub-category <STRING, ARRAY>
+    false, // Extra properties of the setting depending of _settingType. <ANY>
+    true // 1: all clients share the same setting, 2: setting can't be overwritten (optional, default: 0) <NUMBER>
+] call CBA_fnc_addSetting;
 
 [
-	QGVAR(refreshRate), // Global var name
-	"SLIDER", // Setting type
-	[LSTRING(RefreshRate), LSTRING(RefreshRate_Description)], // Title, Tooltip
-	LSTRING(DisplayName),
-	[1, 600, 5, 0], // Extra params, depending on settings type
-	true, // Is global
-	{}, // Init/Stop script
-	false // Needs mission restart
-] call CBA_Settings_fnc_init;
+    QGVAR(refreshRate), // Unique setting name. Matches resulting variable name <STRING>
+    "SLIDER", // Type of setting. Can be "CHECKBOX", "EDITBOX", "LIST", "SLIDER" or "COLOR" <STRING>
+    [LSTRING(RefreshRate), LSTRING(RefreshRate_Description)], // Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
+    LSTRING(DisplayName), // Category for the settings menu + optional sub-category <STRING, ARRAY>
+    [1, 600, 5, 0], // Extra properties of the setting depending of _settingType. <ANY>
+    true // 1: all clients share the same setting, 2: setting can't be overwritten (optional, default: 0) <NUMBER>
+] call CBA_fnc_addSetting;
 
 [
-	QGVAR(GPS), // Global var name
-	"CHECKBOX", // Setting type
-	[LSTRING(GPS), LSTRING(GPS_Descrption)], // Title, Tooltip
-	LSTRING(DisplayName),
-	false, // Extra params, depending on settings type
-	true, // Is global
-	{}, // Init/Stop script
-	false // Needs mission restart
-] call CBA_Settings_fnc_init;
+    QGVAR(GPS), // Unique setting name. Matches resulting variable name <STRING>
+    "CHECKBOX", // Type of setting. Can be "CHECKBOX", "EDITBOX", "LIST", "SLIDER" or "COLOR" <STRING>
+    [LSTRING(GPS), LSTRING(GPS_Descrption)], // Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
+    LSTRING(DisplayName), // Category for the settings menu + optional sub-category <STRING, ARRAY>
+    false, // Extra properties of the setting depending of _settingType. <ANY>
+    true // 1: all clients share the same setting, 2: setting can't be overwritten (optional, default: 0) <NUMBER>
+] call CBA_fnc_addSetting;
