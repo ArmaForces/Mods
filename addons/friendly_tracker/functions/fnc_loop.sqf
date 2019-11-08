@@ -36,7 +36,7 @@ if (GVAR(GPS) && {![player] call FUNC(hasTracker)}) exitWith {
 {
     if (side _x isEqualTo _playerSide) then {
         // If GPS mode is enabled and player does not have GPS/UAV terminal we skip him and go to the next one
-        if (GVAR(GPS) && {![player] call FUNC(hasTracker)}) exitWith {};
+        if (GVAR(GPS) && {![_x] call FUNC(hasTracker)}) exitWith {};
 
         private _isPlayerGroup = group _x isEqualTo group player;
         private _marker = format["player_%1", getPlayerUID _x];
