@@ -1,0 +1,1 @@
+#include "\z\afm\addons\friendly_tracker\script_component.hpp"
