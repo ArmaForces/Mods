@@ -44,5 +44,12 @@ if (GVAR(GPS) && {![player] call FUNC(hasTracker)}) exitWith {
     };
 } foreach AllPlayers select {side _x isEqualTo side player};
 
+if (GVAR(showVehicle)) then {
+    // Create marker for tracked vehicles
+    {
+        [_x] call FUNC(createVehicleMarker);
+    } forEach trackedVehicles;
+};
+
 // Schedule next loop
 [FUNC(loop), [], GVAR(refreshRate)] call CBA_fnc_waitAndExecute;

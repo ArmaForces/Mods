@@ -6,5 +6,6 @@ ADDON = false;
 
 GVAR(running) = false;
 GVAR(markers) = [];
+GVAR(trackedVehicles) = [];
 
 ADDON = true;
