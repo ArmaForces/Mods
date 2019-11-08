@@ -35,40 +35,11 @@ if (GVAR(GPS) && {![player] call FUNC(hasTracker)}) exitWith {
     call {
         // If GPS mode is enabled and player does not have GPS/UAV terminal we skip him and go to the next one
         if (GVAR(GPS) && {![_x] call FUNC(hasTracker)}) exitWith {};
-
-        private _isPlayerGroup = group _x isEqualTo group player;
-        private _marker = format["player_%1", getPlayerUID _x];
-        createMarkerLocal [_marker, getPos _x];
-        _marker setMarkerTypeLocal "mil_dot";
-        GVAR(markers) pushBack [_marker, _x];
-        // Check if player is not in vehicle
-        if (isNull objectParent _x) then {
-            _marker setMarkerSizeLocal [0.5, 0.5];
+        // Check if player is not in vehicle or vehicle markers are off
+        if (isNull objectParent _x || {!GVAR(showVehicle)}) then {
+            [_x] call FUNC(createPlayerMarker);
         } else {
-            _marker setMarkerSizeLocal [0.75, 0.75];
-        };
-        // Determine marker color
-        switch (true) do {
-            // Player (local) is yellow
-            case (_x isEqualTo player): {
-                _marker setMarkerColorLocal "ColorYellow";
-            };
-            // If enabled, unconscious are orange
-            case (GVAR(showUnconc) && (_x getVariable ["ACE_isUnconscious", false]) && {_isPlayerGroup || {GVAR(showAllGroups)}}): {
-                _marker setmarkercolorlocal "ColorOrange";
-            };
-            // Player's group is marked green
-            case (_isPlayerGroup): {
-                _marker setMarkerColorLocal "ColorGreen";
-            };
-            // Other players are blue
-            case (GVAR(showAllGroups)): {
-                _marker setMarkerColorLocal "ColorWEST";
-            };
-            // Remove if no rule matched
-            default {
-                deleteMarkerLocal _marker;
-            };
+            [objectParent _x] call FUNC(createVehicleMarker);
         };
     };
 } foreach AllPlayers select {side _x isEqualTo side player};
