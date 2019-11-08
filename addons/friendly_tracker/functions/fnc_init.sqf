@@ -15,16 +15,12 @@
  * Public: No
  */
 
-if (!hasInterface) exitWith {};
+if (!hasInterface || {GVAR(running)}) exitWith {};
 
-if (isNil(QGVAR(running))) then {GVAR(running) = false};
+LOG("Starting FriendlyTracker");
 
-[{!GVAR(running)}, {
-	GVAR(running) = true;
+GVAR(running) = true;
 
-	LOG("Starting FriendlyTracker");
+[QGVAR(loop)] call CBA_fnc_localEvent;
 
-	GVAR(markers) = [];
-
-    [QGVAR(loop)] call CBA_fnc_localEvent;
-}, [], GVAR(refreshRate) + 1, {}] call CBA_fnc_waitUntilAndExecute;
+nil

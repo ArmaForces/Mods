@@ -4,4 +4,7 @@ ADDON = false;
 
 #include "initSettings.sqf"
 
+GVAR(running) = false;
+GVAR(markers) = [];
+
 ADDON = true;
