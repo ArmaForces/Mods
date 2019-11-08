@@ -7,7 +7,7 @@
  * None
  *
  * Return Value:
- * None
+ * 0: Success <BOOL>
  *
  * Example:
  * [] call afm_friendly_tracker_fnc_stop
@@ -15,18 +15,15 @@
  * Public: No
  */
 
-if (hasInterface && {!GVAR(enabled)} && {GVAR(running)}) exitWith {
+if (!GVAR(running)) exitWith {false};
 
-	LOG("Stopping FriendlyTracker");
+LOG("Stopping FriendlyTracker");
 
-	// Remove all markers
-	{
-		deleteMarkerLocal (_x select 0);
-	} foreach GVAR(markers);
+// Remove all markers
+{
+	deleteMarkerLocal (_x select 0);
+} foreach GVAR(markers);
 
-	GVAR(running) = false;
+GVAR(running) = false;
 
-	true
-};
-
-false
+true
