@@ -40,6 +40,16 @@ switch (true) do {
     case (_isPlayerGroup): {
         _marker setMarkerColorLocal "ColorGreen";
     };
+    // Destroyed vehicles are black
+    case (!alive _vehicle): {
+        _marker setMarkerColorLocal "ColorBlack";
+        _marker setMarkerAlphaLocal 0.8;
+    };
+    // Empty vehicles are grey
+    case (count crew _vehicle isEqualTo 0): {
+        _marker setMarkerColorLocal "ColorBlack";
+        _marker setMarkerAlphaLocal 0.5;
+    };
     // Other vehicles are blue
     case (GVAR(showAllGroups)): {
         _marker setMarkerColorLocal "ColorWEST";
