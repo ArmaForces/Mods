@@ -47,7 +47,7 @@ switch (true) do {
         _marker setMarkerAlphaLocal 0.8;
     };
     // Empty vehicles are grey
-    case (count crew _vehicle isEqualTo 0): {
+    case (crew _vehicle isEqualTo []): {
         _marker setMarkerColorLocal "ColorBlack";
         _marker setMarkerAlphaLocal 0.5;
     };
