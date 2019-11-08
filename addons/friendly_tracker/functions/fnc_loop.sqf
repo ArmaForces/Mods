@@ -25,8 +25,6 @@ if (!GVAR(enabled)) exitWith {
     deleteMarkerLocal (_x select 0);
 } foreach GVAR(markers);
 
-private _playerSide = side player;
-
 // If GPS mode is enabled and player (local) does not have GPS/UAV terminal we break and schedule next loop
 if (GVAR(GPS) && {![player] call FUNC(hasTracker)}) exitWith {
     [FUNC(loop), [], GVAR(refreshRate)] call CBA_fnc_waitAndExecute;
@@ -34,7 +32,7 @@ if (GVAR(GPS) && {![player] call FUNC(hasTracker)}) exitWith {
 
 // Create marker for every player in game
 {
-    if (side _x isEqualTo _playerSide) then {
+    call {
         // If GPS mode is enabled and player does not have GPS/UAV terminal we skip him and go to the next one
         if (GVAR(GPS) && {![_x] call FUNC(hasTracker)}) exitWith {};
 
@@ -73,7 +71,7 @@ if (GVAR(GPS) && {![player] call FUNC(hasTracker)}) exitWith {
             };
         };
     };
-} foreach AllPlayers;
+} foreach AllPlayers select {side _x isEqualTo side player};
 
 // Schedule next loop
 [FUNC(loop), [], GVAR(refreshRate)] call CBA_fnc_waitAndExecute;
