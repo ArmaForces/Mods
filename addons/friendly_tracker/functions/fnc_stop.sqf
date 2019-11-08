@@ -21,7 +21,7 @@ LOG("Stopping FriendlyTracker");
 
 // Remove all markers
 {
-	deleteMarkerLocal (_x select 0);
+    deleteMarkerLocal (_x select 0);
 } foreach GVAR(markers);
 
 GVAR(running) = false;

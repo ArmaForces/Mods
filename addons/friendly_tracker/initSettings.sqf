@@ -6,10 +6,10 @@
     true, // Extra properties of the setting depending of _settingType. <ANY>
     true, // 1: all clients share the same setting, 2: setting can't be overwritten (optional, default: 0) <NUMBER>
     {
-		if (_this) exitWith {
-			[] call FUNC(init);
-		};
-	} // Script to execute when setting is changed. (optional) <CODE>
+        if (_this) exitWith {
+            [] call FUNC(init);
+        };
+    } // Script to execute when setting is changed. (optional) <CODE>
 ] call CBA_fnc_addSetting;
 
 [
