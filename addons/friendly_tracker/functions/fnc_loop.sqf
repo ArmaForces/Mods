@@ -28,7 +28,7 @@ if (!GVAR(enabled)) exitWith {
 private _playerSide = side player;
 
 // If GPS mode is enabled and player (local) does not have GPS/UAV terminal we break and schedule next loop
-if (GVAR(GPS) && {((assignedItems player findIf {_x == "ItemGPS" || {["UavTerminal", _x] call BIS_fnc_inString}}) == -1)}) exitWith {
+if (GVAR(GPS) && {![player] call FUNC(hasTracker)}) exitWith {
     [FUNC(loop), [], GVAR(refreshRate)] call CBA_fnc_waitAndExecute;
 };
 
@@ -36,7 +36,7 @@ if (GVAR(GPS) && {((assignedItems player findIf {_x == "ItemGPS" || {["UavTermin
 {
     if (side _x isEqualTo _playerSide) then {
         // If GPS mode is enabled and player does not have GPS/UAV terminal we skip him and go to the next one
-        if (GVAR(GPS) && {((assignedItems _x findIf {_x == "ItemGPS" || {["UavTerminal", _x] call BIS_fnc_inString}}) == -1)}) exitWith {};
+        if (GVAR(GPS) && {![player] call FUNC(hasTracker)}) exitWith {};
 
         private _isPlayerGroup = group _x isEqualTo group player;
         private _marker = format["player_%1", getPlayerUID _x];
