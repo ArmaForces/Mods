@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="AFM">
+    <Package name="Friendly_Tracker">
+        <Key ID="STR_AFM_Friendly_Tracker_DisplayName">
+            <English>ArmaForces - Friendly Tracker</English>
+            <Polish>ArmaForces - Friendly Tracker</Polish>
+        </Key>
+
+        <Key ID="STR_AFM_Friendly_Tracker_Enabled">
+            <English>Enable Friendly Tracker</English>
+            <Polish>Markery sojuszniczych jednostek</Polish>
+        </Key>
+        <Key ID="STR_AFM_Friendly_Tracker_Enabled_Description">
+            <English>When enabled it shows positions of friendly units.</English>
+            <Polish>Włączenie tej opcji powoduje wskazywanie lokalizacji sojuszniczych jednostek na mapie.</Polish>
+        </Key>
+        <Key ID="STR_AFM_Friendly_Tracker_ShowAllGroups">
+            <English>Show all groups</English>
+            <Polish>Pokazuj wszystkie grupy</Polish>
+        </Key>
+        <Key ID="STR_AFM_Friendly_Tracker_ShowAllGroups_Description">
+            <English>When disabled player can only see his group's markers.</English>
+            <Polish>Wyłączenie tej opcji powoduje, że gracz widzi tylko swoją grupę.</Polish>
+        </Key>
+        <Key ID="STR_AFM_Friendly_Tracker_ShowUnconc">
+            <English>Show unconscious</English>
+            <Polish>Pokazuj nieprzytomnych</Polish>
+        </Key>
+        <Key ID="STR_AFM_Friendly_Tracker_ShowUnconc_Description">
+            <English>When enabled unconscious players will be marked orange.</English>
+            <Polish>Włączenie tej opcji powoduje oznaczenie nieprzytomnych jednostek na pomarańczowo.</Polish>
+        </Key>
+        <Key ID="STR_AFM_Friendly_Tracker_ShowVehicle">
+            <English>Show vehicles</English>
+            <Polish>Pokazuj pojazdy</Polish>
+        </Key>
+        <Key ID="STR_AFM_Friendly_Tracker_ShowVehicle_Description">
+            <English>When enabled player vehicles will be marked.</English>
+            <Polish>Włączenie tej opcji powoduje oznaczenie pojazdów graczy.</Polish>
+        </Key>
+        <Key ID="STR_AFM_Friendly_Tracker_RefreshRate">
+            <English>Marker refresh rate</English>
+            <Polish>Częstotliwość odświeżania markerów</Polish>
+        </Key>
+        <Key ID="STR_AFM_Friendly_Tracker_RefreshRate_Description">
+            <English>Controls how often markers are updated.</English>
+            <Polish>Kontroluje jak często markery są aktualizowane.</Polish>
+        </Key>
+        <Key ID="STR_AFM_Friendly_Tracker_GPS">
+            <English>Require tracker</English>
+            <Polish>Wymagaj trackera</Polish>
+        </Key>
+        <Key ID="STR_AFM_Friendly_Tracker_GPS_Description">
+            <English>When enabled only units with tracker in equipment will be visible on the map. To see other players you also need a tracker.</English>
+            <Polish>Wymagaj trackera by pokazać jednostkę na mapie. By widzieć markery innych graczy również musisz mieć tracker.</Polish>
+        </Key>
+    </Package>
+</Project>
