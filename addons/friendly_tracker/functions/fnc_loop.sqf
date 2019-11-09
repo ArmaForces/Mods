@@ -51,5 +51,12 @@ if (GVAR(showVehicle)) then {
     } forEach trackedVehicles;
 };
 
+if (GVAR(showGroups)) then {
+    // Create marker for groups
+    {
+        [_x] call FUNC(createGroupMarker);
+    } forEach allGroups select {isPlayer leader _x};
+};
+
 // Schedule next loop
 [FUNC(loop), [], GVAR(refreshRate)] call CBA_fnc_waitAndExecute;

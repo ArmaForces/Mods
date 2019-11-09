@@ -22,6 +22,15 @@
 ] call CBA_fnc_addSetting;
 
 [
+    QGVAR(showGroups), // Unique setting name. Matches resulting variable name <STRING>
+    "CHECKBOX", // Type of setting. Can be "CHECKBOX", "EDITBOX", "LIST", "SLIDER" or "COLOR" <STRING>
+    [LSTRING(showGroups), LSTRING(showGroups_Description)], // Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
+    LSTRING(DisplayName), // Category for the settings menu + optional sub-category <STRING, ARRAY>
+    false, // Extra properties of the setting depending of _settingType. <ANY>
+    false // 1: all clients share the same setting, 2: setting can't be overwritten (optional, default: 0) <NUMBER>
+] call CBA_fnc_addSetting;
+
+[
     QGVAR(showUnconc), // Unique setting name. Matches resulting variable name <STRING>
     "CHECKBOX", // Type of setting. Can be "CHECKBOX", "EDITBOX", "LIST", "SLIDER" or "COLOR" <STRING>
     [LSTRING(ShowUnconc), LSTRING(ShowUnconc_Description)], // Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
