@@ -13,3 +13,7 @@ class CfgPatches {
         VERSION_CONFIG;
     };
 };
+
+#include "CfgEden.hpp"
+#include "CfgModuleCategories.hpp"
+#include "DisplayEden.hpp"

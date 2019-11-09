@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="AFM">
+    <Package name="Main">
+        <Key ID="STR_AFM_Main_Attributes">
+            <Original>ArmaForces Attributes</Original>
+            <Polish>Atrybuty ArmaForces</Polish>
+        </Key>
+        <Key ID="STR_AFM_Main_Category">
+            <Original>ArmaForces</Original>
+        </Key>
+        <Key ID="STR_AFM_Main_Toolbar">
+            <Original>ArmaForces</Original>
+        </Key>
+    </Package>
+</Project>
