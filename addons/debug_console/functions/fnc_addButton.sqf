@@ -1,7 +1,7 @@
 #include "script_component.hpp"
 /*
- * Author: <author>
- * Function description
+ * Author: veteran29
+ * Adds custom button to debug console
  *
  * Arguments:
  * 0: Name <STRING, ARRAY>
