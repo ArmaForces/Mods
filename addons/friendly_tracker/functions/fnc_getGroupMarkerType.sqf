@@ -4,7 +4,7 @@
  * Function returns apropriate marker for given group.
  *
  * Arguments:
- * 0: Group to find marker for <OBJECT>
+ * 0: Group to find marker for <GROUP>
  *
  * Return Value:
  * 0: Marker type <STRING>
