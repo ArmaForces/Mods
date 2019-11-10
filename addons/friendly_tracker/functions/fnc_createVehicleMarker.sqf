@@ -25,7 +25,7 @@ if !(getMarkerPos _marker isEqualTo [0, 0, 0]) exitWith {};
 
 // Standard marker creation
 createMarkerLocal [_marker, getPos _vehicle];
-_marker setMarkerTypeLocal "mil_dot"; // Todo: use NATO markers maybe
+_marker setMarkerTypeLocal ([_vehicle] call FUNC(getVehicleMarkerType));
 _marker setMarkerSizeLocal [0.9, 0.9];
 GVAR(markers) pushBack [_marker, _vehicle];
 
