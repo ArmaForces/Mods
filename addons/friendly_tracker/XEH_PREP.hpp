@@ -7,4 +7,5 @@ PREP(createPlayerMarker);
 PREP(createVehicleMarker);
 
 PREP(getGroupMarkerType);
+PREP(getVehicleMarkerType);
 PREP(hasTracker);
