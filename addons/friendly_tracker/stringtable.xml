@@ -22,6 +22,14 @@
             <English>When disabled player can only see his group's markers.</English>
             <Polish>Wyłączenie tej opcji powoduje, że gracz widzi tylko swoją grupę.</Polish>
         </Key>
+        <Key ID="STR_AFM_Friendly_Tracker_ShowGroups">
+            <English>Show group markers</English>
+            <Polish>Pokazuj znaczniki grup</Polish>
+        </Key>
+        <Key ID="STR_AFM_Friendly_Tracker_ShowGroups_Description">
+            <English>If enabled creates group marker at group leader position.</English>
+            <Polish>Włączenie tej opcji powoduje tworzenie znacznika grupy na pozycji jej lidera.</Polish>
+        </Key>
         <Key ID="STR_AFM_Friendly_Tracker_ShowUnconc">
             <English>Show unconscious</English>
             <Polish>Pokazuj nieprzytomnych</Polish>
