@@ -1,11 +1,13 @@
 #include "script_component.hpp"
 class CfgPatches {
     class ADDON {
-        name = COMPONENT;
+        name = COMPONENT_NAME;
         units[] = {};
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
-        requiredAddons[] = {};
+        requiredAddons[] = {
+            "cba_diagnostic"
+        };
         author = "ArmaForces";
         VERSION_CONFIG;
     };
@@ -13,3 +15,5 @@ class CfgPatches {
 
 // Enable CBA target debugging
 EnableTargetDebug = 1;
+
+#include "CfgEventHandlers.hpp"
