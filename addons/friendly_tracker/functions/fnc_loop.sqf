@@ -32,9 +32,8 @@ if (GVAR(GPS) && {!([player] call FUNC(hasTracker))}) exitWith {
 
 // Create marker for every player in game
 {
-    call {
-        // If GPS mode is enabled and player does not have GPS/UAV terminal we skip him and go to the next one
-        if (GVAR(GPS) && {!([_x] call FUNC(hasTracker))}) exitWith {};
+    // If GPS mode is enabled and player does not have GPS/UAV terminal we skip him and go to the next one
+    if (!GVAR(GPS) || {GVAR(GPS) && {[_x] call FUNC(hasTracker)}}) then {
         // Check if player is not in vehicle or vehicle markers are off
         if (isNull objectParent _x || {!GVAR(showVehicle)}) then {
             [_x] call FUNC(createPlayerMarker);
@@ -42,14 +41,12 @@ if (GVAR(GPS) && {!([player] call FUNC(hasTracker))}) exitWith {
             [objectParent _x] call FUNC(createVehicleMarker);
         };
     };
-} foreach AllPlayers select {side _x isEqualTo side player};
+} foreach allPlayers select {side _x isEqualTo side player};
 
-if (GVAR(showVehicle)) then {
-    // Create marker for tracked vehicles
-    {
-        [_x] call FUNC(createVehicleMarker);
-    } forEach trackedVehicles;
-};
+// Create marker for tracked vehicles
+{
+    [_x] call FUNC(createVehicleMarker);
+} forEach GVAR(trackedVehicles);
 
 if (GVAR(showGroups)) then {
     // Create marker for groups

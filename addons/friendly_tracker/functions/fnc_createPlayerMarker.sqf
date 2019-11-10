@@ -33,7 +33,7 @@ switch (true) do {
     };
     // If enabled, unconscious are orange
     case (GVAR(showUnconc) && (_unit getVariable ["ACE_isUnconscious", false]) && {_isPlayerGroup || {GVAR(showAllGroups)}}): {
-        _marker setmarkercolorlocal "ColorOrange";
+        _marker setMarkerColorlocal "ColorOrange";
     };
     // Player's group is marked green
     case (_isPlayerGroup): {

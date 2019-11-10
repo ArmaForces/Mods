@@ -19,7 +19,7 @@ params ["_group"];
 
 // Standard marker creation
 private _groupName = groupId _group;
-private _marker = format["group", _groupName];
+private _marker = format ["group", _groupName];
 createMarkerLocal [_marker, getPos leader _group];
 _marker setMarkerTypeLocal ([_group] call FUNC(getGroupMarkerType));
 _marker setMarkerSizeLocal [0.75, 0.75];
