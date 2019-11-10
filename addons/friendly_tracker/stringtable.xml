@@ -29,6 +29,18 @@
             <English>If enabled creates group marker at group leader position.</English>
             <Polish>Włączenie tej opcji powoduje tworzenie znacznika grupy na pozycji jej lidera.</Polish>
         </Key>
+        <Key ID="STR_AFM_Friendly_Tracker_ShowGroups_Disabled">
+            <English>Disabled</English>
+            <Polish>Wyłączone</Polish>
+        </Key>
+        <Key ID="STR_AFM_Friendly_Tracker_ShowGroups_Player">
+            <English>Only player's group</English>
+            <Polish>Tylko grupa gracza</Polish>
+        </Key>
+        <Key ID="STR_AFM_Friendly_Tracker_ShowGroups_All">
+            <English>All groups</English>
+            <Polish>Wszystkie grupy</Polish>
+        </Key>
         <Key ID="STR_AFM_Friendly_Tracker_ShowUnconc">
             <English>Show unconscious</English>
             <Polish>Pokazuj nieprzytomnych</Polish>

@@ -48,11 +48,20 @@ if (GVAR(GPS) && {!([player] call FUNC(hasTracker))}) exitWith {
     [_x] call FUNC(createVehicleMarker);
 } forEach GVAR(trackedVehicles);
 
-if (GVAR(showGroups)) then {
-    // Create marker for groups
-    {
-        [_x] call FUNC(createGroupMarker);
-    } forEach allGroups select {isPlayer leader _x};
+#define SHOW_NONE   0
+#define SHOW_PLAYER 1
+#define SHOW_ALL    2
+
+// Create marker for groups if enabled
+switch (true) do {
+    case (GVAR(showGroups) isEqualTo SHOW_PLAYER): {
+        [group player] call FUNC(createGroupMarker);
+    };
+    case (GVAR(showGroups) isEqualTo SHOW_ALL): {
+        {
+            [_x] call FUNC(createGroupMarker);
+        } forEach allGroups select {isPlayer leader _x};
+    };
 };
 
 // Schedule next loop

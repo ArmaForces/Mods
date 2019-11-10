@@ -23,10 +23,10 @@
 
 [
     QGVAR(showGroups),
-    "CHECKBOX",
+    "LIST",
     [LSTRING(showGroups), LSTRING(showGroups_Description)],
     LSTRING(DisplayName),
-    false,
+    [[0, 1, 2], [LSTRING(showGroups_Disable), LSTRING(showGroups_Player), LSTRING(showGroups_All)], 0],
     false
 ] call CBA_fnc_addSetting;
 
