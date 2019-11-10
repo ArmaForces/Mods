@@ -17,6 +17,8 @@
 
 params ["_vehicle"];
 
+if (_vehicle isKindOf "Static") exitWith {};
+
 // Create marker name for given vehicle
 private _marker = format ["vehicle_%1", str _vehicle];
 
