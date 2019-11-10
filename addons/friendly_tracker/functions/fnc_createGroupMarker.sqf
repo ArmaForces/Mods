@@ -18,11 +18,12 @@
 params ["_group"];
 
 // Standard marker creation
-private _marker = format["group", name _group];
+private _groupName = groupId _group;
+private _marker = format["group", _groupName];
 createMarkerLocal [_marker, getPos leader _group];
 _marker setMarkerTypeLocal ([_group] call FUNC(getGroupMarkerType));
 _marker setMarkerSizeLocal [0.75, 0.75];
-_marker setMarkerTextLocal name _group;
+_marker setMarkerTextLocal _groupName;
 GVAR(markers) pushBack [_marker, _group];
 
 private _isPlayerGroup = _group isEqualTo group player;
