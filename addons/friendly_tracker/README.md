@@ -1,22 +1,6 @@
-<p align="center">
-    <img src="https://avatars2.githubusercontent.com/u/50863181">
-</p>
-<p align="center">
-    <a href="https://github.com/ArmaForces/Mods/issues">
-        <img src="https://img.shields.io/github/issues-raw/ArmaForces/Mods.svg?label=Issues" alt="ArmaForces Mods Issues">
-    </a>
-    <a href="https://github.com/ArmaForces/Mods/blob/master/LICENSE">
-        <img src="https://img.shields.io/badge/License-GPLv2-red.svg" alt="ArmaForces Mods License">
-    </a>
-    <a href="https://github.com/ArmaForces/Mods/actions">
-        <img src="https://github.com/ArmaForces/Mods/workflows/Arma/badge.svg">
-    </a>
-</p>
-<p align="center"><sup><strong>Requires the latest version of <a href="https://github.com/CBATeam/CBA_A3/releases/latest">CBA</a>.</strong></sup></p>
+## Friendly Tracker
 
-**Friendly Tracker** is our approach to BFT system. Built with modularity and high customization in mind, it serves it's purpose very well. It's clientside only, so no unnecessary network traffic.
-
-## Features
+It is our approach to BFT system. Built with modularity and high customization in mind, it serves it's purpose very well. It's clientside only, so no unnecessary network traffic.
 
 ### Friendly units tracking
 
@@ -43,3 +27,8 @@ If enabled, unit must have tracking device in equipment (GPS/UAV terminal for no
 - Change markers refresh rate
 - Require GPS for tracking (units without GPS will not be marked nor see any markers)
 - Can be started or stopped any time
+
+## Authors
+
+- [3Mydlo3](https://github.com/3Mydlo3)
+- [veteran29](https://github.com/veteran29)
