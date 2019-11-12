@@ -2,14 +2,14 @@
 <Project name="AFM">
     <Package name="Main">
         <Key ID="STR_AFM_Main_Attributes">
-            <Original>ArmaForces Attributes</Original>
+            <English>ArmaForces Attributes</English>
             <Polish>Atrybuty ArmaForces</Polish>
         </Key>
         <Key ID="STR_AFM_Main_Category">
-            <Original>ArmaForces</Original>
+            <English>ArmaForces</English>
         </Key>
         <Key ID="STR_AFM_Main_Toolbar">
-            <Original>ArmaForces</Original>
+            <English>ArmaForces</English>
         </Key>
     </Package>
 </Project>
