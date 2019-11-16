@@ -5,6 +5,7 @@ ADDON = false;
 #include "initSettings.sqf"
 
 GVAR(disconnectedPlayers) = true call CBA_fnc_createNamespace;
+GVAR(savegameData) = [];
 GVAR(teleport) = false; // Used as flag for teleportation agreement
 
 ADDON = true;

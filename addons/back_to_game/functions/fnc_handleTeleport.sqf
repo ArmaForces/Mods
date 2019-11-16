@@ -1,7 +1,7 @@
 #include "script_component.hpp"
 /*
  * Author: 3Mydlo3
- * Function teleports player back to his position before he disconnected and restores his loadout.
+ * Function shows teleport confirmation dialog to player
  *
  * Arguments:
  * 0: Player unit <OBJECT>
@@ -25,16 +25,6 @@ if !(local _unit) exitWith {
     [QGVAR(handleTeleport), _this, _unit] call CBA_fnc_targetEvent;
 };
 
-// Create telport dialog and wait for it to be closed
-createDialog QGVAR(teleportDialog);
-[{isNull findDisplay 11}, {
-    if (GVAR(teleport)) then {
-        // Prepare to teleportation
-        player allowDamage false;
-        [{player allowDamage true}, [], 5] call CBA_fnc_waitAndExecute;
-        player playAction "PlayerProne";
-        player setUnitLoadout (_this select 1);
+GVAR(savegameData) = _save;
 
-        [QGVAR(teleportPlayer), _this] call CBA_fnc_localEvent;
-    };
-}, _save] call CBA_fnc_waitUntilAndExecute;
+createDialog QGVAR(teleportDialog);

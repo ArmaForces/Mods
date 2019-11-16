@@ -29,7 +29,7 @@ class GVAR(teleportDialog) {
             y = "0.445 * safezoneH + safezoneY";
             w = "0.0670312 * safezoneW";
             h = "0.066 * safezoneH";
-            action = QUOTE(GVAR(teleport) = true; closeDialog 0);
+            action = QUOTE(call FUNC(dialogConfirm); closeDialog 0);
         };
         class RscButton_1061: RscButton {
             idc = 1601;
@@ -38,7 +38,7 @@ class GVAR(teleportDialog) {
             y = "0.445 * safezoneH + safezoneY";
             w = "0.0670312 * safezoneW";
             h = "0.066 * safezoneH";
-            action = QUOTE(GVAR(teleport) = false; closeDialog 0);
+            action = QUOTE(call FUNC(dialogReject); closeDialog 0);
         };
     };
 };

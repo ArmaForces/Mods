@@ -1,5 +1,7 @@
 PREP(handleConnected);
 PREP(handleTeleport);
+PREP(dialogConfirm);
+PREP(dialogReject);
 PREP(teleportPlayer);
 
 PREP(deletePlayerData);
