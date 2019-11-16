@@ -6,10 +6,9 @@
  * Arguments:
  * 0: Player unit <OBJECT>
  * 1: "Savegame" <ARRAY>
- *  0: UID <STRING>
- *  1: Player loadout <ARRAY>
- *  2: Player vehicle <OBJECT>
- *  3: Destination <POSITION>
+ *  0: Player loadout <ARRAY>
+ *  1: Player vehicle <OBJECT>
+ *  2: Destination <POSITION>
  *
  * Return Value:
  * None

@@ -8,10 +8,9 @@
  *
  * Return Value:
  * 0: "Savegame" <ARRAY>
- *  0: UID <STRING>
- *  1: Player loadout <ARRAY>
- *  2: Player vehicle <OBJECT>
- *  3: Destination <POSITION>
+ *  0: Player loadout <ARRAY>
+ *  1: Player vehicle <OBJECT>
+ *  2: Destination <POSITION>
  *
  * Example:
  * [getPlayerUID player] call afm_back_to_game_fnc_getPlayerData
@@ -21,4 +20,4 @@
 
 params ["_uid"];
 
-GVAR(disconnectedPlayers) select (GVAR(disconnectedPlayers) findIf {_uid == (_x select 0)})
+GVAR(disconnectedPlayers) getVariable [_uid, nil]

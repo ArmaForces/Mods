@@ -17,4 +17,9 @@
 
 params ["_uid"];
 
-(GVAR(disconnectedPlayers) findIf {_uid == (_x select 0)} != -1)
+private _save = [_uid] call FUNC(getPlayerData);
+if (isNil "_save") then {
+    false
+} else {
+    true
+};
