@@ -17,9 +17,4 @@
 
 params ["_uid"];
 
-private _save = [_uid] call FUNC(getPlayerData);
-if (isNil "_save") then {
-    false
-} else {
-    true
-};
+!isNil {[_uid] call FUNC(getPlayerData)}

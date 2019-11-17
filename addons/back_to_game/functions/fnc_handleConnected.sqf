@@ -18,7 +18,7 @@
 
 params ["_unit", "_uid"];
 
-if (!isServer) then {
+if (!isServer && {hasInterface}) exitWith {
     [QGVAR(handleConnected), _this] call CBA_fnc_serverEvent;
 };
 
