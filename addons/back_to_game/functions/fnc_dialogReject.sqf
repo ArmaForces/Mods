@@ -17,4 +17,4 @@
 
 [{
     GVAR(savegameData) = [];
-}] call CBA_fnc_waitAndExecute;
+}] call CBA_fnc_execNextFrame;

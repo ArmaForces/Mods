@@ -14,7 +14,7 @@ class GVAR(teleportDialog) {
             w = "0.195937 * safezoneW";
             h = "0.165 * safezoneH";
         };
-        class RscText_1059: RscText {
+        class TeleportText: RscText {
             idc = 1000;
             text = CSTRING(TeleportAsk);
             x = "0.412344 * safezoneW + safezoneX";
@@ -22,7 +22,7 @@ class GVAR(teleportDialog) {
             w = "0.180469 * safezoneW";
             h = "0.055 * safezoneH";
         };
-        class RscButton_1060: RscButton {
+        class AgreeButton: RscButton {
             idc = 1600;
             text = CSTRING(TeleportAgree);
             x = "0.407187 * safezoneW + safezoneX";
@@ -31,7 +31,7 @@ class GVAR(teleportDialog) {
             h = "0.066 * safezoneH";
             action = QUOTE(call FUNC(dialogConfirm); closeDialog 0);
         };
-        class RscButton_1061: RscButton {
+        class RejectButton: RscButton {
             idc = 1601;
             text = CSTRING(TeleportReject);
             x = "0.525781 * safezoneW + safezoneX";

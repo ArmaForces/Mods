@@ -21,4 +21,4 @@ If you choose to teleport, you will have your full loadout restored
 ## Authors
 
 - [3Mydlo3](https://github.com/3Mydlo3)
-- Madin5
+- [Madin5](https://github.com/Madin5)
