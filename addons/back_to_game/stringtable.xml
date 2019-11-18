@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="AFM">
+    <Package name="Back_To_Game">
+        <Key ID="STR_AFM_Back_To_Game_DisplayName">
+            <English>ArmaForces - Back To Game</English>
+            <Polish>ArmaForces - Back To Game</Polish>
+        </Key>
+        <Key ID="STR_AFM_Back_To_Game_EnableAddon">
+            <English>Enable Back To Game</English>
+            <Polish>Włącz Back To Game</Polish>
+        </Key>
+        <Key ID="STR_AFM_Back_To_Game_EnableAddon_Description">
+            <English>Activate teleport and loadout restore after reconnect.</English>
+            <Polish>Aktywuj teleportację i przywrócenie wyposażenia po ponownym połączeniu do gry.</Polish>
+        </Key>
+        <Key ID="STR_AFM_Back_To_Game_TeleportToLeader">
+            <English>Teleport to leader</English>
+            <Polish>Teleportuj do dowódcy</Polish>
+        </Key>
+        <Key ID="STR_AFM_Back_To_Game_TeleportToLeader_Description">
+            <English>Allow player teleportation to his group leader.</English>
+            <Polish>Pozwól na teleportację do dowódcy.</Polish>
+        </Key>
+        <Key ID="STR_AFM_Back_To_Game_TeleportToVehicle">
+            <English>Teleport to vehicle</English>
+            <Polish>Teleportuj do pojazdu</Polish>
+        </Key>
+        <Key ID="STR_AFM_Back_To_Game_TeleportToVehicle_Description">
+            <English>Allow player teleportation to his last vehicle or group leader vehicle.</English>
+            <Polish>Pozwól na teleportację do ostatniego pojazdu lub do pojazdu dowódcy.</Polish>
+        </Key>
+        <Key ID="STR_AFM_Back_To_Game_TeleportAsk">
+            <English>Looks like you were disconnected from the server. Teleport back to action?</English>
+            <Polish>Chyba wyrzuciło Cię z serwera. Teleport z powrotem?</Polish>
+        </Key>
+        <Key ID="STR_AFM_Back_To_Game_TeleportAgree">
+            <English>Teleport me</English>
+            <Polish>Teleportuj mnie</Polish>
+        </Key>
+        <Key ID="STR_AFM_Back_To_Game_TeleportReject">
+            <English>Don't teleport me</English>
+            <Polish>Nie teleportuj mnie</Polish>
+        </Key>
+    </Package>
+</Project>
