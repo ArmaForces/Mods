@@ -4,7 +4,7 @@ It is our approach to BFT system. Built with modularity and high customization i
 
 ### Friendly units tracking
 
-Each player will have his very own small dot, changing it's color depending on various factors. Player will have his own dot colored yellow, and his teammates will be green, others will be blue. In case unconscious showing is enabled, anybody unconscious will be marked orange to indicate that he needs help. 
+Each player will have his very own small dot, changing it's color depending on various factors. Player will have his own dot colored yellow, and his teammates will be green, others will be blue. In case unconscious showing is enabled, anybody unconscious will be marked orange to indicate that he needs help. If player has assigned buddy in Diwako DUI, buddy will be marked pink.
 
 ### Friendly vehicles tracking
 

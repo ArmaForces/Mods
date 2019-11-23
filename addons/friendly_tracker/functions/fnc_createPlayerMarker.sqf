@@ -35,6 +35,10 @@ switch (true) do {
     case (GVAR(showUnconc) && (_unit getVariable ["ACE_isUnconscious", false]) && {_isPlayerGroup || {GVAR(showAllGroups)}}): {
         _marker setMarkerColorlocal "ColorOrange";
     };
+    // Diwako DUI buddy compatibility
+    case (_unit getVariable ["diwako_dui_buddy_buddy", objNull] isEqualTo player): {
+        _marker setMarkerColorLocal "ColorPink";
+    };
     // Player's group is marked green
     case (_isPlayerGroup): {
         _marker setMarkerColorLocal "ColorGreen";
