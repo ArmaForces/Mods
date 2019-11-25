@@ -35,6 +35,6 @@ class CfgDifficultyPresets {
             autoReport = 0;
             multipleSaves = 1;
             tacticalPing = 0;
-    };
+        };
     };
 };
