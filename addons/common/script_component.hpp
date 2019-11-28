@@ -5,8 +5,8 @@
 #include "\a3\ui_f\hpp\defineResincl.inc"
 #include "\a3\ui_f\hpp\defineResinclDesign.inc"
 
-// #define DEBUG_MODE_FULL
-// #define DISABLE_COMPILE_CACHE
+#define DEBUG_MODE_FULL
+#define DISABLE_COMPILE_CACHE
 
 #ifdef DEBUG_ENABLED_COMMON
     #define DEBUG_MODE_FULL
@@ -14,6 +14,8 @@
     #ifdef DEBUG_SETTINGS_COMMON
     #define DEBUG_SETTINGS DEBUG_SETTINGS_COMMON
 #endif
+
+#include "\z\afm\addons\main\script_macros.hpp"
 
 #define POS_X(N) ((N) * GUI_GRID_W + GUI_GRID_CENTER_X)
 #define POS_Y(N) ((N) * GUI_GRID_H + GUI_GRID_CENTER_Y)
@@ -27,4 +29,7 @@
     "(profilenamespace getVariable ['GUI_BCG_RGB_A',0.8])" \
 }
 
-#include "\z\afm\addons\main\script_macros.hpp"
+#define IDC_MODAL_TITLE_L       1000
+#define IDC_MODAL_TITLE_R       1001
+#define IDC_MODAL_GROUP_CONTENT 2000
+#define IDC_MODAL_CONTENT_TEXT  2001
