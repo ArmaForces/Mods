@@ -127,9 +127,11 @@ class GVAR(ModalWide): GVAR(Modal) {
         class Content: Content {
             w = QUOTE(POS_W(MODAL_WIDE_W - MODAL_CONTENT_BORDER*2));
 
-            class Text: Text {
-                // relative to display
-                w = QUOTE(POS_W(MODAL_WIDE_W - MODAL_CONTENT_BORDER*2));
+            class Controls: Controls {
+                class Text: Text {
+                    // relative to display
+                    w = QUOTE(POS_W(MODAL_WIDE_W - MODAL_CONTENT_BORDER*2));
+                };
             };
         };
 

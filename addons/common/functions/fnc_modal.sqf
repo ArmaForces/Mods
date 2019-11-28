@@ -10,10 +10,12 @@
  * 1: Dialog content (lines) <STRING,ARRAY>
  *  1: Line 1 <ARRAY>
  *  2: Line 2 <ARRAY>
+ *  ...
  *  N: Line N <ARRAY>
  *   1: Line text or path to image <STRING>
  *   2: Text size mutiplier, default 1 <NUMBER>
  *   3: RGB or RGBA color <ARRAY>
+ *   4: Alignmnet 0 - left, 1 - center, 2 - right, default 1 <NUMBER>
  * 3: Use wider dialog <BOOL>
  * 4: On open callback <CODE>
  *   Arguments passed: [_display, _contentGroupCtrl, _textCtrl, _leftTitleCtrl, _rightTitleCtrl]
@@ -27,7 +29,7 @@
  *  ["Some title", "This is a content."] call afm_common_fnc_modal
  *  [
  *      ["Left", "Right"],
- *      ["This is a content.", ["Second bigger red line", 2, [1,0,0]]],
+ *      ["This is a content.", ["Second bigger red line", 2, [1,0,0], 2], ["Green line", 1, [0,1,0], 0]],
  *      true, {systemChat "Open!"}, {systemChat "Close!"}
  *  ] call afm_common_fnc_modal
  *
@@ -72,7 +74,12 @@ private _composition = [];
 {
     _composition pushBack lineBreak;
 
-    _x params [["_text", "", ["", 0]], ["_size", 1, [0]], ["_color", [], [[]], [3,4]]];
+    _x params [
+        ["_text", "", ["", 0]],
+        ["_size", 1, [0]],
+        ["_color", [], [[]], [3,4]],
+        ["_alignment", 1, [0]]
+    ];
 
     if (_text isEqualType 0) then {
         _text = str _text;
@@ -88,11 +95,21 @@ private _composition = [];
     ];
     _color = [_r, _g, _b, _a] call BIS_fnc_colorRGBAtoHTML;
 
+    private _alignment = switch (_alignment) do {
+        case 0: {"left"};
+        case 1: {"center"};
+        case 2: {"right"};
+        default {
+            ERROR_1("Invalid alignment!",_alignment);
+            "center"
+        };
+    };
+
     private _isImage = toLower _text select [count _text - 4] in [".paa", ".jpg"];
     if (_isImage) then {
-        _composition pushBack parseText format ["<img align='center' size='%2' color='%3' image='%1'/>", _text, _size, _color];
+        _composition pushBack parseText format ["<img align='%4' size='%2' color='%3' image='%1'/>", _text, _size, _color, _alignment];
     } else {
-        _composition pushBack parseText format ["<t align='center' size='%2' color='%3'>%1</t>", _text, _size, _color];
+        _composition pushBack parseText format ["<t align='%4' size='%2' color='%3'>%1</t>", _text, _size, _color, _alignment];
     };
 
 } forEach _content;
