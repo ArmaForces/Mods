@@ -8,7 +8,7 @@ class Cfg3DEN {
                         tooltip = CSTRING(isZeus_Description);
                         property = QGVAR(isZeus);
                         control = "Checkbox";
-                        expression = QUOTE(ARR_2(_value, _this) call FUNC(assignZeus));
+                        expression = QUOTE([ARR_2(_this, _value)] call FUNC(assignZeus));
                         defaultValue = "false";
                         condition = "objectControllable";
                     };
