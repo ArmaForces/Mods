@@ -1,0 +1,2 @@
+PREP(createCuratorModule);
+PREP(getFreeCuratorModule);
