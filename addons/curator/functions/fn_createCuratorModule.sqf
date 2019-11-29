@@ -25,4 +25,5 @@ _zeus setVariable ["BIS_fnc_initModules_disableAutoActivation", false];
 _zeus setCuratorCoef ["Place", 0];
 _zeus setCuratorCoef ["Delete", 0];
 _group deleteGroupWhenEmpty true;
+
 _zeus
