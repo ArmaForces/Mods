@@ -24,7 +24,7 @@ class GVAR(Modal) {
         class TitleBackground: RscText {
             colorBackground[] = COLOR_BCG;
 
-            x = QUOTE(POS_X(1));
+            x = QUOTE(POS_X(7));
             y = QUOTE(POS_Y(1));
             w = QUOTE(POS_W(MODAL_W));
             h = QUOTE(POS_H(1));
@@ -32,7 +32,7 @@ class GVAR(Modal) {
         class MainBackground: RscText {
             colorBackground[] = {0,0,0,0.7};
 
-            x = QUOTE(POS_X(1));
+            x = QUOTE(POS_X(7));
             y = QUOTE(POS_Y(2.1));
             w = QUOTE(POS_W(MODAL_W));
             h = QUOTE(POS_H(20));
@@ -46,7 +46,7 @@ class GVAR(Modal) {
 
             text = "$STR_DISP_OPTIONS_GAME_OPTIONS";
 
-            x = QUOTE(POS_X(1));
+            x = QUOTE(POS_X(7));
             y = QUOTE(POS_Y(1));
             w = QUOTE(POS_W(MODAL_W/2));
             h = QUOTE(POS_H(1));
@@ -58,7 +58,7 @@ class GVAR(Modal) {
 
             text = "$STR_DISP_OPTIONS_GAME_OPTIONS";
 
-            x = QUOTE(POS_X(1+MODAL_W/2));
+            x = QUOTE(POS_X(7+MODAL_W/2));
             w = QUOTE(POS_W(MODAL_W/2));
         };
 
@@ -66,7 +66,7 @@ class GVAR(Modal) {
         class Content: RscControlsGroupNoScrollbars {
             idc = IDC_MODAL_GROUP_CONTENT;
 
-            x = QUOTE(POS_X(1 + MODAL_CONTENT_BORDER));
+            x = QUOTE(POS_X(7 + MODAL_CONTENT_BORDER));
             y = QUOTE(POS_Y(2.1 + MODAL_CONTENT_BORDER));
             w = QUOTE(POS_W(MODAL_W - MODAL_CONTENT_BORDER*2));
             h = QUOTE(POS_H(20 - MODAL_CONTENT_BORDER*2));
@@ -88,7 +88,7 @@ class GVAR(Modal) {
         class ButtonOK: RscButtonMenuOK {
             idc = IDC_OK;
 
-            x = QUOTE(POS_X(1 + MODAL_W - MODAL_MAIN_BTN_W));
+            x = QUOTE(POS_X(7 + MODAL_W - MODAL_MAIN_BTN_W));
             y = QUOTE(POS_Y(22.2));
             w = QUOTE(POS_W(MODAL_MAIN_BTN_W));
             h = QUOTE(POS_H(1));
@@ -96,7 +96,7 @@ class GVAR(Modal) {
         class ButtonCancel: RscButtonMenuCancel {
             idc = IDC_CANCEL;
 
-            x = QUOTE(POS_X(1 + MODAL_W - MODAL_MAIN_BTN_W*2 - 0.2));
+            x = QUOTE(POS_X(7 + MODAL_W - MODAL_MAIN_BTN_W*2 - 0.2));
             y = QUOTE(POS_Y(22.2));
             w = QUOTE(POS_W(MODAL_MAIN_BTN_W));
             h = QUOTE(POS_H(1));
@@ -108,15 +108,18 @@ class GVAR(Modal) {
 class GVAR(ModalWide): GVAR(Modal) {
     class ControlsBackground: ControlsBackground {
         class TitleBackground: TitleBackground {
+            x = QUOTE(POS_X(1));
             w = QUOTE(POS_W(MODAL_WIDE_W));
         };
         class MainBackground: MainBackground {
+            x = QUOTE(POS_X(1));
             w = QUOTE(POS_W(MODAL_WIDE_W));
         };
     };
 
     class Controls: Controls {
         class TitleLeft: TitleLeft {
+            x = QUOTE(POS_X(1));
             w = QUOTE(POS_W(MODAL_WIDE_W/2));
         };
         class TitleRight: TitleRight {
@@ -125,6 +128,7 @@ class GVAR(ModalWide): GVAR(Modal) {
         };
 
         class Content: Content {
+            x = QUOTE(POS_X(1));
             w = QUOTE(POS_W(MODAL_WIDE_W - MODAL_CONTENT_BORDER*2));
 
             class Controls: Controls {
