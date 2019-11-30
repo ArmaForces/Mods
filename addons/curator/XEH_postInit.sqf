@@ -3,15 +3,18 @@
 if (isServer) then {
     [QGVAR(zeusConnected), {
         params ["_unit"];
-        if !(_unit getVariable [QGVAR(isZeus), false]) exitWith {};
+        if !(isPlayer _unit) exitWith {};
 
         private _curatorModule = [_unit] call FUNC(getFreeCuratorModule);
         _unit assignCurator _curatorModule;
     }] call CBA_fnc_addEventHandler;
-};
 
-if (hasInterface) then {
-    if (player getVariable [QGVAR(isZeus), false]) then {
-        [QGVAR(zeusConnected), [player]] call CBA_fnc_serverEvent;
-    };
+    [QGVAR(zeusDisconnected), {
+        params ["_unit"];
+        if !(isPlayer _unit) exitWith {};
+
+        private _curatorModule = getAssignedCuratorLogic _unit;
+        if (_curatorModule isEqualTo objNull) exitWith {};
+        unassignCurator (GVAR(curators) select _curatorModule);
+    }] call CBA_fnc_addEventHandler;
 };
