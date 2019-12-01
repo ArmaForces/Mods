@@ -21,9 +21,7 @@ params ["_unit", ["_isZeus", true]];
 systemChat str _unit;
 
 if (_isZeus) then {
-    _unit setVariable [QGVAR(isZeus), _isZeus, true];
     [QGVAR(zeusConnected), [_unit]] call CBA_fnc_serverEvent;
 } else {
-    _unit setVariable [QGVAR(isZeus), nil, true];
     [QGVAR(zeusDisconnected), [_unit]] call CBA_fnc_serverEvent;
 };
