@@ -29,7 +29,12 @@
  *  ["Some title", "This is a content."] call afm_common_fnc_modal
  *  [
  *      ["Left", "Right"],
- *      ["This is a content.", ["Second bigger red line", 2, [1,0,0], 2], ["Green line", 1, [0,1,0], 0]],
+ *      [
+ *          "This is a content.",
+ *          ["Second bigger red line", 2, [1,0,0], 2],
+ *          ["Green line", 1, [0,1,0], 0],
+ *          [getText (configFile >> "CfgWeapons" >> currentWeapon player >> "picture"), 5]
+ *      ],
  *      true, {systemChat "Open!"}, {systemChat "Close!"}
  *  ] call afm_common_fnc_modal
  *
