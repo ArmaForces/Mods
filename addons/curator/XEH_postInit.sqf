@@ -1,7 +1,7 @@
 #include "script_component.hpp"
 
 if (isServer) then {
-    [QGVAR(zeusConnected), {
+    [QGVAR(zeusAssign), {
         params ["_unit"];
         if !(isPlayer _unit) exitWith {};
 
@@ -9,7 +9,7 @@ if (isServer) then {
         _unit assignCurator _curatorModule;
     }] call CBA_fnc_addEventHandler;
 
-    [QGVAR(zeusDisconnected), {
+    [QGVAR(zeusUnassign), {
         params ["_unit"];
         if !(isPlayer _unit) exitWith {};
 

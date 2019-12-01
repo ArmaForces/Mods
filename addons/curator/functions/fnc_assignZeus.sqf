@@ -18,10 +18,8 @@
 
 params ["_unit", ["_isZeus", true]];
 
-systemChat str _unit;
-
 if (_isZeus) then {
-    [QGVAR(zeusConnected), [_unit]] call CBA_fnc_serverEvent;
+    [QGVAR(zeusAssign), [_unit]] call CBA_fnc_serverEvent;
 } else {
-    [QGVAR(zeusDisconnected), [_unit]] call CBA_fnc_serverEvent;
+    [QGVAR(zeusUnassign), [_unit]] call CBA_fnc_serverEvent;
 };
