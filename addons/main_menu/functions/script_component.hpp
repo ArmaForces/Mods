@@ -1,0 +1,1 @@
+#include "\z\afm\addons\main_menu\script_component.hpp"
