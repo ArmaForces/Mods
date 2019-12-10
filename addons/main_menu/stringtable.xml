@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="AFM">
+    <Package name="Main_Menu">
+        <Key ID="STR_AFM_Main_Menu_SpotlightHeader">
+            <English>ArmaForces</English>
+        </Key>
+        <Key ID="STR_AFM_Main_Menu_SpotlightJoin">
+            <English>Join</English>
+            <Polish>Dołącz</Polish>
+        </Key>
+    </Package>
+</Project>
