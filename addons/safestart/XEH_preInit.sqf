@@ -2,8 +2,6 @@
 ADDON = false;
 #include "XEH_PREP.hpp"
 
-GVAR(aceSafemode)= IS_MOD_LOADED(ace_safemode);
-
 #include "initSettings.sqf"
 
 [QGVAR(enableSafety), {
@@ -11,7 +9,7 @@ GVAR(aceSafemode)= IS_MOD_LOADED(ace_safemode);
 
     [_player] call FUNC(lowerWeapon);
 
-    if (GVAR(aceSafemode) && {GVAR(startLocked)}) then {
+    if (EGVAR(common,aceSafemode) && {GVAR(startLocked)}) then {
         [_player, currentWeapon _player, true] call ACEFUNC(safemode,setWeaponSafety);
     };
 }] call CBA_fnc_addEventHandler;
