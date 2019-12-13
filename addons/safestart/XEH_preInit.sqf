@@ -2,7 +2,7 @@
 ADDON = false;
 #include "XEH_PREP.hpp"
 
-GVAR(aceSafemode)= isClass (configFile >> "CfgPatches" >> "ace_safemode");
+GVAR(aceSafemode)= IS_MOD_LOADED(ace_safemode);
 
 #include "initSettings.sqf"
 
