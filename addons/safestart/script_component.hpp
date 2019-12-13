@@ -11,4 +11,6 @@
     #define DEBUG_SETTINGS DEBUG_SETTINGS_SAFESTART
 #endif
 
+#define DIK_G   34
+
 #include "\z\afm\addons\main\script_macros.hpp"

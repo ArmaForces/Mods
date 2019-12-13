@@ -1,1 +1,2 @@
 PREP(lowerWeapon);
+PREP(warnGrenade);

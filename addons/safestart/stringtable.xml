@@ -13,5 +13,21 @@
             <English>Locks your weapon safety on game start</English>
             <Polish>Powoduje zabezpieczenie broni podczas startu rozgrywki</Polish>
         </Key>
+        <Key ID="STR_AFM_Safestart_Warning">
+            <English>Warning!</English>
+            <Polish>Uwaga!</Polish>
+        </Key>
+        <Key ID="STR_AFM_Safestart_Warn_GrenadeHeader">
+            <English>Dangerous bind detected!</English>
+            <Polish>Niebiezpieczne przypisanie klawiszy wykryte!</Polish>
+        </Key>
+        <Key ID="STR_AFM_Safestart_Warn_GrenadeLine_1">
+            <English>You have bound &#39;Throw&#39; (Grenade) key to G which is easy to press and is considered a &#39;Dangerous&#39; bind.</English>
+            <Polish>Masz ustawiony &#39;Rzut&#39; (Granatem) pod klawiszem G który jest dość łatwo wcisnąć.</Polish>
+        </Key>
+        <Key ID="STR_AFM_Safestart_Warn_GrenadeLine_2">
+            <English>It&#39;s recommended to unbind the key as you can use ACE Throwing (Shift+G) or bind it to 2xG. Do you want do do it now?</English>
+            <Polish>Zalecane jest usunięcie przypisania przycisku, zamiast tego można używać ACE Throwing (Shift+G) albo przypisać rzut na 2xG. Czy chcesz to zrobić teraz?</Polish>
+        </Key
     </Package>
 </Project>
