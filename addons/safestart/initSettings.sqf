@@ -1,7 +1,7 @@
 
-if (GVAR(aceSafemode)) then {
+if (EGVAR(common,aceSafemode)) then {
     [
-        GVAR(startLocked),
+        QGVAR(startLocked),
         "CHECKBOX",
         [LSTRING(StartLocked), LSTRING(StartLocked_Description)],
         LSTRING(DisplayName),
