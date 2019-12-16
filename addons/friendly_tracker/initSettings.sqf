@@ -26,7 +26,7 @@
     "LIST",
     [LSTRING(showGroups), LSTRING(showGroups_Description)],
     LSTRING(DisplayName),
-    [[0, 1, 2], [LSTRING(showGroups_Disable), LSTRING(showGroups_Player), LSTRING(showGroups_All)], 0],
+    [[0, 1, 2], [LSTRING(showGroups_Disabled), LSTRING(showGroups_Player), LSTRING(showGroups_All)], 0],
     false
 ] call CBA_fnc_addSetting;
 
