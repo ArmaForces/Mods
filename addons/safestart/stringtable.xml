@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="AFM">
+    <Package name="Safestart">
+        <Key ID="STR_AFM_Safestart_DisplayName">
+            <English>ArmaForces - Safestart</English>
+            <Polish>ArmaForces - Bezpieczny start</Polish>
+        </Key>
+        <Key ID="STR_AFM_Safestart_StartLocked">
+            <English>Lock weapon</English>
+            <Polish>Zabezpiecz broń</Polish>
+        </Key>
+        <Key ID="STR_AFM_Safestart_StartLocked_Description">
+            <English>Locks your weapon safety on game start</English>
+            <Polish>Powoduje zabezpieczenie broni podczas startu rozgrywki</Polish>
+        </Key>
+    </Package>
+</Project>
