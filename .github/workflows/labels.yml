@@ -1,0 +1,10 @@
+on: issues
+name: Create Default Labels
+jobs:
+  labels:
+    name: Default Labels Action
+    runs-on: ubuntu-latest
+    steps:
+      - uses: lannonbr/issue-label-manager-action@2.0.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
