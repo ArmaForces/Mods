@@ -20,14 +20,19 @@
         "description": "This issue or pull request already exists"
     },
     {
-        "name": "enhancement",
-        "color": "#a2eeef",
+        "name": "feature",
+        "color": "#21c2c4",
         "description": "New feature or request"
     },
     {
-        "name": "cleanup",
+        "name": "enhancement",
         "color": "#a2eeef",
         "description": "Fixes and improvements for existing feature"
+    },
+    {
+        "name": "cleanup",
+        "color": "#00ffcc",
+        "description": "Code cleanup for existing feature"
     },
     {
         "name": "ignore changelog",
