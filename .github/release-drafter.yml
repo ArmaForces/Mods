@@ -1,0 +1,33 @@
+branches:
+    - master
+
+  name-template: 'Version $NEXT_PATCH_VERSION'
+  tag-template: 'v$NEXT_PATCH_VERSION'
+
+  categories:
+    - title: '**ADDED:**'
+      labels:
+        - feature
+    - title: '**FIXED:**'
+      labels:
+        - bugfix
+    - title: '**CHANGED:**'
+      labels:
+        - cleanup
+        - enhancement
+
+  exclude-labels:
+    - 'ignore changelog'
+
+  change-template: '- $TITLE (#$NUMBER)'
+  template: |
+    _ArmaForces Mods release._
+
+    ## Change Log Summary
+
+    $CHANGES
+
+  replacers:
+    # Category titles
+    - search: '/\#\# (\*\*(ADDED|FIXED|CHANGED):\*\*)/g'
+      replace: '$1'
