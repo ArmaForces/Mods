@@ -1,0 +1,38 @@
+[
+    {
+        "name": "bug",
+        "color": "#d73a4a",
+        "description": "Something isn't working"
+    },
+    {
+        "name": "bugfix",
+        "color": "#5e7f03",
+        "description": "Fix for a bug"
+    },
+    {
+        "name": "documentation",
+        "color": "#0075ca",
+        "description": "Improvements or additions to documentation"
+    },
+    {
+        "name": "duplicate",
+        "color": "#cfd3d7",
+        "description": "This issue or pull request already exists"
+    },
+    {
+        "name": "enhancement",
+        "color": "#a2eeef",
+        "description": "New feature or request"
+    },
+    {
+        "name": "cleanup",
+        "color": "#a2eeef",
+        "description": "Fixes and improvements for existing feature"
+    },
+    {
+        "name": "ignore changelog",
+        "color": "#fff",
+        "description": "Do not add to changelog"
+    }
+]
+
