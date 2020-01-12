@@ -28,7 +28,7 @@ jobs:
     # Upload to Steam Workshop
     - uses: arma-actions/workshop-upload@v1
       with:
-        itemId: '1643238133' # Id of item to update
+        itemId: '1934142795' # Id of item to update
         contentPath: 'releases/${{ env.VERSION }}/${{ secrets.MOD_FOLDER }}'
         changelog: '' # TODO add tag description here
       env:
