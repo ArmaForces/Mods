@@ -1,12 +1,9 @@
 name: Release
 
 on:
-  push:
-    tags:
-    - 'v*.*.*'
   release:
     types:
-      - created
+      - published
 
 jobs:
   build_addon:
