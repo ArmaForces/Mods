@@ -17,13 +17,11 @@ if (isNil "acex_killTracker_eventsArray") exitWith {
 };
 
 diag_log text "------ [START_KILLTRACKER_STATS] ------";
-diag_log nil;
 
 {
     diag_log text _x;
 } forEach acex_killTracker_eventsArray;
 
-diag_log nil;
 diag_log text "------ [END_KILLTRACKER_STATS] ------";
 
 nil
