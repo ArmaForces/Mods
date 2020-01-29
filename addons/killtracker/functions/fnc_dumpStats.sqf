@@ -12,6 +12,10 @@
  * Public: No
  */
 
+if (isNil "acex_killTracker_eventsArray") exitWith {
+    WARNING("ACEX Killtracker not detected, can't show stats");
+};
+
 diag_log text "------ [START_KILLTRACKER_STATS] ------";
 diag_log nil;
 
