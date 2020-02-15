@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="AFM">
     <Package name="Fries">
+        <Key ID="STR_AFM_Fries_DisplayName">
+            <English>ArmaForces - FRIES</English>
+            <Polish>ArmaForces - FRIES</Polish>
+        </Key>
         <Key ID="STR_AFM_Fries_AutoAdd">
             <English>Auto add FRIES</English>
             <Polish>Auto dodawanie FRIES</Polish>
