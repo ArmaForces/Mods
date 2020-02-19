@@ -15,7 +15,7 @@
  * Public: No
  */
 
-params ["_player"];
+params [["_player", player]];
 
 if (!(local _player)) exitWith {[QGVAR(start), _this, _player] call CBA_fnc_targetEvent};
 
