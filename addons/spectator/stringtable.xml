@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="AFM">
+    <Package name="Spectator">
+        <Key ID="STR_AFM_Spectator_DisplayName">
+            <English>ArmaForces - Spectator</English>
+            <Polish>ArmaForces - Obserwator</Polish>
+        </Key>
+        <Key ID="STR_AFM_Spectator_Enabled">
+            <English>Enable spectator</English>
+            <Polish>Włącz obserwatora</Polish>
+        </Key>
+        <Key ID="STR_AFM_Spectator_Enabled_Description">
+            <English>Enables spectator for dead players</English>
+            <Polish>Włącza obserwatora martwym graczom</Polish>
+        </Key>
+    </Package>
+</Project>
