@@ -17,5 +17,5 @@
 
 if (!isServer) exitWith {};
 
-call FUNC(disable);
-call FUNC(enable);
+WARNING("Restarting spectator!");
+[QGVAR(reloadLocal)] call CBA_fnc_globalEvent;

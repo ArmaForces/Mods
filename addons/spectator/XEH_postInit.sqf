@@ -9,6 +9,10 @@ if (hasInterface) then {
         _this call FUNC(stop);
     }] call CBA_fnc_addEventHandler;
 
+    [QGVAR(reloadLocal), {
+        _this call FUNC(reloadLocal);
+    }] call CBA_fnc_addEventHandler;
+
     // State change event handlers to detect dying, respawning  and unconscious state change
     player addEventHandler ["Killed", {
         if (!GVAR(enabled)) exitWith {};
