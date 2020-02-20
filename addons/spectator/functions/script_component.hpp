@@ -1,0 +1,1 @@
+#include "\z\afm\addons\spectator\script_component.hpp"
