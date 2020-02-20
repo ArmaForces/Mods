@@ -8,4 +8,14 @@ if (hasInterface) then {
     [QGVAR(stop), {
         _this call FUNC(stop);
     }] call CBA_fnc_addEventHandler;
+
+    player addEventHandler ["Killed", {
+        if (!GVAR(enabled)) exitWith {};
+        [QGVAR(start)] call CBA_fnc_localEvent;
+    }];
+
+    player addEventHandler ["Respawn", {
+        if (!GVAR(enabled)) exitWith {};
+        [QGVAR(stop)] call CBA_fnc_localEvent;
+    }];
 };
