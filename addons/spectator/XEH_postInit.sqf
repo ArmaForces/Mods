@@ -23,7 +23,7 @@ if (hasInterface) then {
     if (EGVAR(common,aceMedical)) then {
         ["ace_unconscious", {
             params ["_unit", "_active"];
-            if (!(local _unit)) exitWith {};
+            if (!(_unit isEqualTo player)) exitWith {};
             if (_active) then {
                 [{!([player] call FUNC(canSpectate))}, {
                     // Do nothing as player can no longer be spectator, probably he's not unconscious anymore
