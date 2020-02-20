@@ -20,3 +20,4 @@ params [["_player", player]];
 if (!(local _player)) exitWith {[QGVAR(start), _this, _player] call CBA_fnc_targetEvent};
 
 ["Terminate"] call BIS_fnc_EGSpectator;
+WARNING("Stopping spectator!");

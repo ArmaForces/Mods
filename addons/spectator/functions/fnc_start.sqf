@@ -19,6 +19,8 @@ params [["_player", player]];
 
 if (!(local _player)) exitWith {[QGVAR(start), _this, _player] call CBA_fnc_targetEvent};
 
+if (["IsInitialized"] call BIS_fnc_EGSpectator) exitWith {WARNING("Spectator already initialized!")};
+
 // Determine sides available for spectating
 private _whitelistedSides = switch GVAR(sides) do {
     // Friendly sides spectator
@@ -36,3 +38,4 @@ if (GVAR(civilianSide)) then {
 
 // Start spectator
 ["Initialize", [player, _whitelistedSides, GVAR(allowAI), GVAR(freeCamera), GVAR(TPPCamera), true, true, true, true, true]] call BIS_fnc_EGSpectator;
+WARNING("Starting spectator!");
