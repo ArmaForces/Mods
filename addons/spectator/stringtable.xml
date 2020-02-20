@@ -21,6 +21,14 @@
             <English>Enables spectator also for unconscious players. Requires enabling spectator.</English>
             <Polish>Włącza obserwatora także nieprzytomnym graczom. Wymaga włączenia obserwatora.</Polish>
         </Key>
+        <Key ID="STR_AFM_Spectator_UnconsciousDelay">
+            <English>Unconscious spectator delay</English>
+            <Polish>Opóźnienie obserwatora dla nieprzytomnych</Polish>
+        </Key>
+        <Key ID="STR_AFM_Spectator_UnconsciousDelay_Description">
+            <English>How much time must pass before unconscious players get spectator.</English>
+            <Polish>Ile czasu musi upłynąć nim nieprzytomni gracze dostaną obserwatora.</Polish>
+        </Key>
         <Key ID="STR_AFM_Spectator_Sides">
             <English>Sides available for spectating</English>
             <Polish>Dostępne strony do obserwowania</Polish>

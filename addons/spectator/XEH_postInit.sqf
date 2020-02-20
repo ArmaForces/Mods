@@ -25,7 +25,11 @@ if (hasInterface) then {
             params ["_unit", "_active"];
             if (!(local _unit)) exitWith {};
             if (_active) then {
-                [QGVAR(start)] call CBA_fnc_localEvent;
+                [{!([player] call FUNC(canSpectate))}, {
+                    // Do nothing as player can no longer be spectator, probably he's not unconscious anymore
+                }, [], GVAR(unconsciousDelay), {
+                    [QGVAR(start)] call CBA_fnc_localEvent;
+                }] call CBA_fnc_waitUntilAndExecute;
             } else {
                 [QGVAR(stop)] call CBA_fnc_localEvent;
             };

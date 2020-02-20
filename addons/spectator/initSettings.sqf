@@ -19,6 +19,15 @@
 ] call CBA_fnc_addSetting;
 
 [
+    QGVAR(unconsciousDelay),
+    "SLIDER",
+    [LSTRING(UnconsciousDelay), LSTRING(UnconsciousDelay_Description)],
+    LSTRING(DisplayName),
+    [1, 300, 30, 0],
+    1
+] call CBA_fnc_addSetting;
+
+[
     QGVAR(sides),
     "LIST",
     [LSTRING(Sides), LSTRING(Sides_Description)],
