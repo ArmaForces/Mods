@@ -17,14 +17,6 @@
 
 params [["_player", player]];
 
-private _unconscious = if (GVAR(allowUnconscious)) then {
-    if (EGVAR(common,aceMedical)) then {
-        _player getVariable ["ACE_isUnconscious", false];
-    } else {
-        lifeState _player isEqualTo "INCAPACITATED"
-    };
-} else {
-    false
-};
-
-!(alive player) || {_unconscious}
+!(alive player)
+|| {GVAR(allowUnconscious)
+&& {[_player] call EFUNC(common,isUnconscious)}}
