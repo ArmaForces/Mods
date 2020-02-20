@@ -12,7 +12,7 @@
     QGVAR(allowUnconscious),
     "CHECKBOX",
     [LSTRING(AllowUnconscious), LSTRING(AllowUnconscious_Description)],
-    LSTRING(DisplayName),
+    [LSTRING(DisplayName), LSTRING(Unconscious)],
     false,
     1,
     {[_this] call FUNC(restart)}
@@ -22,7 +22,7 @@
     QGVAR(unconsciousDelay),
     "SLIDER",
     [LSTRING(UnconsciousDelay), LSTRING(UnconsciousDelay_Description)],
-    LSTRING(DisplayName),
+    [LSTRING(DisplayName), LSTRING(Unconscious)],
     [1, 300, 30, 0],
     1
 ] call CBA_fnc_addSetting;
