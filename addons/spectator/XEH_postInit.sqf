@@ -29,6 +29,8 @@ if (hasInterface) then {
                     // Do nothing as player can no longer be spectator, probably he's not unconscious anymore
                 }, [], GVAR(unconsciousDelay), {
                     [QGVAR(start)] call CBA_fnc_localEvent;
+                    // Disable ACE's disable user input
+                    ["unconscious", false] call ACEFUNC(common,setDisableUserInputStatus);
                 }] call CBA_fnc_waitUntilAndExecute;
             } else {
                 [QGVAR(stop)] call CBA_fnc_localEvent;
