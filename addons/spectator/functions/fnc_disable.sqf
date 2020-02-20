@@ -4,7 +4,7 @@
  * Function disables spectator functionality.
  *
  * Arguments:
- * 0: Enable spectator <BOOL>
+ * None
  *
  * Return Value:
  * 0: New spectator state <BOOL>
@@ -14,8 +14,6 @@
  *
  * Public: No
  */
-
-params ["_enabled"];
 
 [QGVAR(stop)] call CBA_fnc_globalEvent;
 
