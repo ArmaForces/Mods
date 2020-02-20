@@ -40,7 +40,10 @@ if (hasInterface) then {
                     ["unconscious", false] call ACEFUNC(common,setDisableUserInputStatus);
                 }] call CBA_fnc_waitUntilAndExecute;
             } else {
-                if (!alive _unit) exitWith {};
+                if (!alive _unit) exitWith {
+                    // Player died, we need to reload his spectator for new params
+                    [QGVAR(reloadLocal)] call CBA_fnc_localEvent;
+                };
                 WARNING("Player no longer unconscious!");
                 [QGVAR(stop)] call CBA_fnc_localEvent;
             };
