@@ -27,3 +27,13 @@
     1,
     {[_this] call FUNC(restart)}
 ] call CBA_fnc_addSetting;
+
+[
+    QGVAR(allowAI),
+    "CHECKBOX",
+    [LSTRING(AllowAI), LSTRING(AllowAI_Description)],
+    LSTRING(DisplayName),
+    false,
+    1,
+    {[_this] call FUNC(restart)}
+] call CBA_fnc_addSetting;
