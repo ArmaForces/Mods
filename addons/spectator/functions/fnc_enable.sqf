@@ -1,7 +1,7 @@
 #include "script_component.hpp"
 /*
  * Author: 3Mydlo3
- * Function enables spectator functionality
+ * Function enables spectator functionality.
  *
  * Arguments:
  * 0: Enable spectator <BOOL>
@@ -16,10 +16,6 @@
  */
 
 params ["_enabled"];
-
-if (!isServer) exitWith {};
-
-if (!(_enabled)) exitWith {_this call FUNC(disable)};
 
 {
     [QGVAR(start), [_x], _x] call CBA_fnc_targetEvent;
