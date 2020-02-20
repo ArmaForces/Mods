@@ -47,3 +47,13 @@
     1,
     {[_this] call FUNC(restart)}
 ] call CBA_fnc_addSetting;
+
+[
+    QGVAR(TPPCamera),
+    "CHECKBOX",
+    [LSTRING(TPPCamera), LSTRING(TPPCamera_Description)],
+    LSTRING(DisplayName),
+    false,
+    1,
+    {[_this] call FUNC(restart)}
+] call CBA_fnc_addSetting;

@@ -53,5 +53,13 @@
             <English>Allows spectator to move his camera freely.</English>
             <Polish>Pozwala obserwatorowi dowolnie poruszać kamerą.</Polish>
         </Key>
+        <Key ID="STR_AFM_Spectator_TPPCamera">
+            <English>Allow TPP Camera</English>
+            <Polish>Pozwól na trzecioosobową kamerę</Polish>
+        </Key>
+        <Key ID="STR_AFM_Spectator_TPPCamera_Description">
+            <English>Allows spectator to use third person camera.</English>
+            <Polish>Pozwala obserwatorowi używać kamery trzecioosobowej.</Polish>
+        </Key>
     </Package>
 </Project>
