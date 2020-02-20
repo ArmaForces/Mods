@@ -29,5 +29,13 @@
             <English>Player side</English>
             <Polish>Strona gracza</Polish>
         </Key>
+        <Key ID="STR_AFM_Spectator_CivilianSide">
+            <English>Allow civilian spectating</English>
+            <Polish>Pozwól obserwować cywili</Polish>
+        </Key>
+        <Key ID="STR_AFM_Spectator_CivilianSide_Description">
+            <English>Allows tracking units from civilian side.</English>
+            <Polish>Pozwala obserwować jednostki strony cywilnej.</Polish>
+        </Key>
     </Package>
 </Project>

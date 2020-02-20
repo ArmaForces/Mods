@@ -30,5 +30,9 @@ private _whitelistedSides = switch GVAR(sides) do {
     default {player call BIS_fnc_friendlySides};
 };
 
+if (GVAR(civilianSide)) then {
+    _whitelistedSides pushBack CIVILIAN;
+};
+
 // Start spectator
 ["Initialize", [player, _whitelistedSides, false, true, true, true, true, true, true, true]] call BIS_fnc_EGSpectator;

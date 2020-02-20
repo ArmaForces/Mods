@@ -17,3 +17,13 @@
     1,
     {[_this] call FUNC(restart)}
 ] call CBA_fnc_addSetting;
+
+[
+    QGVAR(civilianSide),
+    "CHECKBOX",
+    [LSTRING(CivilianSide), LSTRING(CivilianSide_Description)],
+    LSTRING(DisplayName),
+    false,
+    1,
+    {[_this] call FUNC(restart)}
+] call CBA_fnc_addSetting;
