@@ -13,6 +13,14 @@
             <English>Enables spectator for dead players</English>
             <Polish>Włącza obserwatora martwym graczom</Polish>
         </Key>
+        <Key ID="STR_AFM_Spectator_AllowUnconscious">
+            <English>Allow unconscious</English>
+            <Polish>Obserwator dla nieprzytomnych</Polish>
+        </Key>
+        <Key ID="STR_AFM_Spectator_AllowUnconscious_Description">
+            <English>Enables spectator also for unconscious players. Requires enabling spectator.</English>
+            <Polish>Włącza obserwatora także nieprzytomnym graczom. Wymaga włączenia obserwatora.</Polish>
+        </Key>
         <Key ID="STR_AFM_Spectator_Sides">
             <English>Sides available for spectating</English>
             <Polish>Dostępne strony do obserwowania</Polish>

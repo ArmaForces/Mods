@@ -9,6 +9,16 @@
 ] call CBA_fnc_addSetting;
 
 [
+    QGVAR(allowUnconscious),
+    "CHECKBOX",
+    [LSTRING(AllowUnconscious), LSTRING(AllowUnconscious_Description)],
+    LSTRING(DisplayName),
+    false,
+    1,
+    {[_this] call FUNC(restart)}
+] call CBA_fnc_addSetting;
+
+[
     QGVAR(sides),
     "LIST",
     [LSTRING(Sides), LSTRING(Sides_Description)],

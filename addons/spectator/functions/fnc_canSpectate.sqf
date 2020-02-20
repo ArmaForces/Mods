@@ -17,11 +17,14 @@
 
 params [["_player", player]];
 
-// TODO: Check if is conscious (ACE or vanilla)
-private _unconscious = if (EGVAR(common,aceMedical)) then {
-    _player getVariable ["ACE_isUnconscious", false];
+private _unconscious = if (GVAR(allowUnconscious)) then {
+    if (EGVAR(common,aceMedical)) then {
+        _player getVariable ["ACE_isUnconscious", false];
+    } else {
+        lifeState _player isEqualTo "INCAPACITATED"
+    };
 } else {
-    lifeState _player isEqualTo "INCAPACITATED"
+    false
 };
 
 !(alive player) || {_unconscious}
