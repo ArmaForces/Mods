@@ -13,5 +13,21 @@
             <English>Enables spectator for dead players</English>
             <Polish>Włącza obserwatora martwym graczom</Polish>
         </Key>
+        <Key ID="STR_AFM_Spectator_Sides">
+            <English>Sides available for spectating</English>
+            <Polish>Dostępne strony do obserwowania</Polish>
+        </Key>
+        <Key ID="STR_AFM_Spectator_Sides_Description">
+            <English>Spectator will be able to see and track units from given sides.</English>
+            <Polish>Obserwator będzie mógł widzieć i śledzić jednostki wybranych stron.</Polish>
+        </Key>
+        <Key ID="STR_AFM_Spectator_Friendly">
+            <English>Friendly</English>
+            <Polish>Sojusznicze</Polish>
+        </Key>
+        <Key ID="STR_AFM_Spectator_Own">
+            <English>Player side</English>
+            <Polish>Strona gracza</Polish>
+        </Key>
     </Package>
 </Project>

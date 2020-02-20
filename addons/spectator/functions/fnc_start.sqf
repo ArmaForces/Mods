@@ -19,4 +19,16 @@ params [["_player", player]];
 
 if (!(local _player)) exitWith {[QGVAR(start), _this, _player] call CBA_fnc_targetEvent};
 
-["Initialize", [player, [], false, true, true, true, true, true, true, true]] call BIS_fnc_EGSpectator;
+// Determine sides available for spectating
+private _whitelistedSides = switch GVAR(sides) do {
+    // Friendly sides spectator
+    case 0: {player call BIS_fnc_friendlySides};
+    // Player side spectator
+    case 1: {[playerSide]};
+    // All sides spectator
+    case 2: {[WEST, INDEPENDENT, EAST]};
+    default {player call BIS_fnc_friendlySides};
+};
+
+// Start spectator
+["Initialize", [player, _whitelistedSides, false, true, true, true, true, true, true, true]] call BIS_fnc_EGSpectator;

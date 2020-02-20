@@ -7,3 +7,13 @@
     1,
     {[_this] call FUNC(toggle)}
 ] call CBA_fnc_addSetting;
+
+[
+    QGVAR(sides),
+    "LIST",
+    [LSTRING(Sides), LSTRING(Sides_Description)],
+    LSTRING(DisplayName),
+    [[0, 1, 2], [LSTRING(Friendly), LSTRING(Own), "str_all_voices"], 0],
+    1,
+    {[_this] call FUNC(restart)}
+] call CBA_fnc_addSetting;
