@@ -18,7 +18,7 @@
 params ["_unit"];
 
 if (EGVAR(common,aceMedical)) then {
-    _unit getVariable ["ACE_isUnconscious", false];
+    _unit getVariable ["ACE_isUnconscious", false]
 } else {
     lifeState _unit isEqualTo "INCAPACITATED"
 };

@@ -19,3 +19,5 @@ if (!isServer) exitWith {};
 
 WARNING("Restarting spectator!");
 [QGVAR(reloadLocal)] call CBA_fnc_globalEvent;
+
+nil

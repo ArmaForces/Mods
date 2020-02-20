@@ -47,3 +47,5 @@ if ([player] call FUNC(canSpectate)) then {
 };
 
 GVAR(oldSpectatorCamera) = nil;
+
+nil

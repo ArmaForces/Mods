@@ -48,3 +48,5 @@ if (_civilianSide) then {
 // Start spectator
 ["Initialize", [player, _whitelistedSides, _allowAI, _freeCamera, _TPPCamera, true, true, true, true, true]] call BIS_fnc_EGSpectator;
 WARNING("Starting spectator!");
+
+nil
