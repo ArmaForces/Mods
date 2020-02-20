@@ -7,10 +7,10 @@
  * 0: Spectator enabled <BOOL>
  *
  * Return Value:
- * None
+ * 0: New spectator state <BOOL>
  *
  * Example:
- * [[bob, ted], false] call afm_spectator_fnc_toggle
+ * [true] call afm_spectator_fnc_toggle
  *
  * Public: No
  */

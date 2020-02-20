@@ -7,7 +7,7 @@
  * 0: Enable spectator <BOOL>
  *
  * Return Value:
- * None
+ * 0: New spectator state <BOOL>
  *
  * Example:
  * [1] call afm_spectator_fnc_enable
@@ -20,3 +20,5 @@ params ["_enabled"];
 {
     [QGVAR(start), [_x], _x] call CBA_fnc_targetEvent;
 } forEach (allPlayers select {[_x] call FUNC(canSpectate)});
+
+true

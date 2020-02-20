@@ -7,7 +7,7 @@
  * 0: Enable spectator <BOOL>
  *
  * Return Value:
- * None
+ * 0: New spectator state <BOOL>
  *
  * Example:
  * [0] call afm_spectator_fnc_disable
@@ -18,3 +18,5 @@
 params ["_enabled"];
 
 [QGVAR(stop)] call CBA_fnc_globalEvent;
+
+false
