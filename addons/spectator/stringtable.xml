@@ -45,5 +45,13 @@
             <English>Allows tracking AI units from whitelisted sides.</English>
             <Polish>Pozwala obserwować jednostki AI z dozwolonych stron.</Polish>
         </Key>
+        <Key ID="STR_AFM_Spectator_FreeCamera">
+            <English>Allow free camera</English>
+            <Polish>Pozwól na wolną kamerę</Polish>
+        </Key>
+        <Key ID="STR_AFM_Spectator_FreeCamera_Description">
+            <English>Allows spectator to move his camera freely.</English>
+            <Polish>Pozwala obserwatorowi dowolnie poruszać kamerą.</Polish>
+        </Key>
     </Package>
 </Project>

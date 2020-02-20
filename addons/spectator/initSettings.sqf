@@ -37,3 +37,13 @@
     1,
     {[_this] call FUNC(restart)}
 ] call CBA_fnc_addSetting;
+
+[
+    QGVAR(freeCamera),
+    "CHECKBOX",
+    [LSTRING(FreeCamera), LSTRING(FreeCamera_Description)],
+    LSTRING(DisplayName),
+    false,
+    1,
+    {[_this] call FUNC(restart)}
+] call CBA_fnc_addSetting;

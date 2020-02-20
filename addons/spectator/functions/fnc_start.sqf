@@ -35,4 +35,4 @@ if (GVAR(civilianSide)) then {
 };
 
 // Start spectator
-["Initialize", [player, _whitelistedSides, GVAR(allowAI), true, true, true, true, true, true, true]] call BIS_fnc_EGSpectator;
+["Initialize", [player, _whitelistedSides, GVAR(allowAI), GVAR(freeCamera), true, true, true, true, true, true]] call BIS_fnc_EGSpectator;
