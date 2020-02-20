@@ -22,12 +22,12 @@ if (!(local _player)) exitWith {[QGVAR(start), _this, _player] call CBA_fnc_targ
 // Determine sides available for spectating
 private _whitelistedSides = switch GVAR(sides) do {
     // Friendly sides spectator
-    case 0: {player call BIS_fnc_friendlySides};
+    case 0: {playerSide call BIS_fnc_friendlySides};
     // Player side spectator
     case 1: {[playerSide]};
     // All sides spectator
     case 2: {[WEST, INDEPENDENT, EAST]};
-    default {player call BIS_fnc_friendlySides};
+    default {playerSide call BIS_fnc_friendlySides};
 };
 
 if (GVAR(civilianSide)) then {
