@@ -15,5 +15,5 @@
  * Public: No
  */
 
-GVAR(respawnTimeElapsed) = playerRespawnTime;
+// Restart counter where it stopped
 setPlayerRespawnTime (GVAR(respawnTime) - GVAR(respawnTimeElapsed) max TIME_MINIMUM);

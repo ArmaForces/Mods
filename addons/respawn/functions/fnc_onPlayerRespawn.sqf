@@ -18,6 +18,8 @@
 
 params ["_newUnit", "_oldUnit"];
 
+// Restore starting loadout
 _newUnit setUnitLoadout GVAR(savedEquipment);
 
+// Reset time elapsed counter
 GVAR(respawnTimeElapsed) = 0;
