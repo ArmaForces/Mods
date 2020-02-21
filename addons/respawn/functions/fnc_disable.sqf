@@ -16,6 +16,6 @@
  */
 
 // Save current elapsed time for possible further respawn restart
-GVAR(timeElapsed) = playerRespawnTime;
+GVAR(timeElapsed) = GVAR(time) - playerRespawnTime;
 
 setPlayerRespawnTime TIME_DISABLED;
