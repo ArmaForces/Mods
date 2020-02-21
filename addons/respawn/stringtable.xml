@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="AFM">
+    <Package name="Respawn">
+        <Key ID="STR_AFM_Respawn_DisplayName">
+            <English>ArmaForces - Respawn</English>
+            <Polish>ArmaForces - Odrodzenie</Polish>
+        </Key>
+    </Package>
+</Project>

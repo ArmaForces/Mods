@@ -1,0 +1,2 @@
+PREP(onPlayerKilled);
+PREP(onPlayerRespawn);
