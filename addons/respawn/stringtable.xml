@@ -5,5 +5,13 @@
             <English>ArmaForces - Respawn</English>
             <Polish>ArmaForces - Odrodzenie</Polish>
         </Key>
+        <Key ID="STR_AFM_Respawn_Enabled">
+            <English>Enable respawn</English>
+            <Polish>Włącz odrodzenie</Polish>
+        </Key>
+        <Key ID="STR_AFM_Respawn_Enabled_Description">
+            <English>Enables respawn with given delay.</English>
+            <Polish>Włącza odrodzenie z określonym opóźnieniem.</Polish>
+        </Key>
     </Package>
 </Project>

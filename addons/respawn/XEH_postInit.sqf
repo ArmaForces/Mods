@@ -19,4 +19,12 @@ if (hasInterface) then {
         if (alive player) exitWith {};
         setPlayerRespawnTime TIME_MINIMUM;
     }] call CBA_fnc_addEventHandler;
+
+    [QGVAR(enable), {
+        _this call FUNC(enable);
+    }] call CBA_fnc_addEventHandler;
+
+    [QGVAR(disable), {
+        _this call FUNC(disable);
+    }] call CBA_fnc_addEventHandler;
 };

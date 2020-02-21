@@ -19,3 +19,5 @@
 params ["_newUnit", "_oldUnit"];
 
 _newUnit setUnitLoadout GVAR(savedEquipment);
+
+GVAR(respawnTimeElapsed) = 0;
