@@ -19,9 +19,6 @@ params ["_enabled"];
 
 if (!isServer) exitWith {};
 
-// Setting hasn't change
-if (GVAR(enabled) isEqualTo _enabled) exitWith {};
-
 // Trigger apropriate event on clients
 if (_enabled) then {
     [QGVAR(enable)] call CBA_fnc_globalEvent;
