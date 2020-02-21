@@ -23,9 +23,9 @@ if (!isServer) exitWith {};
 if (GVAR(enabled) isEqualTo _enabled) exitWith {};
 
 if (_enabled) then {
-    [QGVAR(enable)] call CBA_fnc_remoteEvent;
+    [QGVAR(enable)] call CBA_fnc_globalEvent;
 } else {
-    [QGVAR(disable)] call CBA_fnc_remoteEvent;
+    [QGVAR(disable)] call CBA_fnc_globalEvent;
 };
 
 nil
