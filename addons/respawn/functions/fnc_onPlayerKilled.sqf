@@ -21,4 +21,4 @@ params ["_oldUnit", "_killer"];
 // Respawn is disabled
 if (!GVAR(enabled)) exitWith {setPlayerRespawnTime TIME_DISABLED};
 
-setPlayerRespawnTime GVAR(respawnTime);
+setPlayerRespawnTime GVAR(time);

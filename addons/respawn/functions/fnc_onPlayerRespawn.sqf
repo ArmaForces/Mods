@@ -22,4 +22,4 @@ params ["_newUnit", "_oldUnit"];
 _newUnit setUnitLoadout GVAR(savedEquipment);
 
 // Reset time elapsed counter
-GVAR(respawnTimeElapsed) = 0;
+GVAR(timeElapsed) = 0;

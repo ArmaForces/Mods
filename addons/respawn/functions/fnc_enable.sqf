@@ -16,4 +16,4 @@
  */
 
 // Restart counter where it stopped
-setPlayerRespawnTime (GVAR(respawnTime) - GVAR(respawnTimeElapsed) max TIME_MINIMUM);
+setPlayerRespawnTime (GVAR(time) - GVAR(timeElapsed) max TIME_MINIMUM);
