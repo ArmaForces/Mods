@@ -12,3 +12,6 @@
 #endif
 
 #include "\z\afm\addons\main\script_macros.hpp"
+
+#define TIME_DISABLED 1e10
+#define TIME_MINIMUM 1

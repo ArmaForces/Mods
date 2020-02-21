@@ -17,6 +17,6 @@ if (hasInterface) then {
 
     [QGVAR(force), {
         if (alive player) exitWith {};
-        setPlayerRespawnTime 1;
+        setPlayerRespawnTime TIME_MINIMUM;
     }] call CBA_fnc_addEventHandler;
 };
