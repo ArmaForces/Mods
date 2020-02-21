@@ -20,5 +20,3 @@ params ["_newTime"];
 if (!isServer) exitWith {};
 
 [QGVAR(adjustTimeLocal), _this] call CBA_fnc_globalEvent;
-
-GVAR(oldTime) = _newTime;
