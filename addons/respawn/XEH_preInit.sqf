@@ -4,7 +4,6 @@ ADDON = false;
 
 #include "initSettings.sqf"
 
-GVAR(time) = getNumber (configFile >> "CfgRespawnTemplates" >> QGVAR(default) >> "respawnDelay");
 GVAR(timeElapsed) = 0;
 GVAR(savedEquipment) = [];
 

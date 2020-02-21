@@ -24,11 +24,17 @@ if (hasInterface) then {
         setPlayerRespawnTime TIME_MINIMUM;
     }] call CBA_fnc_addEventHandler;
 
+    // Events for enabling/disabling respawn locally
     [QGVAR(enable), {
         _this call FUNC(enable);
     }] call CBA_fnc_addEventHandler;
 
     [QGVAR(disable), {
         _this call FUNC(disable);
+    }] call CBA_fnc_addEventHandler;
+
+    // Event for adjusting remaining respawn time when respawn time changes
+    [QGVAR(adjustTimeLocal), {
+        _this call FUNC(adjustTimeLocal);
     }] call CBA_fnc_addEventHandler;
 };

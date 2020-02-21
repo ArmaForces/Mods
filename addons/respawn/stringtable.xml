@@ -13,5 +13,13 @@
             <English>Enables respawn with given delay.</English>
             <Polish>Włącza odrodzenie z określonym opóźnieniem.</Polish>
         </Key>
+        <Key ID="STR_AFM_Respawn_Time">
+            <English>Respawn delay</English>
+            <Polish>Opóźnienie odrodzenia</Polish>
+        </Key>
+        <Key ID="STR_AFM_Respawn_Time_Description">
+            <English>How much time must pass before player will respawn (if respawn is enabled).</English>
+            <Polish>Jak dużo czasu musi upłynąć by gracz mógł się odrodzić (jeśli odrodzenie jest włączone).</Polish>
+        </Key>
     </Package>
 </Project>
