@@ -17,7 +17,10 @@
 
 params ["_newTime"];
 
-if (playerRespawnTime isEqualTo -1) exitWith {GVAR(oldTime) = _newTime;};
+if (playerRespawnTime isEqualTo -1) exitWith {
+    GVAR(oldTime) = _newTime;
+    nil
+};
 
 // Calculate current elapsed time and adjust new respawn time
 private _elapsedTime = GVAR(oldTime) - playerRespawnTime;
