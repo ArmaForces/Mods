@@ -6,7 +6,7 @@ class CfgRespawnTemplates
         displayName = CSTRING(DisplayName);
         onPlayerKilled = QFUNC(onPlayerKilled);
         onPlayerRespawn = QFUNC(onPlayerRespawn);
-        respawnDelay = 10;
+        respawnDelay = 120;
         respawnOnStart = -1;
         respawnButton = 1;
         respawnDialog = 0;
