@@ -15,6 +15,13 @@
  * Public: No
  */
 
+params ["_newTime"];
+
 if (playerRespawnTime isEqualTo -1) exitWith {};
 
-setPlayerRespawnTime (_newTime - playerRespawnTime max TIME_MINIMUM);
+// Calculate current elapsed time and adjust new respawn time
+private _elapsedTime = GVAR(oldTime) - playerRespawnTime;
+setPlayerRespawnTime (_newTime - _elapsedTime max TIME_MINIMUM);
+
+// Save for further adjustments
+GVAR(oldTime) = _newTime;
