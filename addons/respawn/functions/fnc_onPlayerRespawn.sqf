@@ -17,3 +17,5 @@
  */
 
 params ["_newUnit", "_oldUnit"];
+
+_newUnit setUnitLoadout GVAR(savedEquipment);
