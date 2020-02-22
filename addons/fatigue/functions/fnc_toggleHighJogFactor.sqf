@@ -22,7 +22,7 @@ if (!EGVAR(common,aceFatigue)) exitWith {};
 if (_enable) then {
     [QGVAR(high_jog_coef), {
         private _isHighJog = (animationState _this) select [9, 3] == "tac";
-        if (_isHighJog) exitWith {0.95};
+        if (_isHighJog) exitWith {GVAR(highJogCoef)};
         1
     }] call ACEFUNC(advanced_fatigue,addDutyFactor);
 } else {

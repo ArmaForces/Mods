@@ -13,5 +13,13 @@
             <English>Enables custom high jog coefficient when moving with weapon ready. Requires ACE Advanced Fatigue working.</English>
             <Polish>Włącza dodatkowy modyfikator zmęczenia przy chodzeniu z podniesioną bronią. Wymaga by Zaawansowane Zmęczenie ACE było włączone.</Polish>
         </Key>
+        <Key ID="STR_AFM_Fatigue_High_Jog_Coef">
+            <English>Custom high jog coefficient</English>
+            <Polish>Modyfikator przy chodzeniu z podniesioną bronią</Polish>
+        </Key>
+        <Key ID="STR_AFM_Fatigue_High_Jog_Coef_Description">
+            <English>Stamina multiplier when moving with weapon ready. When set to 1, it does nothing, when set to 0 it breaks stamina.</English>
+            <Polish>Mnożnik zmęczenia podczas poruszania się z podniesioną bronią. Gdy wynosi 1 to nic nie robi, a gdy 0 to psuje staminę.</Polish>
+        </Key>
     </Package>
 </Project>
