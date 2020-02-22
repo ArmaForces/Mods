@@ -18,8 +18,8 @@
             <Polish>Modyfikator przy chodzeniu z podniesioną bronią</Polish>
         </Key>
         <Key ID="STR_AFM_Fatigue_High_Jog_Coef_Description">
-            <English>Stamina multiplier when moving with weapon ready. When set to 1, it does nothing, when set to 0 it breaks stamina.</English>
-            <Polish>Mnożnik zmęczenia podczas poruszania się z podniesioną bronią. Gdy wynosi 1 to nic nie robi, a gdy 0 to psuje staminę.</Polish>
+            <English>Stamina multiplier when moving with weapon ready. When set to 1, it does nothing, when set to 0.8 it's like you had low weapon ready.</English>
+            <Polish>Mnożnik zmęczenia podczas poruszania się z podniesioną bronią. Gdy wynosi 1 to nic nie robi, a gdy 0.8 to tak jakby chodzić z opuszczoną bronią.</Polish>
         </Key>
     </Package>
 </Project>

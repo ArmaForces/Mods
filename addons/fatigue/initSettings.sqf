@@ -13,6 +13,6 @@
     "SLIDER",
     [LSTRING(High_Jog_Coef), LSTRING(High_Jog_Coef_Description)],
     LSTRING(DisplayName),
-    [0, 1, 0.95, 2],
+    [0.8, 1, 0.9, 2],
     1
 ] call CBA_fnc_addSetting;
