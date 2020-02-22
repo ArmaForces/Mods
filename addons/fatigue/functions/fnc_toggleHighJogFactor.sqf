@@ -1,6 +1,6 @@
 #include "script_component.hpp"
 /*
- * Author: 3Mydlo3
+ * Author: 3Mydlo3, veteran29
  * Function toggles custom high jog duty factor.
  *
  * Arguments:
