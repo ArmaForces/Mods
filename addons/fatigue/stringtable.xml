@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="AFM">
+    <Package name="Fatigue">
+        <Key ID="STR_AFM_Fatigue_DisplayName">
+            <English>ArmaForces - Fatigue</English>
+            <Polish>ArmaForces - Zmęczenie</Polish>
+        </Key>
+        <Key ID="STR_AFM_Fatigue_High_Jog_Coef_Enabled">
+            <English>Enable custom high jog coefficient</English>
+            <Polish>Włącz modyfikator przy chodzeniu z podniesioną bronią</Polish>
+        </Key>
+        <Key ID="STR_AFM_Fatigue_High_Jog_Coef_Enabled_Description">
+            <English>Enables custom high jog coefficient when moving with weapon ready. Requires ACE Advanced Fatigue working.</English>
+            <Polish>Włącza dodatkowy modyfikator zmęczenia przy chodzeniu z podniesioną bronią. Wymaga by Zaawansowane Zmęczenie ACE było włączone.</Polish>
+        </Key>
+        <Key ID="STR_AFM_Fatigue_High_Jog_Coef">
+            <English>Custom high jog coefficient</English>
+            <Polish>Modyfikator przy chodzeniu z podniesioną bronią</Polish>
+        </Key>
+        <Key ID="STR_AFM_Fatigue_High_Jog_Coef_Description">
+            <English>Additional stamina used coefficient when moving with weapon ready. 100% is default ACE, 80% it's like you had low weapon ready.</English>
+            <Polish>Współczynnik dodatkowego zużycia wytrzymałości podczas poruszania się z podniesioną bronią. 100% odpowiada domyślnej wartości ACE, 80% to tak jakby chodzić z opuszczoną bronią.</Polish>
+        </Key>
+    </Package>
+</Project>
