@@ -6,3 +6,5 @@ PREP(restart);
 PREP(start);
 PREP(stop);
 PREP(toggle);
+
+PREP(onDisplayLoad);
