@@ -6,6 +6,7 @@ GVAR(aceSafemode) = IS_MOD_LOADED(ace_safemode);
 GVAR(aceFastroping) = IS_MOD_LOADED(ace_fastroping);
 GVAR(aceFatigue) = IS_MOD_LOADED(ace_advanced_fatigue);
 GVAR(aceMedical) = IS_MOD_LOADED(ace_medical_engine);
+GVAR(aceTagging) = IS_MOD_LOADED(ace_tagging);
 
 if (isServer) then {
     GVAR(clientId) = "2";
