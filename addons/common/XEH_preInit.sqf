@@ -20,6 +20,7 @@ if (isServer) then {
 };
 
 if (hasInterface) then {
+    GVAR(playerMarkerIdx) = 0;
     GVAR(clientId) = "";
 };
 
