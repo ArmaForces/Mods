@@ -30,7 +30,7 @@ if (_channel isEqualType "") then {
 };
 
 if (_channel < CHANNEL_MIN || {_channel > CHANNEL_MAX}) exitWith {
-    ERROR_1("Invalid channel given!",_channel);
+    ERROR_1("Invalid channel given! - %1",_channel);
 
     "" // return
 };
