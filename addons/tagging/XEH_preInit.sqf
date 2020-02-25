@@ -1,6 +1,6 @@
 #include "script_component.hpp"
 ADDON = false;
 
-#include "initSettings.hpp"
+#include "initSettings.sqf"
 
 ADDON = true;
