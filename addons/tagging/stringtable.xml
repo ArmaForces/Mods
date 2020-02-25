@@ -9,8 +9,8 @@
             <Polish>Włącz markery ACE Tagging</Polish>
         </Key>
         <Key ID="STR_AFM_Tagging_Enabled_Description">
-            <English>Automatically create marker on buildings sprayed with ACE Spray.</English>
-            <Polish>Automatycznie tworzy marker na budynkach oznaczonych sprejem z ACE.</Polish>
+            <English>Automatically create markers on buildings sprayed with ACE Spray.</English>
+            <Polish>Automatycznie tworzy markery na budynkach oznaczonych sprejem z ACE.</Polish>
         </Key>
     </Package>
 </Project>
