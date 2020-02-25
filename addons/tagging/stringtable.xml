@@ -2,7 +2,7 @@
 <Project name="AFM">
     <Package name="Tagging">
         <Key ID="STR_AFM_Tagging_DisplayName">
-            <English>Tagging</English>
+            <English>ArmaForces - Tagging</English>
         </Key>
         <Key ID="STR_AFM_Tagging_Enabled">
             <English>Enable ACE Tagging markers</English>
