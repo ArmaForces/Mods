@@ -5,7 +5,7 @@ if (EGVAR(common,aceTagging)) then {
         "CHECKBOX",
         [LSTRING(Enabled), LSTRING(Enabled_Description)],
         LSTRING(DisplayName),
-        true,
+        false,
         true
     ] call CBA_fnc_addSetting;
 };
