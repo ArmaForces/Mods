@@ -1,13 +1,13 @@
 #include "script_component.hpp"
 
-if !(EGVAR(common,aceTagging)) exitWith {};
+if (!EGVAR(common,aceTagging)) exitWith {};
 
 if (hasInterface) then {
     ["ace_tagCreated", {
         params ["", "_texture", "_object", "_unit"];
         if (!GVAR(enabled)) exitWith {};
         // Check if tag created on building by local player
-        if (!(_object isKindOf "Building") || {!(_unit isEqualTo player)) exitWith {};
+        if (!(_object isKindOf "Building") || {!(_unit isEqualTo player)}) exitWith {};
 
         private _colorIndex = {
             if (_texture find _x != -1) exitWith {_forEachIndex};
