@@ -22,3 +22,7 @@ if (isServer) then {
         unassignCurator (GVAR(curators) select _curatorModule);
     }] call CBA_fnc_addEventHandler;
 };
+
+if (hasInterface) then {
+    [QGVAR(objectAdd), player] call CBA_fnc_serverEvent;
+};
