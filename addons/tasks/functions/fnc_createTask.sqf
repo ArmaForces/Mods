@@ -38,12 +38,5 @@ private _taskID = if (_parentTask isEqualTo "") then {
 private _taskCreateArray = [_owner, _taskID, [_description, _title, _marker], _position, _initialState, _priority, _createdShowNotification, _icon];
 _taskNamespace setVariable ["taskCreateArray", _taskCreateArray];
 
-// Load show condition
-private _conditionCodeShow = compile (_taskNamespace getVariable ["conditionCodeShow", "true"]);
-if (call _conditionCodeShow) then {
-    // Create task
-    _taskCreateArray call BIS_fnc_taskCreate;
-} else {
-    // Create task when conditionShow is true
-    [_conditionCodeShow, {_this call BIS_fnc_taskCreate}, _taskCreateArray] call CBA_fnc_waitUntilAndExecute;
-};
+// Handle task showing (and creation)
+[_taskNamespace] call FUNC(handleShow);
