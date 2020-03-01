@@ -10,7 +10,6 @@ if (isServer) then {
         private _title = getText (_x >> "title");
         private _description = getText (_x >> "description");
         private _marker = getText (_x >> "marker");
-        private _descriptionArray = [_description, _title, _marker];
         private _icon = getText (_x >> "icon");
         private _parentTask = getText (_x >> "parentTask");
         private _taskID = if (_parentTask isEqualTo "") then {
@@ -21,10 +20,11 @@ if (isServer) then {
         private _position = [_x] call FUNC(readPosition);
         private _owner = getArray (_x >> "owner");
         private _initialState = getArray (_x >> "initialState");
-        private _priority = getText (_x >> "priority");
+        private _priority = if (configName (_x >> "priority") isEqualTo "") then {-1} else {getNumber (_x >> "priority")};
+        private _createdShowNotification = getText (_x >> "createdShowNotification");
 
         // Create task
-        [_owner, _taskID, _descriptionArray, _position, _initialState, _priority] call BIS_fnc_taskCreate;
+        [_owner, _taskID, [_description, _title, _marker], _position, _initialState, _priority, _createdShowNotification, _icon] call BIS_fnc_taskCreate;
     } forEach _configTasks;
 };
 
