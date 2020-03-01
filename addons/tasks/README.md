@@ -2,6 +2,95 @@
 
 Tasks framework. Automatic tasks creation from mission config.
 
+## How to use
+
+Just create `CfgTasks` in your mission's `description.ext` and fill it with tasks! Yes, and that's it, no more linking modules and triggers into spaghetti, works out of the box.
+
+If you don't want to use some property it is best to remove it at all, don't leave it empty, it can break things sometimes.
+
+## Example config
+
+```hpp
+class CfgTasks {
+    class Soapy_Mission_XD {
+        title = "Soapy Mission XD - Horse Knocked"; // Regular task title
+        description = "Great mission of beating horse."; // Regular description. Cannot use linebreaks (enters), if needed use stringtable.
+        /* Task icon location on the map
+        First checks for marker with given name, and if doesn't exists, checks for object in mission namespace.
+        Alternatively {x, y, z} can be used for supplying position coordinates.
+        If all of them are empty then task won't be shown on the map. */
+        position[] = {}; // Use for position
+        object = ""; // Use for objects
+        marker = ""; // Use for marker names only
+        icon = "unknown"; // Icon classname from https://community.bistudio.com/wiki/Arma_3_Tasks_Overhaul#Appendix
+        owners[] = { "true" }; // Default value, use "All"/"true" for all playable units
+        initialState = "CREATED"; // Default value
+        priority = -1; // Default value
+        createdShowNotification = "false"; // Default value
+        visibleIn3D = "false"; // Default value
+
+        parentTask = ""; // Config entry name of parent task
+
+        // Conditions codes which must return true to show task, set as done or failed
+        conditionCodeShow = "true";
+        conditionCodeSuccess = "";
+        conditionCodeFailed = "";
+        // CBA event names which must be triggered to achieve the same as above
+        conditionEventShow = "true";
+        conditionEventSuccess = "";
+        conditionEventFailed = "";
+
+        // Server CBA events called. If you want custom code just add appropriate CBA EH on server.
+        onShow[] = { "" };
+        onSuccess[] = { "" };
+        onFailed[] = { "" };
+    };
+    class FindHorse {
+        title = "Find Horse";
+        icon = "search";
+        parentTask = "Soapy_Mission_XD";
+        conditionShow = "true";
+        conditionSuccess = "player distance horse < 50";
+        onSuccess[] = { "horseFound" };
+    };
+    class KnockHorse {
+        title = "Knock Horse";
+        icon = "attack";
+        object = "horse";
+        parentTask = "FindHorse";
+
+        conditionEventShow = "horseFound";
+        conditionCodeSuccess = "!(alive horse)";
+        conditionCodeFailed = "!(alive player)";
+
+        onSuccessEvent = { "horseKnocked" };
+        onFailedEvent = { "playerDied" };
+    };
+};
+```
+
+## Example custom event handling
+
+```SQF
+// initServer.sqf
+
+// Event handler for onSuccessEvent
+["horseKnocked", {
+    titleText ["You beat the horse!", "PLAIN DOWN", 0.5];
+    [{
+        "EveryoneWon" call BIS_fnc_endMission;
+    }, [], 3] call CBA_fnc_waitAndExecute;
+}] call CBA_fnc_addEventHandler;
+
+// Event handler for onFailedEvent
+["playerDied", {
+    titleText ["You died!", "PLAIN DOWN", 0.5];
+    [{
+        "EveryoneLost" call BIS_fnc_endMission;
+    }, [], 3] call CBA_fnc_waitAndExecute;
+}] call CBA_fnc_addEventHandler;
+```
+
 ### Authors
 
 - [3Mydlo3](http://github.com/3Mydlo3)
