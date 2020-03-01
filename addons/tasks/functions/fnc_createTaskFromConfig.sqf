@@ -17,21 +17,21 @@
 
 params ["_taskConfig"];
 
-private _title = getText (_x >> "title");
-private _description = getText (_x >> "description");
-private _marker = getText (_x >> "marker");
-private _icon = getText (_x >> "icon");
-private _parentTask = getText (_x >> "parentTask");
+private _title = getText (_taskConfig >> "title");
+private _description = getText (_taskConfig >> "description");
+private _marker = getText (_taskConfig >> "marker");
+private _icon = getText (_taskConfig >> "icon");
+private _parentTask = getText (_taskConfig >> "parentTask");
 private _taskID = if (_parentTask isEqualTo "") then {
-    configName _x
+    configName _taskConfig
 } else {
-    [configName _x, _parentTask];
+    [configName _taskConfig, _parentTask];
 };
-private _position = [_x] call FUNC(readPosition);
-private _owner = getArray (_x >> "owner");
-private _initialState = getArray (_x >> "initialState");
-private _priority = if (configName (_x >> "priority") isEqualTo "") then {-1} else {getNumber (_x >> "priority")};
-private _createdShowNotification = if (getText (_x >> "createdShowNotification") isEqualTo "true") then {true} else {false};
+private _position = [_taskConfig] call FUNC(readPosition);
+private _owner = IF_PROPERTY_EXISTS((_taskConfig >> "owner"),getArray,"true");
+private _initialState = IF_PROPERTY_EXISTS((_taskConfig >> "initialState"),getText,"CREATED");
+private _priority = IF_PROPERTY_EXISTS((_taskConfig >> "priority"),getNumber,-1);
+private _createdShowNotification = if (getText (_taskConfig >> "createdShowNotification") isEqualTo "true") then {true} else {false};
 
 // Create task
 [_owner, _taskID, [_description, _title, _marker], _position, _initialState, _priority, _createdShowNotification, _icon] call BIS_fnc_taskCreate;
