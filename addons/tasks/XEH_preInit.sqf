@@ -7,8 +7,14 @@ GVAR(tasks) = call CBA_fnc_createNamespace;
 if (isServer) then {
     // Load tasks from config
     {
-        [_x] call FUNC(createTaskFromConfig);
+        private _taskConfigName = configName _x;
+        private _taskNamespace = [_x] call EFUNC(common,readConfigToNamespace);
+        GVAR(tasks) setVariable [_taskConfigName, _taskNamespace];
     } forEach ("true" configClasses (missionConfigFile >> "CfgTasks"));
+
+    {
+        [_x, GVAR(tasks) getVariable _x] call FUNC(createTask);
+    } forEach (allVariables GVAR(tasks));
 };
 
 ADDON = true;

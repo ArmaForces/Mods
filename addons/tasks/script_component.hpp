@@ -12,5 +12,3 @@
 #endif
 
 #include "\z\afm\addons\main\script_macros.hpp"
-
-#define IF_PROPERTY_EXISTS(CONFIG,GET,DEFAULT) if (configName CONFIG isEqualTo "") then {DEFAULT} else {GET CONFIG}

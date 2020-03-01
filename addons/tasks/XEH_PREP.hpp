@@ -1,2 +1,2 @@
-PREP(createTaskFromConfig);
+PREP(createTask);
 PREP(readPosition);

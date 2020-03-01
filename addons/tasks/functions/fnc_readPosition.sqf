@@ -4,39 +4,40 @@
  * Function reads task position from config.
  *
  * Arguments:
- * 0: Task config <CONFIG>
+ * 0: Task object var (string)/position <STRING/ARRAY>
+ * 1: Task marker
  *
  * Return Value:
  * 0: Task object or (marker) position <OBJECT/POSITION>
  *
  * Example:
- * [missionConfigFile >> "task1"] call afm_tasks_fnc_readPosition
+ * None
  *
  * Public: No
  */
 
-params ["_taskConfig"];
+params ["_taskPosition", "_taskMarker"];
 
-if (configName (_taskConfig >> "position") isEqualTo "") exitWith {
-    // Position is not defined, check if marker exists, if no, then task won't be shown on the map
-    if (configName (_taskConfig >> "marker") isEqualTo "") exitWith {objNull};
-    private _marker = getText (_taskConfig >> "marker");
-    getMarkerPos _marker;
+// If position attribute is empty but marker is supplied then get marker position
+if (_taskPosition isEqualTo objNull) exitWith {
+    if (_taskMarker isEqualTo "") exitWith {objNull};
+    getMarkerPos _taskMarker
 };
 
-// Position is defined, check whether it is marker, object or position array
-if (isText (_taskConfig >> "position")) then {
-    private _text = getText (_taskConfig >> "position");
-    private _markerPos = getMarkerPos _text;
-    // If such marker doesn't exists, it will return [0, 0, 0]
+if (_taskPosition isEqualType "") exitWith {
+    private _markerPos = getMarkerPos _taskPosition;
     if (!(_markerPos isEqualTo [0, 0, 0])) exitWith {_markerPos};
-    private _object = missionNamespace getVariable [_text, objNull];
+    private _object = missionNamespace getVariable [_taskPosition, objNull];
     if (_object isEqualTo objNull) exitWith {
         // Object does not exists, return [0, 0, 0] as standard BI fnc would do
-        WARNING_2("Position %1 defined for task %2 does not exists!", _text, configName _taskConfig)
+        WARNING_1("Position %1 does not exists!", _taskPosition);
         [0, 0, 0]
     };
     _object
-} else {
-    getArray (_taskConfig >> "position")
 };
+
+if (_taskPosition isEqualType []) exitWith {_taskPosition};
+
+// Somehow neither "" nor [], just abort with warning
+WARNING_2("Position %1 and/or marker %2 is invalid.", str _taskPosition, str _taskMarker);
+objNull
