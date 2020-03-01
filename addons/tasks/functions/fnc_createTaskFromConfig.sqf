@@ -33,5 +33,12 @@ private _initialState = IF_PROPERTY_EXISTS((_taskConfig >> "initialState"),getTe
 private _priority = IF_PROPERTY_EXISTS((_taskConfig >> "priority"),getNumber,-1);
 private _createdShowNotification = if (getText (_taskConfig >> "createdShowNotification") isEqualTo "true") then {true} else {false};
 
-// Create task
-[_owner, _taskID, [_description, _title, _marker], _position, _initialState, _priority, _createdShowNotification, _icon] call BIS_fnc_taskCreate;
+// Load show condition
+private _conditionCodeShow = compile (IF_PROPERTY_EXISTS((_taskConfig >> "conditionCodeShow"),getText,"true"));
+if (call _conditionCodeShow) then {
+    // Create task
+    [_owner, _taskID, [_description, _title, _marker], _position, _initialState, _priority, _createdShowNotification, _icon] call BIS_fnc_taskCreate;
+} else {
+    private _taskCreateArray = [_owner, _taskID, [_description, _title, _marker], _position, _initialState, _priority, _createdShowNotification, _icon];
+    [_conditionCodeShow, {_this call BIS_fnc_taskCreate}, _taskCreateArray] call CBA_fnc_waitUntilAndExecute;
+};
