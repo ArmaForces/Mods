@@ -31,7 +31,7 @@ private _position = [_x] call FUNC(readPosition);
 private _owner = getArray (_x >> "owner");
 private _initialState = getArray (_x >> "initialState");
 private _priority = if (configName (_x >> "priority") isEqualTo "") then {-1} else {getNumber (_x >> "priority")};
-private _createdShowNotification = getText (_x >> "createdShowNotification")
+private _createdShowNotification = if (getText (_x >> "createdShowNotification") isEqualTo "true") then {true} else {false};
 
 // Create task
 [_owner, _taskID, [_description, _title, _marker], _position, _initialState, _priority, _createdShowNotification, _icon] call BIS_fnc_taskCreate;
