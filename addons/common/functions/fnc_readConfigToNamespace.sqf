@@ -18,7 +18,11 @@
  * Public: No
  */
 
-params ["_config", ["_namespace", call CBA_fnc_createNamespace]];
+params ["_config", ["_namespace", objNull]];
+
+if (_namespace isEqualTo objNull) then {
+    _namespace = call CBA_fnc_createNamespace;
+};
 
 // Get item properties
 // Read config values for found properties
@@ -27,7 +31,6 @@ params ["_config", ["_namespace", call CBA_fnc_createNamespace]];
         case (isNumber _x): {getNumber _x};
         case (isText _x): {getText _x};
         case (isArray _x): {getArray _x};
-        default {configNull};
     };
     _namespace setVariable [configName _x, _value];
 } forEach (configProperties [_config, "!(isClass _x)", true]);

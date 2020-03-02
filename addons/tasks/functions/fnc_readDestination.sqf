@@ -10,9 +10,6 @@
  * Return Value:
  * 0: Task object or (marker) position <OBJECT/POSITION>
  *
- * Example:
- * None
- *
  * Public: No
  */
 

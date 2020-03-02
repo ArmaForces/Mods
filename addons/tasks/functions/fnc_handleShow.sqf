@@ -10,9 +10,6 @@
  * Return Value:
  * None
  *
- * Example:
- * None
- *
  * Public: No
  */
 

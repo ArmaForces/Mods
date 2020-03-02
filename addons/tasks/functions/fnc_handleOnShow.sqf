@@ -1,15 +1,12 @@
 #include "script_component.hpp"
 /*
- * Author: <author>
+ * Author: 3Mydlo3
  * Function handles executing onShowCode and raising onShowEvents for given task
  *
  * Arguments:
  * 0: Task namespace <CBA_NAMESPACE>
  *
  * Return Value:
- * None
- *
- * Example:
  * None
  *
  * Public: No
