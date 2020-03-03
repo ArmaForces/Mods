@@ -18,13 +18,20 @@ params ["_taskNamespace"];
 // Load success code condition
 private _conditionCodeSuccessValue = _taskNamespace getVariable ["conditionCodeSuccess", "true"];
 private _conditionCodeSuccess = compile _conditionCodeSuccessValue;
+private _conditionCodeEmpty = (_conditionCodeSuccessValue isEqualTo "true" || {_conditionCodeSuccessValue isEqualTo ""});
 
 // Load success event condition
 private _conditionEventSuccess = _taskNamespace getVariable ["conditionEventSuccess", ""];
+private _conditionEventEmpty = _conditionEventSuccess isEqualTo "";
 
 switch (true) do {
-    // No event specified
-    case (_conditionEventSuccess isEqualTo ""): {
+    // No event specified and no code condition
+    case (_conditionEventEmpty && {_conditionCodeEmpty}): {
+        // Do nothing
+    };
+
+    // No event specified and code condition is given
+    case (_conditionEventEmpty && {!_conditionCodeEmpty}): {
         // Wait until code condition is true
         [_conditionCodeSuccess, {
             private _taskNamespace = _this;
@@ -33,7 +40,7 @@ switch (true) do {
     };
 
     // Event is specified and conditionCode is not filled
-    case (!(_conditionEventSuccess isEqualTo "") && {_conditionCodeSuccessValue isEqualTo "true"}): {
+    case (!_conditionEventEmpty && {_conditionCodeEmpty}): {
         // Create EventHandler
         [_conditionEventSuccess, {
             private _taskNamespace = _thisArgs;
