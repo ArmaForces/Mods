@@ -18,13 +18,13 @@
 params ["_taskNamespace", "_finishType", "_callbackFunction"];
 
 // Load code condition
-private _conditionCodeSuccessValue = _taskNamespace getVariable [format ["conditionCode%1", _finishType], "true"];
-private _conditionCodeSuccess = compile _conditionCodeSuccessValue;
-private _conditionCodeEmpty = (_conditionCodeSuccessValue isEqualTo "true" || {_conditionCodeSuccessValue isEqualTo ""});
+private _conditionCodeFinishValue = _taskNamespace getVariable [format ["conditionCode%1", _finishType], "true"];
+private _conditionCodeFinish = compile _conditionCodeFinishValue;
+private _conditionCodeEmpty = (_conditionCodeFinishValue isEqualTo "true" || {_conditionCodeFinishValue isEqualTo ""});
 
 // Load event condition
-private _conditionEventsSuccess = _taskNamespace getVariable [format ["conditionEvents%1", _finishType], []];
-private _conditionEventsEmpty = _conditionEventsSuccess isEqualTo [];
+private _conditionEventsFinish = _taskNamespace getVariable [format ["conditionEvents%1", _finishType], []];
+private _conditionEventsEmpty = _conditionEventsFinish isEqualTo [];
 
 switch (true) do {
     // No event specified and no code condition
@@ -35,7 +35,7 @@ switch (true) do {
     // No event specified and code condition is given
     case (_conditionEventsEmpty && {!_conditionCodeEmpty}): {
         // Wait until code condition is true
-        [_conditionCodeSuccess, {
+        [_conditionCodeFinish, {
             params ["_taskNamespace", "_callbackFunction"];
             [_taskNamespace] call _callbackFunction;
         }, [_taskNamespace, _callbackFunction]] call CBA_fnc_waitUntilAndExecute;
@@ -46,18 +46,26 @@ switch (true) do {
         // Create EventHandler for all events
         {
             [_x, {
-                _thisArgs params ["_taskNamespace", "_callbackFunction"];
-                [_taskNamespace] call _callbackFunction;
+                _thisArgs params ["_taskNamespace", "_finishType", "_callbackFunction"];
                 // Remove EH so it can be triggered only once for given task.
                 [_thisType, _thisId] call CBA_fnc_removeEventsHandler;
-            }, [_taskNamespace, _callbackFunction]] call CBA_fnc_addEventsHandlerArgs;
-        } forEach _conditionEventsSuccess;
+                // Increase counter how many events already fired
+                private _counterVariable = format ["condition%1EventsFired", _finishType];
+                private _currentEventsFired = _taskNamespace getVariable [_counterVariable, 0];
+                INC(_currentEventsFired);
+                _taskNamespace setVariable [_counterVariable, _currentEventsFired];
+                // Check if events requirements are met
+                if (_currentEventsFired < (_taskNamespace getVariable [format ["conditionEvents%1Required", _finishType], 1])) exitWith {};
+                // Run callback
+                [_taskNamespace] call _callbackFunction;
+            }, [_taskNamespace, _finishType, _callbackFunction]] call CBA_fnc_addEventsHandlerArgs;
+        } forEach _conditionEventsFinish;
     };
 
     // Events is specified and conditionCode is filled
     default {
         // Wait until code condition is true
-        [_conditionCodeSuccess, {
+        [_conditionCodeFinish, {
             params ["_taskNamespace", "_callbackFunction"];
             [_taskNamespace] call _callbackFunction;
         }, _taskNamespace] call CBA_fnc_waitUntilAndExecute;
@@ -65,11 +73,20 @@ switch (true) do {
         // Create EventHandler for all events
         {
             [_x, {
-                _thisArgs params ["_taskNamespace", "_callbackFunction"];
+                _thisArgs params ["_taskNamespace", "_finishType", "_callbackFunction"];
                 // Remove EH so it can be triggered only once for given task.
                 [_thisType, _thisId] call CBA_fnc_removeEventsHandler;
-            }, _taskNamespace] call CBA_fnc_addEventsHandlerArgs;
-        } forEach _conditionEventsSuccess;
+                // Increase counter how many events already fired
+                private _counterVariable = format ["condition%1EventsFired", _finishType];
+                private _currentEventsFired = _taskNamespace getVariable [_counterVariable, 0];
+                INC(_currentEventsFired);
+                _taskNamespace setVariable [_counterVariable, _currentEventsFired];
+                // Check if events requirements are met
+                if (_currentEventsFired < (_taskNamespace getVariable [format ["conditionEvents%1Required", _finishType], 1])) exitWith {};
+                // Run callback
+                [_taskNamespace] call _callbackFunction;
+            }, [_taskNamespace, _finishType, _callbackFunction]] call CBA_fnc_addEventsHandlerArgs;
+        } forEach _conditionEventsFinish;
     };
 };
 

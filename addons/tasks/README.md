@@ -31,14 +31,23 @@ class CfgTasks {
 
         parentTask = ""; // Config entry name of parent task
 
-        // Conditions codes which must return true to show task, set as done or failed
+        // Showing/creating task
         conditionCodeShow = "true";
+        conditionEventsShow[] = { "" };
+        conditionEventsShowRequired = 1; // How many events must fire for events condition to be met
+
+        // Conditions codes which must return true to finish task
         conditionCodeSuccess = "";
         conditionCodeFailed = "";
+        conditionCodeCanceled = "";
         // CBA event names which must be triggered to achieve the same as above
-        conditionEventShow = "true";
-        conditionEventSuccess = "";
-        conditionEventFailed = "";
+        conditionEventsSuccess[] = { "" };
+        conditionEventsFailed[] = { "" };
+        conditionEventsCanceled[] = { "" };
+        // And number required as in show but for all others
+        conditionEventsSuccessRequired = 1;
+        conditionEventsFailedRequired = 1;
+        conditionEventsCanceledRequired = 1;
 
         // Server CBA events called. If you want custom code just add appropriate CBA EH on server.
         onShowEvents[] = { "" };
@@ -59,12 +68,12 @@ class CfgTasks {
         object = "horse";
         parentTask = "FindHorse";
 
-        conditionEventShow = "horseFound";
+        conditionEventsShow[] = { "horseFound" };
         conditionCodeSuccess = "!(alive horse)";
         conditionCodeFailed = "!(alive player)";
 
-        onSuccessEvents = { "horseKnocked" };
-        onFailedEvents = { "playerDied" };
+        onSuccessEvents[] = { "horseKnocked" };
+        onFailedEvents[] = { "playerDied" };
     };
 };
 ```
