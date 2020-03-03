@@ -12,3 +12,5 @@
 #endif
 
 #include "\z\afm\addons\main\script_macros.hpp"
+
+#define FINISHED_TASK_STATES ["SUCCEEDED", "FAILED", "CANCELED"]

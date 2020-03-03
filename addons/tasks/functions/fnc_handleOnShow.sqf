@@ -16,6 +16,7 @@ params ["_taskNamespace"];
 
 // Check if task was shown already
 if (_taskNamespace getVariable ["shown", false]) exitWith {};
+_taskNamespace setVariable ["shown", true];
 
 // Create task
 (_taskNamespace getVariable "taskCreateArray") call BIS_fnc_taskCreate;
@@ -27,3 +28,7 @@ call compile (_taskNamespace getVariable ["onShowCode", ""]);
 {
     [_x] call CBA_fnc_serverEvent;
 } forEach (_taskNamespace getVariable ["onShowEvents", []]);
+
+// Prepare Success and Failed handling
+[_taskNamespace] call FUNC(handleSuccess);
+[_taskNamespace] call FUNC(handleFailed);

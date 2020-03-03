@@ -9,6 +9,7 @@ if (isServer) then {
     {
         private _taskConfigName = configName _x;
         private _taskNamespace = [_x] call EFUNC(common,readConfigToNamespace);
+        _taskNamespace setVariable ["taskConfigName", _taskConfigName];
         GVAR(tasks) setVariable [_taskConfigName, _taskNamespace];
     } forEach ("true" configClasses (missionConfigFile >> "CfgTasks"));
 
