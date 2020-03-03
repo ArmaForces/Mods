@@ -21,12 +21,12 @@ private _conditionCodeShow = compile _conditionCodeShowValue;
 private _conditionCodeEmpty = (_conditionCodeShowValue isEqualTo "true" || {_conditionCodeShowValue isEqualTo ""});
 
 // Load show event condition
-private _conditionEventShow = _taskNamespace getVariable ["conditionEventShow", ""];
-private _conditionEventEmpty = _conditionEventShow isEqualTo "";
+private _conditionEventsShow = _taskNamespace getVariable ["conditionEventsShow", ""];
+private _conditionEventsEmpty = _conditionEventsShow isEqualTo "";
 
 switch (true) do {
     // No event specified and no code condition
-    case (_conditionEventEmpty && {_conditionCodeEmpty}): {
+    case (_conditionEventsEmpty && {_conditionCodeEmpty}): {
         // Create true WUAE (will always show task)
         [{true}, {
             private _taskNamespace = _this;
@@ -35,7 +35,7 @@ switch (true) do {
     };
 
     // No event specified and code condition is given
-    case (_conditionEventEmpty && {!_conditionCodeEmpty}): {
+    case (_conditionEventsEmpty && {!_conditionCodeEmpty}): {
         // Wait until code condition is true
         [_conditionCodeShow, {
             private _taskNamespace = _this;
@@ -43,18 +43,20 @@ switch (true) do {
         }, _taskNamespace] call CBA_fnc_waitUntilAndExecute;
     };
 
-    // Event is specified and conditionCode is not filled
-    case (!_conditionEventEmpty && {_conditionCodeEmpty}): {
-        // Create EventHandler
-        [_conditionEventShow, {
-            private _taskNamespace = _thisArgs;
-            [_taskNamespace] call FUNC(handleOnShow);
-            // Remove EH so it can be triggered only once for given task.
-            [_thisType, _thisId] call CBA_fnc_removeEventHandler;
-        }, _taskNamespace] call CBA_fnc_addEventHandlerArgs;
+    // Events is specified and conditionCode is not filled
+    case (!_conditionEventsEmpty && {_conditionCodeEmpty}): {
+        // Create EventHandler for all events
+        {
+            [_x, {
+                private _taskNamespace = _thisArgs;
+                [_taskNamespace] call FUNC(handleOnShow);
+                // Remove EH so it can be triggered only once for given task.
+                [_thisType, _thisId] call CBA_fnc_removeEventsHandler;
+            }, _taskNamespace] call CBA_fnc_addEventsHandlerArgs;
+        } forEach _conditionEventsShow;
     };
 
-    // Event is specified and conditionCode is filled
+    // Events is specified and conditionCode is filled
     default {
         // Wait until code condition is true
         [_conditionCodeShow, {
@@ -62,13 +64,15 @@ switch (true) do {
             [_taskNamespace] call FUNC(handleOnShow);
         }, _taskNamespace] call CBA_fnc_waitUntilAndExecute;
 
-        // Create EventHandler
-        [_conditionEventShow, {
-            private _taskNamespace = _thisArgs;
-            [_taskNamespace] call FUNC(handleOnShow);
-            // Remove EH so it can be triggered only once for given task.
-            [_thisType, _thisId] call CBA_fnc_removeEventHandler;
-        }, _taskNamespace] call CBA_fnc_addEventHandlerArgs;
+        // Create EventHandler for all events
+        {
+            [_x, {
+                private _taskNamespace = _thisArgs;
+                [_taskNamespace] call FUNC(handleOnShow);
+                // Remove EH so it can be triggered only once for given task.
+                [_thisType, _thisId] call CBA_fnc_removeEventsHandler;
+            }, _taskNamespace] call CBA_fnc_addEventsHandlerArgs;
+        } forEach _conditionEventsShow;
     };
 };
 

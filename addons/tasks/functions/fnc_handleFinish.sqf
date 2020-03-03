@@ -23,17 +23,17 @@ private _conditionCodeSuccess = compile _conditionCodeSuccessValue;
 private _conditionCodeEmpty = (_conditionCodeSuccessValue isEqualTo "true" || {_conditionCodeSuccessValue isEqualTo ""});
 
 // Load event condition
-private _conditionEventSuccess = _taskNamespace getVariable [format ["conditionEvent%1", _finishType], ""];
-private _conditionEventEmpty = _conditionEventSuccess isEqualTo "";
+private _conditionEventsSuccess = _taskNamespace getVariable [format ["conditionEvents%1", _finishType], []];
+private _conditionEventsEmpty = _conditionEventsSuccess isEqualTo [];
 
 switch (true) do {
     // No event specified and no code condition
-    case (_conditionEventEmpty && {_conditionCodeEmpty}): {
+    case (_conditionEventsEmpty && {_conditionCodeEmpty}): {
         // Do nothing
     };
 
     // No event specified and code condition is given
-    case (_conditionEventEmpty && {!_conditionCodeEmpty}): {
+    case (_conditionEventsEmpty && {!_conditionCodeEmpty}): {
         // Wait until code condition is true
         [_conditionCodeSuccess, {
             params ["_taskNamespace", "_callbackFunction"];
@@ -41,18 +41,20 @@ switch (true) do {
         }, [_taskNamespace, _callbackFunction]] call CBA_fnc_waitUntilAndExecute;
     };
 
-    // Event is specified and conditionCode is not filled
-    case (!_conditionEventEmpty && {_conditionCodeEmpty}): {
-        // Create EventHandler
-        [_conditionEventSuccess, {
-            _thisArgs params ["_taskNamespace", "_callbackFunction"];
-            [_taskNamespace] call _callbackFunction;
-            // Remove EH so it can be triggered only once for given task.
-            [_thisType, _thisId] call CBA_fnc_removeEventHandler;
-        }, [_taskNamespace, _callbackFunction]] call CBA_fnc_addEventHandlerArgs;
+    // Events is specified and conditionCode is not filled
+    case (!_conditionEventsEmpty && {_conditionCodeEmpty}): {
+        // Create EventHandler for all events
+        {
+            [_x, {
+                _thisArgs params ["_taskNamespace", "_callbackFunction"];
+                [_taskNamespace] call _callbackFunction;
+                // Remove EH so it can be triggered only once for given task.
+                [_thisType, _thisId] call CBA_fnc_removeEventsHandler;
+            }, [_taskNamespace, _callbackFunction]] call CBA_fnc_addEventsHandlerArgs;
+        } forEach _conditionEventsSuccess;
     };
 
-    // Event is specified and conditionCode is filled
+    // Events is specified and conditionCode is filled
     default {
         // Wait until code condition is true
         [_conditionCodeSuccess, {
@@ -60,12 +62,14 @@ switch (true) do {
             [_taskNamespace] call _callbackFunction;
         }, _taskNamespace] call CBA_fnc_waitUntilAndExecute;
 
-        // Create EventHandler
-        [_conditionEventSuccess, {
-            _thisArgs params ["_taskNamespace", "_callbackFunction"];
-            // Remove EH so it can be triggered only once for given task.
-            [_thisType, _thisId] call CBA_fnc_removeEventHandler;
-        }, _taskNamespace] call CBA_fnc_addEventHandlerArgs;
+        // Create EventHandler for all events
+        {
+            [_x, {
+                _thisArgs params ["_taskNamespace", "_callbackFunction"];
+                // Remove EH so it can be triggered only once for given task.
+                [_thisType, _thisId] call CBA_fnc_removeEventsHandler;
+            }, _taskNamespace] call CBA_fnc_addEventsHandlerArgs;
+        } forEach _conditionEventsSuccess;
     };
 };
 
