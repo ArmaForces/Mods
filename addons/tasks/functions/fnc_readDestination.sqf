@@ -15,7 +15,7 @@
 
 params ["_taskPosition", "_taskObject", "_taskMarker"];
 
-if (_taskPosition isEqualTo [] && {_taskObject isEqualTo objNull && {_taskMarker isEqualTo ""}}) exitWith {objNull};
+if (_taskPosition isEqualTo [] && {_taskObject isEqualTo "" && {_taskMarker isEqualTo ""}}) exitWith {objNull};
 
 private _destination = objNull;
 
@@ -25,7 +25,7 @@ if (!(_taskMarker isEqualTo "")) then {
     WARNING_1("Marker %1 does not exist!", _taskMarker);
 };
 
-if (_destination isEqualTo objNull && {!(_taskObject isEqualTo objNull)}) then {
+if (_destination isEqualTo objNull && {!(_taskObject isEqualTo "")}) then {
     private _object = missionNamespace getVariable [_taskObject, objNull];
     if (!(_object isEqualTo objNull)) exitWith {_destination = _object};
     WARNING_1("Object %1 does not exist!", _taskObject);
