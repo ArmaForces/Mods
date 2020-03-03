@@ -1,13 +1,13 @@
 PREP(createTask);
 
 // Condition meet actions
+PREP(handleOnCanceled);
 PREP(handleOnFailed);
 PREP(handleOnShow);
 PREP(handleOnSuccess);
 // Condition handlers
-PREP(handleFailed);
+PREP(handleFinish);
 PREP(handleShow);
-PREP(handleSuccess);
 
 PREP(readDestination);
 PREP(readOwners);

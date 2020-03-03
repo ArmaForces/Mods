@@ -6,6 +6,8 @@
  *
  * Arguments:
  * 0: Task namespace <CBA_NAMESPACE>
+ * 1: Task finish type "Success"/"Failed"/"Canceled" <STRING>
+ * 2: Callback function "handleOnXXX" <CODE>
  *
  * Return Value:
  * None
@@ -13,15 +15,15 @@
  * Public: No
  */
 
-params ["_taskNamespace"];
+params ["_taskNamespace", "_finishType", "_callbackFunction"];
 
-// Load success code condition
-private _conditionCodeSuccessValue = _taskNamespace getVariable ["conditionCodeSuccess", "true"];
+// Load code condition
+private _conditionCodeSuccessValue = _taskNamespace getVariable [format ["conditionCode%1", _finishType], "true"];
 private _conditionCodeSuccess = compile _conditionCodeSuccessValue;
 private _conditionCodeEmpty = (_conditionCodeSuccessValue isEqualTo "true" || {_conditionCodeSuccessValue isEqualTo ""});
 
-// Load success event condition
-private _conditionEventSuccess = _taskNamespace getVariable ["conditionEventSuccess", ""];
+// Load event condition
+private _conditionEventSuccess = _taskNamespace getVariable [format ["conditionEvent%1", _finishType], ""];
 private _conditionEventEmpty = _conditionEventSuccess isEqualTo "";
 
 switch (true) do {
@@ -34,34 +36,33 @@ switch (true) do {
     case (_conditionEventEmpty && {!_conditionCodeEmpty}): {
         // Wait until code condition is true
         [_conditionCodeSuccess, {
-            private _taskNamespace = _this;
-            [_taskNamespace] call FUNC(handleOnSuccess);
-        }, _taskNamespace] call CBA_fnc_waitUntilAndExecute;
+            params ["_taskNamespace", "_callbackFunction"];
+            [_taskNamespace] call _callbackFunction;
+        }, [_taskNamespace, _callbackFunction]] call CBA_fnc_waitUntilAndExecute;
     };
 
     // Event is specified and conditionCode is not filled
     case (!_conditionEventEmpty && {_conditionCodeEmpty}): {
         // Create EventHandler
         [_conditionEventSuccess, {
-            private _taskNamespace = _thisArgs;
-            [_taskNamespace] call FUNC(handleOnSuccess);
+            _thisArgs params ["_taskNamespace", "_callbackFunction"];
+            [_taskNamespace] call _callbackFunction;
             // Remove EH so it can be triggered only once for given task.
             [_thisType, _thisId] call CBA_fnc_removeEventHandler;
-        }, _taskNamespace] call CBA_fnc_addEventHandlerArgs;
+        }, [_taskNamespace, _callbackFunction]] call CBA_fnc_addEventHandlerArgs;
     };
 
     // Event is specified and conditionCode is filled
     default {
         // Wait until code condition is true
         [_conditionCodeSuccess, {
-            private _taskNamespace = _this;
-            [_taskNamespace] call FUNC(handleOnSuccess);
+            params ["_taskNamespace", "_callbackFunction"];
+            [_taskNamespace] call _callbackFunction;
         }, _taskNamespace] call CBA_fnc_waitUntilAndExecute;
 
         // Create EventHandler
         [_conditionEventSuccess, {
-            private _taskNamespace = _thisArgs;
-            [_taskNamespace] call FUNC(handleOnSuccess);
+            _thisArgs params ["_taskNamespace", "_callbackFunction"];
             // Remove EH so it can be triggered only once for given task.
             [_thisType, _thisId] call CBA_fnc_removeEventHandler;
         }, _taskNamespace] call CBA_fnc_addEventHandlerArgs;
