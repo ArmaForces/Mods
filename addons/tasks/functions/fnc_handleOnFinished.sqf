@@ -13,20 +13,26 @@
  * Public: No
  */
 
-params ["_taskNamespace"];
+params ["_taskNamespace", "_finishType"];
 
 private _taskConfigName = _taskNamespace getVariable "taskConfigName";
 
 // Check if task was finished already
 if ((_taskConfigName call BIS_fnc_taskState) in FINISHED_TASK_STATES) exitWith {nil};
 
-// Fail task
-[_taskConfigName, "SUCCEEDED"] call BIS_fnc_taskSetState;
+private _newTaskState = switch (_finishType) do {
+    case "Success": {"SUCCEEDED"};
+    case "Failed": {"FAILED"};
+    case "Canceled": {"CANCELED"};
+};
 
-// Call onSuccessCode
-call compile (_taskNamespace getVariable ["onSuccessCode", ""]);
+// Set task state
+[_taskConfigName, _newTaskState] call BIS_fnc_taskSetState;
 
-// Raise onSuccessEvents
+// Call code
+call compile (_taskNamespace getVariable [format ["on%1Code", _finishType], ""]);
+
+// Raise events
 {
     [_x] call CBA_fnc_serverEvent;
-} forEach (_taskNamespace getVariable ["onSuccessEvents", []]);
+} forEach (_taskNamespace getVariable [format ["on%1Events", _finishType], []]);

@@ -1,10 +1,8 @@
 PREP(createTask);
 
 // Condition meet actions
-PREP(handleOnCanceled);
-PREP(handleOnFailed);
+PREP(handleOnFinished);
 PREP(handleOnShow);
-PREP(handleOnSuccess);
 // Condition handlers
 PREP(handleFinish);
 PREP(handleShow);
