@@ -18,13 +18,24 @@ params ["_taskNamespace"];
 // Load show code condition
 private _conditionCodeShowValue = _taskNamespace getVariable ["conditionCodeShow", "true"];
 private _conditionCodeShow = compile _conditionCodeShowValue;
+private _conditionCodeEmpty = (_conditionCodeShowValue isEqualTo "true" || {_conditionCodeShowValue isEqualTo ""});
 
 // Load show event condition
 private _conditionEventShow = _taskNamespace getVariable ["conditionEventShow", ""];
+private _conditionEventEmpty = _conditionEventShow isEqualTo "";
 
 switch (true) do {
-    // No event specified
-    case (_conditionEventShow isEqualTo ""): {
+    // No event specified and no code condition
+    case (_conditionEventEmpty && {_conditionCodeEmpty}): {
+        // Create true WUAE (will always show task)
+        [{true}, {
+            private _taskNamespace = _this;
+            [_taskNamespace] call FUNC(handleOnShow);
+        }, _taskNamespace] call CBA_fnc_waitUntilAndExecute;
+    };
+
+    // No event specified and code condition is given
+    case (_conditionEventEmpty && {!_conditionCodeEmpty}): {
         // Wait until code condition is true
         [_conditionCodeShow, {
             private _taskNamespace = _this;
@@ -33,7 +44,7 @@ switch (true) do {
     };
 
     // Event is specified and conditionCode is not filled
-    case (!(_conditionEventShow isEqualTo "") && {_conditionCodeShowValue isEqualTo "true"}): {
+    case (!_conditionEventEmpty && {_conditionCodeEmpty}): {
         // Create EventHandler
         [_conditionEventShow, {
             private _taskNamespace = _thisArgs;
