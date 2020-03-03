@@ -14,6 +14,12 @@
 
 params ["_taskNamespace"];
 
+// Check if task was shown already
+if (_taskNamespace getVariable ["shown", false]) exitWith {};
+
+// Create task
+(_taskNamespace getVariable "taskCreateArray") call BIS_fnc_taskCreate;
+
 // Call onShowCode
 call compile (_taskNamespace getVariable ["onShowCode", ""]);
 
