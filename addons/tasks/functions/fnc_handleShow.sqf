@@ -24,7 +24,7 @@ private _conditionCodeShow = compile (_taskNamespace getVariable ["conditionCode
 }, _taskNamespace] call CBA_fnc_waitUntilAndExecute;
 
 // Load show event condition
-private _conditionEventShow = compile (_taskNamespace getVariable ["conditionEventShow", ""]);
+private _conditionEventShow = _taskNamespace getVariable ["conditionEventShow", ""];
 
 // No events specified
 if (_conditionEventShow isEqualTo "") exitWith {nil};

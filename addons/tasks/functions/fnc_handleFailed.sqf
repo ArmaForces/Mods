@@ -24,7 +24,7 @@ private _conditionCodeFailed = compile (_taskNamespace getVariable ["conditionCo
 }, _taskNamespace] call CBA_fnc_waitUntilAndExecute;
 
 // Load failed event condition
-private _conditionEventFailed = compile (_taskNamespace getVariable ["conditionCodeFailed", ""]);
+private _conditionEventFailed = _taskNamespace getVariable ["conditionEventFailed", ""];
 
 // No events specified
 if (_conditionEventFailed isEqualTo "") exitWith {nil};
