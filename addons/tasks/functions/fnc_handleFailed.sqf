@@ -15,25 +15,50 @@
 
 params ["_taskNamespace"];
 
-// Load failed condition
-private _conditionCodeFailed = compile (_taskNamespace getVariable ["conditionCodeFailed", "true"]);
-
-[_conditionCodeFailed, {
-        private _taskNamespace = _this;
-        [_taskNamespace] call FUNC(handleOnFailed);
-}, _taskNamespace] call CBA_fnc_waitUntilAndExecute;
+// Load failed code condition
+private _conditionCodeFailedValue = _taskNamespace getVariable ["conditionCodeFailed", "true"];
+private _conditionCodeFailed = compile _conditionCodeFailedValue;
 
 // Load failed event condition
 private _conditionEventFailed = _taskNamespace getVariable ["conditionEventFailed", ""];
 
-// No events specified
-if (_conditionEventFailed isEqualTo "") exitWith {nil};
+switch (true) do {
+    // No event specified
+    case (_conditionEventFailed isEqualTo ""): {
+        // Wait until code condition is true
+        [_conditionCodeFailed, {
+            private _taskNamespace = _this;
+            [_taskNamespace] call FUNC(handleOnFailed);
+        }, _taskNamespace] call CBA_fnc_waitUntilAndExecute;
+    };
 
-[_conditionEventFailed, {
-    private _taskNamespace = _thisArgs;
-    [_taskNamespace] call FUNC(handleOnFailed);
-    // Remove EH so it can be triggered only once for given task.
-    [_thisType, _thisId] call CBA_fnc_removeEventHandler;
-}, _taskNamespace] call CBA_fnc_addEventHandlerArgs;
+    // Event is specified and conditionCode is not filled
+    case (!(_conditionEventFailed isEqualTo "") && {_conditionCodeFailedValue isEqualTo "true"}): {
+        // Create EventHandler
+        [_conditionEventFailed, {
+            private _taskNamespace = _thisArgs;
+            [_taskNamespace] call FUNC(handleOnFailed);
+            // Remove EH so it can be triggered only once for given task.
+            [_thisType, _thisId] call CBA_fnc_removeEventHandler;
+        }, _taskNamespace] call CBA_fnc_addEventHandlerArgs;
+    };
+
+    // Event is specified and conditionCode is filled
+    default {
+        // Wait until code condition is true
+        [_conditionCodeFailed, {
+            private _taskNamespace = _this;
+            [_taskNamespace] call FUNC(handleOnFailed);
+        }, _taskNamespace] call CBA_fnc_waitUntilAndExecute;
+
+        // Create EventHandler
+        [_conditionEventFailed, {
+            private _taskNamespace = _thisArgs;
+            [_taskNamespace] call FUNC(handleOnFailed);
+            // Remove EH so it can be triggered only once for given task.
+            [_thisType, _thisId] call CBA_fnc_removeEventHandler;
+        }, _taskNamespace] call CBA_fnc_addEventHandlerArgs;
+    };
+};
 
 nil

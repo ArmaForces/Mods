@@ -15,25 +15,50 @@
 
 params ["_taskNamespace"];
 
-// Load show condition
-private _conditionCodeShow = compile (_taskNamespace getVariable ["conditionCodeShow", "true"]);
-
-[_conditionCodeShow, {
-        private _taskNamespace = _this;
-        [_taskNamespace] call FUNC(handleOnShow);
-}, _taskNamespace] call CBA_fnc_waitUntilAndExecute;
+// Load show code condition
+private _conditionCodeShowValue = _taskNamespace getVariable ["conditionCodeShow", "true"];
+private _conditionCodeShow = compile _conditionCodeShowValue;
 
 // Load show event condition
 private _conditionEventShow = _taskNamespace getVariable ["conditionEventShow", ""];
 
-// No events specified
-if (_conditionEventShow isEqualTo "") exitWith {nil};
+switch (true) do {
+    // No event specified
+    case (_conditionEventShow isEqualTo ""): {
+        // Wait until code condition is true
+        [_conditionCodeShow, {
+            private _taskNamespace = _this;
+            [_taskNamespace] call FUNC(handleOnShow);
+        }, _taskNamespace] call CBA_fnc_waitUntilAndExecute;
+    };
 
-[_conditionEventShow, {
-    private _taskNamespace = _thisArgs;
-    [_taskNamespace] call FUNC(handleOnShow);
-    // Remove EH so it can be triggered only once for given task.
-    [_thisType, _thisId] call CBA_fnc_removeEventHandler;
-}, _taskNamespace] call CBA_fnc_addEventHandlerArgs;
+    // Event is specified and conditionCode is not filled
+    case (!(_conditionEventShow isEqualTo "") && {_conditionCodeShowValue isEqualTo "true"}): {
+        // Create EventHandler
+        [_conditionEventShow, {
+            private _taskNamespace = _thisArgs;
+            [_taskNamespace] call FUNC(handleOnShow);
+            // Remove EH so it can be triggered only once for given task.
+            [_thisType, _thisId] call CBA_fnc_removeEventHandler;
+        }, _taskNamespace] call CBA_fnc_addEventHandlerArgs;
+    };
+
+    // Event is specified and conditionCode is filled
+    default {
+        // Wait until code condition is true
+        [_conditionCodeShow, {
+            private _taskNamespace = _this;
+            [_taskNamespace] call FUNC(handleOnShow);
+        }, _taskNamespace] call CBA_fnc_waitUntilAndExecute;
+
+        // Create EventHandler
+        [_conditionEventShow, {
+            private _taskNamespace = _thisArgs;
+            [_taskNamespace] call FUNC(handleOnShow);
+            // Remove EH so it can be triggered only once for given task.
+            [_thisType, _thisId] call CBA_fnc_removeEventHandler;
+        }, _taskNamespace] call CBA_fnc_addEventHandlerArgs;
+    };
+};
 
 nil
