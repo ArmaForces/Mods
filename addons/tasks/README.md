@@ -41,17 +41,17 @@ class CfgTasks {
         conditionEventFailed = "";
 
         // Server CBA events called. If you want custom code just add appropriate CBA EH on server.
-        onShow[] = { "" };
-        onSuccess[] = { "" };
-        onFailed[] = { "" };
+        onShowEvents[] = { "" };
+        onSuccessEvents[] = { "" };
+        onFailedEvents[] = { "" };
     };
     class FindHorse {
         title = "Find Horse";
         icon = "search";
         parentTask = "Soapy_Mission_XD";
-        conditionShow = "true";
-        conditionSuccess = "player distance horse < 50";
-        onSuccess[] = { "horseFound" };
+        conditionCodeShow = "true";
+        conditionCodeSuccess = "player distance horse < 50";
+        onSuccessEvents[] = { "horseFound" };
     };
     class KnockHorse {
         title = "Knock Horse";
@@ -63,8 +63,8 @@ class CfgTasks {
         conditionCodeSuccess = "!(alive horse)";
         conditionCodeFailed = "!(alive player)";
 
-        onSuccessEvent = { "horseKnocked" };
-        onFailedEvent = { "playerDied" };
+        onSuccessEvents = { "horseKnocked" };
+        onFailedEvents = { "playerDied" };
     };
 };
 ```
