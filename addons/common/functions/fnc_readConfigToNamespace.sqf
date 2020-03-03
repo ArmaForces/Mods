@@ -32,7 +32,12 @@ if (_namespace isEqualTo objNull) then {
         case (isText _x): {getText _x};
         case (isArray _x): {getArray _x};
     };
-    _namespace setVariable [configName _x, _value, _public];
+    // When it is location it does not support third param
+    if (!(_namespace isEqualType locationNull)) then {
+        _namespace setVariable [configName _x, _value, _public];
+    } else {
+        _namespace setVariable [configName _x, _value];
+    };
 } forEach (configProperties [_config, "!(isClass _x)", true]);
 
 _namespace
