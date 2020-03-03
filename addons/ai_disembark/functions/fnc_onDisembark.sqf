@@ -13,7 +13,7 @@
  */
 
 params ["_unit"];
-if (!local _unit || {isPlayer _unit}) exitWith {};
+if (!local _unit || {!GVAR(enabled) || {isPlayer _unit}}) exitWith {};
 
 TRACE_1("Disembark",_unit);
 
