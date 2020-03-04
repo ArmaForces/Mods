@@ -8,7 +8,8 @@
  * Arguments:
  * 0: Config to read from <CONFIG>
  * 1: Namespace to save data to <CBA_NAMESPACE>
- *
+ * 2: Should saved data be global <BOOL>
+ * 
  * Return Value:
  * 0: Filled/created namespace <CBA_NAMESPACE>
  *
@@ -18,7 +19,11 @@
  * Public: No
  */
 
-params ["_config", ["_namespace", objNull], ["_public", false]];
+params [
+    ["_config", nil, [configNull]],
+    ["_namespace", objNull, [objNull, locationNull]],
+    ["_public", false, [true]]
+];
 
 if (_namespace isEqualTo objNull) then {
     _namespace = _public call CBA_fnc_createNamespace;
@@ -33,7 +38,7 @@ if (_namespace isEqualTo objNull) then {
         case (isArray _x): {getArray _x};
     };
     // When it is location it does not support third param
-    if (!(_namespace isEqualType locationNull)) then {
+    if (_namespace isEqualType objNull) then {
         _namespace setVariable [configName _x, _value, _public];
     } else {
         _namespace setVariable [configName _x, _value];
