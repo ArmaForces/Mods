@@ -30,6 +30,6 @@ call compile (_taskNamespace getVariable ["onShowCode", ""]);
 } forEach (_taskNamespace getVariable ["onShowEvents", []]);
 
 // Prepare Success and Failed handling
-[_taskNamespace, "Success", FUNC(handleOnSuccess)] call FUNC(handleFinish);
-[_taskNamespace, "Failed", FUNC(handleOnFailed)] call FUNC(handleFinish);
-[_taskNamespace, "Canceled", FUNC(handleOnCanceled)] call FUNC(handleFinish);
+[_taskNamespace, "Success", FUNC(handleOnFinished)] call FUNC(handleFinish);
+[_taskNamespace, "Failed", FUNC(handleOnFinished)] call FUNC(handleFinish);
+[_taskNamespace, "Canceled", FUNC(handleOnFinished)] call FUNC(handleFinish);
