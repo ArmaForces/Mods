@@ -57,7 +57,7 @@ switch (true) do {
                 // Check if events requirements are met
                 if (_currentEventsFired < (_taskNamespace getVariable [format ["conditionEvents%1Required", _finishType], 1])) exitWith {};
                 // Run callback
-                [_taskNamespace] call _callbackFunction;
+                [_taskNamespace, _finishType] call _callbackFunction;
             }, [_taskNamespace, _finishType, _callbackFunction]] call CBA_fnc_addEventHandlerArgs;
         } forEach _conditionEventsFinish;
     };
@@ -84,7 +84,7 @@ switch (true) do {
                 // Check if events requirements are met
                 if (_currentEventsFired < (_taskNamespace getVariable [format ["conditionEvents%1Required", _finishType], 1])) exitWith {};
                 // Run callback
-                [_taskNamespace] call _callbackFunction;
+                [_taskNamespace, _finishType] call _callbackFunction;
             }, [_taskNamespace, _finishType, _callbackFunction]] call CBA_fnc_addEventHandlerArgs;
         } forEach _conditionEventsFinish;
     };
