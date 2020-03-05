@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="AFM">
+    <Package name="AI_Disembark">
+        <Key ID="STR_AFM_AI_Disembark_DisplayName">
+            <English>ArmaForces - AI Disembark</English>
+            <Polish>ArmaForces - AI Wysiadanie</Polish>
+        </Key>
+        <Key ID="STR_AFM_AI_Disembark_Enabled">
+            <English>Force reload on disembarking AI</English>
+            <Polish>Wymuś przeładowanie na wysiadająych AI</Polish>
+        </Key>
+        <Key ID="STR_AFM_AI_Disembark_Enabled_Description">
+            <English>Forces AI to play reload animation after disembarking from vehicle. Prevents instant shooting after disembark.</English>
+            <Polish>Zmusza AI do odegrania animacji przeładowania po wyjściu z pojazdu. Zapobiega strzelaniu natychmiast po wyjściu.</Polish>
+        </Key>
+    </Package>
+</Project>
