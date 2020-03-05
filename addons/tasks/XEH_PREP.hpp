@@ -3,6 +3,7 @@ PREP(createTask);
 // Public framework interaction functions
 PREP(cancelUnfinishedTasks);
 PREP(finishTask);
+PREP(showTask);
 
 // Condition meet actions
 PREP(handleOnFinished);
