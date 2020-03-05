@@ -50,7 +50,7 @@ switch (true) do {
             [_x, {
                 private _taskNamespace = _thisArgs;
                 // Remove EH so it can be triggered only once for given task.
-                [_thisType, _thisId] call CBA_fnc_removeEventsHandler;
+                [_thisType, _thisId] call CBA_fnc_removeEventHandler;
                 // Increase counter how many events already fired
                 private _currentEventsFired = _taskNamespace getVariable ["conditionShowEventsFired", 0];
                 INC(_currentEventsFired);
@@ -59,7 +59,7 @@ switch (true) do {
                 if (_currentEventsFired < (_taskNamespace getVariable ["conditionEventsShowRequired", 1])) exitWith {};
                 // Run onShow
                 [_taskNamespace] call FUNC(handleOnShow);
-            }, _taskNamespace] call CBA_fnc_addEventsHandlerArgs;
+            }, _taskNamespace] call CBA_fnc_addEventHandlerArgs;
         } forEach _conditionEventsShow;
     };
 
@@ -76,7 +76,7 @@ switch (true) do {
             [_x, {
                 private _taskNamespace = _thisArgs;
                 // Remove EH so it can be triggered only once for given task.
-                [_thisType, _thisId] call CBA_fnc_removeEventsHandler;
+                [_thisType, _thisId] call CBA_fnc_removeEventHandler;
                 // Increase counter how many events already fired
                 private _currentEventsFired = _taskNamespace getVariable ["conditionShowEventsFired", 0];
                 INC(_currentEventsFired);
@@ -85,7 +85,7 @@ switch (true) do {
                 if (_currentEventsFired < (_taskNamespace getVariable ["conditionEventsShowRequired", 1])) exitWith {};
                 // Run onShow
                 [_taskNamespace] call FUNC(handleOnShow);
-            }, _taskNamespace] call CBA_fnc_addEventsHandlerArgs;
+            }, _taskNamespace] call CBA_fnc_addEventHandlerArgs;
         } forEach _conditionEventsShow;
     };
 };

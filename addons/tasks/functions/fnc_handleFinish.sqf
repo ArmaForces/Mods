@@ -48,7 +48,7 @@ switch (true) do {
             [_x, {
                 _thisArgs params ["_taskNamespace", "_finishType", "_callbackFunction"];
                 // Remove EH so it can be triggered only once for given task.
-                [_thisType, _thisId] call CBA_fnc_removeEventsHandler;
+                [_thisType, _thisId] call CBA_fnc_removeEventHandler;
                 // Increase counter how many events already fired
                 private _counterVariable = format ["condition%1EventsFired", _finishType];
                 private _currentEventsFired = _taskNamespace getVariable [_counterVariable, 0];
@@ -58,7 +58,7 @@ switch (true) do {
                 if (_currentEventsFired < (_taskNamespace getVariable [format ["conditionEvents%1Required", _finishType], 1])) exitWith {};
                 // Run callback
                 [_taskNamespace] call _callbackFunction;
-            }, [_taskNamespace, _finishType, _callbackFunction]] call CBA_fnc_addEventsHandlerArgs;
+            }, [_taskNamespace, _finishType, _callbackFunction]] call CBA_fnc_addEventHandlerArgs;
         } forEach _conditionEventsFinish;
     };
 
@@ -75,7 +75,7 @@ switch (true) do {
             [_x, {
                 _thisArgs params ["_taskNamespace", "_finishType", "_callbackFunction"];
                 // Remove EH so it can be triggered only once for given task.
-                [_thisType, _thisId] call CBA_fnc_removeEventsHandler;
+                [_thisType, _thisId] call CBA_fnc_removeEventHandler;
                 // Increase counter how many events already fired
                 private _counterVariable = format ["condition%1EventsFired", _finishType];
                 private _currentEventsFired = _taskNamespace getVariable [_counterVariable, 0];
@@ -85,7 +85,7 @@ switch (true) do {
                 if (_currentEventsFired < (_taskNamespace getVariable [format ["conditionEvents%1Required", _finishType], 1])) exitWith {};
                 // Run callback
                 [_taskNamespace] call _callbackFunction;
-            }, [_taskNamespace, _finishType, _callbackFunction]] call CBA_fnc_addEventsHandlerArgs;
+            }, [_taskNamespace, _finishType, _callbackFunction]] call CBA_fnc_addEventHandlerArgs;
         } forEach _conditionEventsFinish;
     };
 };
