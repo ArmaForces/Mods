@@ -6,6 +6,8 @@
  *
  * Arguments:
  * 0: Task namespace <CBA_NAMESPACE>
+ * 1: Finish type "Success"/"Failed"/"Canceled" <STRING>
+ * 2: Force new task state? <BOOL>
  *
  * Return Value:
  * None
@@ -13,12 +15,12 @@
  * Public: No
  */
 
-params ["_taskNamespace", "_finishType"];
+params ["_taskNamespace", "_finishType", ["_force", false]];
 
 private _taskConfigName = _taskNamespace getVariable "taskConfigName";
 
-// Check if task was finished already
-if ((_taskConfigName call BIS_fnc_taskState) in FINISHED_TASK_STATES) exitWith {nil};
+// Check if task was finished already or we force state change
+if (!_force && {(_taskConfigName call BIS_fnc_taskState) in FINISHED_TASK_STATES}) exitWith {nil};
 
 private _newTaskState = switch (_finishType) do {
     case "Success": {"SUCCEEDED"};

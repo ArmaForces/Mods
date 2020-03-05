@@ -5,7 +5,8 @@
  *
  * Arguments:
  * 0: Task to finish <CBA_NAMESPACE/STRING>
- * 1: Finish type (default "Success") <STRING>
+ * 1: Finish type ("Success"/"Failed"/"Canceled" default "Success") <STRING>
+ * 2: Force new task state? (default false) <BOOL>
  *
  * Return Value:
  * 0: Is task successfully finished? <BOOL>
@@ -16,7 +17,7 @@
  * Public: Yes
  */
 
-params ["_taskNamespace", ["_finishType", "Success"]];
+params ["_taskNamespace", ["_finishType", "Success"], ["_force", false]];
 
 if (_taskNamespace isEqualType "") then {
     _taskNamespace = GVAR(tasks) getVariable [_taskNamespace, objNull];
@@ -27,5 +28,5 @@ if (_taskNamespace isEqualTo objNull) exitWith {
     false
 };
 
-[_taskNamespace, _finishType] call FUNC(handleOnFinished);
+[_taskNamespace, _finishType, _force] call FUNC(handleOnFinished);
 true
