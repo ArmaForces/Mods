@@ -53,6 +53,7 @@ class CfgTasks {
         onShowEvents[] = { "" };
         onSuccessEvents[] = { "" };
         onFailedEvents[] = { "" };
+        onCanceledEvents[] = { "" };
     };
     class FindHorse {
         title = "Find Horse";
