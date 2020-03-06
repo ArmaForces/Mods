@@ -11,5 +11,6 @@ class CfgRespawnTemplates
         respawnButton = 1;
         respawnDialog = 0;
         respawnTypes[] = {3};
+        isCall = 1;
     };
 };
