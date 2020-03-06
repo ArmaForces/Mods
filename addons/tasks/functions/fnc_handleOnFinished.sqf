@@ -31,6 +31,8 @@ private _newTaskState = switch (_finishType) do {
 // Set task state
 [_taskConfigName, _newTaskState] call BIS_fnc_taskSetState;
 
+[QGVAR(taskStateChanged), [_taskConfigName, _newTaskState]] call CBA_fnc_globalEvent;
+
 // Call code
 call compile (_taskNamespace getVariable [format ["on%1Code", _finishType], ""]);
 

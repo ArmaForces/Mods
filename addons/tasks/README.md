@@ -101,6 +101,18 @@ class CfgTasks {
 }] call CBA_fnc_addEventHandler;
 ```
 
+## Framework events
+
+```
+Event "afm_tasks_taskCreated"
+  Params
+  - 0: Task config name <STRING>
+Event "afm_tasks_taskStateChanged"
+  Params
+  - 0: Task config name <STRING>
+  - 1: New task state <STRING>
+```
+
 ### Authors
 
 - [3Mydlo3](http://github.com/3Mydlo3)
