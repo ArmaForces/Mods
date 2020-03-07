@@ -19,3 +19,5 @@
 GVAR(timeElapsed) = GVAR(time) - playerRespawnTime;
 
 setPlayerRespawnTime TIME_DISABLED;
+
+nil
