@@ -8,6 +8,7 @@ if (isServer) then {
         INFO_1("Assigning Zeus to '%1'", _unit);
 
         private _curatorModule = [_unit] call FUNC(getFreeCuratorModule);
+        unassignCurator getAssignedCuratorLogic _unit;
         _unit assignCurator _curatorModule;
     }] call CBA_fnc_addEventHandler;
 
