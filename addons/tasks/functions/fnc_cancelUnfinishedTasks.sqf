@@ -38,3 +38,5 @@ private _allTasks = [];
 {
     [_x, "Canceled"] call FUNC(finishTask);
 } forEach _allTasks;
+
+true
