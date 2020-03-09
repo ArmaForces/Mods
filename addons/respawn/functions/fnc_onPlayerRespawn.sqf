@@ -23,3 +23,5 @@ _newUnit setUnitLoadout GVAR(savedEquipment);
 
 // Reset time elapsed counter
 GVAR(timeElapsed) = 0;
+
+nil

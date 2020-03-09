@@ -17,3 +17,5 @@
 
 // Restart counter where it stopped
 setPlayerRespawnTime (GVAR(time) - GVAR(timeElapsed) max TIME_MINIMUM);
+
+nil

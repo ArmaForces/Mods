@@ -22,3 +22,5 @@ params ["_oldUnit", "_killer"];
 if (!GVAR(enabled)) exitWith {setPlayerRespawnTime TIME_DISABLED};
 
 setPlayerRespawnTime GVAR(time);
+
+nil

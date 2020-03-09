@@ -28,3 +28,5 @@ setPlayerRespawnTime (_newTime - _elapsedTime max TIME_MINIMUM);
 
 // Save for further adjustments
 GVAR(oldTime) = _newTime;
+
+nil
