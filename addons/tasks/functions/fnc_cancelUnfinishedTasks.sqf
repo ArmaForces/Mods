@@ -29,10 +29,11 @@ if (!(_unit isEqualTo objNull)) exitWith {
 private _allTasks = [];
 {
     private _tasks = _x call BIS_fnc_tasksUnit;
-    {
-        _allTasks pushBackUnique _x;
-    } forEach _tasks;
+    _allTasks append _tasks;
 } forEach allPlayers;
+
+// Remove duplicates
+_allTasks = _allTasks arrayIntersect _allTasks;
 
 // And cancel them all.
 {
