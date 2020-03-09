@@ -19,7 +19,7 @@ if (isServer) then {
 
         private _curatorModule = getAssignedCuratorLogic _unit;
         if (_curatorModule isEqualTo objNull) exitWith {};
-        unassignCurator (GVAR(curators) select _curatorModule);
+        unassignCurator _curatorModule;
     }] call CBA_fnc_addEventHandler;
 };
 
