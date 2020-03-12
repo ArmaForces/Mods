@@ -259,6 +259,14 @@ class CfgInsurgentGear {
             "srifle_DMR_06_camo_F",
             "SMG_02_F"
         };
+        pistols[] = {
+            "hgun_Pistol_heavy_01_F",
+            "hgun_Pistol_heavy_01_green_F",
+            "hgun_ACPC2_F",
+            "hgun_Pistol_01_F",
+            "hgun_Rook40_F",
+            "hgun_Pistol_heavy_02_F"
+        };
     };
     class CUP {
         uniforms[] = {
@@ -701,6 +709,24 @@ class CfgInsurgentGear {
             "CUP_srifle_LeeEnfield",
             "CUP_srifle_LeeEnfield",
             "CUP_lmg_UK59"
+        };
+        pistols[] = {
+            "CUP_hgun_Compact",
+            "CUP_hgun_Duty",
+            "CUP_hgun_Phantom",
+            "CUP_hgun_Deagle",
+            "CUP_hgun_Glock17",
+            "CUP_hgun_Glock17_blk",
+            "CUP_hgun_Glock17_tan",
+            "CUP_hgun_Colt1911",
+            "CUP_hgun_M9",
+            "CUP_hgun_Mac10",
+            "CUP_hgun_Makarov",
+            "CUP_hgun_MicroUzi",
+            "CUP_hgun_PMM",
+            "CUP_hgun_SA61",
+            "CUP_hgun_TaurusTracker455",
+            "CUP_hgun_TEC9"
         };
     };
 };
