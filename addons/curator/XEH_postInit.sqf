@@ -8,6 +8,7 @@ if (isServer) then {
         INFO_1("Assigning Zeus to '%1'", _unit);
 
         private _curatorModule = [_unit] call FUNC(getFreeCuratorModule);
+        unassignCurator getAssignedCuratorLogic _unit;
         _unit assignCurator _curatorModule;
     }] call CBA_fnc_addEventHandler;
 
@@ -25,4 +26,5 @@ if (isServer) then {
 
 if (hasInterface) then {
     [QGVAR(objectAdd), player] call CBA_fnc_serverEvent;
+    [[LLSTRING(GetZeus), LLSTRING(GetZeus_Description)], {player call FUNC(assignZeus)}] call EFUNC(debug_console,addButton);
 };
