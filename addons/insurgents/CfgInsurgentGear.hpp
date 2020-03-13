@@ -267,6 +267,9 @@ class CfgInsurgentGear {
             "hgun_Rook40_F",
             "hgun_Pistol_heavy_02_F"
         };
+        launchers[] = {
+            "launch_RPG7_F"
+        };
     };
     class CUP {
         uniforms[] = {
@@ -727,6 +730,14 @@ class CfgInsurgentGear {
             "CUP_hgun_SA61",
             "CUP_hgun_TaurusTracker455",
             "CUP_hgun_TEC9"
+        };
+        launchers[] = {
+            "CUP_launch_RPG18",
+            "CUP_launch_M72A6",
+            "CUP_launch_MAAWS",
+            "CUP_launch_FIM92Stinger",
+            "CUP_launch_9K32Strela",
+            "CUP_launch_Igla"
         };
     };
 };
