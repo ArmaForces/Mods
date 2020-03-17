@@ -4,9 +4,9 @@ class CfgPatches {
     class ADDON {
         name = COMPONENT_NAME;
         units[] = {
-            GVAR(soldier_i),
-            GVAR(soldier_o),
-            GVAR(soldier_b)
+            QGVAR(soldier_i),
+            QGVAR(soldier_o),
+            QGVAR(soldier_b)
         };
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
@@ -21,5 +21,6 @@ class CfgPatches {
 
 
 #include "CfgEventHandlers.hpp"
+#include "CfgGroups.hpp"
 #include "CfgInsurgentGear.hpp"
 #include "CfgVehicles.hpp"
