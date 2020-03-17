@@ -1,8 +1,10 @@
 #define COMPONENT insurgents
 #include "\z\afm\addons\main\script_mod.hpp"
 
-#define DEBUG_MODE_FULL
-#define DISABLE_COMPILE_CACHE
+#define DEBUG_SYNCHRONOUS
+
+// #define DEBUG_MODE_FULL
+// #define DISABLE_COMPILE_CACHE
 
 #ifdef DEBUG_ENABLED_INSURGENTS
     #define DEBUG_MODE_FULL
