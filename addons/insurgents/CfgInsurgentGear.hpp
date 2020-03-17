@@ -84,7 +84,8 @@ class CfgInsurgentGear {
             "H_Helmet_Skate",
             "H_StrawHat",
             "H_StrawHat_dark",
-            "H_WirelessEarpiece_F"
+            "H_WirelessEarpiece_F",
+            "H_Hat_Tinfoil_F"
         };
         uniforms[] = {
             "U_I_C_Soldier_Bandit_2_F",
