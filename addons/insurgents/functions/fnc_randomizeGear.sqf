@@ -46,37 +46,14 @@ _unit addVest selectRandom RANDOM_GEAR(vests);
 // add primary weapon
 private _weapon = selectRandom RANDOM_GEAR(weapons);
 _unit addWeapon _weapon;
-
-// TODO function, muzzles caching?
-// add compatible mags for primary weapon
-private _weaponCfg = configFile >> "CfgWeapons" >> _weapon;
-{
-    if (_x == "this") then {
-        private _primaryMag = selectRandom (_weaponCfg call CBA_fnc_compatibleMagazines);
-        _unit addMagazines [_primaryMag, 8];
-    } else {
-        private _additionalMag = selectRandom ((_weaponCfg >> _x) call CBA_fnc_compatibleMagazines);
-        _unit addMagazines [_additionalMag, 4];
-    };
-} forEach getArray (_weaponCfg >> "muzzles");
+[_unit, _weapon, 8, 4] call FUNC(addWeaponAmmo);
 
 // add pistol
 if (random 1 <= CHANCE_PISTOL) then {
     private _pistol = selectRandom RANDOM_GEAR(pistols);
     _unit addWeapon _pistol;
 
-    // TODO function, muzzles caching?
-    // add compatible mags for pistol
-    private _pistolCfg = configFile >> "CfgWeapons" >> _pistol;
-    {
-        if (_x == "this") then {
-            private _primaryMag = selectRandom (_pistolCfg call CBA_fnc_compatibleMagazines);
-            _unit addMagazines [_primaryMag, 3];
-        } else {
-            private _additionalMag = selectRandom ((_pistolCfg >> _x) call CBA_fnc_compatibleMagazines);
-            _unit addMagazines [_additionalMag, 1];
-        };
-    } forEach getArray (_pistolCfg >> "muzzles");
+    [_unit, _pistol, 3, 1] call FUNC(addWeaponAmmo);
 };
 
 nil

@@ -1,1 +1,2 @@
 PREP(randomizeGear);
+PREP(addWeaponAmmo);
