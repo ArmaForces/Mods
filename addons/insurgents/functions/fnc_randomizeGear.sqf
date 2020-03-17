@@ -52,8 +52,20 @@ _unit addWeapon _weapon;
 if (random 1 <= CHANCE_PISTOL) then {
     private _pistol = selectRandom RANDOM_GEAR(pistols);
     _unit addWeapon _pistol;
-
     [_unit, _pistol, 3, 1] call FUNC(addWeaponAmmo);
+};
+
+// add launcher
+if (random 1 <= CHANCE_LAUNCHER) then {
+    private _backpack = selectRandom RANDOM_GEAR(backpacks);
+    _unit addBackpack _backpack;
+
+    private _launcher = selectRandom RANDOM_GEAR(launchers);
+    _unit addWeapon _launcher;
+
+    if (!IS_DISPOSABLE(_launcher)) then {
+        [_unit, _launcher, 3, 1] call FUNC(addWeaponAmmo);
+    };
 };
 
 nil

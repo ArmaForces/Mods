@@ -15,7 +15,7 @@
 
 #define EMPTY_LOADOUT [[],[],[],[],[],[],"","",[],["ItemMap","","ItemRadio","ItemCompass","ItemWatch",""]]
 
-#define RANDOM_GEAR(var) (GVAR(randomGear) getVariable #var)
+#define IS_DISPOSABLE(var) (cba_disposable_replaceDisposableLauncher && {!isNil {cba_disposable_NormalLaunchers getVariable var}})
 
 #define CHANCE_HEADGEAR 0.5
 #define CHANCE_FACEWEAR 0.3
