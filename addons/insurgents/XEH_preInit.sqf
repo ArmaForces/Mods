@@ -16,7 +16,7 @@ GVAR(randomGear) = true call CBA_fnc_createNamespace;
             GVAR(randomGear) setVariable [_key, _items];
         };
 
-        // add and filter unavilable classes
+        // add and filter unavailable classes
         {
             if (!isNull (_x call CBA_fnc_getItemConfig)) then {
                 LOG_1("Adding '%1' to random gear pool",_x);
