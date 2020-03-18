@@ -1,4 +1,4 @@
-class CfgInsurgentGear {
+class GVAR(gear) {
     class Vanilla {
         headgear[] = {
             "H_Bandanna_gry",
