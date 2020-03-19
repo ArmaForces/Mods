@@ -7,7 +7,7 @@
  * 0: Player unit <OBJECT>
  *
  * Return Value:
- * None
+ * Can spectate <BOOL>
  *
  * Example:
  * [player] call afm_spectator_fnc_canSpectate

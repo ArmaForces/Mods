@@ -25,4 +25,3 @@ diag_log text "------ [START_KILLTRACKER_STATS] ------";
 diag_log text "------ [END_KILLTRACKER_STATS] ------";
 
 nil
-
