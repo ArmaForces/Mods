@@ -20,6 +20,9 @@
 #define IS_DISPOSABLE(var) (cba_disposable_replaceDisposableLauncher && {!isNil {cba_disposable_NormalLaunchers getVariable var}})
 #define RANDOM_GEAR(var) (GVAR(randomGear) getVariable [#var,[]])
 
+#define GEAR_SETTING(var) (format [QGVAR(enabled_%1), var])
+#define GEAR_ENABLED(var) (missionNamespace getVariable [GEAR_SETTING(var), true])
+
 #define CHANCE_HEADGEAR 0.5
 #define CHANCE_FACEWEAR 0.3
 #define CHANCE_PISTOL 0.3
