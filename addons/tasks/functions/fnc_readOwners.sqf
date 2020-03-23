@@ -29,7 +29,7 @@ private _taskOwners = [];
     } else {
         // Try to reach object
         private _object = missionNamespace getVariable [_x, objNull];
-        if (_object isEqualTo objNull) exitWith {};
+        if (isNull _object) exitWith {};
         _taskOwners pushBackUnique _object;
     };
 } forEach _taskOwnersRaw;

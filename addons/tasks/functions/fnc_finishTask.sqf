@@ -23,7 +23,7 @@ if (_taskNamespace isEqualType "") then {
     _taskNamespace = GVAR(tasks) getVariable [_taskNamespace, objNull];
 };
 
-if (_taskNamespace isEqualTo objNull) exitWith {
+if (isNull _taskNamespace) exitWith {
     WARNING("No task specified!");
     false
 };

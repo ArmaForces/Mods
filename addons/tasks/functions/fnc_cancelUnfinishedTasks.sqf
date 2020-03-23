@@ -18,7 +18,7 @@
 params [["_unit", objNull]];
 
 // Unit was given
-if (!(_unit isEqualTo objNull)) exitWith {
+if (!isNull _unit) exitWith {
     {
         [_x, "Canceled"] call FUNC(finishTask);
     } forEach (_unit call BIS_fnc_tasksUnit);
