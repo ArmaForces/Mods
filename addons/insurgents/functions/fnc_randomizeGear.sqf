@@ -57,13 +57,13 @@ if (random 1 <= CHANCE_PISTOL) then {
 
 // add launcher
 if (random 1 <= CHANCE_LAUNCHER) then {
-    private _backpack = selectRandom RANDOM_GEAR(backpacks);
-    _unit addBackpack _backpack;
-
     private _launcher = selectRandom RANDOM_GEAR(launchers);
     _unit addWeapon _launcher;
 
     if (!IS_DISPOSABLE(_launcher)) then {
+        private _backpack = selectRandom RANDOM_GEAR(backpacks);
+        _unit addBackpack _backpack;
+
         [_unit, _launcher, 3, 1] call FUNC(addWeaponAmmo);
     };
 };
