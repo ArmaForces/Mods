@@ -9,6 +9,8 @@
         "_thisArgs",
         "_thisId",
         "_thisType",
+        "cba_disposable_replaceDisposableLauncher",
+        "cba_disposable_NormalLaunchers",
     ],
     "sqflint.exclude": [],
     "psi-header.lang-config": [
