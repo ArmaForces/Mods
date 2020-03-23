@@ -21,4 +21,3 @@ params [
 [QGVAR(lowerWeapon), _unit, _unit] call CBA_fnc_targetEvent;
 
 nil
-

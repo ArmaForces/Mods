@@ -14,6 +14,8 @@ jobs:
       uses: actions/checkout@master
     - name: Validate SQF
       run: python3 tools/sqf_validator.py
+    - name: Validate Return Types
+      run: python3 tools/return_checker.py
     - name: Validate Config
       run: python3 tools/config_style_checker.py
     - name: Validate Stringtables
