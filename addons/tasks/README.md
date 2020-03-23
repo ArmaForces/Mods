@@ -1,6 +1,6 @@
 ## Tasks
 
-Tasks framework. Automatic tasks creation from mission config.
+Tasks framework. Automatic tasks creation from mission config. All scripts, conditions and events are run on server only.
 
 ## How to use
 
@@ -60,7 +60,7 @@ class CfgTasks {
         icon = "search";
         parentTask = "Soapy_Mission_XD";
         conditionCodeShow = "true";
-        conditionCodeSuccess = "player distance horse < 50";
+        conditionCodeSuccess = "unit1 distance horse < 50";
         onSuccessEvents[] = { "horseFound" };
     };
     class KnockHorse {
@@ -71,7 +71,7 @@ class CfgTasks {
 
         conditionEventsShow[] = { "horseFound" };
         conditionCodeSuccess = "!(alive horse)";
-        conditionCodeFailed = "!(alive player)";
+        conditionCodeFailed = "!(alive unit1)";
 
         onSuccessEvents[] = { "horseKnocked" };
         onFailedEvents[] = { "playerDied" };
