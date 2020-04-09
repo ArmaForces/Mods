@@ -1,0 +1,1 @@
+#include "\z\afm\addons\grass_force\script_component.hpp"
