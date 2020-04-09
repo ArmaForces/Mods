@@ -17,7 +17,7 @@
 
 params ["_enabled"];
 
-if (isServer) exitWith {};
+if (!hasInterface) exitWith {};
 
 if (_enabled) then {
     call FUNC(loop);

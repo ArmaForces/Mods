@@ -12,7 +12,7 @@
  * Public: No
  */
 
-if (!GVAR(enabled)) exitWith { nil };
+if (!GVAR(enabled)) exitWith {};
 
 // If >25 then grass is disabled
 if (getTerrainGrid > 25) then {
