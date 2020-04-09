@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="AFM">
-    <Package name="Grass_Force">
-        <Key ID="STR_AFM_Grass_Force_DisplayName">
-            <English>ArmaForces - Grass Force</English>
-            <Polish>ArmaForces - Wymuszanie trawy</Polish>
+    <Package name="Grass">
+        <Key ID="STR_AFM_Grass_DisplayName">
+            <English>ArmaForces - Grass</English>
+            <Polish>ArmaForces - Trawa</Polish>
         </Key>
-        <Key ID="STR_AFM_Grass_Force_Enabled">
+        <Key ID="STR_AFM_Grass_Forced">
             <English>Force Grass</English>
             <Polish>Wymuś trawę</Polish>
         </Key>
-        <Key ID="STR_AFM_Grass_Force_Enabled_Description">
+        <Key ID="STR_AFM_Grass_Forced_Description">
             <English>Forces grass for all players</English>
             <Polish>Wymusza trawę u wszystkich graczy</Polish>
         </Key>
