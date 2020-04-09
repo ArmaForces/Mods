@@ -1,0 +1,1 @@
+#include "\z\afm\addons\flags\script_component.hpp"
