@@ -1,1 +1,1 @@
-#include "\z\afm\addons\grass\script_component.hpp"
+#include "..\script_component.hpp"
