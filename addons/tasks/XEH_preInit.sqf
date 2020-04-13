@@ -12,10 +12,6 @@ if (isServer) then {
         _taskNamespace setVariable ["taskConfigName", _taskConfigName];
         GVAR(tasks) setVariable [_taskConfigName, _taskNamespace];
     } forEach ("true" configClasses (missionConfigFile >> "CfgTasks"));
-
-    {
-        [_x, GVAR(tasks) getVariable _x] call FUNC(createTask);
-    } forEach (allVariables GVAR(tasks));
 };
 
 ADDON = true;
