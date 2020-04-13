@@ -38,7 +38,7 @@ private _taskID = if (_parentTask isEqualTo "") then {
 };
 
 // Array used for BIS_fnc_taskCreate
-private _taskCreateArray = [_ownersProcessed, _taskID, [_description, _title, _marker], _position, _initialState, _priority, _createdShowNotification, _icon];
+private _taskCreateArray = [_ownersProcessed, _taskID, [_description, _title, _marker], _destination, _initialState, _priority, _createdShowNotification, _icon];
 _taskNamespace setVariable ["taskCreateArray", _taskCreateArray];
 
 // Handle task showing (and creation)
