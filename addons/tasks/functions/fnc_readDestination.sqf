@@ -25,13 +25,13 @@ if (!(_taskMarker isEqualTo "")) then {
     WARNING_1("Marker %1 does not exist!", _taskMarker);
 };
 
-if (isNull _destination && {!(_taskObject isEqualTo "")}) then {
+if (_destination isEqualTo objNull && {!(_taskObject isEqualTo "")}) then {
     private _object = missionNamespace getVariable [_taskObject, objNull];
     if (!isNull _object) exitWith {_destination = _object};
     WARNING_1("Object %1 does not exist!", _taskObject);
 };
 
-if (isNull _destination && {!(_taskPosition isEqualTo [])}) then {
+if (_destination isEqualTo objNull && {!(_taskPosition isEqualTo [])}) then {
     if (count _taskPosition isEqualTo 3) exitWith {_destination = _taskPosition};
     WARNING_1("Position %1 is invalid!", _taskPosition);
 };
