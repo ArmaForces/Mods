@@ -21,6 +21,7 @@ _taskNamespace setVariable ["shown", true];
 // Create task
 (_taskNamespace getVariable "taskCreateArray") call BIS_fnc_taskCreate;
 
+private _taskConfigName = _taskNamespace getVariable "taskConfigName";
 [QGVAR(taskCreated), [_taskConfigName]] call CBA_fnc_globalEvent;
 
 // Call onShowCode
