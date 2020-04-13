@@ -32,7 +32,9 @@ if (isNull _destination && {!(_taskObject isEqualTo "")}) then {
 };
 
 if (isNull _destination && {!(_taskPosition isEqualTo [])}) then {
-    if (count _taskPosition isEqualTo 3) exitWith {_destination = _taskPosition};
+    private _coordinatesCount = count _taskPosition;
+    if (_coordinatesCount isEqualTo 3) exitWith {_destination = _taskPosition};
+    if (_coordinatesCount isEqualTo 2) exitWith {_destination = _taskPosition; _destination pushBack 0};
     WARNING_1("Position %1 is invalid!", _taskPosition);
 };
 
