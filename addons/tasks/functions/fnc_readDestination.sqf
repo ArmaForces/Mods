@@ -34,7 +34,9 @@ if (_destination isEqualTo objNull && {!(_taskObject isEqualTo "")}) then {
 
 // destination can contain an array, isNull can't be used
 if (_destination isEqualTo objNull && {!(_taskPosition isEqualTo [])}) then {
-    if (count _taskPosition isEqualTo 3) exitWith {_destination = _taskPosition};
+    private _coordinatesCount = count _taskPosition;
+    if (_coordinatesCount isEqualTo 3) exitWith {_destination = _taskPosition};
+    if (_coordinatesCount isEqualTo 2) exitWith {_destination = _taskPosition; _destination pushBack 0};
     WARNING_1("Position %1 is invalid!", _taskPosition);
 };
 
