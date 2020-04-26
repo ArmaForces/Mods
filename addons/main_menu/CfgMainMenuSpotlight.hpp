@@ -27,6 +27,8 @@ class CfgMainMenuSpotlight {
 
     delete Tanks_Campaign_01;
 
+    delete OldMan;
+
     delete Contact_Campaign;
 
     delete gm_campaign_01;
