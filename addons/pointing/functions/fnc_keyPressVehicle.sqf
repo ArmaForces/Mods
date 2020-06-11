@@ -21,8 +21,6 @@ private _vehicle = vehicle ACE_player;
 // make sure player is in vehicle and not in a static weapon (inverse of ACE Finger check):
 if ((ACE_player == _vehicle) || {(_vehicle isKindOf "StaticWeapon")}) exitWith {false};
 
-systemChat "pointing kp";
-
 // Exit if run recently (run every 1 second)
 if (diag_tickTime < (GVAR(lastPointTime) + 1)) exitWith {true};
 
