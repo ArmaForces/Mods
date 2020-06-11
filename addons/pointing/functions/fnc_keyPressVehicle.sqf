@@ -28,9 +28,8 @@ if (diag_tickTime < (GVAR(lastPointTime) + 1)) exitWith {true};
 
 GVAR(lastPointTime) = diag_tickTime;
 
-FP_DISTANCE = 5000;
-private _fingerPosASL = AGLtoASL positionCameraToWorld [0, 0, FP_DISTANCE];
+private _pointPosASL = AGLtoASL positionCameraToWorld [0, 0, POINT_DISTANCE];
 
-[QGVAR(pointed), [ACE_player, _fingerPosASL], crew _vehicle] call CBA_fnc_targetEvent;
+[QGVAR(pointed), [ACE_player, _pointPosASL], crew _vehicle] call CBA_fnc_targetEvent;
 
 true // return

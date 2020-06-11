@@ -12,3 +12,5 @@
 #endif
 
 #include "\z\afm\addons\main\script_macros.hpp"
+
+#define POINT_DISTANCE 5000

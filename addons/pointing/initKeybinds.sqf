@@ -4,11 +4,11 @@ if (EGVAR(common,aceFinger)) then {
     private _keybind = [_aceKeybind, [41, [true, false, false]]] select isNil "_aceKeybind";
 
     [
-        QUOTE(PREFIX),
+        LLSTRING(DisplayName),
         QGVAR(pointVehicle),
         [LLSTRING(Key_PointVehicle), LLSTRING(Key_PointVehicle_Description)],
         {
-            if (!GVAR(enabled)) exitWith {false};
+            if (!GVAR(vehicleEnabled)) exitWith {false};
 
             _this call FUNC(keyPressVehicle) // return
         },
