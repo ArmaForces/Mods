@@ -6,7 +6,6 @@
  * Arguments:
  * None
  *
- *
  * Return Value:
  * Key Handled <BOOL>
  *
