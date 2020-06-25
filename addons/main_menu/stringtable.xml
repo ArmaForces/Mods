@@ -8,5 +8,17 @@
             <English>Join</English>
             <Polish>Dołącz</Polish>
         </Key>
+        <Key ID="STR_AFM_Main_Menu_AdminLogin">
+            <English>Admin Login</English>
+            <Polish>Admin Zaloguj</Polish>
+        </Key>
+        <Key ID="STR_AFM_Main_Menu_AdminLogout">
+            <English>Admin Logout</English>
+            <Polish>Admin Wyloguj</Polish>
+        </Key>
+        <Key ID="STR_AFM_Main_Menu_PasswordPlaceholder">
+            <English>Password</English>
+            <Polish>Hasło</Polish>
+        </Key>
     </Package>
 </Project>
