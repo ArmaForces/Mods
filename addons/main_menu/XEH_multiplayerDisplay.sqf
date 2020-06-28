@@ -12,13 +12,9 @@
  *
  */
 
-params ["_display", "_displayName"];
+if (isServer) exitWith {};
 
-// if no world is loaded missionNamespace will be empty
-// copy logging function from uiNamespace
-if (isNil "CBA_fnc_log") then {
-    CBA_fnc_log = uiNamespace getVariable QUOTE(CBA_fnc_log);
-};
+params ["_display", "_displayName"];
 
 TRACE_2("Multiplayer display init",_display,_displayName);
 
