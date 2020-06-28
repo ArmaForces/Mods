@@ -11,5 +11,8 @@
         <Key ID="STR_AFM_Main_Toolbar">
             <English>ArmaForces</English>
         </Key>
+        <Key ID="STR_AFM_Main_ToolbarWiki">
+            <English>Wiki</English>
+        </Key>
     </Package>
 </Project>
