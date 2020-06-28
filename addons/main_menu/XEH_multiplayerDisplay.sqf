@@ -7,6 +7,9 @@
  * 0: Display <DISPLAY>
  * 1: Display name <STRING>
  *
+ * Return Value:
+ * None
+ *
  */
 
 params ["_display", "_displayName"];
