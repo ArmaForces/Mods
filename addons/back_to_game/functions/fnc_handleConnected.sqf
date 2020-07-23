@@ -25,7 +25,7 @@ if (!isServer && {hasInterface}) exitWith {
 };
 
 if ([_uid] call FUNC(hasDisconnected)) exitWith {
-    INFO_1("%1 has disconnected previously, loading saved data.", name _unit);
+    INFO_1("%1 has disconnected previously, loading saved data.",name _unit);
     private _save = [_uid] call FUNC(getPlayerData);
     [QGVAR(handleTeleport), [_unit, _save], _unit] call CBA_fnc_targetEvent;
 
