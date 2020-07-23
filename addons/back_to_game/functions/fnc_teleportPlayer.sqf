@@ -48,3 +48,5 @@ switch (true) do {
 };
 
 INFO("Teleported player.");
+
+nil

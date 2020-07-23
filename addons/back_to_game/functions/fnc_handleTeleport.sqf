@@ -31,3 +31,4 @@ GVAR(savegameData) = _save;
     createDialog QGVAR(teleportDialog);
 }] call CBA_fnc_waitUntilAndExecute;
 
+nil

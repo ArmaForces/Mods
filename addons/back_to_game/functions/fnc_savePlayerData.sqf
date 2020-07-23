@@ -24,3 +24,5 @@ private _pos = getPosATL _unit;
 GVAR(disconnectedPlayers) setVariable [_uid, [_loadout, vehicle _unit, _pos]];
 
 INFO_2("%1 UID: %2 disconnected, saved data.", name _unit, _uid);
+
+nil

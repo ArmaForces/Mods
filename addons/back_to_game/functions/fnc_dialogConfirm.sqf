@@ -23,3 +23,5 @@ player playAction "PlayerProne";
 player setUnitLoadout (GVAR(savegameData) select 0);
 
 [QGVAR(teleportPlayer), GVAR(savegameData)] call CBA_fnc_localEvent;
+
+nil

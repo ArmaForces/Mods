@@ -19,3 +19,5 @@ params ["_uid"];
 
 GVAR(disconnectedPlayers) setVariable [_uid, nil];
 INFO_1("Deleted data for %1 UID.", _uid);
+
+nil
