@@ -27,4 +27,8 @@ if !(local _unit) exitWith {
 
 GVAR(savegameData) = _save;
 
-createDialog QGVAR(teleportDialog);
+[{!isNull(findDisplay 46)}, {
+    createDialog QGVAR(teleportDialog);
+}] call CBA_fnc_waitUntilAndExecute;
+
+nil

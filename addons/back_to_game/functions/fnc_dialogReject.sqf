@@ -15,6 +15,10 @@
  * Public: No
  */
 
+INFO("Teleportation rejected!");
+
 [{
     GVAR(savegameData) = [];
 }] call CBA_fnc_execNextFrame;
+
+nil
