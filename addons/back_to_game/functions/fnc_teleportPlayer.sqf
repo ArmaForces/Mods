@@ -46,3 +46,5 @@ switch (true) do {
         player setPos _pos;
     };
 };
+
+INFO("Teleported player.");
