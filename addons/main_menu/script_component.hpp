@@ -1,6 +1,7 @@
 #define COMPONENT main_menu
 #include "\z\afm\addons\main\script_mod.hpp"
 
+#include "\a3\ui_f\hpp\defineCommonGrids.inc"
 #include "\a3\ui_f\hpp\defineResincl.inc"
 
 // #define DEBUG_MODE_FULL
@@ -14,3 +15,5 @@
 #endif
 
 #include "\z\afm\addons\main\script_macros.hpp"
+
+#define MP_PWD_BORDER_CONTROL (_display displayCtrl ([108, 143] select (_displayName == 'RscDisplayRemoteMissions')))
