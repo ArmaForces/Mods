@@ -112,6 +112,21 @@ _passwordButton ctrlAddEventHandler ["ButtonClick", {
         };
     };
 }];
+
+_passwordInput ctrlAddEventHandler ["SetFocus", {
+    params ["_input"];
+
+    if (ctrlText _input == LLSTRING(PasswordPlaceholder)) then {
+        _input ctrlSetText "";
+    };
+}];
+
+_passwordInput ctrlAddEventHandler ["KillFocus", {
+    params ["_input"];
+
+    if (ctrlText _input == "") then {
+        _input ctrlSetText LLSTRING(PasswordPlaceholder);
+    };
 }];
 
 nil
