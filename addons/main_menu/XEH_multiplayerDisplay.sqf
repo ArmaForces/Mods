@@ -66,21 +66,23 @@ _passwordButton ctrlAddEventHandler ["ButtonClick", {
 
         // wait until logged out or restore state on timeout
         [_passwordInput, _passwordButton] spawn {
-            params ["_passwordInput", "_passwordButton"];
+            with uiNamespace do {
+                params ["_passwordInput", "_passwordButton"];
 
-            private _timeout = diag_tickTime + 10;
-            waitUntil {!IS_ADMIN || {diag_tickTime > _timeout}};
+                private _timeout = diag_tickTime + 10;
+                waitUntil {!IS_ADMIN || {diag_tickTime > _timeout}};
 
-            if (!IS_ADMIN) exitWith {
-                INFO("Logged out from admin");
+                if (!IS_ADMIN) exitWith {
+                    INFO("Logged out from admin");
 
-                _passwordButton ctrlSetText LLSTRING(AdminLogin);
+                    _passwordButton ctrlSetText LLSTRING(AdminLogin);
+                    _passwordButton ctrlEnable true;
+                    _passwordInput ctrlEnable true;
+                };
+
+                WARNING("Admin log out timeout");
                 _passwordButton ctrlEnable true;
-                _passwordInput ctrlEnable true;
             };
-
-            WARNING("Admin log out timeout");
-            _passwordButton ctrlEnable true;
         };
     } else {
         INFO("Logging in as admin");
@@ -90,23 +92,26 @@ _passwordButton ctrlAddEventHandler ["ButtonClick", {
 
         // wait until logged in or restore state on timeout
         [_passwordInput, _passwordButton] spawn {
-            params ["_passwordInput", "_passwordButton"];
+            with uiNamespace do {
+                params ["_passwordInput", "_passwordButton"];
 
-            private _timeout = diag_tickTime + 10;
-            waitUntil {IS_ADMIN || {diag_tickTime > _timeout}};
+                private _timeout = diag_tickTime + 10;
+                waitUntil {IS_ADMIN || {diag_tickTime > _timeout}};
 
-            if (IS_ADMIN) exitWith {
-                INFO("Logged in as admin");
+                if (IS_ADMIN) exitWith {
+                    INFO("Logged in as admin");
 
-                _passwordButton ctrlSetText LLSTRING(AdminLogout);
+                    _passwordButton ctrlSetText LLSTRING(AdminLogout);
+                    _passwordButton ctrlEnable true;
+                };
+
+                WARNING("Admin log in timeout/Wrong password");
                 _passwordButton ctrlEnable true;
+                _passwordInput ctrlEnable true;
             };
-
-            WARNING("Admin log in timeout/Wrong password");
-            _passwordButton ctrlEnable true;
-            _passwordInput ctrlEnable true;
         };
     };
+}];
 }];
 
 nil
