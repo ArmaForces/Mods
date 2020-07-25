@@ -12,9 +12,6 @@
  *
  */
 
-// If already an admin at display init it must be a local hosted
-if (IS_ADMIN) exitWith {};
-
 params ["_display", "_displayName"];
 
 TRACE_2("Multiplayer display init",_display,_displayName);
