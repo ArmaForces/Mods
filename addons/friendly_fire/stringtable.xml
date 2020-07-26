@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="AFM">
+    <Package name="Friendly_Fire">
+        <Key ID="STR_AFM_Friendly_Fire_DisplayName">
+            <English>ArmaForces - Friendly Fire</English>
+            <Polish>ArmaForces - Ogień sojuszniczy</Polish>
+        </Key>
+        <Key ID="STR_AFM_Friendly_Fire_Logging_Enabled">
+            <English>Friendly fire logging</English>
+            <Polish>Logowanie ognia sojuszniczego</Polish>
+        </Key>
+    </Package>
+</Project>
