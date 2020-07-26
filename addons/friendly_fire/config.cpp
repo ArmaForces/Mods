@@ -10,6 +10,7 @@ class CfgPatches {
             "afm_common"
         };
         author = "ArmaForces";
+        authors[] = {"veteran29"};
         VERSION_CONFIG;
     };
 };
