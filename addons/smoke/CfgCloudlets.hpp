@@ -10,7 +10,7 @@ class CfgCloudlets {
         lifeTime = 20; // 20
     };
 
-    /*class ObjectDestructionSmoke: Default {
+    class ObjectDestructionSmoke: Default {
         interval = 0.25; // 0.18
     };
     class ObjectDestructionSmoke1_2: Default {
@@ -30,5 +30,5 @@ class CfgCloudlets {
     };
     class ObjectDestructionSmoke2: Default {
         interval = 0.1; // 0.04
-    };*/
+    };
 };
