@@ -33,7 +33,7 @@ class CfgTasks {
 
         // Showing/creating task
         conditionCodeShow = "true";
-        conditionEventsShow[] = { "" };
+        conditionEventsShow[] = {}; // Default value for all conditionEvents*[] is equal to [] which is {} in config
         conditionEventsShowRequired = 1; // How many events must fire for events condition to be met
 
         // Conditions codes which must return true to finish task
@@ -41,19 +41,19 @@ class CfgTasks {
         conditionCodeFailed = "";
         conditionCodeCanceled = "";
         // CBA event names which must be triggered to achieve the same as above
-        conditionEventsSuccess[] = { "" };
-        conditionEventsFailed[] = { "" };
-        conditionEventsCanceled[] = { "" };
+        conditionEventsSuccess[] = {};
+        conditionEventsFailed[] = {};
+        conditionEventsCanceled[] = {};
         // And number required as in show but for all others
         conditionEventsSuccessRequired = 1;
         conditionEventsFailedRequired = 1;
         conditionEventsCanceledRequired = 1;
 
         // Server CBA events called. If you want custom code just add appropriate CBA EH on server.
-        onShowEvents[] = { "" };
-        onSuccessEvents[] = { "" };
-        onFailedEvents[] = { "" };
-        onCanceledEvents[] = { "" };
+        onShowEvents[] = {};
+        onSuccessEvents[] = {};
+        onFailedEvents[] = {};
+        onCanceledEvents[] = {};
     };
     class FindHorse {
         title = "Find Horse";
