@@ -1,3 +1,5 @@
 #include "script_component.hpp"
 
-call FUNC(init);
+if (EGVAR(common,acre)) then {
+    call FUNC(init);
+};
