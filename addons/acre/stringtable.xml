@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="AFM">
+    <Package name="Acre">
+        <Key ID="STR_AFM_Acre_DisplayName">
+            <English>ArmaForces - ACRE</English>
+            <Polish>ArmaForces - ACRE</Polish>
+        </Key>
+        <Key ID="STR_AFM_Acre_Babel">
+            <English>Babel</English>
+            <Polish>Babel</Polish>
+        </Key>
+        <Key ID="STR_AFM_Acre_Babel_Description">
+            <English>Each side will have it's own babel language assigned and won't understand each other. Requires mission restart to change.</English>
+            <Polish>Każda strona będzie miała swój język babel i nie będą się rozumieć. Zmiana wymaga restartu misji.</Polish>
+        </Key>
+        <Key ID="STR_AFM_Acre_PerSideRadios">
+            <English>Per Side Radios</English>
+            <Polish>Kanały per strona</Polish>
+        </Key>
+        <Key ID="STR_AFM_Acre_PerSideRadios_Description">
+            <English>Each side will have it's own frequency on radio and won't hear each other. Requires mission restart to change.</English>
+            <Polish>Każda strona będzie miała swoje częstotliwości i nie będą się słyszeć na radiu. Zmiana wymaga restartu misji.</Polish>
+        </Key>
+    </Package>
+</Project>
