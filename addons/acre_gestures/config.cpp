@@ -10,7 +10,7 @@ class CfgPatches {
             "afm_common"
         };
         author = "ArmaForces";
-        authors[] = {"Diwako"};
+        authors[] = {"diwako"};
         VERSION_CONFIG;
     };
 };

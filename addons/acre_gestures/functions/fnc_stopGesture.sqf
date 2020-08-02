@@ -1,6 +1,6 @@
 #include "script_component.hpp"
 /*
- * Author: Diwako
+ * Author: diwako
  * Stops ACRE radio gesture
  *
  * Arguments:
