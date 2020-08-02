@@ -21,5 +21,25 @@
             <English>Each side will have it's own frequency on radio and won't hear each other. Requires mission restart to change.</English>
             <Polish>Każda strona będzie miała swoje częstotliwości i nie będą się słyszeć na radiu. Zmiana wymaga restartu misji.</Polish>
         </Key>
+        <Key ID="STR_AFM_Acre_PerSideChannelNames">
+            <English>Per Side Channel Names</English>
+            <Polish>Nazwy kanałów per strona</Polish>
+        </Key>
+        <Key ID="STR_AFM_Acre_PerSideChannelNames_Description">
+            <English>Each side will have it's own channel names. If disabled, BLUFOR channel names are used. Requires mission restart to change.</English>
+            <Polish>Każda strona będzie miała swoje nazwy kanałów. Jeżeli wyłączone to używane są nazwy kanałów BLUFORu. Zmiana wymaga restartu misji.</Polish>
+        </Key>
+        <Key ID="STR_AFM_Acre_SideChannelNames">
+            <English>%1 Channel Names</English>
+            <Polish>Nazwy kanałów %1</Polish>
+        </Key>
+        <Key ID="STR_AFM_Acre_ChannelName">
+            <English>Channel %1 name</English>
+            <Polish>Nazwa kanału %1</Polish>
+        </Key>
+        <Key ID="STR_AFM_Acre_ChannelName_Description">
+            <English>Channel %1 name. Requires mission restart to change.</English>
+            <Polish>Nazwa kanału %1. Zmiana wymaga restartu misji.</Polish>
+        </Key>
     </Package>
 </Project>
