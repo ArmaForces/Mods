@@ -89,6 +89,11 @@ if (hasInterface) then {
 
         private _allAddons = ("true" configClasses (configFile >> "CfgPatches")) apply {configName _x};
         [QGVAR(zeusActivateAddons), [_curatorModule, _allAddons]] call CBA_fnc_serverEvent;
+
+        if !(_curatorModule getVariable [QGVAR(drawCuratorLocations), false]) then {
+            _curatorModule setVariable [QGVAR(drawCuratorLocations), true];
+            [_curatorModule] call BIS_fnc_drawCuratorLocations;
+        };
     }] call CBA_fnc_addEventHandler;
 };
 
