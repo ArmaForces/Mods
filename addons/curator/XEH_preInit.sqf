@@ -70,6 +70,26 @@ if (isServer) then {
         if (_curatorModule isEqualTo objNull) exitWith {};
         unassignCurator _curatorModule;
     }] call CBA_fnc_addEventHandler;
+
+    // Activate Zeus addons
+    [QGVAR(zeusActivateAddons), {
+        params ["_curatorModule", "_addons"];
+
+        INFO_1("Activating curator addons - '%1'",_curatorModule);
+
+        _curatorModule addCuratorAddons _addons;
+    }] call CBA_fnc_addEventHandler;
+};
+
+if (hasInterface) then {
+    [QGVAR(zeusAssigned), {
+        params ["_curatorModule"];
+
+        INFO_1("Assigned Curator '%1'",_curatorModule);
+
+        private _allAddons = ("true" configClasses (configFile >> "CfgPatches")) apply {configName _x};
+        [QGVAR(zeusActivateAddons), [_curatorModule, _allAddons]] call CBA_fnc_serverEvent;
+    }] call CBA_fnc_addEventHandler;
 };
 
 ADDON = true;
