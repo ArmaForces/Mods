@@ -43,11 +43,20 @@ if (isServer) then {
         params ["_unit"];
         if !(isPlayer _unit) exitWith {};
 
-        INFO_1("Assigning Zeus to '%1'", _unit);
+        INFO_1("Assigning Zeus to '%1'",_unit);
 
         private _curatorModule = [_unit] call FUNC(getFreeCuratorModule);
         unassignCurator getAssignedCuratorLogic _unit;
-        _unit assignCurator _curatorModule;
+
+        // Curator unassign can take a moment, add delay
+        [{}, {}, [_unit, _curatorModule] , 5, {
+            params ["_unit", "_curatorModule"];
+
+            _unit assignCurator _curatorModule;
+
+            [QGVAR(zeusAssigned), _curatorModule, _unit] call CBA_fnc_targetEvent;
+        }] call CBA_fnc_waitUntilAndExecute;
+
     }] call CBA_fnc_addEventHandler;
 
     // Unassign curator on demand
