@@ -9,13 +9,19 @@ GVAR(binoClasses) = QUOTE(getNumber (_x >> 'type') == TYPE_BINOCULAR) configClas
 ["acre_startedSpeaking", {
     params ["_unit", "_onRadio", "_radio"];
 
-    if (!_onRadio ||
+    if (
+        !_onRadio ||
         {!isNull objectParent _unit} ||
-        {!(cameraView in ["INTERNAL","EXTERNAL"])} ||
         {ACEGVAR(common,isReloading)} ||
         {isWeaponDeployed _unit} ||
         {animationState _unit in GVAR(blackListAnims)} ||
-        {currentWeapon _unit in GVAR(binoClasses) }) exitWith {};
+        {
+            GVAR(allowADS) && {
+                !(cameraView in ["INTERNAL","EXTERNAL"]) ||
+                {currentWeapon _unit in GVAR(binoClasses)}
+            }
+        }
+    ) exitWith {};
 
     private _hasVest = vest _unit != "";
     private _hasHeadgear = headgear _unit != "";
@@ -25,12 +31,12 @@ GVAR(binoClasses) = QUOTE(getNumber (_x >> 'type') == TYPE_BINOCULAR) configClas
 
     // 343 is vest mounted
     if (_hasVest && _shortRange) then {
-        _unit playActionNow "acre_radio_vest";
+        _unit playActionNow (["acre_radio_vest_NoADS", "acre_radio_vest"] select GVAR(allowADS));
     };
 
     // 148/152 is ear piece
     if (_hasHeadgear && !_shortRange) then {
-        _unit playActionNow "acre_radio_helmet";
+        _unit playActionNow (["acre_radio_helmet_NoADS", "acre_radio_helmet"] select GVAR(allowADS));
     };
 
     _unit setVariable [QGVAR(onRadio), true];
