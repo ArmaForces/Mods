@@ -2,14 +2,22 @@ class CfgMovesBasic {
     class DefaultDie;
     class ManActions {
         acre_radio_helmet = "acre_radio_helmet";
+        acre_radio_helmet_NoADS = "acre_radio_helmet_NoADS";
+
         acre_radio_vest = "acre_radio_vest";
+        acre_radio_vest_NoADS = "acre_radio_vest_NoADS";
+
         acre_radio_stop = "acre_radio_stop";
     };
     class Actions {
         class Default;
         class NoActions: ManActions {
             acre_radio_helmet[] = {"acre_radio_helmet", "Gesture"};
+            acre_radio_helmet_NoADS[] = {"acre_radio_helmet_NoADS", "Gesture"};
+
             acre_radio_vest[] = {"acre_radio_vest", "Gesture"};
+            acre_radio_vest_NoADS[] = {"acre_radio_vest_NoADS", "Gesture"};
+
             acre_radio_stop[] = {"acre_radio_stop", "Gesture"};
         };
     };
@@ -65,15 +73,24 @@ class CfgGesturesMale {
             rightHandIKCurve[] = {1};
             rightHandIKEnd = 1;
         };
+
         class acre_radio_helmet: acre_radio_base {
             file = "a3\anims_f_epa\data\anim\sdr\cts\custom\a_in\acts_listeningtoradioloop.rtm";
             minPlayTime = 2;
             mask = "acre_UpperBodyNoRArm";
         };
+        class acre_radio_helmet_NoADS: acre_radio_helmet {
+            enableOptics = 0;
+        };
+
         class acre_radio_vest: acre_radio_base {
             file = "a3\anims_f_bootcamp\data\anim\sdr\cts\acts_kore_talkingoverradio_loop.rtm";
             mask = "acre_UpperBodyNoRArm";
         };
+        class acre_radio_vest_NoADS: acre_radio_vest {
+            enableOptics = 0;
+        };
+
         class GestureNod;
         class acre_radio_stop: GestureNod {
             file = "a3\anims_f\data\anim\sdr\gst\gestureEmpty.rtm";
