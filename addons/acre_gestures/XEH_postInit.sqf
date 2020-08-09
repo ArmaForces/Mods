@@ -4,7 +4,7 @@ if (is3DEN) exitWith {};
 if (!hasInterface || {!GVAR(enabled) || {!EGVAR(common,ace) || !EGVAR(common,acre)}}) exitWith {};
 
 GVAR(blackListAnims) = ["amovppnemstpsraswrfldnon", "aadjppnemstpsraswrfldleft", "aadjppnemstpsraswrfldright"];
-GVAR(binoClasses) = QUOTE(getNumber (_x >> 'type') == 'TYPE_BINOCULAR') configClasses (configFile >> "CfgWeapons") apply {configName _x};
+GVAR(binoClasses) = QUOTE(getNumber (_x >> 'type') == TYPE_BINOCULAR) configClasses (configFile >> "CfgWeapons") apply {configName _x};
 
 ["acre_startedSpeaking", {
     params ["_unit", "_onRadio", "_radio"];
