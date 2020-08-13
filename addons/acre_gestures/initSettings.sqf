@@ -5,7 +5,7 @@
     ["Enable ACRE gestures", "Enable ACRE gestures"],
     "ArmaForces - ACRE (ACE) Gestures",
     true,
-    true,
+    false,
     {},
     true
 ] call CBA_fnc_addSetting;
