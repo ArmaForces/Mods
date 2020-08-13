@@ -2,8 +2,8 @@
 [
     QGVAR(enabled),
     "CHECKBOX",
-    ["Enable ACRE gestures", "Enable ACRE gestures"],
-    "ArmaForces - ACRE (ACE) Gestures",
+    [LLSTRING(Enabled), LLSTRING(Enabled_Description)],
+    LLSTRING(DisplayName),
     true,
     false,
     {},
@@ -13,7 +13,7 @@
 [
     QGVAR(allowADS),
     "CHECKBOX",
-    ["Allow ADS", "Allow aiming down the sights while using the radio"],
-    "ArmaForces - ACRE (ACE) Gestures",
+    [LLSTRING(AllowADS), LLSTRING(AllowADS_Description)],
+    LLSTRING(DisplayName),
     true
 ] call CBA_fnc_addSetting;
