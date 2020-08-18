@@ -21,5 +21,17 @@
             <English>Each side will have it's own frequency on radio and won't hear each other. Requires mission restart to change.</English>
             <Polish>Każda strona będzie miała swoje częstotliwości i nie będą się słyszeć na radiu. Zmiana wymaga restartu misji.</Polish>
         </Key>
+        <Key ID="STR_AFM_Acre_AddArsenalCategory">
+            <English>Add arsenal category</English>
+            <Polish>Dodaj kategorie w arsenale</Polish>
+        </Key>
+        <Key ID="STR_AFM_Acre_AddArsenalCategory_Description">
+            <English>Add category with ACRE radios to ACE Arsenal.</English>
+            <Polish>Dodaj kategorię z radiami ACRE do arsenału ACE.</Polish>
+        </Key>
+        <Key ID="STR_AFM_Acre_ArsenalCategory">
+            <English>Radios</English>
+            <Polish>Radia</Polish>
+        </Key>
     </Package>
 </Project>
