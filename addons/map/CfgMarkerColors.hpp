@@ -16,5 +16,6 @@ class CfgMarkerColors {
     class ColorPink: Default {
         name = CSTRING(ColorPink);
         scope = 2;
+        color[] = {1, 0, 1, 1};
     };
 };
