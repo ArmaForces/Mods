@@ -9,4 +9,13 @@ class CfgMarkerColors {
     class ColorGreen: Default {
         name = CSTRING(ColorGreen);
     };
+    class ColorBrown: Default {
+        scope = 2;
+    };
+    class ColorOrange: Default {
+        scope = 2;
+    };
+    class ColorPink: Default {
+        scope = 2;
+    };
 };
