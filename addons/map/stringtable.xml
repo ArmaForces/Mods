@@ -17,5 +17,13 @@
             <English>Green (Charlie)</English>
             <Polish>Zielony (Charlie)</Polish>
         </Key>
+        <Key ID="STR_AFM_Map_ColorOrange">
+            <English>Orange (Delta)</English>
+            <Polish>Pomarańczowy (Delta)</Polish>
+        </Key>
+        <Key ID="STR_AFM_Map_ColorPink">
+            <English>Pink (Support)</English>
+            <Polish>Różowy (Wsparcie)</Polish>
+        </Key>
     </Package>
 </Project>
