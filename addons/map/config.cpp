@@ -17,3 +17,4 @@ class CfgPatches {
 
 #include "CfgEventHandlers.hpp"
 #include "CfgMarkerColors.hpp"
+#include "ui\RscDisplayMainMap.hpp"
