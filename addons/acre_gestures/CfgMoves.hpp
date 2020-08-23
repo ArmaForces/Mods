@@ -93,10 +93,12 @@ class CfgGesturesMale {
         class GestureNod;
         class acre_radio_stop: GestureNod {
             file = "a3\anims_f\data\anim\sdr\gst\gestureEmpty.rtm";
+            disableWeapons = 0;
             disableWeaponsLong = 0;
             enableBinocular = 1;
             enableMissile = 1;
             enableOptics = 1;
+            mask = "empty";
         };
     };
 
