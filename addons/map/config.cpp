@@ -7,13 +7,14 @@ class CfgPatches {
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {
-            "afm_common"
+            "afm_main"
         };
         author = "ArmaForces";
-        authors[] = {"3Mydlo3"};
+        authors[] = {"veteran29"};
         VERSION_CONFIG;
     };
 };
 
-
 #include "CfgEventHandlers.hpp"
+#include "CfgMarkerColors.hpp"
+#include "ui\RscDisplayMainMap.hpp"

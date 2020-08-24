@@ -21,8 +21,8 @@ private _conditionCodeShow = compile _conditionCodeShowValue;
 private _conditionCodeEmpty = (_conditionCodeShowValue isEqualTo "true" || {_conditionCodeShowValue isEqualTo ""});
 
 // Load show event condition
-private _conditionEventsShow = _taskNamespace getVariable ["conditionEventsShow", ""];
-private _conditionEventsEmpty = _conditionEventsShow isEqualTo "";
+private _conditionEventsShow = _taskNamespace getVariable ["conditionEventsShow", []];
+private _conditionEventsEmpty = _conditionEventsShow isEqualTo [];
 
 if (_conditionEventsEmpty && {_conditionCodeEmpty}) exitWith {
     // Show task
