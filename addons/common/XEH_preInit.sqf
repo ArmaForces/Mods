@@ -2,6 +2,7 @@
 ADDON = false;
 #include "XEH_PREP.hpp"
 
+GVAR(ace) = IS_MOD_LOADED(ace_common);
 GVAR(aceSafemode) = IS_MOD_LOADED(ace_safemode);
 GVAR(aceFastroping) = IS_MOD_LOADED(ace_fastroping);
 GVAR(aceFatigue) = IS_MOD_LOADED(ace_advanced_fatigue);
