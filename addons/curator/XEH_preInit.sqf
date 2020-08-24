@@ -43,11 +43,20 @@ if (isServer) then {
         params ["_unit"];
         if !(isPlayer _unit) exitWith {};
 
-        INFO_1("Assigning Zeus to '%1'", _unit);
+        INFO_1("Assigning Zeus to '%1'",_unit);
 
         private _curatorModule = [_unit] call FUNC(getFreeCuratorModule);
         unassignCurator getAssignedCuratorLogic _unit;
-        _unit assignCurator _curatorModule;
+
+        // Curator unassign can take a moment, add delay
+        [{}, {}, [_unit, _curatorModule] , 5, {
+            params ["_unit", "_curatorModule"];
+
+            _unit assignCurator _curatorModule;
+
+            [QGVAR(zeusAssigned), _curatorModule, _unit] call CBA_fnc_targetEvent;
+        }] call CBA_fnc_waitUntilAndExecute;
+
     }] call CBA_fnc_addEventHandler;
 
     // Unassign curator on demand
@@ -60,6 +69,31 @@ if (isServer) then {
         private _curatorModule = getAssignedCuratorLogic _unit;
         if (_curatorModule isEqualTo objNull) exitWith {};
         unassignCurator _curatorModule;
+    }] call CBA_fnc_addEventHandler;
+
+    // Activate Zeus addons
+    [QGVAR(zeusActivateAddons), {
+        params ["_curatorModule", "_addons"];
+
+        INFO_1("Activating curator addons - '%1'",_curatorModule);
+
+        _curatorModule addCuratorAddons _addons;
+    }] call CBA_fnc_addEventHandler;
+};
+
+if (hasInterface) then {
+    [QGVAR(zeusAssigned), {
+        params ["_curatorModule"];
+
+        INFO_1("Assigned Curator '%1'",_curatorModule);
+
+        private _allAddons = ("true" configClasses (configFile >> "CfgPatches")) apply {configName _x};
+        [QGVAR(zeusActivateAddons), [_curatorModule, _allAddons]] call CBA_fnc_serverEvent;
+
+        if !(_curatorModule getVariable [QGVAR(drawCuratorLocations), false]) then {
+            _curatorModule setVariable [QGVAR(drawCuratorLocations), true];
+            [_curatorModule] call BIS_fnc_drawCuratorLocations;
+        };
     }] call CBA_fnc_addEventHandler;
 };
 
