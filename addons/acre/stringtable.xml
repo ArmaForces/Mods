@@ -26,8 +26,8 @@
             <Polish>Nazwy kanałów per strona</Polish>
         </Key>
         <Key ID="STR_AFM_Acre_PerSideChannelNames_Description">
-            <English>Each side will have it's own channel names. If disabled, BLUFOR channel names are used. Requires mission restart to change.</English>
-            <Polish>Każda strona będzie miała swoje nazwy kanałów. Jeżeli wyłączone to używane są nazwy kanałów BLUFORu. Zmiana wymaga restartu misji.</Polish>
+            <English>Each side will have it's own channel names. If disabled, CIVILIAN channel names are used. Requires Per Side Radios enabled. Requires mission restart to change.</English>
+            <Polish>Każda strona będzie miała swoje nazwy kanałów. Jeżeli wyłączone to używane są nazwy kanałów Cywili. Wymaga kanałów per strona. Zmiana wymaga restartu misji.</Polish>
         </Key>
         <Key ID="STR_AFM_Acre_SideChannelNames">
             <English>%1 Channel Names</English>

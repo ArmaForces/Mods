@@ -18,4 +18,4 @@
 
 params ["_side", "_channelNumber"];
 
-format ["%1_%2ChannelName%3", QUOTE(ADDON), _side, _channelNumber];
+format ["%1_%2ChannelName%3", QUOTE(ADDON), _side, _channelNumber]
