@@ -17,7 +17,7 @@
  * Public: No
  */
 
-params ["", "_vehicle", "_pos"];
+params ["", "", "_vehicle", "_pos"];
 
 private _leader = leader group player;
 
