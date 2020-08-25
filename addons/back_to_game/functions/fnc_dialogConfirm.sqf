@@ -21,6 +21,7 @@ player allowDamage false;
 [{player allowDamage true}, [], 5] call CBA_fnc_waitAndExecute;
 player playAction "PlayerProne";
 player setUnitLoadout (GVAR(savegameData) select 0);
+[player] join (GVAR(savegameData) select 1); // Join player back to group
 
 [QGVAR(teleportPlayer), GVAR(savegameData)] call CBA_fnc_localEvent;
 

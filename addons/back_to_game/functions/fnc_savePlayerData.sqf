@@ -21,7 +21,7 @@ params ["_unit", "_uid"];
 // Save player's loadout, vehicle and position
 private _loadout = getUnitLoadout _unit;
 private _pos = getPosATL _unit;
-GVAR(disconnectedPlayers) setVariable [_uid, [_loadout, vehicle _unit, _pos]];
+GVAR(disconnectedPlayers) setVariable [_uid, [_loadout, group _unit, vehicle _unit, _pos]];
 
 INFO_2("%1 UID: %2 disconnected, saved data.",name _unit,_uid);
 
