@@ -1,6 +1,15 @@
 ## ACRE
 
-Standard ArmaForces ACRE framework for missions
+Standard ArmaForces ACRE framework for missions.
+
+## Mission modules out, CBA settings is my best friend
+
+No more modules in mission. These things can now be set up through settings:
+
+- Babel
+- Radios per side
+- Channel names
+- Channel names per side
 
 ### Authors
 
