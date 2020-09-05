@@ -38,7 +38,7 @@ _missionsButton ctrlSetPosition [
     _offsetH
 ];
 _missionsButton ctrlEnable (_displayName != 'RscDisplayRemoteMissions') && {IS_ADMIN};
-_missionsButton ctrlSetText "Missions";
+_missionsButton ctrlSetText LLSTRING(Missions);
 _missionsButton ctrlCommit 0;
 
 _passwordInput ctrlSetPosition [
