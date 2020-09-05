@@ -42,4 +42,4 @@
     true
 ] call CBA_fnc_addSetting;
 
-#include "initSettingsChannelNames.sqf"
+#include "initSettingsChannelNames.sqf.h"

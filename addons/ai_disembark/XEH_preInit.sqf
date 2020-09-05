@@ -2,7 +2,7 @@
 ADDON = false;
 #include "XEH_PREP.hpp"
 
-#include "initSettings.sqf"
+#include "initSettings.sqf.h"
 
 ["CAManBase", "GetOutMan", {
     _this call FUNC(onDisembark);

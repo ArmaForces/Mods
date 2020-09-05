@@ -5,6 +5,6 @@ if (!EGVAR(common,acre)) exitWith {};
 
 #include "XEH_PREP.hpp"
 
-#include "initSettings.sqf"
+#include "initSettings.sqf.h"
 
 ADDON = true;

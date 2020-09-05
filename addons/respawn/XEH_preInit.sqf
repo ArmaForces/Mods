@@ -2,7 +2,7 @@
 ADDON = false;
 #include "XEH_PREP.hpp"
 
-#include "initSettings.sqf"
+#include "initSettings.sqf.h"
 
 if (hasInterface) then {
     // Save current time delay in case it changes (to adjust remaining respawn time)
