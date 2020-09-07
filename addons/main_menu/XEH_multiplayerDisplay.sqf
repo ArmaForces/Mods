@@ -28,11 +28,12 @@ private _passwordInput  = _display ctrlCreate ["RscEdit", -1];
 private _passwordButton = _display ctrlCreate ["RscButtonMenu", -1];
 private _missionsButton = _display ctrlCreate ["RscButtonMenu", -1];
 
+#define BUTTON_SPACING (0.1 * GUI_GRID_W)
 #define BUTTON_W _offsetW
-#define MP_PWD_INPUT_X (_baseX + BUTTON_W * 2 + (0.25 * GUI_GRID_W))
+#define MP_PWD_INPUT_X (_baseX + BUTTON_W * 2 + (2 * BUTTON_SPACING))
 
 _missionsButton ctrlSetPosition [
-    _baseX + BUTTON_W + (0.1 * GUI_GRID_W),
+    _baseX + BUTTON_W + BUTTON_SPACING,
     _baseY,
     BUTTON_W,
     _offsetH
@@ -44,7 +45,7 @@ _missionsButton ctrlCommit 0;
 _passwordInput ctrlSetPosition [
     MP_PWD_INPUT_X,
     _baseY,
-    _rightBorder - MP_PWD_INPUT_X - BUTTON_W,
+    _rightBorder - MP_PWD_INPUT_X - BUTTON_W - BUTTON_SPACING,
     _offsetH //+ pixelH
 ];
 _passwordButton ctrlSetPosition [
