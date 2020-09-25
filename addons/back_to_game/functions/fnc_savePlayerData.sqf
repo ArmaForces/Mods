@@ -21,6 +21,13 @@ params ["_unit", "_uid"];
 // Save player's loadout, vehicle and position
 private _loadout = getUnitLoadout _unit;
 private _pos = getPosATL _unit;
+if (EGVAR(common,aceHearing)) then {
+    // Add earplugs to uniform if player has them plugged in
+    if (_unit call ACEFUNC(hearing,hasEarPlugsIn) && {!((_loadout select 3) isEqualTo [])}) then {
+        ((_loadout select 3) select 1) pushBack ["ACE_EarPlugs", 1];
+    };
+};
+
 GVAR(disconnectedPlayers) setVariable [_uid, [_loadout, group _unit, vehicle _unit, _pos]];
 
 INFO_2("%1 UID: %2 disconnected, saved data.",name _unit,_uid);
