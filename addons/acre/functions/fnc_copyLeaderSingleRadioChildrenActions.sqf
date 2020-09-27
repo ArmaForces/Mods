@@ -29,9 +29,9 @@ private _actions = [];
         // Display frequency if single-channel radio (eg. AN/PRC-77)
         private _txData = [_x, "getCurrentChannelData"] call acre_sys_data_fnc_dataEvent;
         private _leaderFreq = _txData getVariable "frequencyTX";
-        _displayName = format ["Set to freq: %1 MHz", _leaderFreq];
+        _displayName = format [LLSTRING(SetToFrequency), _leaderFreq];
     } else {
-        _displayName = format ["Set to chn: %1", _leaderRadioChannel];
+        _displayName = format [LLSTRING(SetToChannel), _leaderRadioChannel];
     };
 
     // TODO support radios without channels

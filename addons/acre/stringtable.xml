@@ -41,5 +41,17 @@
             <English>Channel %1 name. Requires mission restart to change.</English>
             <Polish>Nazwa kanału %1. Zmiana wymaga restartu misji.</Polish>
         </Key>
+        <Key ID="STR_AFM_Acre_CopyLeaderRadio">
+            <English>Copy leader radio settings</English>
+            <Polish>Skopiuj ustawienia radia od dowódcy</Polish>
+        </Key>
+        <Key ID="STR_AFM_Acre_SetToChannel">
+            <English>Set to chn: %1</English>
+            <Polish>Ustaw kanał: %1</Polish>
+        </Key>
+        <Key ID="STR_AFM_Acre_SetToFrequency">
+            <English>Set to freq: %1 MHz</English>
+            <Polish>Ustaw częst.: %1 MHz</Polish>
+        </Key>
     </Package>
 </Project>
