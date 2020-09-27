@@ -12,7 +12,7 @@ if (EGVAR(common,aceInteractMenu)) then {
         QGVAR(copyLeaderRadio),
         LLSTRING(CopyLeaderRadio),
         ICON_RADIO_CALL,
-        nil,
+        {},
         {
             private _leader = leader _player;
             _player != _leader
