@@ -14,4 +14,14 @@ if (isServer) then {
     GVAR(saveHandlers) = [];
 };
 
+if (EGVAR(common,aceHearing)) then {
+    [
+        {_this getVariable ["ACE_hasEarPlugsIn", false]},
+        {
+            params ["_player", "_hasEarPlugsIn"];
+            _player setVariable ["ACE_hasEarPlugsIn", _hasEarPlugsIn, true];
+        }
+    ] call FUNC(addHandler);
+};
+
 ADDON = true;
