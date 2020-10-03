@@ -1,3 +1,4 @@
+PREP(addSaveHandler);
 PREP(handleConnected);
 PREP(handleTeleport);
 PREP(dialogConfirm);
