@@ -41,5 +41,17 @@
             <English>Channel %1 name. Requires mission restart to change.</English>
             <Polish>Nazwa kanału %1. Zmiana wymaga restartu misji.</Polish>
         </Key>
+        <Key ID="STR_AFM_Acre_AddArsenalCategory">
+            <English>Add arsenal category</English>
+            <Polish>Dodaj kategorie w arsenale</Polish>
+        </Key>
+        <Key ID="STR_AFM_Acre_AddArsenalCategory_Description">
+            <English>Add category with ACRE radios to ACE Arsenal.</English>
+            <Polish>Dodaj kategorię z radiami ACRE do arsenału ACE.</Polish>
+        </Key>
+        <Key ID="STR_AFM_Acre_ArsenalCategory">
+            <English>Radios</English>
+            <Polish>Radia</Polish>
+        </Key>
     </Package>
 </Project>
