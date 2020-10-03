@@ -12,9 +12,9 @@
  *
  * Example:
  * [
- *     {_this getVariable ["ACE_hasEarPlugsIn", true]},
+ *     {_this getVariable ["ACE_hasEarPlugsIn", false]},
  *     {(_this select 0) setVariable ["ACE_hasEarPlugsIn", (_this select 1), true]}
- * ] call afm_back_to_game_fnc_addSaveHandler
+ * ] call afm_back_to_game_fnc_addHandler
  *
  * Public: No
  */
