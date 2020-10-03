@@ -19,21 +19,21 @@ if (_taskPosition isEqualTo [] && {_taskObject isEqualTo "" && {_taskMarker isEq
 
 private _destination = objNull;
 
-if (!(_taskMarker isEqualTo "")) then {
+if (_taskMarker isNotEqualTo "") then {
     private _markerPos = getMarkerPos _taskMarker;
-    if (!(_markerPos isEqualTo [0, 0, 0])) exitWith {_destination = _markerPos};
+    if (_markerPos isNotEqualTo [0, 0, 0]) exitWith {_destination = _markerPos};
     WARNING_1("Marker %1 does not exist!", _taskMarker);
 };
 
 // destination can contain an array, isNull can't be used
-if (_destination isEqualTo objNull && {!(_taskObject isEqualTo "")}) then {
+if (_destination isEqualTo objNull && {_taskObject isNotEqualTo ""}) then {
     private _object = missionNamespace getVariable [_taskObject, objNull];
     if (!isNull _object) exitWith {_destination = _object};
     WARNING_1("Object %1 does not exist!", _taskObject);
 };
 
 // destination can contain an array, isNull can't be used
-if (_destination isEqualTo objNull && {!(_taskPosition isEqualTo [])}) then {
+if (_destination isEqualTo objNull && {_taskPosition isNotEqualTo []}) then {
     private _coordinatesCount = count _taskPosition;
     if (_coordinatesCount isEqualTo 3) exitWith {_destination = _taskPosition};
     if (_coordinatesCount isEqualTo 2) exitWith {_destination = _taskPosition; _destination pushBack 0};

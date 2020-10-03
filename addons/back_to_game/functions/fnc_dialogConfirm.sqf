@@ -26,7 +26,7 @@ player playAction "PlayerProne";
 }] call CBA_fnc_waitUntilAndExecute;
 
 private _oldGroup = GVAR(savegameData) select 1;
-if (!(group player isEqualTo _oldGroup) && {!isNull _oldGroup}) then {
+if ((group player isNotEqualTo _oldGroup) && {!isNull _oldGroup}) then {
     // Join player back to group
     [player] join _oldGroup;
 };

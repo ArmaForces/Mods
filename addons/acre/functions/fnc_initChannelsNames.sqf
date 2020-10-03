@@ -44,7 +44,7 @@ private _targetSide = [[_sourceSide], [WEST, EAST, INDEPENDENT, CIVILIAN]] selec
         private _variableName = [_sourceSide, _channelNumber] call FUNC(getSideChannelNumberVariableName);
         private _channelName = missionNamespace getVariable [_variableName, ""];
         // If not empty, set
-        if (!(_channelName isEqualTo "")) then {
+        if (_channelName isNotEqualTo "") then {
             TRACE_4("Setting %4 label for radio %1 preset %2 channel number %3",_x,DEFAULT_PRESET_NAME,_channelNumber,_channelName);
             {
                 [_x, _presetName, _channelNumber, "label", _channelName] call acre_api_fnc_setPresetChannelField;
