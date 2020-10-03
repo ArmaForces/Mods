@@ -2,18 +2,23 @@
 
 if (!GVAR(loggingEnabled)) exitWith {};
 
+INFO("Friendly fire logging enabled");
+
 if (hasInterface) then {
-    GVAR(ehId) = player addEventHandler ["Hit", {
-        params ["_target", "_shooter"];
+    [{!isNull player}, {
+        INFO("Adding friendly fire EH");
+        GVAR(ehId) = player addEventHandler ["Hit", {
+            params ["_target", "_shooter"];
 
-        if (
-            !isPlayer _shooter
-            || {side group _target != side group _shooter
-            || {_target isEqualTo _shooter}}
-        ) exitWith {};
+            if (
+                !isPlayer _shooter
+                || {side group _target != side group _shooter
+                || {_target isEqualTo _shooter}}
+            ) exitWith {};
 
-        [QGVAR(friendlyFire), [_target, _shooter, vehicle _shooter]] call CBA_fnc_globalEvent;
-    }];
+            [QGVAR(friendlyFire), [_target, _shooter, vehicle _shooter]] call CBA_fnc_globalEvent;
+        }];
+    }] call CBA_fnc_waitUntilAndExecute;
 };
 
 [QGVAR(friendlyFire), {

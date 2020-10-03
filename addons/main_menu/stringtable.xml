@@ -20,5 +20,9 @@
             <English>Password</English>
             <Polish>Hasło</Polish>
         </Key>
+        <Key ID="STR_AFM_Main_Menu_Missions">
+            <English>Missions</English>
+            <Polish>Misje</Polish>
+        </Key>
     </Package>
 </Project>

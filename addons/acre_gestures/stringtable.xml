@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="AFM">
+    <Package name="ACRE_Gestures">
+        <Key ID="STR_AFM_ACRE_Gestures_DisplayName">
+            <English>ArmaForces - ACRE (ACE) Gestures</English>
+            <Polish>ArmaForces - ACRE (ACE) Gesty</Polish>
+        </Key>
+        <Key ID="STR_AFM_ACRE_Gestures_Enabled">
+            <English>Gestures enabled</English>
+            <Polish>Gesty włączone</Polish>
+        </Key>
+        <Key ID="STR_AFM_ACRE_Gestures_Enabled_Description">
+            <English>Player character will do radio releated animations while using the ACRE radios.</English>
+            <Polish>Postać gracza będzie odgrywać animacje używania radia gdy będzie używane radio z ACRE.</Polish>
+        </Key>
+        <Key ID="STR_AFM_ACRE_Gestures_AllowADS">
+            <English>Allow aiming aown the sights (ADS)</English>
+            <Polish>Zezwalaj na celowanie przez przyrządy (ADS)</Polish>
+        </Key>
+        <Key ID="STR_AFM_ACRE_Gestures_AllowADS_Description">
+            <English>Sets if player can use weapon sights while using the radio.</English>
+            <Polish>Określa czy gracz może korzystać z przyrządów celowniczych podczas używania radia.</Polish>
+        </Key>
+    </Package>
+</Project>

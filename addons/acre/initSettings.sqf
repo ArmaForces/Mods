@@ -31,6 +31,17 @@
     true
 ] call CBA_fnc_addSetting;
 
+[
+    QGVAR(perSideChannelNames),
+    "CHECKBOX",
+    [LSTRING(PerSideChannelNames), LSTRING(PerSideChannelNames_Description)],
+    LSTRING(DisplayName),
+    false,
+    1,
+    {},
+    true
+] call CBA_fnc_addSetting;
+
 if (EGVAR(common,aceArsenal)) then {
     [
         QGVAR(addArsenalCategory),
@@ -43,3 +54,5 @@ if (EGVAR(common,aceArsenal)) then {
         true
     ] call CBA_fnc_addSetting;
 };
+
+#include "initSettingsChannelNames.sqf"
