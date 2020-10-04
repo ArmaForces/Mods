@@ -1,5 +1,6 @@
 PREP(addHandler);
 PREP(handleConnected);
+PREP(handleDisconnected);
 PREP(handleTeleport);
 PREP(dialogConfirm);
 PREP(dialogReject);

@@ -29,6 +29,14 @@
             <English>Allow player teleportation to his last vehicle or group leader vehicle.</English>
             <Polish>Pozwól na teleportację do ostatniego pojazdu lub do pojazdu dowódcy.</Polish>
         </Key>
+        <Key ID="STR_AFM_Back_To_Game_RemoveBody">
+            <English>Remove body</English>
+            <Polish>Usuń ciało</Polish>
+        </Key>
+        <Key ID="STR_AFM_Back_To_Game_RemoveBody_Description">
+            <English>Removes bodies of alive people who disconnected.</English>
+            <Polish>Usuwa ciała żywych graczy, którzy wyszli z gry.</Polish>
+        </Key>
         <Key ID="STR_AFM_Back_To_Game_TeleportAsk">
             <English>Looks like you were disconnected from the server. Teleport back to action?</English>
             <Polish>Chyba wyrzuciło Cię z serwera. Teleport z powrotem?</Polish>
