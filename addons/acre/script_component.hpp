@@ -12,3 +12,5 @@
 #endif
 
 #include "\z\afm\addons\main\script_macros.hpp"
+
+#define ICON_RADIO_CALL "\a3\Ui_f\data\GUI\Cfg\CommunicationMenu\call_ca.paa"
