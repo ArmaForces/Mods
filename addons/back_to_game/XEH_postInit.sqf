@@ -8,7 +8,7 @@ if (isServer) then {
     addMissionEventHandler ["HandleDisconnect", {
         params ["_unit", "_id", "_uid", "_name"];
         if !GVAR(enableAddon) exitWith {};
-        [_unit, _uid] call FUNC(savePlayerData);
+        [_unit, _uid] call FUNC(handleDisconnected);
         // To prevent AI transfer to server
         false
     }];
