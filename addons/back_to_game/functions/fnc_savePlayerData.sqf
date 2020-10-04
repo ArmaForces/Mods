@@ -30,6 +30,6 @@ INFO_2("%1 UID: %2 disconnected, saved data.",name _unit,_uid);
 if (GVAR(removeBody) && {alive _unit}) then {
     INFO_1("Removing body of %1",name _unit);
     deleteVehicle _unit;
-}
+};
 
 nil
