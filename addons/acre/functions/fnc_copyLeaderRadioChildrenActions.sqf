@@ -7,7 +7,7 @@
  * 0: Unit to copy radio settings from it's leader <OBJECT>
  *
  * Return Value:
- * List of actions with radios that are both on target an his leader <ARRAY>
+ * List of actions with radios that are both on target and his leader <ARRAY>
  *
  * Example:
  * [player] call afm_acre_fnc_copyLeaderRadioChildrenActions
