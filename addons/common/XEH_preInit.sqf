@@ -10,6 +10,7 @@ GVAR(aceMedical) = IS_MOD_LOADED(ace_medical_engine);
 GVAR(aceTagging) = IS_MOD_LOADED(ace_tagging);
 GVAR(aceFinger) = IS_MOD_LOADED(ace_finger);
 GVAR(aceHearing) = IS_MOD_LOADED(ace_hearing);
+GVAR(aceArsenal) = IS_MOD_LOADED(ace_arsenal);
 GVAR(acre) = IS_MOD_LOADED(acre_main);
 
 if (isServer) then {
