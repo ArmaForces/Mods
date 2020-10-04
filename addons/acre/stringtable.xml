@@ -52,6 +52,17 @@
         <Key ID="STR_AFM_Acre_SetToFrequency">
             <English>Set to freq: %1 MHz</English>
             <Polish>Ustaw częst.: %1 MHz</Polish>
+        <Key ID="STR_AFM_Acre_AddArsenalCategory">
+            <English>Add arsenal category</English>
+            <Polish>Dodaj kategorie w arsenale</Polish>
+        </Key>
+        <Key ID="STR_AFM_Acre_AddArsenalCategory_Description">
+            <English>Add category with ACRE radios to ACE Arsenal.</English>
+            <Polish>Dodaj kategorię z radiami ACRE do arsenału ACE.</Polish>
+        </Key>
+        <Key ID="STR_AFM_Acre_ArsenalCategory">
+            <English>Radios</English>
+            <Polish>Radia</Polish>
         </Key>
     </Package>
 </Project>
