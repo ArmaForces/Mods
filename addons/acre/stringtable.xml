@@ -52,6 +52,7 @@
         <Key ID="STR_AFM_Acre_SetToFrequency">
             <English>Set to freq: %1 MHz</English>
             <Polish>Ustaw częst.: %1 MHz</Polish>
+        </Key>
         <Key ID="STR_AFM_Acre_AddArsenalCategory">
             <English>Add arsenal category</English>
             <Polish>Dodaj kategorie w arsenale</Polish>
