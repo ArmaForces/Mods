@@ -1,17 +1,20 @@
 #include "script_component.hpp"
 /*
- * Author: <author>
- * Function description
+ * Author: veteran29
+ * Get child actions with list of certain radio type channels that can be copied from leader.
  *
  * Arguments:
- * 0: Objects <ARRAY>
- * 1: All <BOOL>
+ * 0: Unit to set radio channels on <OBJECT>
+ * 1: Unused
+ * 2: Radio data arguments <ARRAY>
+ *  0: Unit unique radio class <STRING>
+ *  1: List of unique radio classes that channels can be copied from <ARRAY>
  *
  * Return Value:
- * None
+ * List of actions with leader channels that can be set on parent node radio <ARRAY>
  *
  * Example:
- * [[bob, ted], false] call afm_main_fnc_example
+ * [player, nil, ["ACRE_PRC343_ID1", ["ACRE_PRC343_ID2", "ACRE_PRC343_ID3"]]] call afm_acre_fnc_copyLeaderSingleRadioChildrenActions
  *
  * Public: No
  */

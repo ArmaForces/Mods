@@ -1,13 +1,13 @@
 #include "script_component.hpp"
 /*
  * Author: veteran29, ACRE2Team
- * Get child actios to copy radio settings from leader, based on ACRE2 fnc_radioListChildrenActions function.
+ * Get child actions to copy radio settings from leader, based on ACRE2 fnc_radioListChildrenActions function.
  *
  * Arguments:
  * 0: Unit to copy radio settings from it's leader <OBJECT>
  *
  * Return Value:
- * List of actions <ARRAY>
+ * List of actions with radios that are both on target an his leader <ARRAY>
  *
  * Example:
  * [player] call afm_acre_fnc_copyLeaderRadioChildrenActions

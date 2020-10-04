@@ -10,10 +10,9 @@ class CfgPatches {
             "afm_common"
         };
         author = "ArmaForces";
-        authors[] = {"3Mydlo3"};
+        authors[] = {"3Mydlo3", "veteran29"};
         VERSION_CONFIG;
     };
 };
-
 
 #include "CfgEventHandlers.hpp"
