@@ -1,7 +1,7 @@
 #include "script_component.hpp"
 /*
  * Author: veteran29
- * Returns formatted radio display name with channels/mhZ.
+ * Returns formatted radio display name with channels/MHz.
  *
  * Arguments:
  * 0: Unique radio ID <STRING>

@@ -4,14 +4,13 @@
  * Get child actios to copy radio settings from leader, based on ACRE2 fnc_radioListChildrenActions function.
  *
  * Arguments:
- * 0: Objects <ARRAY>
- * 1: All <BOOL>
+ * 0: Unit to copy radio settings from it's leader <OBJECT>
  *
  * Return Value:
- * None
+ * List of actions <ARRAY>
  *
  * Example:
- * [[bob, ted], false] call afm_main_fnc_example
+ * [player] call afm_acre_fnc_copyLeaderRadioChildrenActions
  *
  * Public: No
  */
