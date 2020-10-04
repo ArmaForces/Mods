@@ -24,3 +24,12 @@
     true,
     true
 ] call CBA_fnc_addSetting;
+
+[
+    QGVAR(removeBody),
+    "CHECKBOX",
+    [LSTRING(RemoveBody), LSTRING(RemoveBody_Description)],
+    LSTRING(DisplayName),
+    true,
+    true
+] call CBA_fnc_addSetting;
