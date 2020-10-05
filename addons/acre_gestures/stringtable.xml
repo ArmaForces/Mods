@@ -14,7 +14,7 @@
             <Polish>Postać gracza będzie odgrywać animacje używania radia gdy będzie używane radio z ACRE.</Polish>
         </Key>
         <Key ID="STR_AFM_ACRE_Gestures_AllowADS">
-            <English>Allow aiming aown the sights (ADS)</English>
+            <English>Allow aiming down the sights (ADS)</English>
             <Polish>Zezwalaj na celowanie przez przyrządy (ADS)</Polish>
         </Key>
         <Key ID="STR_AFM_ACRE_Gestures_AllowADS_Description">
