@@ -16,9 +16,9 @@ class Extended_PostInit_EventHandlers {
 
 class Extended_DisplayLoad_EventHandlers {
     class RscDisplayRemoteMissions {
-        init = QUOTE(ARR_2([_this select 0, 'RscDisplayRemoteMissions']) call COMPILE_FILE(XEH_multiplayerDisplay));
+        ADDON = QUOTE(ARR_2([_this select 0, 'RscDisplayRemoteMissions']) call COMPILE_FILE(XEH_multiplayerDisplay));
     };
     class RscDisplayMultiplayerSetup {
-        init = QUOTE(ARR_2([_this select 0, 'RscDisplayMultiplayerSetup']) call COMPILE_FILE(XEH_multiplayerDisplay));
+        ADDON = QUOTE(ARR_2([_this select 0, 'RscDisplayMultiplayerSetup']) call COMPILE_FILE(XEH_multiplayerDisplay));
     };
 };
