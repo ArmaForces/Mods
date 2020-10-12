@@ -6,15 +6,17 @@ class RscPictureKeepAspect;
 #define DISPLAY_LOADING_ADD_BG(displayClass) class displayClass: RscStandardDisplay { \
     class controls { \
         class LoadingStart: RscControlsGroup { \
+            class VScrollbar {\
+                width = 0; \
+            }; \
             class controls { \
                 class GVAR(background): RscPictureKeepAspect { \
                     idc = IDC_LOADINGSTART_CUSTOM_BG; \
                     text = QPATHTOF(ui\loading\0_co.paa); \
-                    colorBackground[] = {0,0,0,0}; \
                     x = 0; \
-                    y = 0; \
+                    y = "-(0.5 * safezoneH)"; \
                     w = "safezoneW"; \
-                    h = "safezoneH"; \
+                    h = "2 * safezoneH"; \
                 }; \
                 class GVAR(lines): RscPicture { \
                     text = "\A3\Ui_f\data\IGUI\RscTitles\SplashArma3\arma3_splashNoise_ca.paa"; \
