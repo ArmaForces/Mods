@@ -14,8 +14,14 @@ class GVAR(CfgLoadingScreen) {
         LOADING_SCREEN_CLASS(rhs_1,ARR_2(Mikeboss, JurijPietrowicz));
         LOADING_SCREEN_CLASS(rhs_2,<unknown>);
         LOADING_SCREEN_CLASS(rhs_3,<unknown>);
+        LOADING_SCREEN_CLASS(rhs_4,ARR_2(Norek, Nomus));
+        LOADING_SCREEN_CLASS(rhs_5,Bolec);
+        LOADING_SCREEN_CLASS(rhs_6,Bolec);
         LOADING_SCREEN_CLASS(vanilla_0,PanAnonim);
         LOADING_SCREEN_CLASS(other_0,Monk[e]y);
         LOADING_SCREEN_CLASS(other_1,Monk[e]y);
+        LOADING_SCREEN_CLASS(unsung_0,<unknown>);
+        LOADING_SCREEN_CLASS(unsung_1,3Mydlo3);
+        LOADING_SCREEN_CLASS(postapo_0,Monk[e]y);
     };
 };
