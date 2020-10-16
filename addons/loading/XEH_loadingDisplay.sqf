@@ -44,14 +44,14 @@ switch (systemTime select 1) do {
 _picture ctrlCommit 0;
 
 private _ctrlBg = _display displayctrl IDC_LOADINGSTART_CUSTOM_BG;
-private _background = uiNamespace getVariable [QGVAR(background), ""];
-if (_background == "") then {
-    _background = format [QPATHTOF(ui\loading\%1_co.paa), floor random 11];
-    uiNamespace setVariable [QGVAR(background), _background];
-    TRACE_1("Loading background",_background);
+private _backgroundCfg = uiNamespace getVariable [QGVAR(backgroundCfg), configNull];
+if (isNull _backgroundCfg) then {
+    _backgroundCfg = selectRandom ("true" configClasses (CFG_LOADING_SCREEN >> "Backgrounds"));
+    uiNamespace setVariable [QGVAR(backgroundCfg), _backgroundCfg];
+    TRACE_1("Loading background",_backgroundCfg);
 };
 
-_ctrlBg ctrlSetText _background;
+_ctrlBg ctrlSetText getText (_backgroundCfg >> "path");
 _ctrlBg ctrlCommit 0;
 
 nil

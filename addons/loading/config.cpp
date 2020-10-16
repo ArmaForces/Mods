@@ -16,4 +16,5 @@ class CfgPatches {
 };
 
 #include "CfgEventHandlers.hpp"
+#include "CfgLoadingScreen.hpp"
 #include "gui.hpp"

@@ -14,3 +14,4 @@
 #include "\z\afm\addons\main\script_macros.hpp"
 
 #define IDC_LOADINGSTART_CUSTOM_BG 657001
+#define CFG_LOADING_SCREEN (configFile >> QGVAR(CfgLoadingScreen))
