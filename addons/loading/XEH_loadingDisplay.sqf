@@ -21,31 +21,27 @@ private _width = _size * safezoneW;
 private _height = _size * safezoneH * (getResolution select 4);
 
 private _picture = _display ctrlCreate ["RscPicture", -1];
-
 _picture ctrlSetPosition [
     safezoneX,
     safezoneY + safeZoneH - _height,
     _width, _height
 ];
-_picture ctrlCommit 0;
-if (productVersion select 2 > 199) then {
-    switch (systemTime select 1) do {
-        case 10: {
-            _picture ctrlSetText QPATHTOF(ui\logo_256_oct_ca.paa);
-        };
-        case 12: {
-            _picture ctrlSetText QPATHTOF(ui\logo_256_dec_ca.paa);
-        };
-        // case TODO_EASTER: {
-        //     _picture ctrlSetText QPATHTOF(ui\logo_256_easter_ca.paa);
-        // };
-        default {
-            _picture ctrlSetText QPATHTOF(ui\logo_256_ca.paa);
-        };
+
+switch (systemTime select 1) do {
+    case 10: {
+        _picture ctrlSetText QPATHTOF(ui\logo_256_oct_ca.paa);
     };
-} else {
-    _picture ctrlSetText QPATHTOF(ui\logo_256_ca.paa);
+    case 12: {
+        _picture ctrlSetText QPATHTOF(ui\logo_256_dec_ca.paa);
+    };
+    // case TODO_EASTER: {
+    //     _picture ctrlSetText QPATHTOF(ui\logo_256_easter_ca.paa);
+    // };
+    default {
+        _picture ctrlSetText QPATHTOF(ui\logo_256_ca.paa);
+    };
 };
+_picture ctrlCommit 0;
 
 private _ctrlBg = _display displayctrl IDC_LOADINGSTART_CUSTOM_BG;
 private _background = uiNamespace getVariable [QGVAR(background), ""];
