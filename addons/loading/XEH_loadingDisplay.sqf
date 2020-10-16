@@ -54,4 +54,17 @@ if (isNull _backgroundCfg) then {
 _ctrlBg ctrlSetText getText (_backgroundCfg >> "path");
 _ctrlBg ctrlCommit 0;
 
+private _loadingLabel = _display ctrlCreate ["RscStructuredText", -1];
+_loadingLabel ctrlSetPosition [0, 0, 1, 1];
+_loadingLabel ctrlSetText format ["Author: %1", getText (_backgroundCfg >> "author")];
+_loadingLabel ctrlCommit 0;
+
+_loadingLabel ctrlSetPosition [
+    safezoneX + safeZoneW - ctrlTextWidth _loadingLabel,
+    safezoneY + safeZoneH - ctrlTextHeight _loadingLabel,
+    ctrlTextWidth _loadingLabel, ctrlTextHeight _loadingLabel
+];
+_loadingLabel ctrlCommit 0;
+
+
 nil
