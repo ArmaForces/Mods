@@ -33,4 +33,5 @@ class CfgMainMenuSpotlight {
 
     delete gm_campaign_01;
 
+    delete SP_FD14;
 };
