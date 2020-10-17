@@ -4,3 +4,4 @@ PREP(onModalOpen);
 PREP(onModalClose);
 PREP(createPlayerMarker);
 PREP(readConfigToNamespace);
+PREP(easterDate);
