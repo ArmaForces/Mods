@@ -1,4 +1,5 @@
 #include "script_component.hpp"
+#include "\a3\ui_f\hpp\defineResinclDesign.inc"
 /*
  * Author: veteran29
  * Initializes loading screen display and adds ArmaForces branding.
@@ -54,17 +55,17 @@ if (isNull _backgroundCfg) then {
 _ctrlBg ctrlSetText getText (_backgroundCfg >> "path");
 _ctrlBg ctrlCommit 0;
 
-private _loadingLabel = _display ctrlCreate ["RscStructuredText", -1];
+private _ctrlGrpLoadingStart = _display displayctrl IDC_LOADINGSTART_LOADINGSTART;
+private _loadingLabel = _display ctrlCreate ["RscStructuredText", -1, _ctrlGrpLoadingStart];
 _loadingLabel ctrlSetPosition [0, 0, 1, 1];
 _loadingLabel ctrlSetText format [LLSTRING(Author), getText (_backgroundCfg >> "author")];
 _loadingLabel ctrlCommit 0;
 
 _loadingLabel ctrlSetPosition [
-    safezoneX + safeZoneW - ctrlTextWidth _loadingLabel,
-    safezoneY + safeZoneH - ctrlTextHeight _loadingLabel,
+    safeZoneW - ctrlTextWidth _loadingLabel,
+    safeZoneH - ctrlTextHeight _loadingLabel,
     ctrlTextWidth _loadingLabel, ctrlTextHeight _loadingLabel
 ];
 _loadingLabel ctrlCommit 0;
-
 
 nil
