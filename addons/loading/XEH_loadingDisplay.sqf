@@ -34,9 +34,9 @@ switch (systemTime select 1) do {
     case 12: {
         _picture ctrlSetText QPATHTOF(ui\logo_256_dec_ca.paa);
     };
-    // case TODO_EASTER: {
-    //     _picture ctrlSetText QPATHTOF(ui\logo_256_easter_ca.paa);
-    // };
+    case ([] call EFUNC(common,easterDate) select 1): {
+        _picture ctrlSetText QPATHTOF(ui\logo_256_easter_ca.paa);
+    };
     default {
         _picture ctrlSetText QPATHTOF(ui\logo_256_ca.paa);
     };
