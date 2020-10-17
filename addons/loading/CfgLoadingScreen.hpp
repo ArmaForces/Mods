@@ -6,6 +6,7 @@
 
 class GVAR(CfgLoadingScreen) {
     class Backgrounds {
+        LOADING_SCREEN_CLASS(cup_0,ARR_2(Norek, WINDOWS_95_SE));
         LOADING_SCREEN_CLASS(gm_0,Mikkeboss);
         LOADING_SCREEN_CLASS(ifa_0,Mikkeboss);
         LOADING_SCREEN_CLASS(ifa_1,Krystol);
