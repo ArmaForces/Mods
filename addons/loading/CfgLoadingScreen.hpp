@@ -21,7 +21,7 @@ class GVAR(CfgLoadingScreen) {
         LOADING_SCREEN_CLASS(vanilla_0,Monk[e]y);
         LOADING_SCREEN_CLASS(other_0,Monk[e]y);
         LOADING_SCREEN_CLASS(other_1,Monk[e]y);
-        LOADING_SCREEN_CLASS(unsung_0,<unknown>);
+        LOADING_SCREEN_CLASS(unsung_0,WINDOWS_95_SE);
         LOADING_SCREEN_CLASS(unsung_1,3Mydlo3);
         LOADING_SCREEN_CLASS(postapo_0,Monk[e]y);
     };
