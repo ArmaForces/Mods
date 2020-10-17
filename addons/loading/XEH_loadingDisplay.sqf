@@ -56,7 +56,7 @@ _ctrlBg ctrlCommit 0;
 
 private _loadingLabel = _display ctrlCreate ["RscStructuredText", -1];
 _loadingLabel ctrlSetPosition [0, 0, 1, 1];
-_loadingLabel ctrlSetText format ["Author: %1", getText (_backgroundCfg >> "author")];
+_loadingLabel ctrlSetText format [LLSTRING(Author), getText (_backgroundCfg >> "author")];
 _loadingLabel ctrlCommit 0;
 
 _loadingLabel ctrlSetPosition [

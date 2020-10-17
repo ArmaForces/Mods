@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="AFM">
+    <Package name="Loading">
+        <Key ID="STR_AFM_Loading_Author">
+            <English>Author: %1</English>
+            <Polish>Autor: %1</Polish>
+        </Key>
+    </Package>
+</Project>
