@@ -2,7 +2,9 @@
 
 if (is3DEN || !(EGVAR(common,aceFastroping))) exitWith {};
 
-["Helicopter", "init", {
-    if (!GVAR(autoAdd)) exitWith {};
-    _this call ACEFUNC(fastroping,equipFRIES);
-}, true, ["ACE_friesBase"], true] call CBA_fnc_addClassEventHandler;
+if (isServer) then {
+    ["Helicopter", "init", {
+        if (!GVAR(autoAdd)) exitWith {};
+        _this call ACEFUNC(fastroping,equipFRIES);
+    }, true, ["ACE_friesBase"], true] call CBA_fnc_addClassEventHandler;
+};
