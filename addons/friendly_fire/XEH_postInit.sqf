@@ -32,7 +32,7 @@ if (hasInterface) then {
             "Victim-Origin distance: ", _victim distance _origin
         ] joinString ""
     } else {
-        private _displayName = getText (configFile >> "CfgVehicles" >> typeOf _origin >> "displayName");
+        private _displayName = getText (configOf _origin >> "displayName");
         [
             _nl,
             _displayName, " shot at ", name _victim, _nl,
