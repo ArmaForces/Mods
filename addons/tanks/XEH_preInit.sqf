@@ -7,7 +7,7 @@ if (isServer || !hasInterface) then {
         if !(_this call FUNC(canHeat)) exitWith {};
         TRACE_1("Tank shot by AI, heating up",_this);
         params ["_vehicle"];
-        _vehicle setVariable [QGVAR(heatTime), CBA_missionTime + 60];
+        _vehicle setVariable [QGVAR(heatTime), CBA_missionTime + 30];
         // heat up the vehicle
         [QGVAR(heat), _vehicle] call CBA_fnc_globalEvent;
     }] call CBA_fnc_addClassEventHandler;
@@ -15,7 +15,8 @@ if (isServer || !hasInterface) then {
 
 if (hasInterface) then {
     [QGVAR(heat), {
-        _this setVehicleTiPars [1,1,1];
+        private _tiPars = getVehicleTiPars _this vectorAdd [0.2,0.2,0.2];
+        _this setVehicleTiPars _tiPars;
     }] call CBA_fnc_addEventHandler;
 };
 
