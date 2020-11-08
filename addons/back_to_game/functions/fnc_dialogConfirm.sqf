@@ -20,9 +20,12 @@ INFO("Teleportation confirmed!");
 player allowDamage false;
 [{player allowDamage true}, [], 5] call CBA_fnc_waitAndExecute;
 player playAction "PlayerProne";
-player setUnitLoadout (GVAR(savegameData) select 0);
-private _oldGroup = GVAR(savegameData) select 1;
+// wait for ACRE init if present
+[{!EGVAR(common,acre) || {[] call acre_api_fnc_isInitialized}}, {
+    player setUnitLoadout (GVAR(savegameData) select 0);
+}] call CBA_fnc_waitUntilAndExecute;
 
+private _oldGroup = GVAR(savegameData) select 1;
 if (!(group player isEqualTo _oldGroup) && {!isNull _oldGroup}) then {
     // Join player back to group
     [player] join _oldGroup;
