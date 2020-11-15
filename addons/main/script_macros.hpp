@@ -22,3 +22,6 @@
 
 // AFM macros
 #define IS_MOD_LOADED(modclass)     (isClass (configFile >> "CfgPatches" >> #modclass))
+
+// AFM Debug macros
+#include "\z\afm\addons\main\script_debug.hpp"
