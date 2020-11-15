@@ -8,3 +8,4 @@ PREP(stop);
 PREP(toggle);
 
 PREP(onDisplayLoad);
+PREP(addPlayerStatePanel);
