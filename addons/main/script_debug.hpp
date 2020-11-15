@@ -9,7 +9,9 @@
     #define LINKFUNC(x) {_this call FUNC(x)}
     #define PREP_RECOMPILE_ADD_BUTTON \
         if (isNil 'PREFIX##_PREP_RECOMPILE_BUTTON') then {\
-            [['Recomp. PREFIX', 'Recompile functions of PREFIX'], {call PREFIX##_PREP_RECOMPILE}] call EFUNC(debug_console,addButton);\
+            [{\
+                [['Recomp. PREFIX', 'Recompile functions of PREFIX'], {call PREFIX##_PREP_RECOMPILE}] call EFUNC(debug_console,addButton);\
+            }] call CBA_fnc_execNextFrame;\
             PREFIX##_PREP_RECOMPILE_BUTTON = true;\
         }
     #define PREP_RECOMPILE_START    if (isNil 'PREFIX##_PREP_RECOMPILE') then {PREFIX##_RECOMPILES = []; PREFIX##_PREP_RECOMPILE = {{call _x} forEach PREFIX##_RECOMPILES;}}; private _recomp = {
