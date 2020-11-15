@@ -81,5 +81,13 @@
             <English>Allows spectator to use third person camera.</English>
             <Polish>Pozwala obserwatorowi używać kamery trzecioosobowej.</Polish>
         </Key>
+        <Key ID="STR_AFM_Spectator_State_Alive">
+            <English>You're not dead (yet).</English>
+            <Polish>Nie jesteś martwy (jeszcze).</Polish>
+        </Key>
+        <Key ID="STR_AFM_Spectator_State_Dead">
+            <English>You're dead.</English>
+            <Polish>Jesteś martwy.</Polish>
+        </Key>
     </Package>
 </Project>

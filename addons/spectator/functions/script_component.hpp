@@ -1,1 +1,1 @@
-#include "\z\afm\addons\spectator\script_component.hpp"
+#include "..\script_component.hpp"
