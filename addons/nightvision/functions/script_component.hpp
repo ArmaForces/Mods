@@ -1,0 +1,1 @@
+#include "\z\afm\addons\nightvision\script_component.hpp"
