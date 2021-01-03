@@ -8,6 +8,7 @@ class CfgPatches {
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {};
         author = "ArmaForces";
+        authors[] = {"3Mydlo3"};
         VERSION_CONFIG;
     };
 };
