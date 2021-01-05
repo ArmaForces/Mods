@@ -10,8 +10,8 @@ files = [
 exclude = ["*.psd", "*.png", "*.tga"]
 
 modname = "armaforces_mods"
-keyname = "armaforces_mods_{{version}}"
-signame = "armaforces_mods_{{version}}"
+key_name = "armaforces_mods_{{version}}"
+sig_name = "armaforces_mods_{{version}}"
 
 releasebuild = [
     "!Set_version",
@@ -19,12 +19,8 @@ releasebuild = [
     "!Publish"
 ]
 
-# HEMTT >= 0.7 (unreleased)
-#[header_exts]
-#version = "{{git \"id 8\"}}"
-headerexts = [
-    "version={{git \"id 8\"}}"
-]
+[header_exts]
+version = "{{git \"id 8\"}}"
 
 [scripts.Set_version]
     steps_windows = [
