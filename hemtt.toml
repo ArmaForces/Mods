@@ -11,7 +11,7 @@ exclude = ["*.psd", "*.png", "*.tga"]
 
 modname = "armaforces_mods"
 key_name = "armaforces_mods_{{version}}"
-sig_name = "armaforces_mods_{{version}}"
+authority = "armaforces_mods_{{version}}"
 
 releasebuild = [
     "!Set_version",
