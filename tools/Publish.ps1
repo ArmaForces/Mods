@@ -4,6 +4,8 @@ param (
     [string] $addonDir
 )
 
+if ($env:CI) {Write-Host "CI Detected! Skipping Steam Workshop upload";Exit}
+
 $choice = Read-Host -Prompt "Do you want to publish '$version' on Steam Workshop? (y/N)"
 if ('y' -ne $choice.ToLower()) {
     Write-Host "Skipping Steam Workshop upload"
