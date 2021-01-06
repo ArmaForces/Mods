@@ -32,7 +32,6 @@ jobs:
       uses: arma-actions/sqflint@master
       continue-on-error: true # No failure due to many false-positives
 
-
   build:
     runs-on: windows-2019
     steps:

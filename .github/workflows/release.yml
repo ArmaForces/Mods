@@ -7,26 +7,52 @@ on:
 
 jobs:
   build_addon:
-    runs-on: ubuntu-latest
+    runs-on: windows-2019
     steps:
-    - uses: actions/checkout@v1
     - name: Set VERSION env
       run: echo VERSION=${GITHUB_REF:11} >> $GITHUB_ENV
-    - name: Build addon with HEMTT
-      uses: 16AAModTeam/hemtt@stable
+
+    - uses: actions/checkout@v2
+
+    - name: Pull Arma3Tools
+      run: |
+        echo ${{ secrets.CR_PAT }} | docker login -u ${{ secrets.CR_USER }} --password-stdin ghcr.io
+        docker pull ghcr.io/armaforces/arma3tools:latest
+
+    - name: Build using HEMTT
+      run: |
+        docker run -v "$(pwd):c:/workdir" -e CI=$True ghcr.io/armaforces/arma3tools:latest hemtt build --release --ci --time
+
+    - uses: actions/upload-artifact@v2
       with:
-        command: 'build --release'
+        name: releases
+        path: releases/
+        if-no-files-found: error
+        retention-days: 7
+
+  release_addon:
+    runs-on: ubuntu-latest
+    needs: build_addon
+    steps:
+    - name: Set VERSION env
+      run: echo VERSION=${GITHUB_REF:11} >> $GITHUB_ENV
+
+    - uses: actions/download-artifact@v2
+      with:
+        name: releases
+
     # Upload to GitHub
     - uses: softprops/action-gh-release@v1
       with:
-        files: 'releases/ArmaForces_Mods_${{ env.VERSION }}.zip'
+        files: 'ArmaForces_Mods_${{ env.VERSION }}.zip'
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
     # Upload to Steam Workshop
     - uses: arma-actions/workshop-upload@v1
       with:
         itemId: '1934142795' # Id of item to update
-        contentPath: 'releases/${{ env.VERSION }}/@armaforces_mods'
+        contentPath: '${{ env.VERSION }}/@armaforces_mods'
         changelog: 'https://github.com/ArmaForces/Mods/releases/tag/v${{ env.VERSION }}'
       env:
         STEAM_USERNAME: ${{ secrets.STEAM_USERNAME }}
