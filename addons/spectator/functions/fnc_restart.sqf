@@ -15,7 +15,7 @@
  * Public: No
  */
 
-if (!isServer) exitWith {};
+if (!isServer || {time < 1}) exitWith {};
 
 WARNING("Restarting spectator!");
 [QGVAR(reloadLocal)] call CBA_fnc_globalEvent;
