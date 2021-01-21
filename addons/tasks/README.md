@@ -79,6 +79,22 @@ class CfgTasks {
 };
 ```
 
+## Using stringtable
+
+When using stringtable make sure your config entry doesn't start with `$`:
+
+```hpp
+// Bad - it will be localized in config
+title = $STR_TAG_TaskOneTitle;
+
+// Good - it will be unchanged and can be loaded and localized by scripts
+title = "STR_TAG_TaskOneTitle";
+```
+
+If using CBA macros use `LSTRING()` instead of `CSTRING()`.
+
+Otherwise localization will be performed on the server, before tasks configuration is read.
+
 ## Example custom event handling
 
 ```SQF
