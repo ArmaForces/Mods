@@ -17,6 +17,8 @@
 
 params ["_taskConfigName", "_taskNamespace"];
 
+INFO_1("Creating '%1'",_taskConfigName);
+
 private _title = _taskNamespace getVariable ["title", ""];
 private _description = _taskNamespace getVariable ["description", ""];
 private _marker = _taskNamespace getVariable ["marker", ""];
