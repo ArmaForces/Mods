@@ -2,6 +2,8 @@
 
 if (isServer) then {
     {
-        [_x, GVAR(tasks) getVariable _x] call FUNC(createTask);
-    } forEach (allVariables GVAR(tasks));
+        [_x getVariable "taskConfigName", _x] call FUNC(createTask);
+    } forEach GVAR(tasksArray);
+
+    GVAR(tasksArray) = nil;
 };
