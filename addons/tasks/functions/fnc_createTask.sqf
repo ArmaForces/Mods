@@ -31,6 +31,8 @@ private _initialState = _taskNamespace getVariable ["initialState", "CREATED"];
 private _priority = _taskNamespace getVariable ["priority", -1];
 private _createdShowNotification = _taskNamespace getVariable ["createdShowNotification", ""] == "true";
 
+TRACE_5("Creating",_taskConfigName,_parentTask,_owners,_ownersProcessed,_initialState);
+
 private _taskID = if (_parentTask isEqualTo "") then {
     _taskConfigName
 } else {
