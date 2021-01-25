@@ -17,7 +17,11 @@ if (hasInterface) then {
     player addEventHandler ["Killed", {
         if (!GVAR(enabled)) exitWith {};
         WARNING("Player killed!");
-        [QGVAR(start)] call CBA_fnc_localEvent;
+
+        private _delay = SPECTATOR_KILLED_DELAY min (missionNamespace getVariable [QEGVAR(respawn,time), 1e10]);
+        [{
+            [QGVAR(start)] call CBA_fnc_localEvent;
+        }, [], _delay] call CBA_fnc_waitAndExecute;
     }];
 
     player addEventHandler ["Respawn", {
