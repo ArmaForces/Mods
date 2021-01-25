@@ -45,7 +45,12 @@ if (hasInterface) then {
                     [QGVAR(reloadLocal)] call CBA_fnc_localEvent;
                 };
                 WARNING("Player no longer unconscious!");
-                [QGVAR(stop)] call CBA_fnc_localEvent;
+                // Wait for display init to prevent race condition (BI uses spawn to show the display :| )
+                [{
+                    !isNull (uiNamespace getVariable "RscEGSpectator_display");
+                }, {
+                    [QGVAR(stop)] call CBA_fnc_localEvent;
+                }, [], 3] call CBA_fnc_waitUntilAndExecute;
             };
         }] call CBA_fnc_addEventHandler;
     } else {
