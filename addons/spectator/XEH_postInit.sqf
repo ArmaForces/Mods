@@ -37,7 +37,7 @@ if (hasInterface) then {
             if (_active) then {
                 [{!([player] call FUNC(canSpectate))}, {
                     // Do nothing as player can no longer be spectator, probably he's not unconscious anymore
-                    TRACE("Unconscious canSpectate 'false'");
+                    LOG("Unconscious canSpectate 'false'");
                 }, [], GVAR(unconsciousDelay), {
                     WARNING("Player unconscious!");
                     [QGVAR(start)] call CBA_fnc_localEvent;
@@ -46,7 +46,7 @@ if (hasInterface) then {
                 }] call CBA_fnc_waitUntilAndExecute;
 
                 GVAR(unconsciousKilledEH) = player addEventHandler ["Killed", {
-                    TRACE("Unconscious killed EH");
+                    LOG("Unconscious killed EH");
                     player removeEventHandler ["Killed", _thisEventHandler];
                     [QGVAR(reloadLocal)] call CBA_fnc_localEvent;
                 }];
