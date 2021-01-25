@@ -12,14 +12,27 @@
  * Public: No
  */
 
+#define COUNTER_TEXT_DISABLED "  --:--.---"
+
 params [["_display", displayNull]];
 
 // prevent gametime and respawn delay overlap
 private _counterDisplay = uiNamespace getVariable ["RscRespawnCounter", displayNull];
 if (!isNull _counterDisplay) then {
+
+    private _counterTxtCtrl = _counterDisplay displayCtrl IDC_COUNTER_TXT;
     private _counterBgCtrl = _counterDisplay displayCtrl IDC_COUNTER_BG;
     private _counterBg2Ctrl = _counterDisplay displayCtrl IDC_COUNTER_BG2;
-    private _counterTxtCtrl = _counterDisplay displayCtrl IDC_COUNTER_TXT;
+
+    if (ctrlText _counterTxtCtrl == COUNTER_TEXT_DISABLED) exitWith {
+        LOG("Respawn disabled, hidding counter");
+
+        {
+            _x ctrlSetFade 1;
+            _x ctrlCommit 0;
+        } forEach [_counterTxtCtrl, _counterBgCtrl, _counterBg2Ctrl];
+    };
+
     private _gameTimeCtrl = _display displayCtrl IDC_GAMETIME;
 
     (ctrlPosition _counterBgCtrl) params ["_offsetW", "", "_offsetW"];

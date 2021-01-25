@@ -13,7 +13,9 @@
 
 #include "\z\afm\addons\main\script_macros.hpp"
 
-#define IDC_COUNTER_BG 1002
+#define IDC_COUNTER_BG 1001
+#define IDC_COUNTER_BG2 1002
+#define IDC_COUNTER_TXT 1003
 #define IDC_GAMETIME 42609
 #define IDC_TABS 43609
 
