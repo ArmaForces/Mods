@@ -44,23 +44,19 @@ if (!isNull _counterDisplay) then {
     // display state monitor loop
     [{
         params ["_args", "_handle"];
-        _args params ["_display", "_counterBgCtrl", "_counterBg2Ctrl", "_counterTxtCtrl", "_gameTimeCtrl"];
+        _args params ["_display", "_gameTimeCtrl", "_counterCtrls"];
         if (isNull _display) exitWith {
             _handle call CBA_fnc_removePerFrameHandler;
         };
 
         private _fade = ctrlFade _gameTimeCtrl;
 
-        _counterTxtCtrl ctrlSetFade _fade;
-        _counterTxtCtrl ctrlCommit 0;
+        {
+            _x ctrlSetFade _fade;
+            _x ctrlCommit 0;
+        } forEach _counterCtrls;
 
-        _counterBgCtrl ctrlSetFade _fade;
-        _counterBgCtrl ctrlCommit 0;
-
-        _counterBg2Ctrl ctrlSetFade _fade;
-        _counterBg2Ctrl ctrlCommit 0;
-
-    }, 0, [_display, _counterBgCtrl, _counterBg2Ctrl, _counterTxtCtrl, _gameTimeCtrl]] call CBA_fnc_addPerFrameHandler;
+    }, 0, [_display, _gameTimeCtrl, [_counterBgCtrl, _counterBg2Ctrl, _counterTxtCtrl]]] call CBA_fnc_addPerFrameHandler;
 };
 
 _display call FUNC(addPlayerStatePanel);
