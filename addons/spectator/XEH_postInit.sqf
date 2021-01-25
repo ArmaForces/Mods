@@ -33,18 +33,24 @@ if (hasInterface) then {
             if (_active) then {
                 [{!([player] call FUNC(canSpectate))}, {
                     // Do nothing as player can no longer be spectator, probably he's not unconscious anymore
+                    TRACE("Unconscious canSpectate 'false'");
                 }, [], GVAR(unconsciousDelay), {
                     WARNING("Player unconscious!");
                     [QGVAR(start)] call CBA_fnc_localEvent;
                     // Disable ACE's disable user input
                     ["unconscious", false] call ACEFUNC(common,setDisableUserInputStatus);
                 }] call CBA_fnc_waitUntilAndExecute;
-            } else {
-                if (!alive _unit) exitWith {
-                    // Player died, we need to reload his spectator for new params
+
+                GVAR(unconsciousKilledEH) = player addEventHandler ["Killed", {
+                    TRACE("Unconscious killed EH");
+                    player removeEventHandler ["Killed", _thisEventHandler];
                     [QGVAR(reloadLocal)] call CBA_fnc_localEvent;
-                };
+                }];
+            } else {
                 WARNING("Player no longer unconscious!");
+
+                player removeEventHandler ["Killed", GVAR(unconsciousKilledEH)];
+
                 // Wait for display init to prevent race condition (BI uses spawn to show the display :| )
                 [{
                     !isNull (uiNamespace getVariable "RscEGSpectator_display");
