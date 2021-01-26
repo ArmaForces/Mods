@@ -5,10 +5,11 @@ PREP_RECOMPILE_START;
 #include "XEH_PREP.hpp"
 PREP_RECOMPILE_END;
 
-GVAR(tasks) = call CBA_fnc_createNamespace;
-GVAR(tasksArray) = [];
-
 if (isServer) then {
+
+    GVAR(tasks) = call CBA_fnc_createNamespace;
+    GVAR(tasksArray) = [];
+
     // Load tasks from config
     {
         private _taskConfigName = configName _x;
