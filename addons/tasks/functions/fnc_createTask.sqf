@@ -17,6 +17,8 @@
 
 params ["_taskConfigName", "_taskNamespace"];
 
+INFO_1("Creating '%1'",_taskConfigName);
+
 private _title = _taskNamespace getVariable ["title", ""];
 private _description = _taskNamespace getVariable ["description", ""];
 private _marker = _taskNamespace getVariable ["marker", ""];
@@ -30,6 +32,8 @@ private _ownersProcessed = [_owners] call FUNC(readOwners);
 private _initialState = _taskNamespace getVariable ["initialState", "CREATED"];
 private _priority = _taskNamespace getVariable ["priority", -1];
 private _createdShowNotification = _taskNamespace getVariable ["createdShowNotification", ""] == "true";
+
+TRACE_5("Creating",_taskConfigName,_parentTask,_owners,_ownersProcessed,_initialState);
 
 private _taskID = if (_parentTask isEqualTo "") then {
     _taskConfigName
