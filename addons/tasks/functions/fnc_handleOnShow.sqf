@@ -24,7 +24,7 @@ private _taskCreateArray = _taskNamespace getVariable "taskCreateArray";
 // Get scripted owners
 private _scriptedOwners = call compile (_taskNamespace getVariable ["ownersCode", ""]);
 if (!isNil "_scriptedOwners") then {
-    INFO_1("Scripted owners '%1' for task '%2'",_scriptedOwners,_taskConfigName);
+    INFO_2("Scripted owners '%1' for task '%2'",_scriptedOwners,_taskConfigName);
     _taskCreateArray set [0, _scriptedOwners];
 };
 
