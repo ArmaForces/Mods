@@ -10,6 +10,9 @@ class RscPictureKeepAspect;
                 class VScrollbar {\
                     width = 0; \
                 }; \
+                class HScrollbar {\
+                    width = 0; \
+                }; \
                 class controls { \
                     class GVAR(background): RscPictureKeepAspect { \
                         idc = IDC_LOADINGSTART_CUSTOM_BG; \
