@@ -58,12 +58,16 @@ _ctrlBg ctrlCommit 0;
 private _ctrlGrpLoadingStart = _display displayctrl IDC_LOADINGSTART_LOADINGSTART;
 private _loadingLabel = _display ctrlCreate ["RscStructuredText", -1, _ctrlGrpLoadingStart];
 _loadingLabel ctrlSetPosition [0, 0, 1, 1];
-_loadingLabel ctrlSetText format [LLSTRING(Author), getText (_backgroundCfg >> "author")];
+_loadingLabel ctrlSetStructuredText parseText ([
+    '<t size="1.17" shadow="2">',
+    format [LLSTRING(Author), getText (_backgroundCfg >> "author")],
+    '</t>'
+] joinString "");
 _loadingLabel ctrlCommit 0;
 
 _loadingLabel ctrlSetPosition [
     safeZoneW - ctrlTextWidth _loadingLabel,
-    safeZoneH - ctrlTextHeight _loadingLabel,
+    0,
     ctrlTextWidth _loadingLabel, ctrlTextHeight _loadingLabel
 ];
 _loadingLabel ctrlCommit 0;
