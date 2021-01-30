@@ -20,7 +20,7 @@ if (EGVAR(common,aceArsenal) && {GVAR(addArsenalCategory)}) then {
 
         GVAR(arsenalButton) = [
             [] call FUNC(getAllRadios),
-            LLSTRING(Radios),
+            LLSTRING(ArsenalCategory),
             "\a3\ui_f\data\IGUI\Cfg\simpleTasks\types\radio_ca.paa"
         ] call ACEFUNC(arsenal,addRightPanelButton);
     };
