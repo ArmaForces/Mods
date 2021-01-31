@@ -19,8 +19,8 @@ if (EGVAR(common,aceArsenal) && {GVAR(addArsenalCategory)}) then {
         };
 
         GVAR(arsenalButton) = [
-            ([] call acre_api_fnc_getAllRadios) select 0,
-            LLSTRING(Radios),
+            [] call FUNC(getAllRadios),
+            LLSTRING(ArsenalCategory),
             "\a3\ui_f\data\IGUI\Cfg\simpleTasks\types\radio_ca.paa"
         ] call ACEFUNC(arsenal,addRightPanelButton);
     };
