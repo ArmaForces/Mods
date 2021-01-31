@@ -72,6 +72,7 @@ class CfgTasks {
         object = "horse";
         parentTask = "FindHorse";
 
+        // Will add this tasks only for players with "isHorseKnocker" variable set to true
         ownersCode = "allPlayers select {_x getVariable ['isHorseKnocker', false]}";
 
         conditionEventsShow[] = { "horseFound" };
