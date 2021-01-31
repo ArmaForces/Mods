@@ -1,7 +1,7 @@
 #define BROKEN_GOGGLES(ORIGINAL_NVG) class ORIGINAL_NVG; \
 class GVAR(DOUBLES(ORIGINAL_NVG,Broken)) : ORIGINAL_NVG { \
         scope = 1; \
-        visionMode[] = {"Normal"} \
+        modelOptics = QPATHTOF(data\afm_nvg_defunct.p3d); \
 }
 
 class CfgWeapons {
