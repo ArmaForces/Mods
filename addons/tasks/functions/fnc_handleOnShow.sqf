@@ -18,10 +18,19 @@ params ["_taskNamespace"];
 if (_taskNamespace getVariable ["shown", false]) exitWith {};
 _taskNamespace setVariable ["shown", true];
 
-// Create task
-(_taskNamespace getVariable "taskCreateArray") call BIS_fnc_taskCreate;
-
 private _taskConfigName = _taskNamespace getVariable "taskConfigName";
+private _taskCreateArray = _taskNamespace getVariable "taskCreateArray";
+
+// Get scripted owners
+private _scriptedOwners = call compile (_taskNamespace getVariable ["ownersCode", ""]);
+if (!isNil "_scriptedOwners") then {
+    INFO_2("Scripted owners '%1' for task '%2'",_scriptedOwners,_taskConfigName);
+    _taskCreateArray set [0, _scriptedOwners];
+};
+
+// Create task
+_taskCreateArray call BIS_fnc_taskCreate;
+
 [QGVAR(taskCreated), [_taskConfigName]] call CBA_fnc_globalEvent;
 
 // Call onShowCode
