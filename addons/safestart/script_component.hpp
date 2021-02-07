@@ -12,3 +12,5 @@
 #endif
 
 #include "\z\afm\addons\main\script_macros.hpp"
+
+#define MISSION_DISPLAY (findDisplay 46)
