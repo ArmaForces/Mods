@@ -34,4 +34,7 @@ class CfgMainMenuSpotlight {
     delete gm_campaign_01;
 
     delete SP_FD14;
+
+    delete AoW_Showcase_AoW;
+    delete AoW_Showcase_Future;
 };
