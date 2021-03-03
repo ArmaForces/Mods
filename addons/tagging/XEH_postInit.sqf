@@ -17,7 +17,7 @@ if (hasInterface) then {
         // no matching color, do not create marker
         if (_colorIndex == -1) exitWith {};
 
-        private _marker = [_object, "side"] call EFUNC(common,createPlayerMarker);
+        private _marker = [_object, "side", _unit] call EFUNC(common,createPlayerMarker);
         _marker setMarkerShape "ICON";
         _marker setMarkerType "hd_dot";
         _marker setMarkerColor (MARKER_COLORS select _colorIndex);
