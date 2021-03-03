@@ -28,7 +28,7 @@ if (EGVAR(common,acre)) then {
     _loadout = [_loadout] call acre_api_fnc_filterUnitLoadout;
 };
 
-GVAR(disconnectedPlayers) setVariable [_uid, [_loadout, group _unit, vehicle _unit, _pos, _handlerData]];
+GVAR(disconnectedPlayers) set [_uid, [_loadout, group _unit, vehicle _unit, _pos, _handlerData]];
 
 INFO_2("%1 UID: %2 disconnected, saved data.",name _unit,_uid);
 
