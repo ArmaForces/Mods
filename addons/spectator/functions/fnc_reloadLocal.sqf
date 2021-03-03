@@ -40,7 +40,7 @@ if ([player] call FUNC(canSpectate)) then {
         _newSpectatorCamera setVectorDir (GVAR(oldSpectatorCamera) select 1);
         _newSpectatorCamera setVectorUp (GVAR(oldSpectatorCamera) select 2);
         private _targetObject = GVAR(oldSpectatorCamera) select 3;
-        if (!(_targetObject isEqualTo objNull)) then {
+        if (_targetObject isNotEqualTo objNull) then {
             [_targetObject] call BIS_fnc_EGSpectatorCameraSetTarget;
         };
     };
