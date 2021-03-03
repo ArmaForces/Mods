@@ -23,6 +23,9 @@ if (isNil "CBA_fnc_log") then {
     CBA_fnc_log = uiNamespace getVariable "CBA_fnc_log";
 };
 
+// Disable Enchanced Multiplayer Menu for compatiblity with this script
+uiNamespace setVariable ["EMM_multiplayerMenu_enabled", false];
+
 INFO("Auto joining to ArmaForces server");
 
 GVAR(serverAddress) = "server.armaforces.com";
