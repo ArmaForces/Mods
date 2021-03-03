@@ -20,4 +20,4 @@
 
 params ["_uid"];
 
-GVAR(disconnectedPlayers) get _uid;
+GVAR(disconnectedPlayers) get _uid // return
