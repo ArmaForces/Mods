@@ -17,22 +17,7 @@ GVAR(aceSafemode) = IS_MOD_LOADED(ace_safemode);
 GVAR(aceTagging) = IS_MOD_LOADED(ace_tagging);
 GVAR(acre) = IS_MOD_LOADED(acre_main);
 
-if (isServer) then {
-    GVAR(clientId) = "2";
-
-    // publish Direct Play clientId to clients
-    addMissionEventHandler ["PlayerConnected", {
-        params ["", "", "", "", "_ownerId", "_clientIdStr"];
-
-        // CBA events do not support client Id
-        missionNamespace setVariable [QGVAR(clientId), _clientIdStr, _ownerId];
-    }];
-};
-
-if (hasInterface) then {
-    GVAR(playerMarkerIdx) = 0;
-    GVAR(clientId) = "";
-};
+GVAR(playerMarkerIdx) = 0;
 
 // Handling for running code after settings are initialized
 GVAR(settingsInitialized) = false;

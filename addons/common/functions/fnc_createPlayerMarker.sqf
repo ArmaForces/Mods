@@ -1,11 +1,12 @@
 #include "script_component.hpp"
 /*
- * Author: <author>
- * Create local player owned marker.
+ * Author: veteran29
+ * Create player owned marker.
  *
  * Arguments:
  * 0: Marker position <ARRAY, OBJECT>
- * 1: Channel to create marker on <STRING, NUMBER>
+ * 1: Channel to create marker on, defaults to 1 (side channel) <STRING, NUMBER>
+ * 2: Player owning the marker, defaults to local player <OBJECT>
  *
  * Return Value:
  * Marker ID, empty string if could not create <STRING>
@@ -22,7 +23,8 @@
 
 params [
     ["_position", [0,0,0], [[], objNull]],
-    ["_channel", 1, [0, ""]]
+    ["_channel", 1, [0, ""]],
+    ["_player", player, [objNull]]
 ];
 
 if (_channel isEqualType "") then {
@@ -39,6 +41,6 @@ if (_channel < CHANNEL_MIN || {_channel > CHANNEL_MAX}) exitWith {
 private _id = format ["%1_%2", QUOTE(PREFIX), GVAR(playerMarkerIdx)];
 GVAR(playerMarkerIdx) = GVAR(playerMarkerIdx) + 1;
 
-private _markerId = format ["_USER_DEFINED #%1/%2/%3", GVAR(clientId), _id, _channel];
+private _markerId = format ["_USER_DEFINED #%1/%2/%3", getPlayerID _player, _id, _channel];
 
-createMarker [_markerId, _position] // return
+createMarker [_markerId, _position, _channel, _player] // return
