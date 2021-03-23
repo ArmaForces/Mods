@@ -21,6 +21,24 @@
 ] call CBA_fnc_addSetting;
 
 [
+    QGVAR(startBppVolume),
+    "SLIDER",
+    [LSTRING(StartBppVolume), LSTRING(StartBppVolume_Description)],
+    LSTRING(DisplayName),
+    [0, 4, DEFAULT_BPP_VOLUME, 0],
+    1
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(startLeaderVolume),
+    "SLIDER",
+    [LSTRING(StartLeaderVolume), LSTRING(StartLeaderVolume_Description)],
+    LSTRING(DisplayName),
+    [0, 4, DEFAULT_LEADER_VOLUME, 0],
+    1
+] call CBA_fnc_addSetting;
+
+[
     QGVAR(perSideRadios),
     "CHECKBOX",
     [LSTRING(PerSideRadios), LSTRING(PerSideRadios_Description)],

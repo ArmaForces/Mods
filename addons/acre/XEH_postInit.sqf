@@ -6,5 +6,6 @@
             ERROR("Mission ACRE Modules detected! AFM ACRE module disabled.");
         };
         call FUNC(init);
+        call FUNC(adjustVoiceVolume);
     };
 }] call EFUNC(common,runAfterSettingsInit);

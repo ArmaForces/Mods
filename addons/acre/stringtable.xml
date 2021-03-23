@@ -13,6 +13,22 @@
             <English>Each side will have it's own babel language assigned and won't understand each other. Requires mission restart to change.</English>
             <Polish>Każda strona będzie miała swój język babel i nie będą się rozumieć. Zmiana wymaga restartu misji.</Polish>
         </Key>
+        <Key ID="STR_AFM_Acre_StartBppVolume">
+            <English>Initial speech volume</English>
+            <Polish>Początkowa głośność mówienia</Polish>
+        </Key>
+        <Key ID="STR_AFM_Acre_StartBppVolume_Description">
+            <English>Controls initial direct speech volume. It is set at mission start and after JIP. 0 is whispering, 4 is shouting.</English>
+            <Polish>Kontroluje początkową głośność mówienia. Jest ustawiana na starcie misji oraz przy JIP. 0 to szept, 4 to krzyk.</Polish>
+        </Key>
+        <Key ID="STR_AFM_Acre_StartLeaderVolume">
+            <English>Initial leader speech volume</English>
+            <Polish>Początkowa głośność mówienia dowódców</Polish>
+        </Key>
+        <Key ID="STR_AFM_Acre_StartLeaderVolume_Description">
+            <English>Controls initial direct speech volume for leaders. It is set at mission start and after JIP. 0 is whispering, 4 is shouting.</English>
+            <Polish>Kontroluje początkową głośność mówienia dowódców. Jest ustawiana na starcie misji oraz przy JIP. 0 to szept, 4 to krzyk.</Polish>
+        </Key>
         <Key ID="STR_AFM_Acre_PerSideRadios">
             <English>Per Side Radios</English>
             <Polish>Kanały per strona</Polish>
