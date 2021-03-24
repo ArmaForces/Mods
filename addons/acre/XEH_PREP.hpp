@@ -1,4 +1,5 @@
 PREP(acreModulesPresent);
+PREP(adjustVoiceVolume);
 PREP(copyLeaderRadioChildrenActions);
 PREP(copyLeaderSingleRadioChildrenActions);
 PREP(getAllRadios);

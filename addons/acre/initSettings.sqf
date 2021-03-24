@@ -21,6 +21,32 @@
 ] call CBA_fnc_addSetting;
 
 [
+    QGVAR(startBppVolume),
+    "LIST",
+    [LSTRING(StartBppVolume), LSTRING(StartBppVolume_Description)],
+    LSTRING(DisplayName),
+    [
+        [0, 1, 2, 3, 4],
+        [LSTRING(Whisper), LSTRING(Quiet), LSTRING(Normal), LSTRING(Loud), LSTRING(Shout)],
+        DEFAULT_BPP_VOLUME
+    ],
+    1
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(startLeaderVolume),
+    "LIST",
+    [LSTRING(StartLeaderVolume), LSTRING(StartLeaderVolume_Description)],
+    LSTRING(DisplayName),
+    [
+        [0, 1, 2, 3, 4],
+        [LSTRING(Whisper), LSTRING(Quiet), LSTRING(Normal), LSTRING(Loud), LSTRING(Shout)],
+        DEFAULT_LEADER_VOLUME
+    ],
+    1
+] call CBA_fnc_addSetting;
+
+[
     QGVAR(perSideRadios),
     "CHECKBOX",
     [LSTRING(PerSideRadios), LSTRING(PerSideRadios_Description)],

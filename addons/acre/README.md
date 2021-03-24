@@ -7,6 +7,7 @@ Standard ArmaForces ACRE framework for missions.
 No more modules in mission. These things can now be set up through settings:
 
 - Babel
+- Initial direct speech volume
 - Radios per side
 - Channel names
 - Channel names per side
