@@ -1,7 +1,8 @@
 #include "script_component.hpp"
 /*
  * Author: 3Mydlo3
- *
+ * Adjusts initial direct speech volume for local player based on CBA settings.
+ * Works also for players JIP.
  *
  * Arguments:
  * None
