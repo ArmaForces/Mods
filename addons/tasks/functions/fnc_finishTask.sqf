@@ -20,7 +20,7 @@
 params ["_taskNamespace", ["_finishType", "Success"], ["_force", false]];
 
 if (_taskNamespace isEqualType "") then {
-    _taskNamespace = GVAR(tasks) getVariable [_taskNamespace, objNull];
+    _taskNamespace = GVAR(tasks) getOrDefault [_taskNamespace, objNull];
 };
 
 if (isNull _taskNamespace) exitWith {

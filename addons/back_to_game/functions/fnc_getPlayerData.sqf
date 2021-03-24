@@ -20,4 +20,4 @@
 
 params ["_uid"];
 
-GVAR(disconnectedPlayers) getVariable [_uid, nil]
+GVAR(disconnectedPlayers) get _uid // return

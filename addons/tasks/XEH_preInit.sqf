@@ -7,7 +7,7 @@ PREP_RECOMPILE_END;
 
 if (isServer) then {
 
-    GVAR(tasks) = call CBA_fnc_createNamespace;
+    GVAR(tasks) = createHashMap;
     GVAR(tasksArray) = [];
 
     // Load tasks from config
@@ -16,7 +16,7 @@ if (isServer) then {
         private _taskNamespace = [_x] call EFUNC(common,readConfigToNamespace);
         _taskNamespace setVariable ["taskConfigName", _taskConfigName];
 
-        GVAR(tasks) setVariable [_taskConfigName, _taskNamespace];
+        GVAR(tasks) set [_taskConfigName, _taskNamespace];
         GVAR(tasksArray) pushBack _taskNamespace;
     } forEach ("true" configClasses (missionConfigFile >> "CfgTasks"));
 };

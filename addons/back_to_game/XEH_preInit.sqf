@@ -13,7 +13,7 @@ if (hasInterface) then {
 };
 
 if (isServer) then {
-    GVAR(disconnectedPlayers) = true call CBA_fnc_createNamespace;
+    GVAR(disconnectedPlayers) = createHashMap;
     GVAR(saveHandlers) = [];
 };
 
