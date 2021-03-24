@@ -18,16 +18,36 @@
             <Polish>Początkowa głośność mówienia</Polish>
         </Key>
         <Key ID="STR_AFM_Acre_StartBppVolume_Description">
-            <English>Controls initial direct speech volume. It is set at mission start and after JIP. 0 is whispering, 4 is shouting.</English>
-            <Polish>Kontroluje początkową głośność mówienia. Jest ustawiana na starcie misji oraz przy JIP. 0 to szept, 4 to krzyk.</Polish>
+            <English>Controls initial direct speech volume. It is set at mission start and after JIP.</English>
+            <Polish>Kontroluje początkową głośność mówienia. Jest ustawiana na starcie misji oraz przy JIP.</Polish>
         </Key>
         <Key ID="STR_AFM_Acre_StartLeaderVolume">
             <English>Initial leader speech volume</English>
             <Polish>Początkowa głośność mówienia dowódców</Polish>
         </Key>
         <Key ID="STR_AFM_Acre_StartLeaderVolume_Description">
-            <English>Controls initial direct speech volume for leaders. It is set at mission start and after JIP. 0 is whispering, 4 is shouting.</English>
-            <Polish>Kontroluje początkową głośność mówienia dowódców. Jest ustawiana na starcie misji oraz przy JIP. 0 to szept, 4 to krzyk.</Polish>
+            <English>Controls initial direct speech volume for leaders. It is set at mission start and after JIP.</English>
+            <Polish>Kontroluje początkową głośność mówienia dowódców. Jest ustawiana na starcie misji oraz przy JIP.</Polish>
+        </Key>
+        <Key ID="STR_AFM_Acre_Whisper">
+            <English>Whisper</English>
+            <Polish>Szept</Polish>
+        </Key>
+        <Key ID="STR_AFM_Acre_Quiet">
+            <English>Quiet</English>
+            <Polish>Cicho</Polish>
+        </Key>
+        <Key ID="STR_AFM_Acre_Normal">
+            <English>Normal</English>
+            <Polish>Normalnie</Polish>
+        </Key>
+        <Key ID="STR_AFM_Acre_Loud">
+            <English>Loud</English>
+            <Polish>Głośno</Polish>
+        </Key>
+        <Key ID="STR_AFM_Acre_Shout">
+            <English>Shout</English>
+            <Polish>Krzyk</Polish>
         </Key>
         <Key ID="STR_AFM_Acre_PerSideRadios">
             <English>Per Side Radios</English>
