@@ -43,6 +43,8 @@ class CfgVehicles {
 
                     ANIMACTION(Dance1,"",Acts_Dance_01);
                     ANIMACTION(Dance2,"",Acts_Dance_02);
+                    ANIMACTION(DanceZOZO,"",ActsPercMstpSnonWnonDnon_DancingZOZO);
+                    ANIMACTION(DanceCrazy,"",ActsPercMstpSnonWnonDnon_DancingMetal);
                 };
 
                 class GVAR(actions) {
@@ -68,3 +70,4 @@ class CfgVehicles {
         };
     };
 };
+
