@@ -18,7 +18,7 @@
 
 params ["_player", "_anim"];
 
-[_player, _anim] remoteExec ["switchMove", 0]
+[_player, _anim] remoteExec ["switchMove", 0];
 
 [findDisplay 46, "KeyDown", {
 	params ["", "_key"];

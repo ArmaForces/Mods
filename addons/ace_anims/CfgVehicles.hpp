@@ -22,7 +22,19 @@ class CfgVehicles {
                     ANIMACTION(Relaxed9,"",Acts_AidlPercMstpSnonWnonDnon_warmup_8_loop);
 
                     ANIMACTION(Relaxed10,"",Acts_AidlPercMstpSloWWrflDnon_warmup_5_loop);
-                    
+
+                    ANIMACTION(Relaxed10,"",Acts_Hilltop_Calibration_Loop);
+                };
+
+                class GVAR(gestures) {
+                    displayName = "Gestures";
+                    icon = "\a3\ui_f\data\IGUI\Cfg\simpleTasks\letters\g_ca.paa";
+
+                    ANIMACTION(Crouch,"",Acts_JetsCrewaidFCrouch_in);
+                    ANIMACTION(CrouchThumbUp,"",Acts_JetsCrewaidFCrouchThumbup_in);
+                    ANIMACTION(EnginesOn,"",Acts_JetsMarshallingEnginesOn_in);
+                    ANIMACTION(ComeIn,"",Acts_NavigatingChopper_Loop);
+                    ANIMACTION(ShieldFromSun,"",Acts_ShieldFromSun_loop);
                 };
 
                 class GVAR(dance) {
@@ -47,7 +59,12 @@ class CfgVehicles {
 
                     // TODO
                 };
-            }; 
+
+                class GVAR(cancel) {
+                    displayName = CSTRING(Cancel);
+                    statement = "[_player, ''] remoteExec ['switchMove', 0]"
+                };
+            };
         };
     };
 };
