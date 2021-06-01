@@ -6,22 +6,27 @@ PREP_RECOMPILE_START;
 PREP_RECOMPILE_END;
 
 #include "initSettings.sqf"
+if (hasInterface) then {
+    [QGVAR(enableSafety), {
+        params ["_player"];
 
-[QGVAR(enableSafety), {
-    params ["_player"];
+        [_player] call FUNC(lowerWeapon);
 
-    [_player] call FUNC(lowerWeapon);
+        if (EGVAR(common,aceSafemode) && {GVAR(startLocked)}) then {
+            [_player, currentWeapon _player, true] call ACEFUNC(safemode,setWeaponSafety);
+        };
 
-    if (EGVAR(common,aceSafemode) && {GVAR(startLocked)}) then {
-        [_player, currentWeapon _player, true] call ACEFUNC(safemode,setWeaponSafety);
-    };
-}] call CBA_fnc_addEventHandler;
+        if (DIK_G in actionKeys "Throw" && {!GVAR(warningGrenadeConfirmed)}) then {
+            [] call FUNC(warnGrenade);
+        };
+    }] call CBA_fnc_addEventHandler;
 
-[QGVAR(lowerWeapon), {
-    params ["_unit"];
+    [QGVAR(lowerWeapon), {
+        params ["_unit"];
 
-    _unit action ["WeaponOnBack", _unit];
+        _unit action ["WeaponOnBack", _unit];
 
-}] call CBA_fnc_addEventHandler;
+    }] call CBA_fnc_addEventHandler;
+};
 
 ADDON = true;
