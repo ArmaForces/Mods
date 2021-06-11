@@ -22,7 +22,7 @@ class CfgTasks {
         position[] = {}; // Use for position
         object = ""; // Use for objects
         marker = ""; // Use for marker names only
-        icon = "unknown"; // Icon classname from https://community.bistudio.com/wiki/Arma_3_Tasks_Overhaul#Appendix
+        icon = "unknown"; // Icon classname from https://community.bistudio.com/wiki/Arma_3:_Task_Framework#Task_icons
 
         owners[] = { "true" }; // Default value, use "All"/"true" for all playable units
         ownersCode = ""; // Default value, code executed when task show conditions apply, returned value overwrites 'owners', ignored if returns nil
