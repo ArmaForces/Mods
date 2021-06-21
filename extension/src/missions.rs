@@ -1,4 +1,3 @@
-
 #[derive(serde::Deserialize)]
 pub struct Mission {
     pub title: String,
@@ -11,10 +10,12 @@ impl Mission {
     }
 
     fn empty() -> Self {
-        Mission{title: "".to_string(), date: "".to_string()}
+        Mission {
+            title: "".to_string(),
+            date: "".to_string(),
+        }
     }
 }
-
 
 pub fn get_missions() -> Result<Vec<Mission>, String> {
     match reqwest::blocking::get(&format!("{}/missions", *crate::MISSION_API))
@@ -27,15 +28,14 @@ pub fn get_missions() -> Result<Vec<Mission>, String> {
 }
 
 pub fn get_current_mission() -> Result<Mission, String> {
-    let resp =  match reqwest::blocking::get(&format!("{}/currentMission", *crate::MISSION_API))
-    {
+    let resp = match reqwest::blocking::get(&format!("{}/currentMission", *crate::MISSION_API)) {
         Ok(r) => r,
-        Err(e) => return Err(e.to_string())
+        Err(e) => return Err(e.to_string()),
     };
 
     // return empty Mission struct when no ongoing mission
     if resp.status() == reqwest::StatusCode::from_u16(404).unwrap() {
-        return Ok(Mission::empty())
+        return Ok(Mission::empty());
     }
 
     match resp.json::<Mission>() {
