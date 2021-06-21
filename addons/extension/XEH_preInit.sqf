@@ -8,7 +8,7 @@ PREP_RECOMPILE_START;
 PREP_RECOMPILE_END;
 
 GVAR(enabled) = EXT callExtension "setup" == "true";
-GVAR(currentMissionId) = "";
+GVAR(handlers) = createHashMap;
 
 addMissionEventHandler ["ExtensionCallback", {
 	params ["_name", "_function", "_data"];
@@ -20,12 +20,7 @@ addMissionEventHandler ["ExtensionCallback", {
     };
 	if (_name != EXT) exitWith {};
 
-	switch (_function) do {
-		case "set_current_mission_id": {
-            INFO_1("Current mission id - '%1'",_data);
-            GVAR(currentMissionId) = _data;
-        };
-    };
+	_data call (GVAR(handlers) get _function);
 }];
 
 
