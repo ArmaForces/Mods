@@ -43,3 +43,11 @@ pub fn get_current_mission() -> Result<Mission, String> {
         Err(e) => Err(e.to_string()),
     }
 }
+
+pub fn post_attendance(mission_id: &String, steam_id: &u64) -> Result<(), String> {
+    warn!(
+        "Attendance POST not implemented yet! - {}, {}",
+        mission_id, steam_id
+    );
+    Ok(())
+}
