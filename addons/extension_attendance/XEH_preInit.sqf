@@ -8,27 +8,25 @@ PREP_RECOMPILE_END;
 if (isServer && {EGVAR(extension,enabled)}) then {
 
     GVAR(currentMissionId) = "";
-    GVAR(retries) = 0;
 
     ["set_current_mission_id", {
         params ["_missionId"];
+        if (_missionId == "") exitWith {
+            WARNING("No ongoing mission");
+        };
 
-        GVAR(currentMissionId) = _missionId;
+        INFO_1("Received mission id - '%1'",_missionId);
+
+        missionNamespace setVariable [QGVAR(currentMissionId), _missionId, true];
+    }] call EFUNC(extension,setHandler);
+
+    ["get_current_mission_error", {
+        private _msg = LOG_SYS_FORMAT("ERROR","Failed to fetch current mission id - notify AF Admins");
+
+        _msg remoteExec ["systemChat", 0];
     }] call EFUNC(extension,setHandler);
 
     EXT callExtension "get_current_mission_id";
-
-    // Try to get current mission id for first 20mins
-    ["retry_get_current_mission_id", {
-        if (GVAR(retries) >= 5) exitWith {};
-
-        INC(GVAR(retries));
-
-        // TODO notify admins about the issue
-
-        [{EXT callExtension "get_current_mission_id"}, (20 * 60) / 5] call CBA_fnc_waitAndExecute;
-    }] call EFUNC(extension,setHandler);
-
 
     [QGVAR(markAttendance), {
         params ["_playerId"];

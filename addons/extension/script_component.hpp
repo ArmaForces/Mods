@@ -12,6 +12,3 @@
 #endif
 
 #include "\z\afm\addons\main\script_macros.hpp"
-
-#define EXT "armaforces_mods"
-#define EXT_LOG "armaforces_mods_log"

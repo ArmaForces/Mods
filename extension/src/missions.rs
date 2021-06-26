@@ -43,9 +43,16 @@ pub fn get_current_mission() -> Result<Mission, String> {
 }
 
 pub fn post_attendance(mission_id: &String, steam_id: &u64) -> Result<(), String> {
+    std::thread::sleep(std::time::Duration::from_millis(1500));
+
+    if rand::random() {
+        return Err("Random failure, test".to_string());
+    }
+
     warn!(
         "Attendance POST not implemented yet! - {}, {}",
         mission_id, steam_id
     );
+
     Ok(())
 }

@@ -16,7 +16,7 @@ where
     loop {
         match callback() {
             Err(e) if retries > 0 => {
-                warn!("Retrying - {}", e.to_string());
+                warn!("Retrying in {}s - {}", delay, e.to_string());
 
                 retries -= 1;
                 std::thread::sleep(std::time::Duration::from_secs(delay));

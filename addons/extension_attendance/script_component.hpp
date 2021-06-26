@@ -13,5 +13,7 @@
 
 #include "\z\afm\addons\main\script_macros.hpp"
 
+#define ATTENDANCE_DELAY_MIN 30
+
 #define IS_ATTENDANCE_LOGGED(ID) (missionNamespace getVariable [format [QGVAR(logged$%1), ID], false])
 #define SET_ATTENDANCE_LOGGED(ID) (missionNamespace setVariable [format [QGVAR(logged$%1), ID], true, true])

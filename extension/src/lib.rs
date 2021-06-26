@@ -48,7 +48,10 @@ fn get_current_mission_id() {
 #[rv(thread = true)]
 fn post_attendance(mission_id: String, steam_id: u64) {
     if mission_id.is_empty() {
-        return warn!("Unable to send attendance, mission_id empty.");
+        return warn!(
+            "Unable to send attendance for {} - mission_id empty.",
+            steam_id
+        );
     }
 
     info!("Sending attendance for: {}, {}", mission_id, steam_id);
@@ -61,7 +64,8 @@ fn post_attendance(mission_id: String, steam_id: u64) {
 
 // endregion
 
-// Logger
+// region: Logger
+
 use log::{Level, LevelFilter, Metadata, Record};
 struct ArmaLogger;
 impl log::Log for ArmaLogger {
@@ -82,6 +86,8 @@ impl log::Log for ArmaLogger {
     fn flush(&self) {}
 }
 static LOGGER: ArmaLogger = ArmaLogger;
+
+// endregion
 
 // needs to be at the bottom after all #[rv] functions
 #[rv_handler]
