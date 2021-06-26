@@ -1,4 +1,3 @@
-
 pub fn backoff<F, T, E>(callback: F) -> Result<T, E>
 where
     F: Fn() -> Result<T, E>,
@@ -23,7 +22,7 @@ where
                 std::thread::sleep(std::time::Duration::from_secs(delay));
                 delay *= 2;
             }
-            r => break r,
+            r => return r,
         }
     }
 }

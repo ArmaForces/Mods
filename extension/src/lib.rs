@@ -14,8 +14,8 @@ lazy_static! {
     static ref TOKEN: String = std::env::var("AF_MISSION_API_TOKEN").unwrap_or_default();
 }
 
-mod retry;
 pub mod missions;
+mod retry;
 
 #[rv]
 fn setup() -> bool {
@@ -52,7 +52,6 @@ fn post_attendance(mission_id: String, steam_id: u64) {
     }
 
     info!("Sending attendance for: {}, {}", mission_id, steam_id);
-
 
     match retry::backoff(|| missions::post_attendance(&mission_id, &steam_id)) {
         Ok(_) => info!("Saved attendance for: {}", steam_id),
