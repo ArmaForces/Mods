@@ -1,16 +1,14 @@
 #[derive(serde::Deserialize)]
 pub struct Mission {
+    pub id: String,
     pub title: String,
     pub date: String,
 }
 
 impl Mission {
-    pub fn get_id(&self) -> String {
-        self.date.to_string()
-    }
-
     fn empty() -> Self {
         Mission {
+            id: "".to_string(),
             title: "".to_string(),
             date: "".to_string(),
         }

@@ -14,6 +14,7 @@ lazy_static! {
     static ref TOKEN: String = std::env::var("AF_MISSION_API_TOKEN").unwrap_or_default();
 }
 
+mod retry;
 pub mod missions;
 
 #[rv]
@@ -31,11 +32,15 @@ fn setup() -> bool {
 
 #[rv(thread = true)]
 fn get_current_mission_id() {
-    match missions::get_current_mission() {
-        Ok(m) => rv_callback!(EXT, "set_current_mission_id", m.get_id()),
+    match retry::backoff(|| missions::get_current_mission()) {
+        Ok(m) => rv_callback!(EXT, "set_current_mission_id", m.id),
         Err(e) => {
             error!("Could not fetch current mission id - {}", e);
-            rv_callback!(EXT, "retry_get_current_mission_id");
+            rv_callback!(
+                EXT,
+                "get_current_mission_error",
+                format!("Could not fetch current mission id - {}", e)
+            );
         }
     }
 }
@@ -48,21 +53,11 @@ fn post_attendance(mission_id: String, steam_id: u64) {
 
     info!("Sending attendance for: {}, {}", mission_id, steam_id);
 
-    let mut retries = 3;
-    let mut delay = 10;
-    loop {
-        match missions::post_attendance(&mission_id, &steam_id) {
-            Ok(r) => r,
-            Err(e) if retries > 0 => {
-                warn!("Retrying attendance post for: {} - {}", steam_id, e);
 
-                retries -= 1;
-                std::thread::sleep(std::time::Duration::from_secs(delay));
-                delay *= 2;
-            }
-            Err(e) => error!("Failed to post attendance for: {} - {}", steam_id, e),
-        };
-    }
+    match retry::backoff(|| missions::post_attendance(&mission_id, &steam_id)) {
+        Ok(_) => info!("Saved attendance for: {}", steam_id),
+        Err(e) => error!("Failed to post attendance for: {} - {}", steam_id, e),
+    };
 }
 
 // endregion
