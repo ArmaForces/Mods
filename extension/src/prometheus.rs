@@ -1,6 +1,9 @@
-use std::{io::{Error, Read, Write}, net::{SocketAddr, TcpListener, TcpStream}, sync::{Arc, Condvar, Mutex, mpsc::Receiver}, thread::{self, sleep}, time::{Duration, Instant}};
-
-use crate::retry;
+use std::{
+    io::{Read, Write},
+    net::{SocketAddr, TcpListener, TcpStream},
+    sync::{mpsc, Arc, Mutex},
+    thread, time,
+};
 
 #[derive(Clone, Copy)]
 pub struct Metrics {
@@ -26,7 +29,11 @@ impl Default for Metrics {
     }
 }
 
-pub fn start<F>(address: SocketAddr, request_metrics: F, receiver: Receiver<Metrics>) -> Result<(), String>
+pub fn start<F>(
+    address: SocketAddr,
+    request_metrics: F,
+    receiver: mpsc::Receiver<Metrics>,
+) -> Result<(), String>
 where
     F: Fn() -> () + Send + 'static,
 {
@@ -45,13 +52,22 @@ impl MetricsServer {
         }
     }
 
-    pub fn start<F>(self, request_metrics: F, receiver: Receiver<Metrics>) -> Result<(), String>
+    pub fn start<F>(
+        self,
+        request_metrics: F,
+        receiver: mpsc::Receiver<Metrics>,
+    ) -> Result<(), String>
     where
         F: Fn() -> () + Send + 'static,
     {
         let listener = match TcpListener::bind(self.address) {
             Ok(l) => l,
-            Err(e) => return Err(format!("Failed to start server at: {} - {}", self.address, e)),
+            Err(e) => {
+                return Err(format!(
+                    "Failed to start server at: {} - {}",
+                    self.address, e
+                ))
+            }
         };
 
         println!("Server started at: {}", self.address);
@@ -66,7 +82,7 @@ impl MetricsServer {
                 if metrics.is_stale() {
                     request_metrics();
 
-                    *metrics = receiver.recv().unwrap();
+                    *metrics = receiver.recv_timeout(time::Duration::from_secs(5)).unwrap();
                 }
 
                 Self::handle_request(stream, *metrics);
@@ -87,8 +103,8 @@ impl MetricsServer {
 
         let (status, content) = if request.starts_with(REQUEST_METRICS) {
             let duration = match metrics.fetch_time {
-                Some(time) => Instant::now().duration_since(time),
-                None => Duration::from_secs(0),
+                Some(time) => time::Instant::now().duration_since(time),
+                None => time::Duration::from_secs(0),
             };
 
             (STATUS_SUCCESS, duration.as_secs().to_string())

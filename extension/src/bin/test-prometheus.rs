@@ -1,4 +1,11 @@
-use std::{sync::{Arc, Mutex, mpsc::{self, Receiver, SyncSender}}, thread::sleep, time::{Duration, Instant}};
+use std::{
+    sync::{
+        mpsc::{self, Receiver, SyncSender},
+        Arc, Mutex,
+    },
+    thread::sleep,
+    time::{Duration, Instant},
+};
 
 use armaforces_mods::prometheus;
 use log::info;
@@ -44,9 +51,10 @@ fn main() {
     *lock = Some(tx);
     drop(lock);
 
-    let server = prometheus::start("0.0.0.0:8080".parse().unwrap(), || {
-        export_metrics()
-    }, rx).unwrap();
+    let server =
+        prometheus::start("0.0.0.0:8080".parse().unwrap(), || export_metrics(), rx).unwrap();
 
-    loop {std::thread::park()};
+    loop {
+        std::thread::park()
+    }
 }
