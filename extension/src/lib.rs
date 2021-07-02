@@ -12,9 +12,11 @@ lazy_static! {
     static ref MISSION_API: String = std::env::var("AF_MISSION_API")
         .unwrap_or(String::from("https://boderator.armaforces.com/api"));
     static ref TOKEN: String = std::env::var("AF_MISSION_API_TOKEN").unwrap_or_default();
+    static ref PROMETHEUS: bool = std::env::var("AF_PROMETHEUS_ENABLED").unwrap_or_default() == "1";
 }
 
 pub mod missions;
+pub mod prometheus;
 mod retry;
 
 #[rv]
@@ -93,4 +95,9 @@ static LOGGER: ArmaLogger = ArmaLogger;
 #[rv_handler]
 fn init() {
     let _ = log::set_logger(&LOGGER).map(|()| log::set_max_level(LevelFilter::Info));
+
+    if *PROMETHEUS || true {
+        info!("Starting Prometheus stats");
+        // std::thread::spawn(move || prometheus::thread(|| rv_callback!(EXT, "get_stats")));
+    }
 }
