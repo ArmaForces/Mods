@@ -29,15 +29,37 @@ impl Default for Metrics {
     }
 }
 
-pub fn start<F>(
-    address: SocketAddr,
-    request_metrics: F,
-    receiver: mpsc::Receiver<Metrics>,
-) -> Result<(), String>
+/// Helper to request metrics from Arma and receive them via Receiver
+pub struct MetricsFetcher<F>
+where
+    F: Fn() + Send + 'static,
+{
+    pub requester: F,
+    pub receiver: mpsc::Receiver<Metrics>,
+}
+impl<F> MetricsFetcher<F>
+where
+    F: Fn() + Send + 'static,
+{
+    /// Request Metrics
+    fn request(&self) {
+        (self.requester)()
+    }
+
+    /// Receive Metrics on the receiver channel, will return error if receiving takes too long.
+    fn receive(&self) -> Result<Metrics, mpsc::RecvTimeoutError> {
+        const RECEIVE_TIMEOUT: u64 = 3;
+
+        self.receiver
+            .recv_timeout(time::Duration::from_secs(RECEIVE_TIMEOUT))
+    }
+}
+
+pub fn start<F>(address: SocketAddr, fetcher: MetricsFetcher<F>) -> Result<(), String>
 where
     F: Fn() -> () + Send + 'static,
 {
-    MetricsServer::new(address).start(request_metrics, receiver)
+    MetricsServer::new(address).start(fetcher)
 }
 
 pub struct MetricsServer {
@@ -52,11 +74,8 @@ impl MetricsServer {
         }
     }
 
-    pub fn start<F>(
-        self,
-        request_metrics: F,
-        receiver: mpsc::Receiver<Metrics>,
-    ) -> Result<(), String>
+    /// Starts HTTP server and fetches Metrics when stale
+    pub fn start<F>(self, fetcher: MetricsFetcher<F>) -> Result<(), String>
     where
         F: Fn() -> () + Send + 'static,
     {
@@ -80,9 +99,9 @@ impl MetricsServer {
                 // if metrics are stale request them from separate thread and wait for the result
                 let mut metrics = metrics_arc.lock().unwrap();
                 if metrics.is_stale() {
-                    request_metrics();
+                    fetcher.request();
 
-                    *metrics = receiver.recv_timeout(time::Duration::from_secs(5)).unwrap();
+                    *metrics = fetcher.receive().unwrap();
                 }
 
                 Self::handle_request(stream, *metrics);

@@ -1,14 +1,13 @@
 use std::{
     sync::{
-        mpsc::{self, Receiver, SyncSender},
-        Arc, Mutex,
+        mpsc::{self, SyncSender},
+        Mutex,
     },
     thread::sleep,
     time::{Duration, Instant},
 };
 
-use armaforces_mods::prometheus;
-use log::info;
+use armaforces_mods::prometheus::{self, MetricsFetcher};
 
 #[macro_use]
 extern crate lazy_static;
@@ -51,8 +50,13 @@ fn main() {
     *lock = Some(tx);
     drop(lock);
 
-    let server =
-        prometheus::start("0.0.0.0:8080".parse().unwrap(), || export_metrics(), rx).unwrap();
+    let addres = "0.0.0.0:8080".parse().unwrap();
+    let fetcher = MetricsFetcher {
+        requester: || export_metrics(),
+        receiver: rx,
+    };
+
+    let _server = prometheus::start(addres, fetcher).unwrap();
 
     loop {
         std::thread::park()
