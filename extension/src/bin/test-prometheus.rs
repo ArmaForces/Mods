@@ -8,6 +8,7 @@ use std::{
 };
 
 use armaforces_mods::prometheus::{self, MetricsFetcher};
+use rand::Rng;
 
 #[macro_use]
 extern crate lazy_static;
@@ -21,7 +22,9 @@ fn export_metrics() {
     println!("requesting metrics");
 
     std::thread::spawn(|| {
-        sleep(Duration::from_secs(2));
+        let mut rng = rand::thread_rng();
+
+        sleep(Duration::from_secs(rng.gen_range(1..4)));
         send_metrics();
     });
 }
@@ -38,7 +41,9 @@ fn send_metrics() {
     metrics.fetch_time = Some(Instant::now());
 
     println!("tx");
-    tx.send(metrics).unwrap();
+    if let Err(e) = tx.try_send(metrics) {
+        println!("Failed to send metrics - {}", e);
+    }
 }
 
 fn main() {

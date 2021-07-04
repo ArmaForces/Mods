@@ -42,16 +42,27 @@ where
     F: Fn() + Send + 'static,
 {
     /// Request Metrics
-    fn request(&self) {
-        (self.requester)()
+    fn request(&self) -> Metrics {
+        (self.requester)();
+
+        self.receive()
     }
 
-    /// Receive Metrics on the receiver channel, will return error if receiving takes too long.
-    fn receive(&self) -> Result<Metrics, mpsc::RecvTimeoutError> {
+    /// Receive Metrics on the receiver channel, will return empty metrics on timeout
+    fn receive(&self) -> Metrics {
         const RECEIVE_TIMEOUT: u64 = 3;
 
-        self.receiver
+        match self
+            .receiver
             .recv_timeout(time::Duration::from_secs(RECEIVE_TIMEOUT))
+        {
+            Ok(m) => m,
+            Err(e) => {
+                error!("Failed to recive metrics - {}", e);
+
+                Metrics::default()
+            }
+        }
     }
 }
 
@@ -91,7 +102,7 @@ impl MetricsServer {
 
         println!("Server started at: {}", self.address);
 
-        let metrics_arc = self.metrics.clone();
+        let metrics_arc = self.metrics;
         std::thread::spawn(move || {
             for stream in listener.incoming() {
                 let stream = stream.unwrap();
@@ -99,9 +110,7 @@ impl MetricsServer {
                 // if metrics are stale request them from separate thread and wait for the result
                 let mut metrics = metrics_arc.lock().unwrap();
                 if metrics.is_stale() {
-                    fetcher.request();
-
-                    *metrics = fetcher.receive().unwrap();
+                    *metrics = fetcher.request();
                 }
 
                 Self::handle_request(stream, *metrics);
@@ -113,7 +122,7 @@ impl MetricsServer {
 
     fn handle_request(mut stream: TcpStream, metrics: Metrics) {
         const STATUS_SUCCESS: &str = "HTTP/1.1 200 OK";
-        const STATUS_BAD_REQUEST: &str = "HTTP/1.1 404 NOT FOUND";
+        const STATUS_NOT_FOUND: &str = "HTTP/1.1 404 NOT FOUND";
 
         const REQUEST_METRICS: &[u8; 23] = b"GET /metrics HTTP/1.1\r\n";
 
@@ -121,14 +130,17 @@ impl MetricsServer {
         stream.read(&mut request).unwrap();
 
         let (status, content) = if request.starts_with(REQUEST_METRICS) {
-            let duration = match metrics.fetch_time {
-                Some(time) => time::Instant::now().duration_since(time),
-                None => time::Duration::from_secs(0),
+            let content: String = match metrics.fetch_time {
+                Some(time) => time::Instant::now()
+                    .duration_since(time)
+                    .as_secs()
+                    .to_string(),
+                None => "empty".to_string(),
             };
 
-            (STATUS_SUCCESS, duration.as_secs().to_string())
+            (STATUS_SUCCESS, content)
         } else {
-            (STATUS_BAD_REQUEST, "NOT FOUND".to_string())
+            (STATUS_NOT_FOUND, "NOT FOUND".to_string())
         };
 
         let response = format!(
