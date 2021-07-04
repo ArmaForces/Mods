@@ -4,7 +4,8 @@ author = "ArmaForces"
 files = [
     "LICENSE",
     "mod.cpp",
-    "README.md"
+    "README.md",
+    "armaforces_mods_x64.dll",
 ]
 
 exclude = ["*.psd", "*.png", "*.tga"]
@@ -14,15 +15,25 @@ key_name = "armaforces_mods_{{version}}"
 authority = "armaforces_mods_{{version}}"
 
 releasebuild = [
-    "!Set_version",
+    "!set_version",
     "@zip",
-    "!Publish"
+    "!publish"
 ]
 
 [header_exts]
 version = "{{git \"id 8\"}}"
 
-[scripts.Set_version]
+[scripts.extension]
+    show_output = true
+    steps_windows = [
+        "cd extension && cargo build --release",
+        "copy extension\\target\\release\\armaforces_mods.dll armaforces_mods_x64.dll"
+    ]
+    steps_linux = [
+        "echo \"Unable to build extension on Linux\""
+    ]
+
+[scripts.set_version]
     steps_windows = [
         "powershell ./tools/Set-Version.ps1 {{version}} '@armaforces_mods'"
     ]
@@ -31,7 +42,7 @@ version = "{{git \"id 8\"}}"
     ]
     # show_output = true
 
-[scripts.Publish]
+[scripts.publish]
     steps_windows = [
         "powershell ./tools/Publish.ps1 {{version}} 1934142795 '@armaforces_mods'"
     ]
