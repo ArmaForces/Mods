@@ -13,5 +13,21 @@
             <English>Locks your weapon safety on game start</English>
             <Polish>Powoduje zabezpieczenie broni podczas startu rozgrywki</Polish>
         </Key>
+        <Key ID="STR_AFM_Safestart_ThrowBind_Title">
+            <English>Dangerous bind detected!</English>
+            <Polish>Wykryto niebezpieczne przypisanie klawiszy!</Polish>
+        </Key>
+        <Key ID="STR_AFM_Safestart_ThrowBind_Warn">
+            <English>Hey!&lt;br /&gt;You have bound &#39;Throw&#39; (Grenade) key to G which is easy to press and is considered a &#39;Dangerous&#39; bind.&lt;br /&gt;It&#39;s recommended to unbind the key as you can use ACE Throwing (Shift+G) or bind it to 2xG.&lt;br /&gt;Do you want to rebind the action?</English>
+            <Polish>Hej!&lt;br /&gt;Masz ustawiony &#39;Rzut&#39; (Granatem) pod klawiszem G który jest dość łatwo wcisnąć. Zalecane jest odbindowanie dla bezpieczeństwa siebie samego oraz otoczenia, zamiast tego można używać ACE Throwing (Shift+G) albo zbindować rzut na 2xG.&lt;br /&gt;Czy chcesz przebindować akcje?</Polish>
+        </Key>
+        <Key ID="STR_AFM_Safestart_ThrowBind_WarnNoACEThrowing">
+            <English>Hey!&lt;br /&gt;You have bound &#39;Throw&#39; (Grenade) key to G which is easy to press and is considered a &#39;Dangerous&#39; bind.&lt;br /&gt;It&#39;s recommended to bind it to 2xG.&lt;br /&gt;Do you want to rebind the action?</English>
+            <Polish>Hej!&lt;br /&gt;Masz ustawiony &#39;Rzut&#39; (Granatem) pod klawiszem G który jest dość łatwo wcisnąć. Zalecane jest przebindowanie na 2xG dla bezpieczeństwa siebie samego oraz otoczenia.&lt;br /&gt;Czy chcesz przebindować akcje?</Polish>
+        </Key>
+        <Key ID="STR_AFM_Safestart_ThrowBind_Warn2">
+            <English>Are you completly sure!? By confirming this you take full responsblity for all possible accidents.</English>
+            <Polish>Jesteś pewny!? Potwierdzając to bierzesz pełną odpowiedzialność za możliwe wypadki.</Polish>
+        </Key>
     </Package>
 </Project>
