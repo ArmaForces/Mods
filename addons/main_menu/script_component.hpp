@@ -17,3 +17,15 @@
 #include "\z\afm\addons\main\script_macros.hpp"
 
 #define MP_PWD_BORDER_CONTROL (_display displayCtrl ([108, 143] select (_displayName == 'RscDisplayRemoteMissions')))
+
+#define POS_X(N) ((N) * GUI_GRID_W + GUI_GRID_CENTER_X)
+#define POS_Y(N) ((N) * GUI_GRID_H + GUI_GRID_CENTER_Y)
+#define POS_W(N) ((N) * GUI_GRID_W)
+#define POS_H(N) ((N) * GUI_GRID_H)
+
+#define COLOR_BCG { \
+    "(profilenamespace getVariable ['GUI_BCG_RGB_R',0.13])", \
+    "(profilenamespace getVariable ['GUI_BCG_RGB_G',0.54])", \
+    "(profilenamespace getVariable ['GUI_BCG_RGB_B',0.21])", \
+    "(profilenamespace getVariable ['GUI_BCG_RGB_A',0.8])" \
+}

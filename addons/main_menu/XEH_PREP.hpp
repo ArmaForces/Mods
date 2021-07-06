@@ -1,1 +1,2 @@
 PREP(join);
+PREP(serverStatusOnLoad);
