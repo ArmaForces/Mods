@@ -16,21 +16,18 @@
  * Public: No
  */
 
-diag_log "asdf";
-
 params ["_ctrlGroup"];
 
-private _ctrlText = _ctrlGroup controlsGroupCtrl 1000;
+if (getClientState == "NONE" && !is3DEN) exitWith {
+    _ctrlGroup ctrlShow false;
+};
 
-diag_log _ctrlText;
+private _ctrlText = _ctrlGroup controlsGroupCtrl 1000;
 
 GVAR(text) = _ctrlText;
 
 _ctrlGroup spawn {
     waitUntil {
-        diag_log getClientState;
-        diag_log GVAR(text);
-
         GVAR(text) ctrlSetText getClientState;
         GVAR(text) ctrlCommit 0;
 
