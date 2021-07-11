@@ -21,7 +21,7 @@ class RscDisplayClient: RscStandardDisplay {
             onLoad = QUOTE(with uiNamespace do {call FUNC(serverStatusOnLoad)});
 
                 x = QUOTE(safezoneX + POS_W(1));
-                y = QUOTE(safeZoneY + SERVER_STATUS_H * POS_H(1));
+                y = QUOTE(safeZoneY + 3.5 * POS_H(1));
                 w = QUOTE(POS_W(SERVER_STATUS_W));
                 h = QUOTE(POS_H(SERVER_STATUS_H));
 
@@ -58,7 +58,6 @@ class RscDisplayClient: RscStandardDisplay {
 
                 class ButtonsRow: RscControlsGroupNoScrollbars {
                     x = 0;
-
                     y = QUOTE(POS_H(SERVER_STATUS_BUTTONS_Y));
                     w = QUOTE(POS_W(SERVER_STATUS_W));
                     h = QUOTE(POS_H(SERVER_STATUS_BUTTONS_H));
