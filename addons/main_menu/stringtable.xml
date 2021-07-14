@@ -24,5 +24,25 @@
             <English>Missions</English>
             <Polish>Misje</Polish>
         </Key>
+        <Key ID="STR_AFM_Main_Menu_ServerStatus_Joining">
+            <English>Joining</English>
+            <Polish>Dołączanie</Polish>
+        </Key>
+        <Key ID="STR_AFM_Main_Menu_ServerStatus_Joining_Desc">
+            <English>Trying to establish connection with the server, please wait.</English>
+            <Polish>Trwa ustanawianie połączenia z serwerem, proszę czekać.</Polish>
+        </Key>
+        <Key ID="STR_AFM_Main_Menu_ServerStatus_Connected">
+            <English>Connected to server</English>
+            <Polish>Podłączono do serwera</Polish>
+        </Key>
+        <Key ID="STR_AFM_Main_Menu_ServerStatus_Connected_Desc">
+            <English>You're connected to the server. Please wait for the admin to select mission.&lt;br /&gt;(You can use #login command to log in as admin)</English>
+            <Polish>Jesteś podłączony do serwera. Proszę czekać aż admin wybierze misję.&lt;br /&gt;(Możesz użyć komendy #login aby zalogować się jako admin)</Polish>
+        </Key>
+        <Key ID="STR_AFM_Main_Menu_ServerStatus_ConnectedAdmin_Desc">
+            <English>You're connected to the server as admin.&lt;br /&gt;(You can use #missions command to show missions list)</English>
+            <Polish>Jesteś podłączony do serwera jako admin.&lt;br /&gt;(Możesz użyć komendy #missions aby wyświetlić listę misji)</Polish>
+        </Key>
     </Package>
 </Project>

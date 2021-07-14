@@ -35,7 +35,7 @@ class RscDisplayClient: RscStandardDisplay {
                     h = QUOTE(POS_H(SERVER_STATUS_TITLE_H));
                 };
                 class Title: RscStructuredText {
-                    idc = 1000;
+                    idc = IDC_SERVERSTATUS_TITLE;
 
                     colorText[] = {1,1,1,1};
 
@@ -55,6 +55,18 @@ class RscDisplayClient: RscStandardDisplay {
                     w = QUOTE(POS_W(SERVER_STATUS_W));
                     h = QUOTE(POS_H(SERVER_STATUS_CONTENT_H));
                 };
+                class Description: RscStructuredText {
+                    idc = IDC_SERVERSTATUS_DESCRIPTION;
+
+                    colorText[] = {1,1,1,1};
+
+                    size = QUOTE(POS_H(0.85));
+
+                    x = 0;
+                    y = QUOTE(POS_H(SERVER_STATUS_TITLE_H));
+                    w = QUOTE(POS_W(SERVER_STATUS_W));
+                    h = QUOTE(POS_H(SERVER_STATUS_CONTENT_H));
+                };
 
                 class ButtonsRow: RscControlsGroupNoScrollbars {
                     x = 0;
@@ -64,7 +76,7 @@ class RscDisplayClient: RscStandardDisplay {
 
                     class Controls {
                         class PasswordInput: RscEdit {
-                            idc = 1001;
+                            idc = IDC_SERVERSTATUS_PASSWORD;
 
                             x = 0;
                             y = 0;
@@ -72,7 +84,7 @@ class RscDisplayClient: RscStandardDisplay {
                             h = QUOTE(POS_H(SERVER_STATUS_BUTTONS_H));
                         };
                         class LoginButton: RscButtonMenu {
-                            idc = 1002;
+                            idc = IDC_SERVERSTATUS_LOGIN;
 
                             x = QUOTE(POS_W(SERVER_STATUS_W/4 * 2));
                             y = 0;
@@ -80,7 +92,7 @@ class RscDisplayClient: RscStandardDisplay {
                             h = QUOTE(POS_H(SERVER_STATUS_BUTTONS_H));
                         };
                         class MissionsButton: RscButtonMenu {
-                            idc = 1003;
+                            idc = IDC_SERVERSTATUS_MISSIONS;
 
                             x = QUOTE(POS_W(SERVER_STATUS_W/4 * 3));
                             y = 0;

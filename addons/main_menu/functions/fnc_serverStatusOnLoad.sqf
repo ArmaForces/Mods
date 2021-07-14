@@ -23,15 +23,17 @@ if (getClientState == "NONE" && !is3DEN) exitWith {
     _ctrlGroup ctrlShow false;
 };
 
-private _ctrlText = _ctrlGroup controlsGroupCtrl 1000;
-private _ctrlLoginInput = _ctrlGroup controlsGroupCtrl 1001;
-private _ctrlLoginButton = _ctrlGroup controlsGroupCtrl 1002;
-private _ctrlMissionsButton = _ctrlGroup controlsGroupCtrl 1003;
+private _ctrlText = _ctrlGroup controlsGroupCtrl IDC_SERVERSTATUS_TITLE;
+private _ctrlDesc = _ctrlGroup controlsGroupCtrl IDC_SERVERSTATUS_DESCRIPTION;
+private _ctrlLoginInput = _ctrlGroup controlsGroupCtrl IDC_SERVERSTATUS_PASSWORD;
+private _ctrlLoginButton = _ctrlGroup controlsGroupCtrl IDC_SERVERSTATUS_LOGIN;
+private _ctrlMissionsButton = _ctrlGroup controlsGroupCtrl IDC_SERVERSTATUS_MISSIONS;
 
 _ctrlMissionsButton ctrlEnable IS_ADMIN;
 
 // Server status update loop
-_ctrlText spawn {
+[_ctrlText, _ctrlDesc] spawn {
+    params ["_ctrlTitle", "_ctrlDesc"];
 
     private _dots = "";
 
@@ -41,15 +43,20 @@ _ctrlText spawn {
                 _dots = "";
             };
 
-            _this ctrlSetText (["Joining", _dots] joinString "");
+            _ctrlTitle ctrlSetText ([LLSTRING(ServerStatus_Joining), _dots] joinString "");
             _dots = [_dots, "."] joinString "";
+
+            _ctrlDesc ctrlSetText LLSTRING(ServerStatus_Joining_Desc);
         } else {
-            _this ctrlSetText "Connected to server";
+            _ctrlTitle ctrlSetText LLSTRING(ServerStatus_Connected);
+
+            private _desc = [LLSTRING(ServerStatus_Connected_Desc), LLSTRING(ServerStatus_ConnectedAdmin_Desc)] select IS_ADMIN;
+            _ctrlDesc ctrlSetStructuredText parseText _desc;
         };
 
         uiSleep 1;
 
-        isNull _this;
+        isNull _ctrlTitle;
     };
 };
 
