@@ -55,4 +55,8 @@ _ctrlText spawn {
 
 [_ctrlLoginInput, _ctrlLoginButton, _ctrlMissionsButton] call FUNC(addMultiplayerButtonsLogic);
 
+// TODO find a way to show cursor on loading screen, tabbing to this panel is not so useful / intuitive
+// hidden for now
+ctrlParentControlsGroup _ctrlLoginInput ctrlShow false;
+
 nil
