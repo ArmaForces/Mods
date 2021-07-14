@@ -51,9 +51,9 @@ class RscDisplayClient: RscStandardDisplay {
                     colorBackground[] = COLOR_BCG_TRANS;
 
                     x = 0;
-                    y = QUOTE(POS_H(SERVER_STATUS_TITLE_H));
+                    y = QUOTE(POS_H(SERVER_STATUS_TITLE_H) + 2 * pixelH);
                     w = QUOTE(POS_W(SERVER_STATUS_W));
-                    h = QUOTE(POS_H(SERVER_STATUS_CONTENT_H));
+                    h = QUOTE(POS_H(SERVER_STATUS_CONTENT_H) - 2 * pixelH);
                 };
                 class Description: RscStructuredText {
                     idc = IDC_SERVERSTATUS_DESCRIPTION;
@@ -63,9 +63,9 @@ class RscDisplayClient: RscStandardDisplay {
                     size = QUOTE(POS_H(0.85));
 
                     x = 0;
-                    y = QUOTE(POS_H(SERVER_STATUS_TITLE_H));
+                    y = QUOTE(POS_H(SERVER_STATUS_TITLE_H) + 2 * pixelH);
                     w = QUOTE(POS_W(SERVER_STATUS_W));
-                    h = QUOTE(POS_H(SERVER_STATUS_CONTENT_H));
+                    h = QUOTE(POS_H(SERVER_STATUS_CONTENT_H) - 2 * pixelH);
                 };
 
                 class ButtonsRow: RscControlsGroupNoScrollbars {
