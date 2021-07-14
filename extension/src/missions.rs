@@ -1,6 +1,5 @@
 #[derive(serde::Deserialize)]
 pub struct Mission {
-    pub id: String,
     pub title: String,
     pub date: String,
 }
@@ -8,10 +7,15 @@ pub struct Mission {
 impl Mission {
     fn empty() -> Self {
         Mission {
-            id: "".to_string(),
             title: "".to_string(),
             date: "".to_string(),
         }
+    }
+    pub fn get_id(&self) -> String {
+        chrono::NaiveDateTime::parse_from_str(&self.date, "%Y-%m-%dT%H:%M:%S")
+            .unwrap()
+            .timestamp()
+            .to_string()
     }
 }
 
@@ -55,4 +59,14 @@ pub fn post_attendance(mission_id: &String, steam_id: &u64) -> Result<(), String
     );
 
     Ok(())
+}
+
+#[test]
+fn test_mission_get_id() {
+    let mission = Mission {
+        title: "".to_string(),
+        date: "2021-07-04T14:00:01".to_string(),
+    };
+
+    assert_eq!("1625407201", mission.get_id());
 }

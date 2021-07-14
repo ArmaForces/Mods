@@ -33,7 +33,7 @@ fn setup() -> bool {
 #[rv(thread = true)]
 fn get_current_mission_id() {
     match retry::backoff(|| missions::get_current_mission()) {
-        Ok(m) => rv_callback!(EXT, "set_current_mission_id", m.id),
+        Ok(m) => rv_callback!(EXT, "set_current_mission_id", m.get_id()),
         Err(e) => {
             error!("Could not fetch current mission id - {}", e);
             rv_callback!(
