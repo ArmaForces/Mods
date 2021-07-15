@@ -10,7 +10,7 @@ static EXT: &str = "armaforces_mods";
 
 lazy_static! {
     static ref MISSION_API: String = std::env::var("AF_MISSION_API")
-        .unwrap_or(String::from("https://boderator.armaforces.com/api"));
+        .unwrap_or_else(|_| String::from("https://boderator.armaforces.com/api"));
     static ref TOKEN: String = std::env::var("AF_MISSION_API_TOKEN").unwrap_or_default();
 }
 
@@ -32,7 +32,7 @@ fn setup() -> bool {
 
 #[rv(thread = true)]
 fn get_current_mission_id() {
-    match retry::backoff(|| missions::get_current_mission()) {
+    match retry::backoff(missions::get_current_mission) {
         Ok(m) => rv_callback!(EXT, "set_current_mission_id", m.get_id()),
         Err(e) => {
             error!("Could not fetch current mission id - {}", e);
