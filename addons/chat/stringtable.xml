@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="AFM">
+    <Package name="Chat">
+        <Key ID="STR_AFM_Chat_DisplayName">
+            <English>ArmaForces - Chat</English>
+            <Polish>ArmaForces - Czat</Polish>
+        </Key>
+        <Key ID="STR_AFM_Chat_Enabled">
+            <English>Force reload on disembarking AI</English>
+            <Polish>Wymuś przeładowanie na wysiadająych AI</Polish>
+        </Key>
+        <Key ID="STR_AFM_Chat_Enabled_Description">
+            <English>Forces AI to play reload animation after disembarking from vehicle. Prevents instant shooting after disembark.</English>
+            <Polish>Zmusza AI do odegrania animacji przeładowania po wyjściu z pojazdu. Zapobiega strzelaniu natychmiast po wyjściu.</Polish>
+        </Key>
+        <Key ID="STR_AFM_Chat_StayInImmobileChance">
+            <English>Stay in immobile vehicle chance</English>
+            <Polish>Szansa na pozostanie w opuszczonym pojeździe</Polish>
+        </Key>
+        <Key ID="STR_AFM_Chat_StayInImmobileChance_Description">
+            <English>Chance that AI will be told to stay in immobilized vehicles, applied on vehicle init.</English>
+            <Polish>Szansa że AI pozostanie w unieruchomionym pojeździe, ma zastosowanie od inicjalizacji pojazdu.</Polish>
+        </Key>
+    </Package>
+</Project>
