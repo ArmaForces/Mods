@@ -34,7 +34,7 @@ dependencies = [
 
 [[package]]
 name = "armaforces_mods"
-version = "0.1.0"
+version = "0.2.0"
 dependencies = [
  "arma-rs",
  "chrono",

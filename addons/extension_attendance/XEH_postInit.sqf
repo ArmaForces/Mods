@@ -1,6 +1,7 @@
 #include "script_component.hpp"
 
-if (!hasInterface || {IS_ATTENDANCE_LOGGED(getPlayerUID player)}) exitWith {
+if (!hasInterface) exitWith {};
+if (IS_ATTENDANCE_LOGGED(getPlayerUID player)) exitWith {
     INFO("Player attendance already logged");
 };
 

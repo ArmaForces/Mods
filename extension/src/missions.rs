@@ -1,3 +1,5 @@
+use reqwest::StatusCode;
+
 #[derive(serde::Deserialize)]
 pub struct Mission {
     pub title: String,
@@ -46,19 +48,43 @@ pub fn get_current_mission() -> Result<Mission, String> {
     }
 }
 
+#[derive(serde::Serialize)]
+struct AttendanceBody<'a> {
+    #[serde(rename = "missionId")]
+    mission_id: &'a str,
+    #[serde(rename = "playerId")]
+    steam_id: &'a u64,
+}
+
+#[derive(serde::Deserialize)]
+struct AttendanceResponse {
+    detail: String,
+}
+
 pub fn post_attendance(mission_id: &str, steam_id: &u64) -> Result<(), String> {
-    std::thread::sleep(std::time::Duration::from_millis(1500));
+    let resp = reqwest::blocking::Client::new()
+        .post(&format!("{}/attendances", *crate::ATTENDANCE_API))
+        .header("X-API-KEY", crate::ATTENDANCE_TOKEN.clone())
+        .json(&AttendanceBody {
+            mission_id,
+            steam_id,
+        })
+        .send();
 
-    if rand::random() {
-        return Err("Random failure, test".to_string());
+    match resp {
+        Ok(r) => match r.status() {
+            StatusCode::CREATED => Ok(()),
+            s => {
+                let resp = r
+                    .json::<AttendanceResponse>()
+                    .unwrap_or(AttendanceResponse {
+                        detail: format!("Unkown error - {}", s),
+                    });
+                Err(resp.detail)
+            }
+        },
+        Err(e) => Err(e.to_string()),
     }
-
-    warn!(
-        "Attendance POST not implemented yet! - {}, {}",
-        mission_id, steam_id
-    );
-
-    Ok(())
 }
 
 #[test]
