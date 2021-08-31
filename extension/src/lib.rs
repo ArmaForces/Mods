@@ -11,7 +11,10 @@ static EXT: &str = "armaforces_mods";
 lazy_static! {
     static ref MISSION_API: String = std::env::var("AF_MISSION_API")
         .unwrap_or_else(|_| String::from("https://boderator.armaforces.com/api"));
-    static ref TOKEN: String = std::env::var("AF_MISSION_API_TOKEN").unwrap_or_default();
+    static ref ATTENDANCE_API: String = std::env::var("AF_ATTENDANCE_API")
+        .unwrap_or_else(|_| String::from("https://armaforces.com/api"));
+    static ref ATTENDANCE_TOKEN: String =
+        std::env::var("AF_ATTENDANCE_API_TOKEN").unwrap_or_default();
 }
 
 pub mod missions;
@@ -19,11 +22,11 @@ mod retry;
 
 #[rv]
 fn setup() -> bool {
-    if TOKEN.is_empty() {
-        error!("Token is empty, disabled");
+    if ATTENDANCE_TOKEN.is_empty() {
+        error!("Attendance token is empty, disabled");
         false
     } else {
-        info!("Token not empty, enabled");
+        info!("Attendance token not empty, enabled");
         true
     }
 }
