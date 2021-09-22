@@ -61,4 +61,10 @@ if (!isNull _counterDisplay) then {
 
 _display call FUNC(addPlayerStatePanel);
 
+// Removes death blur if present
+if (!isNil "BIS_DeathBlur") then {
+    BIS_DeathBlur ppEffectAdjust [0];
+    BIS_DeathBlur ppEffectCommit 0;
+};
+
 nil
