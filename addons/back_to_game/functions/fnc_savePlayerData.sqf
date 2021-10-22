@@ -25,9 +25,6 @@ private _handlerData = GVAR(saveHandlers) apply {[_x select 1, _unit call (_x se
 
 // filter ACRE2 radios
 if (EGVAR(common,acre)) then {
-    INFO_1("Loadout debug - %1",str _loadout);
-    INFO_1("%1",str (_loadout select 9));
-
     _loadout = [_loadout] call acre_api_fnc_filterUnitLoadout;
 };
 

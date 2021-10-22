@@ -25,6 +25,8 @@ if (!isServer && {hasInterface}) exitWith {
     nil
 };
 
+if (_unit isKindOf "HeadlessClient_F") exitWith {};
+
 if (!alive _unit) exitWith {
     INFO_1("Player %1 was dead when disconnected. No data was saved.",name _unit);
     nil
