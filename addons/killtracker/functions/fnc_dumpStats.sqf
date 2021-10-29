@@ -12,7 +12,7 @@
  * Public: No
  */
 
-if (isNil "acex_killTracker_eventsArray") exitWith {
+if (isNil "ace_killTracker_eventsArray") exitWith {
     WARNING("ACEX Killtracker not detected, can't show stats");
 };
 
@@ -23,7 +23,7 @@ diag_log text "------ [START_KILLTRACKER_STATS] ------";
 
 {
     diag_log text _x;
-} forEach acex_killTracker_eventsArray;
+} forEach ace_killTracker_eventsArray;
 
 diag_log text format ["Total kills: %1", count acex_killTracker_eventsArray];
 diag_log text "------ [END_KILLTRACKER_STATS] ------";
