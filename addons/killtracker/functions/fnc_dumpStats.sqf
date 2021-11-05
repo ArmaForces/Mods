@@ -25,7 +25,7 @@ diag_log text "------ [START_KILLTRACKER_STATS] ------";
     diag_log text _x;
 } forEach ace_killTracker_eventsArray;
 
-diag_log text format ["Total kills: %1", count acex_killTracker_eventsArray];
+diag_log text format ["Total kills: %1", count ace_killTracker_eventsArray];
 diag_log text "------ [END_KILLTRACKER_STATS] ------";
 
 nil
