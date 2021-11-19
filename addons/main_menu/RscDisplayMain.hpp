@@ -1,7 +1,5 @@
-class RscStandardDisplay;
+
 class RscDisplayMain: RscStandardDisplay {
-    class Spotlight {
-        delete lxWS_Extraction;
-        delete lxWS_Showcase_VR;
-    };
+    // delete all Spotlights added directly to the display. (only saw it in WS CDLC so far)
+    delete Spotlight;
 };
