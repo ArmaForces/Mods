@@ -13,4 +13,7 @@
 
 #include "\z\afm\addons\main\script_macros.hpp"
 
+#define DEFAULT_CTITLE(TASK_NAME) format ["$Task_%1_Title", TASK_NAME]
+#define DEFAULT_CDESCRIPTION(TASK_NAME) format ["$Task_%1_Description", TASK_NAME]
+
 #define FINISHED_TASK_STATES ["SUCCEEDED", "FAILED", "CANCELED"]
