@@ -4,7 +4,8 @@
  * Function creates task from given task namespace.
  *
  * Arguments:
- * 0: Task namespace <CBA_NAMESPACE>
+ * 0: Task config name <STRING>
+ * 1: Task namespace <CBA_NAMESPACE>
  *
  * Return Value:
  * None
