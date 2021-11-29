@@ -79,14 +79,7 @@ fn get_server_status() {
     match retry::backoff(server::get_status) {
         Ok(s) => {
             info!("Server status: {:?}", s);
-            match s {
-                server::ServerStatus::Started { .. } => {
-                    rv_callback!(EXT, "get_server_status", "started")
-                }
-                server::ServerStatus::Stopped {} => {
-                    rv_callback!(EXT, "get_server_status", "stopped")
-                }
-            }
+            rv_callback!(EXT, "get_server_status", s);
         }
         Err(e) => error!("Could not fetch server status - {}", e),
     }

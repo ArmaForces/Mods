@@ -21,7 +21,7 @@ if (uiNamespace getVariable [QGVAR(serverStatus), false]) exitWith {};
 
     private _display = findDisplay 0;
     private _ctrlSpotlightMain = _display displayctrl IDC_MAIN_SPOTLIGHT_GROUP_1;
-    INFO_1("Adding server status text",_ctrlSpotlightMain);
+    TRACE_1("Adding server status text",_ctrlSpotlightMain);
 
     // get first spotlight
     private _ctrlGrpSpotlight = (_ctrlSpotlightMain getVariable "spotlights") param [0, controlNull];
@@ -41,7 +41,7 @@ if (uiNamespace getVariable [QGVAR(serverStatus), false]) exitWith {};
     } foreach ["mouseExit", "killFocus"];
 
     uiNamespace setVariable [QGVAR(ctrlServerStatus), _ctrlText];
-    call FUNC(updateServerStatus);
+    [] call FUNC(updateServerStatus);
 
 };
 

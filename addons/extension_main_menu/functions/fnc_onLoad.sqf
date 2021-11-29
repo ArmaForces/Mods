@@ -20,7 +20,7 @@
 if (!isNull (uiNamespace getVariable [QGVAR(loop), scriptNull])) exitWith {};
 
 params ["_display"];
-INFO_1("Main menu refresh",_display);
+TRACE_1("Main menu refresh",_display);
 
 GVAR(extEh) = addMissionEventHandler ["ExtensionCallback", {
     params ["_name", "_function", "_data"];
@@ -31,7 +31,7 @@ GVAR(extEh) = addMissionEventHandler ["ExtensionCallback", {
     };
     if (_name != EXT || _function != "get_server_status") exitWith {};
 
-    diag_log text format ["from extension - %1", _data];
+    parseSimpleArray _data call FUNC(updateServerStatus);
 }];
 
 GVAR(loop) = [] spawn {

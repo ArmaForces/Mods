@@ -2,7 +2,6 @@
 #[serde(tag = "status")]
 pub enum ServerStatus {
     Started {
-        name: String,
         #[serde(rename = "modsetName")]
         modset_name: String,
         map: String,
@@ -11,6 +10,19 @@ pub enum ServerStatus {
         players_max: i16,
     },
     Stopped {},
+}
+
+impl arma_rs::ToArma for ServerStatus {
+    fn to_arma(&self) -> arma_rs::ArmaValue {
+        let data: Vec<String> = match self {
+            ServerStatus::Started { modset_name, map, players, players_max } => {
+                vec!["Started".to_string(), modset_name.to_string(), players.to_string(), players_max.to_string(), map.to_string()]
+            },
+            ServerStatus::Stopped {} => vec!["Stopped".to_string()],
+        };
+
+        data.to_arma()
+    }
 }
 
 pub fn get_status() -> Result<ServerStatus, String> {
