@@ -21,10 +21,21 @@ impl arma_rs::ToArma for ServerStatus {
         let data: Vec<String> = match self {
             ServerStatus::Starting { modset_name } => {
                 vec!["Starting".to_string(), modset_name.to_string()]
-            },
-            ServerStatus::Started { modset_name, map, players, players_max } => {
-                vec!["Started".to_string(), modset_name.to_string(), players.to_string(), players_max.to_string(), map.to_string()]
-            },
+            }
+            ServerStatus::Started {
+                modset_name,
+                map,
+                players,
+                players_max,
+            } => {
+                vec![
+                    "Started".to_string(),
+                    modset_name.to_string(),
+                    players.to_string(),
+                    players_max.to_string(),
+                    map.to_string(),
+                ]
+            }
             ServerStatus::Stopped {} => vec!["Stopped".to_string()],
         };
 
