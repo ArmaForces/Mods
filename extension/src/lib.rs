@@ -85,7 +85,7 @@ fn get_server_status() {
     }
 }
 
-// endregionm
+// endregion
 
 // region: Logger
 
