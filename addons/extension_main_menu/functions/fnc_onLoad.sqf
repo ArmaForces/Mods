@@ -31,7 +31,7 @@ GVAR(extEh) = addMissionEventHandler ["ExtensionCallback", {
     };
     if (_name != EXT || _function != "get_server_status") exitWith {};
 
-    diag_log str _data;
+    diag_log text format ["from extension - %1", _data];
 }];
 
 GVAR(loop) = [] spawn {
