@@ -1,3 +1,4 @@
+#define DEBUG_SYNCHRONOUS
 #include "script_component.hpp"
 /*
  * Author: veteran29
