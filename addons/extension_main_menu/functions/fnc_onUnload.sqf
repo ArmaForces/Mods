@@ -1,12 +1,11 @@
 #define DEBUG_SYNCHRONOUS
 #include "script_component.hpp"
 /*
- * Author: <author>
- * Function description
+ * Author: veteran29
+ * Handle change of current foreground display/main display going to background.
  *
  * Arguments:
- * 0: Objects <ARRAY>
- * 1: All <BOOL>
+ * 0: Main display <DISPLAY>
  *
  * Return Value:
  * None

@@ -1,18 +1,14 @@
 #define DEBUG_SYNCHRONOUS
 #include "script_component.hpp"
 /*
- * Author: <author>
- * Function description
+ * Author: veteran29
+ * Handle initialization of main display/main display going to foreground.
  *
  * Arguments:
- * 0: Objects <ARRAY>
- * 1: All <BOOL>
+ * 0: Main display <DISPLAY>
  *
  * Return Value:
  * None
- *
- * Example:
- * [[bob, ted], false] call afm_main_fnc_example
  *
  * Public: No
  */
