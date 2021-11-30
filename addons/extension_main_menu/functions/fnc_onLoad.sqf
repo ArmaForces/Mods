@@ -27,7 +27,10 @@ GVAR(extEh) = addMissionEventHandler ["ExtensionCallback", {
     };
     if (_name != EXT || _function != "get_server_status") exitWith {};
 
-    parseSimpleArray _data call FUNC(updateServerStatus);
+    // when world is not loaded mission namespace will be empty as preInit does not run.
+    with uiNamespace do {
+        parseSimpleArray _data call FUNC(updateServerStatus);
+    };
 }];
 
 GVAR(loop) = [] spawn {
