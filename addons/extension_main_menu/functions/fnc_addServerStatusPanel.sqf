@@ -24,7 +24,7 @@ TRACE_1("Adding server status text",_ctrlSpotlightMain);
 
 // get dimensions from the center spotlight
 ctrlPosition _ctrlSpotlightMain params ["_x", "_y", "_w", "_h"];
-_h = _h / 2.5;
+_h = _h / 2.4;
 _y = _y - _h;
 
 // main container
