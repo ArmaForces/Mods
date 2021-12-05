@@ -19,12 +19,16 @@
 
 params ["_taskConfigName", "_taskNamespace"];
 
-private _tag = _taskNamespace getVariable ["taskTag", ""];
+private _taskTag = _taskNamespace getVariable [
+    "tag",
+    // Get global CfgTasks tag as fallback
+    _taskNamespace getVariable ["taskGlobalTag", ""]
+];
 
-if (_tag isNotEqualTo "") then {
+if (_taskTag isNotEqualTo "") then {
     [
-        _taskNamespace getVariable ["title", format [DEFAULT_TITLE_FORMAT_WITH_COMPONENT, _tag, _taskConfigName]],
-        _taskNamespace getVariable ["description", format [DEFAULT_DESCRIPTION_FORMAT_WITH_COMPONENT, _tag, _taskConfigName]]
+        _taskNamespace getVariable ["title", format [DEFAULT_TITLE_FORMAT_WITH_COMPONENT, _taskTag, _taskConfigName]],
+        _taskNamespace getVariable ["description", format [DEFAULT_DESCRIPTION_FORMAT_WITH_COMPONENT, _taskTag, _taskConfigName]]
     ]
 } else {
     [
