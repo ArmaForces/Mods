@@ -13,12 +13,15 @@ lazy_static! {
         .unwrap_or_else(|_| String::from("https://boderator.armaforces.com/api"));
     static ref ATTENDANCE_API: String = std::env::var("AF_ATTENDANCE_API")
         .unwrap_or_else(|_| String::from("https://armaforces.com/api"));
+    static ref SERVER_API: String = std::env::var("AF_SERVER_API")
+        .unwrap_or_else(|_| String::from("https://server.armaforces.com:8888"));
     static ref ATTENDANCE_TOKEN: String =
         std::env::var("AF_ATTENDANCE_API_TOKEN").unwrap_or_default();
 }
 
 pub mod missions;
 mod retry;
+pub mod server;
 
 #[rv]
 fn setup() -> bool {
@@ -63,6 +66,23 @@ fn post_attendance(mission_id: String, steam_id: u64) {
         Ok(_) => info!("Saved attendance for: {}", steam_id),
         Err(e) => error!("Failed to post attendance for: {} - {}", steam_id, e),
     };
+}
+
+// endregion
+
+// region: Server
+
+#[rv(thread = true)]
+fn get_server_status() {
+    info!("Fetching server status");
+
+    match retry::backoff(server::get_status) {
+        Ok(s) => {
+            info!("Server status: {:?}", s);
+            rv_callback!(EXT, "get_server_status", s);
+        }
+        Err(e) => error!("Could not fetch server status - {}", e),
+    }
 }
 
 // endregion
