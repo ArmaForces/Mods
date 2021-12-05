@@ -14,3 +14,4 @@ PREP(handleShow);
 
 PREP(readDestination);
 PREP(readOwners);
+PREP(readTitleAndDescription);
