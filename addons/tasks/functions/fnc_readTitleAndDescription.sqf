@@ -19,12 +19,12 @@
 
 params ["_taskConfigName", "_taskNamespace"];
 
-private _component = _taskNamespace getVariable ["taskComponent", ""];
+private _tag = _taskNamespace getVariable ["taskTag", ""];
 
-if (_component isNotEqualTo "") then {
+if (_tag isNotEqualTo "") then {
     [
-        _taskNamespace getVariable ["title", format [DEFAULT_TITLE_FORMAT_WITH_COMPONENT, _component, _taskConfigName]],
-        _taskNamespace getVariable ["description", format [DEFAULT_DESCRIPTION_FORMAT_WITH_COMPONENT, _component, _taskConfigName]]
+        _taskNamespace getVariable ["title", format [DEFAULT_TITLE_FORMAT_WITH_COMPONENT, _tag, _taskConfigName]],
+        _taskNamespace getVariable ["description", format [DEFAULT_DESCRIPTION_FORMAT_WITH_COMPONENT, _tag, _taskConfigName]]
     ]
 } else {
     [
