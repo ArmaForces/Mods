@@ -14,6 +14,8 @@
 #include "\z\afm\addons\main\script_macros.hpp"
 
 #define DEFAULT_TITLE_FORMAT "STR_Task_%1_Title"
+#define DEFAULT_TITLE_FORMAT_WITH_COMPONENT "STR_%1_Task_%2_Title"
 #define DEFAULT_DESCRIPTION_FORMAT "STR_Task_%1_Description"
+#define DEFAULT_DESCRIPTION_FORMAT_WITH_COMPONENT "STR_%1_Task_%2_Description"
 
 #define FINISHED_TASK_STATES ["SUCCEEDED", "FAILED", "CANCELED"]
