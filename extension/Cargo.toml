@@ -10,7 +10,7 @@ crate-type = ["lib", "cdylib"]
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-arma-rs = { git = "https://github.com/synixebrett/arma-rs", branch = "expirement" }
+arma-rs = { git = "https://github.com/synixebrett/arma-rs", branch = "legacy" }
 chrono = "0.4"
 lazy_static = "1.4.0"
 log = "0.4"
