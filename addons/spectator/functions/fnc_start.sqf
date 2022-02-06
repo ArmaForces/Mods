@@ -45,8 +45,13 @@ if (_civilianSide) then {
     _whitelistedSides pushBack CIVILIAN;
 };
 
+// EG spectator disables player damage on init,
+// save allowDamage state to restore it after spectator is opened.
+private _allowDamage = isDamageAllowed player;
+
 // Start spectator
 ["Initialize", [player, _whitelistedSides, _allowAI, _freeCamera, _TPPCamera, true, true, true, true, true]] call BIS_fnc_EGSpectator;
+player allowDamage _allowDamage;
 WARNING("Starting spectator!");
 
 nil
