@@ -33,7 +33,7 @@ jobs:
       continue-on-error: true # No failure due to many false-positives
 
   build:
-    runs-on: windows-latest
+    runs-on: windows-2019
     steps:
     - name: Checkout the source code
       uses: actions/checkout@master
