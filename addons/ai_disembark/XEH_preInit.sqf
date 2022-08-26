@@ -12,7 +12,10 @@ PREP_RECOMPILE_END;
 }] call CBA_fnc_addClassEventHandler;
 
 ["LandVehicle", "InitPost", {
-    (_this select 0) allowCrewInImmobile (random 1 < GVAR(stayInImmobileChance))
+    params ["_vehicle"];
+    if (isAllowedCrewInImmobile _vehicle) exitWith {};
+    private _allow = random 1 < GVAR(stayInImmobileChance);
+    _vehicle allowCrewInImmobile [_allow, _allow];
 }] call CBA_fnc_addClassEventHandler;
 
 ADDON = true;
