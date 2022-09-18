@@ -28,14 +28,16 @@ _picture ctrlSetPosition [
     _width, _height
 ];
 
-switch (systemTime select 1) do {
+private _month = systemTime select 1;
+private _easterMonth = [] call EFUNC(common,easterDate) select 1;
+switch (_month) do {
     case 10: {
         _picture ctrlSetText QPATHTOF(ui\logo_256_oct_ca.paa);
     };
     case 12: {
         _picture ctrlSetText QPATHTOF(ui\logo_256_dec_ca.paa);
     };
-    case ([] call EFUNC(common,easterDate) select 1): {
+    case _easterMonth: {
         _picture ctrlSetText QPATHTOF(ui\logo_256_easter_ca.paa);
     };
     default {
@@ -47,7 +49,11 @@ _picture ctrlCommit 0;
 private _ctrlBg = _display displayctrl IDC_LOADINGSTART_CUSTOM_BG;
 private _backgroundCfg = uiNamespace getVariable [QGVAR(backgroundCfg), configNull];
 if (isNull _backgroundCfg) then {
-    _backgroundCfg = selectRandom ("true" configClasses (CFG_LOADING_SCREEN >> "Backgrounds"));
+    if (_month == _easterMonth && {selectRandom [true, false]}) then {
+        _backgroundCfg = CFG_LOADING_SCREEN >> "Backgrounds" >> "bunny";
+    } else {
+        _backgroundCfg = selectRandom ("true" configClasses (CFG_LOADING_SCREEN >> "Backgrounds"));
+    };
     uiNamespace setVariable [QGVAR(backgroundCfg), _backgroundCfg];
     TRACE_1("Loading background",_backgroundCfg);
 };
