@@ -19,7 +19,6 @@
     #define PREP_RECOMPILE_END      }; call _recomp; PREFIX##_RECOMPILES pushBack _recomp; PREP_RECOMPILE_ADD_BUTTON;
 #else
     #define LINKFUNC(x) FUNC(x)
-    #define PREP_RECOMPILE_ADD_BUTTON /* */
-    #define PREP_RECOMPILE_START /* */
-    #define PREP_RECOMPILE_END /* */
+    #define PREP_RECOMPILE_START ;
+    #define PREP_RECOMPILE_END ;
 #endif
