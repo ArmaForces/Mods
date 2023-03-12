@@ -1,0 +1,20 @@
+
+name = "ArmaForces Mods"
+mainprefix = "z"
+prefix = "afm"
+
+[files]
+include = [
+    "LICENSE",
+    "mod.cpp",
+    "README.md",
+    "armaforces_mods_x64.dll",
+]
+
+exclude = ["*.psd", "*.png", "*.tga"]
+
+[properties]
+author = "ArmaForces"
+
+[version]
+path = "addons/main/script_version.hpp"

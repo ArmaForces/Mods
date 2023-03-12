@@ -1,0 +1,5 @@
+# leave the models unbinarized
+# bit slower game startup as it has to binarize the models but we can easily build on Linux
+no_bin = [
+    "data/afm_nvg_defunct.p3d",
+]
