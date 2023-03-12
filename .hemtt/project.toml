@@ -18,3 +18,17 @@ author = "ArmaForces"
 
 [version]
 path = "addons/main/script_version.hpp"
+
+[hemtt.launch]
+workshop = [
+    "450814997", # CBA_A3
+    "2369477168", # ADT
+]
+parameters = [
+    "-debug",
+    "-filePatching",
+    "-name=dev",
+    "-noSplash",
+    "-showScriptErrors",
+    "-window",
+]
