@@ -118,7 +118,7 @@ class GVAR(gear) {
             "U_I_E_Uniform_01_tanktop_F",
             "U_C_Mechanic_01_F",
             "U_C_HunterBody_grn",
-            "U_C_Poor_1",
+            "U_C_Poor_1"
         };
         vests[] = {
             "V_Chestrig_blk",
