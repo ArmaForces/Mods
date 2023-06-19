@@ -22,7 +22,7 @@ impl Mission {
 }
 
 pub fn get_missions() -> Result<Vec<Mission>, String> {
-    match reqwest::blocking::get(&format!("{}/missions", *crate::MISSION_API))
+    match reqwest::blocking::get(format!("{}/missions", *crate::MISSION_API))
         .unwrap()
         .json::<Vec<Mission>>()
     {
@@ -32,7 +32,7 @@ pub fn get_missions() -> Result<Vec<Mission>, String> {
 }
 
 pub fn get_current_mission() -> Result<Mission, String> {
-    let resp = match reqwest::blocking::get(&format!("{}/currentMission", *crate::MISSION_API)) {
+    let resp = match reqwest::blocking::get(format!("{}/currentMission", *crate::MISSION_API)) {
         Ok(r) => r,
         Err(e) => return Err(e.to_string()),
     };
@@ -63,7 +63,7 @@ struct AttendanceResponse {
 
 pub fn post_attendance(mission_id: &str, steam_id: &u64) -> Result<(), String> {
     let resp = reqwest::blocking::Client::new()
-        .post(&format!("{}/attendances", *crate::ATTENDANCE_API))
+        .post(format!("{}/attendances", *crate::ATTENDANCE_API))
         .header("X-API-KEY", crate::ATTENDANCE_TOKEN.clone())
         .json(&AttendanceBody {
             mission_id,
