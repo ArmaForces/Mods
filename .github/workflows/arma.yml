@@ -43,9 +43,11 @@ jobs:
         docker pull ghcr.io/armaforces/arma3tools:v2
     - name: Build using HEMTT
       run: |
-        docker run -v "$(pwd):c:/workdir" -e CI=$True ghcr.io/armaforces/arma3tools:v2 hemtt build --release --ci --time
+        docker run -v "$(pwd):c:/workdir" -e CI=$True ghcr.io/armaforces/arma3tools:v2 hemtt release
 
     - uses: actions/upload-artifact@v2
       with:
         name: armaforces_mods
-        path: releases/*.zip
+        path: |
+            releases/*.zip
+            !releases/afm-latest.zip
