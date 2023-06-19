@@ -25,10 +25,17 @@ workshop = [
     "2369477168", # ADT
 ]
 parameters = [
-    "-debug",
-    "-filePatching",
     "-name=dev",
-    "-noSplash",
-    "-showScriptErrors",
+    "-window",
+]
+
+[hemtt.launch.ace]
+workshop = [
+    "450814997", # CBA_A3
+    "2369477168", # ADT
+    "463939057", # ACE
+]
+parameters = [
+    "-name=dev",
     "-window",
 ]
