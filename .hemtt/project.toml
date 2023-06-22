@@ -39,3 +39,16 @@ parameters = [
     "-name=dev",
     "-window",
 ]
+
+[hemtt.launch.vn]
+workshop = [
+    "450814997", # CBA_A3
+    "2369477168", # ADT
+]
+parameters = [
+    "-name=dev",
+    "-window",
+]
+dlc = [
+    "S.O.G. Prairie Fire",
+]
