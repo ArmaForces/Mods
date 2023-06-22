@@ -22,6 +22,7 @@ path = "addons/main/script_version.hpp"
 [asc]
 exclude = [
     "initSettings.sqf",
+    "initKeybinds.sqf",
     "initSettingsChannelNames.sqf",
 ]
 
