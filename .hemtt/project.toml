@@ -19,6 +19,12 @@ author = "ArmaForces"
 [version]
 path = "addons/main/script_version.hpp"
 
+[asc]
+exclude = [
+    "initSettings.sqf",
+    "initSettingsChannelNames.sqf",
+]
+
 [hemtt.launch]
 workshop = [
     "450814997", # CBA_A3
