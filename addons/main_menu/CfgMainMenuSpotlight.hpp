@@ -43,4 +43,10 @@ class CfgMainMenuSpotlight {
     delete vn_showcase_pavn;
     delete vn_showcase_pavn_13;
     delete vn_sogba;
+
+    delete SPE_Arsenal;
+    delete SPE_Campagin_OperationCobra_04;
+    delete SPE_Coop_DerZahnarzt;
+    delete SPE_Faction_Showcase_GER;
+    delete SPE_Faction_Showcase_US;
 };
