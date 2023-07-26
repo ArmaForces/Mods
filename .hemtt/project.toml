@@ -59,3 +59,16 @@ parameters = [
 dlc = [
     "S.O.G. Prairie Fire",
 ]
+
+[hemtt.launch.ww2]
+workshop = [
+    "450814997", # CBA_A3
+    "2369477168", # ADT
+]
+parameters = [
+    "-name=dev",
+    "-window",
+]
+dlc = [
+    "Spearhead 1944",
+]
