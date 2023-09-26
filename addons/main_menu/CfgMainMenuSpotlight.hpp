@@ -37,4 +37,20 @@ class CfgMainMenuSpotlight {
 
     delete AoW_Showcase_AoW;
     delete AoW_Showcase_Future;
+
+    delete Extraction_lxWS;
+    delete Showcase_Alchemist_lxWS;
+    delete Showcase_VR_lxWS;
+
+    delete vn_showcase_macv;
+    delete vn_showcase_macv_13;
+    delete vn_showcase_pavn;
+    delete vn_showcase_pavn_13;
+    delete vn_sogba;
+
+    delete SPE_Arsenal;
+    delete SPE_Campagin_OperationCobra_04;
+    delete SPE_Coop_DerZahnarzt;
+    delete SPE_Faction_Showcase_GER;
+    delete SPE_Faction_Showcase_US;
 };
