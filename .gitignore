@@ -1,8 +1,8 @@
 # Build output
-.hemttout/*
+/.hemttout/
 
 # Releases
-releases/*
+/releases/
 
 hemtt
 hemtt.exe
