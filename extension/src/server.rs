@@ -44,7 +44,7 @@ impl arma_rs::ToArma for ServerStatus {
 }
 
 pub fn get_status() -> Result<ServerStatus, String> {
-    let resp = match reqwest::blocking::get(&format!("{}/status", *crate::SERVER_API)) {
+    let resp = match reqwest::blocking::get(format!("{}/status", *crate::SERVER_API)) {
         Ok(r) => r,
         Err(e) => return Err(e.to_string()),
     };

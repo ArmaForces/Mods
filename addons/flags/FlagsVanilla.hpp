@@ -33,6 +33,6 @@ class GVAR(Russia): Flag_White_F {
     displayName = "Flag (Russia)";
 
     class EventHandlers {
-        init = '(_this select 0) setFlagTexture "\A3\UI_F_Enoch\Data\CfgMarkers\Russia_CA.paa"';
+        init = "(_this select 0) setFlagTexture '\A3\UI_F_Enoch\Data\CfgMarkers\Russia_CA.paa'";
     };
 };

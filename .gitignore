@@ -1,6 +1,5 @@
 # Build output
-addons/*.pbo
-keys/*
+.hemttout/*
 
 # Releases
 releases/*

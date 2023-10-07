@@ -1,0 +1,74 @@
+
+name = "ArmaForces Mods"
+mainprefix = "z"
+prefix = "afm"
+
+[files]
+include = [
+    "LICENSE",
+    "mod.cpp",
+    "README.md",
+    "armaforces_mods_x64.dll",
+]
+
+exclude = ["*.psd", "*.png", "*.tga"]
+
+[properties]
+author = "ArmaForces"
+
+[version]
+path = "addons/main/script_version.hpp"
+
+[asc]
+exclude = [
+    "initSettings.sqf",
+    "initKeybinds.sqf",
+    "initSettingsChannelNames.sqf",
+]
+
+[hemtt.launch]
+workshop = [
+    "450814997", # CBA_A3
+    "2369477168", # ADT
+]
+parameters = [
+    "-name=dev",
+    "-window",
+]
+
+[hemtt.launch.ace]
+workshop = [
+    "450814997", # CBA_A3
+    "2369477168", # ADT
+    "463939057", # ACE
+]
+parameters = [
+    "-name=dev",
+    "-window",
+]
+
+[hemtt.launch.vn]
+workshop = [
+    "450814997", # CBA_A3
+    "2369477168", # ADT
+]
+parameters = [
+    "-name=dev",
+    "-window",
+]
+dlc = [
+    "S.O.G. Prairie Fire",
+]
+
+[hemtt.launch.ww2]
+workshop = [
+    "450814997", # CBA_A3
+    "2369477168", # ADT
+]
+parameters = [
+    "-name=dev",
+    "-window",
+]
+dlc = [
+    "Spearhead 1944",
+]

@@ -1,5 +1,3 @@
-#include "script_component.hpp"
-
 class RscText;
 class RscTitle;
 class RscButtonMenuOK;
