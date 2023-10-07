@@ -17,6 +17,7 @@ jobs:
     - name: Pull Arma3Tools
       run: |
         echo ${{ secrets.CR_PAT }} | docker login -u ${{ secrets.CR_USER }} --password-stdin ghcr.io
+        docker pull mcr.microsoft.com/windows/servercore:ltsc2022
         docker pull ghcr.io/armaforces/arma3tools:latest
 
     - name: Build using HEMTT
