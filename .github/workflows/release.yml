@@ -21,7 +21,7 @@ jobs:
 
     - name: Build using HEMTT
       run: |
-        docker run -v "$(pwd):c:/workdir" -e CI=$True ghcr.io/armaforces/arma3tools:latest hemtt build --release --ci --time
+        docker run -v "$(pwd):c:/workdir" -e CI=$True ghcr.io/armaforces/arma3tools:v2 hemtt release
 
     - uses: actions/upload-artifact@v2
       with:
