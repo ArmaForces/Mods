@@ -15,3 +15,16 @@ class CfgPatches {
 };
 
 #include "CfgEventHandlers.hpp"
+
+// TODO: Move this somewhere appropriate
+class GVAR(fpsListDialog) {
+    idd = -1;
+    movingEnable = 0;
+    onLoad = QUOTE(_this call FUNC(fpsOpen));
+};
+
+class GVAR(dlcListDialog) {
+    idd = -1;
+    movingEnable = 0;
+    onLoad = QUOTE(_this call FUNC(dlcOpen));
+};
