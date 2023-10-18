@@ -1,3 +1,3 @@
 # Compatiblity
 
-Adds compatiblity for various mods, loaded as needen thanks to `skipWhenMissingDependencies`
+Adds compatiblity for various mods, loaded as needed thanks to `skipWhenMissingDependencies`
