@@ -41,6 +41,7 @@ workshop = [
     "450814997", # CBA_A3
     "2369477168", # ADT
     "463939057", # ACE
+#    "766491311", # KKA3 ACE Extension
 ]
 parameters = [
     "-name=dev",
