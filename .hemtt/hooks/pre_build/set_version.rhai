@@ -5,7 +5,7 @@ let modCpp = HEMTT_VFS
     .read()
 ;
 
-modCpp.replace("0.0.0", `${HEMTT_PROJECT_VERSION_MAJOR}.${HEMTT_PROJECT_VERSION_MINOR}.${HEMTT_PROJECT_VERSION_PATCH}`);
+modCpp.replace("0.0.0", HEMTT.project().version().to_string_short());
 
 HEMTT_VFS
     .join("mod.cpp")
