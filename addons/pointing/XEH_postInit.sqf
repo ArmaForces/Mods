@@ -1,6 +1,6 @@
 #include "script_component.hpp"
 
-#include "initKeybinds.sqf"
+#include "initKeybinds.inc.sqf"
 
 if (IS_MOD_LOADED(diwako_dui_radar)) then {
     [QGVAR(pointed), {

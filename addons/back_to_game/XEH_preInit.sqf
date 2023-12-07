@@ -5,7 +5,7 @@ PREP_RECOMPILE_START;
 #include "XEH_PREP.hpp"
 PREP_RECOMPILE_END;
 
-#include "initSettings.sqf"
+#include "initSettings.inc.sqf"
 
 if (hasInterface) then {
     GVAR(teleport) = false; // Used as flag for teleportation agreement

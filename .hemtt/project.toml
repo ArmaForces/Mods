@@ -19,11 +19,10 @@ author = "ArmaForces"
 [version]
 path = "addons/main/script_version.hpp"
 
+# Unused in HEMTT v1.11 or higher, kept for backwards compatibility
 [asc]
 exclude = [
-    "initSettings.sqf",
-    "initKeybinds.sqf",
-    "initSettingsChannelNames.sqf",
+    ".inc.sqf",
 ]
 
 [hemtt.launch]
