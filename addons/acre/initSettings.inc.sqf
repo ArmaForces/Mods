@@ -81,4 +81,4 @@ if (EGVAR(common,aceArsenal)) then {
     ] call CBA_fnc_addSetting;
 };
 
-#include "initSettingsChannelNames.sqf"
+#include "initSettingsChannelNames.inc.sqf"

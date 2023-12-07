@@ -3,6 +3,6 @@ ADDON = false;
 
 if (!EGVAR(common,aceTowing)) exitWith {};
 
-#include "initSettings.sqf"
+#include "initSettings.inc.sqf"
 
 ADDON = true;
