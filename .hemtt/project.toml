@@ -47,6 +47,18 @@ parameters = [
     "-window",
 ]
 
+[hemtt.launch.cup]
+workshop = [
+    "450814997", # CBA_A3
+    "2369477168", # ADT
+    "583496184", # CUP Terrains - Core
+    "583544987", # CUP Terrains - Maps
+]
+parameters = [
+    "-name=dev",
+    "-window",
+]
+
 [hemtt.launch.vn]
 workshop = [
     "450814997", # CBA_A3
