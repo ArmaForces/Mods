@@ -17,9 +17,8 @@ params ["_display"];
 
 TRACE_1("Loading screen",_display);
 
-private _size = 0.1;
-private _width = _size * safezoneW;
-private _height = _size * safezoneH * (getResolution select 4);
+private _width = 256 * pixelW;
+private _height = 256 * pixelH;
 
 private _picture = _display ctrlCreate ["RscPicture", -1];
 _picture ctrlSetPosition [
