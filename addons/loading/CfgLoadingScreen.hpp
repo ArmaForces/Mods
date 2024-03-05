@@ -21,6 +21,7 @@ class GVAR(CfgLoadingScreen) {
         LOADING_SCREEN_CLASS(rhs_6,Bolec);
         LOADING_SCREEN_CLASS(rhs_7,Renchon);
         LOADING_SCREEN_CLASS(rhs_8,Hyperion);
+        LOADING_SCREEN_CLASS(serialkillers_0,ARR_2(Renchon, Bene));
         LOADING_SCREEN_CLASS(vanilla_0,Monk[e]y);
         LOADING_SCREEN_CLASS(other_0,Monk[e]y);
         LOADING_SCREEN_CLASS(other_1,Monk[e]y);
