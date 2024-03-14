@@ -1,0 +1,1 @@
+#include "\z\afm\addons\diagnostics\script_component.hpp"
