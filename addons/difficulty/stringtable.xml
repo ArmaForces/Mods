@@ -4,6 +4,9 @@
         <Key ID="STR_AFM_Difficulty_DifficultyName">
             <English>ArmaForces</English>
         </Key>
+        <Key ID="STR_AFM_Difficulty_DifficultyNameTPP">
+            <English>ArmaForces (TPP)</English>
+        </Key>
         <Key ID="STR_AFM_Difficulty_DifficultyDescription">
             <English>Custom ArmaForces settings.</English>
             <Polish>Własne ustawienia ArmaForces.</Polish>
