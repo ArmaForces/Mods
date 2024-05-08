@@ -25,7 +25,7 @@ exclude = [
     ".inc.sqf",
 ]
 
-[hemtt.launch]
+[hemtt.launch.default]
 workshop = [
     "450814997", # CBA_A3
     "2369477168", # ADT
@@ -83,4 +83,9 @@ parameters = [
 ]
 dlc = [
     "Spearhead 1944",
+]
+
+[hemtt.launch.gm]
+dlc = [
+    "Global Mobilization",
 ]
