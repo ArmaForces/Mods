@@ -37,4 +37,12 @@ class CfgDifficultyPresets {
             tacticalPing = 0;
         };
     };
+
+    class GVAR(DifficultyTPP): GVAR(Difficulty) {
+        displayName = CSTRING(DifficultyNameTPP);
+
+        class Options: Options {
+            thirdPersonView = 1;
+        };
+    };
 };
