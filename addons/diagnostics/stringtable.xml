@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="AFM">
+    <Package name="Diagnostics">
+        <Key ID="STR_AFM_Diagnostics_DisplayName">
+            <English>ArmaForces - Diagnostics</English>
+            <Polish>ArmaForces - Diagnostyka</Polish>
+        </Key>
+        <Key ID="STR_AFM_Diagnostics_EnableMarkers">
+            <English>Enable diagnostic markers</English>
+            <Polish>Włącz markery diagnostyczne</Polish>
+        </Key>
+        <Key ID="STR_AFM_Diagnostics_EnableMarkers_Description">
+            <English>Shows markers with server and headess client diagnostic information below map.</English>
+            <Polish>Pokazuje markery z danymi diagnostycznimi serwera i HC poniżej mapy.</Polish>
+        </Key>
+    </Package>
+</Project>
