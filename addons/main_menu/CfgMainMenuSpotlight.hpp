@@ -53,4 +53,8 @@ class CfgMainMenuSpotlight {
     delete SPE_Coop_DerZahnarzt;
     delete SPE_Faction_Showcase_GER;
     delete SPE_Faction_Showcase_US;
+
+    delete Scenario_TrainingDay_RF;
+    delete Scenario_FireSeason_RF;
+    delete Scenario_AirControl_RF;
 };
