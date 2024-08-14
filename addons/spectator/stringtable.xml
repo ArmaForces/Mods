@@ -49,6 +49,10 @@
             <English>Player side</English>
             <Polish>Strona gracza</Polish>
         </Key>
+        <Key ID="STR_AFM_Spectator_PlayerGroup">
+            <English>Player group</English>
+            <Polish>Grupa gracza</Polish>
+        </Key>
         <Key ID="STR_AFM_Spectator_CivilianSide">
             <English>Allow civilian spectating</English>
             <Polish>Pozwól obserwować cywili</Polish>
