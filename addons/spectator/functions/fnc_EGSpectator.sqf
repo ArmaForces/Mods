@@ -87,8 +87,6 @@ switch (_mode) do
             };
         } forEach _entities;
 
-        // hint str _validEntities;
-
         _validEntities;
     };
 
@@ -116,14 +114,13 @@ switch (_mode) do
 
         // Side and number of units filter
         {
-            // if ((_whitelistEmpty || { side _x in _whitelist }) && {{!(_x isKindOf SPECTATOR_CLASS)} count units _x > 0 }) then
-            if ((_whitelistEmpty || { side _x in _whitelist || { _x in _whitelist || units _x findIf {_x in _whitelist} != -1 }}) && {{!(_x isKindOf SPECTATOR_CLASS)} count units _x > 0 }) then
+            // Added '|| { _x in _whitelist || { units _x findIf {_x in _whitelist} != -1 }}'
+            if ((_whitelistEmpty || { side _x in _whitelist || { _x in _whitelist || { units _x findIf {_x in _whitelist} != -1 }}}) && {{!(_x isKindOf SPECTATOR_CLASS)} count units _x > 0 }) then
             {
                 _validGroups pushBack _x;
             };
         } forEach _groups;
 
-        // hint str _validGroups;
 
         _validGroups;
     };
