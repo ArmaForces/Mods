@@ -4,6 +4,7 @@ PREP(EGSpectator); // This duplicated as BIS_fnc_EGSpectator in CfgFunctions so 
 PREP(enable);
 PREP(reloadLocal);
 PREP(restart);
+PREP(rscDisplayEGSpectator);
 PREP(start);
 PREP(stop);
 PREP(toggle);
