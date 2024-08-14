@@ -23,7 +23,6 @@
 	["Initialize", [player]] call BIS_fnc_EGSpectator; 	// Initializes spectator for given player
 	["Terminate"] call BIS_fnc_EGSpectator; 			// Terminates spectator for given player
 */
-hint "DUPA";
 
 // Do not execute from within 3DEN
 if (count (supportInfo "n:is3DEN") > 0 && { is3DEN }) exitWith {};
@@ -361,7 +360,7 @@ switch (_mode) do
 			};
 		} forEach _entities;
 
-        hint str _validEntities;
+        // hint str _validEntities;
 
 		_validEntities;
 	};
@@ -390,8 +389,8 @@ switch (_mode) do
 
 		// Side and number of units filter
 		{
-			if ((_whitelistEmpty || { side _x in _whitelist }) && {{!(_x isKindOf SPECTATOR_CLASS)} count units _x > 0 }) then
-			// if ((_whitelistEmpty || { side _x in _whitelist || { _x in _whitelist || units _x findIf {_x in _whitelist} != -1 }}) && {{!(_x isKindOf SPECTATOR_CLASS)} count units _x > 0 }) then
+			// if ((_whitelistEmpty || { side _x in _whitelist }) && {{!(_x isKindOf SPECTATOR_CLASS)} count units _x > 0 }) then
+			if ((_whitelistEmpty || { side _x in _whitelist || { _x in _whitelist || units _x findIf {_x in _whitelist} != -1 }}) && {{!(_x isKindOf SPECTATOR_CLASS)} count units _x > 0 }) then
 			{
 				_validGroups pushBack _x;
 			};

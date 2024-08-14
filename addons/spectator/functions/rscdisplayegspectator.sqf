@@ -1,3 +1,11 @@
+#include "script_component.hpp"
+/*
+ * Author: 3Mydlo3
+ * Enhanced original BIS_fnc_EGSpectator to support array of units/groups as spectator targets instead of sides only.
+ *
+ * Public: No
+ */
+
 /*
     Author:
     Nelson Duarte
@@ -447,6 +455,7 @@ switch _mode do
 
         private _oldList	= [] + (uiNamespace getVariable [VAR_ENTITIES_LIST_OLD, []]);
         private _groups		= [] + (["GetTargetGroups"] call SPEC);
+        private _validUnits = [] + (["GetTargetEntities"] call SPEC);
 
         private ["_west", "_east", "_indep", "_civ"];
         _west		= [];
@@ -465,9 +474,11 @@ switch _mode do
 
             // Validate units
             {
-                if (simulationEnabled _x && {!isObjectHidden _x} && {simulationEnabled vehicle _x} && {!isObjectHidden vehicle _x} && {isPlayer _x || {_showAiGroups}} && !(_x isKindOf SPECTATOR_CLASS)) then
+                private _unit = _x;
+                if (simulationEnabled _x && {!isObjectHidden _x} && {simulationEnabled vehicle _x} && {!isObjectHidden vehicle _x} && {isPlayer _x || {_showAiGroups}} && {_validUnits findIf {_x isEqualTo _unit} != -1} && !(_x isKindOf SPECTATOR_CLASS)) then
                 {
                     _unitsInfo pushBack [_x, alive _x, alive _x && { _x getVariable [VAR_INCAPACITATED, false] }, [_x, true, NAME_MAX_CHARACTERS] call BIS_fnc_getName, _group];
+                    INFO_1("Valid unit found: %1",str _unit);
                 };
             } forEach _units;
 
@@ -475,6 +486,7 @@ switch _mode do
             if (count _unitsInfo > 0) then
             {
                 private _result = [_groupInfo, _unitsInfo];
+                INFO_2("Valid group found: groupInfo: %1 | unitsInfo: %2",str _groupInfo,str _unitsInfo);
 
                 // Add group to corresponding array, divided per side
                 switch (side _group) do
