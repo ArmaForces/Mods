@@ -15,7 +15,7 @@
         </Key>
         <Key ID="STR_AFM_Chat_AllowGlobalChat_Warning">
             <English>Global and side chat is disabled, your message is visible only to administrators and zeuses!</English>
-            <Polish>Czat globalny i strony jest wyłaczony, twoja wiadomość jest widoczna tylko dla administratorów i zeusów!</Polish>
+            <Polish>Czat globalny i strony jest wyłączony, twoja wiadomość jest widoczna tylko dla administratorów i zeusów!</Polish>
         </Key>
     </Package>
 </Project>
