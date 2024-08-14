@@ -13,17 +13,25 @@
             <English>Enables spectator for dead players</English>
             <Polish>Włącza obserwatora martwym graczom</Polish>
         </Key>
+        <Key ID="STR_AFM_Spectator_EnabledUnconscious">
+            <English>Enable spectator (CLIENT)</English>
+            <Polish>Włącz obserwatora (KLIENT)</Polish>
+        </Key>
+        <Key ID="STR_AFM_Spectator_EnabledUnconscious_Description">
+            <English>Enables spectator when unconscious if it's allowed by server setting.</English>
+            <Polish>Włącza obserwatora podczas nieprzytomności jeżeli ustawienia serwera pozwalają.</Polish>
+        </Key>
         <Key ID="STR_AFM_Spectator_Unconscious">
             <English>Unconscious</English>
             <Polish>Nieprzytomni</Polish>
         </Key>
         <Key ID="STR_AFM_Spectator_AllowUnconscious">
-            <English>Allow unconscious</English>
-            <Polish>Obserwator dla nieprzytomnych</Polish>
+            <English>Allow spectator for unconscious</English>
+            <Polish>Pozwól na obserwatora dla nieprzytomnych</Polish>
         </Key>
         <Key ID="STR_AFM_Spectator_AllowUnconscious_Description">
-            <English>Enables spectator also for unconscious players. Requires enabling spectator.</English>
-            <Polish>Włącza obserwatora także nieprzytomnym graczom. Wymaga włączenia obserwatora.</Polish>
+            <English>Allows spectator also for unconscious players. Requires enabling spectator.</English>
+            <Polish>Pozwala na obserwatora także nieprzytomnym graczom. Wymaga włączenia obserwatora.</Polish>
         </Key>
         <Key ID="STR_AFM_Spectator_UnconsciousDelay">
             <English>Unconscious spectator delay</English>

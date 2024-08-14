@@ -19,6 +19,16 @@
 ] call CBA_fnc_addSetting;
 
 [
+    QGVAR(enabledUnconscious),
+    "CHECKBOX",
+    [LSTRING(EnabledUnconscious), LSTRING(EnabledUnconscious_Description)],
+    [LSTRING(DisplayName), LSTRING(Unconscious)],
+    true,
+    0,
+    {[_this] call FUNC(restart)}
+] call CBA_fnc_addSetting;
+
+[
     QGVAR(unconsciousDelay),
     "SLIDER",
     [LSTRING(UnconsciousDelay), LSTRING(UnconsciousDelay_Description)],
