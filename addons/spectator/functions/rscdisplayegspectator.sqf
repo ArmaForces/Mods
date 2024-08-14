@@ -3,6 +3,9 @@
  * Author: 3Mydlo3
  * Enhanced original RscDisplayEGSpectator to support showing only valid units from group on the list for selection instead of whole group.
  *
+ * Return Value:
+ * The same as original RscDisplayEGSpectator (Probably none)
+ *
  * Public: No
  */
 

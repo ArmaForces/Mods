@@ -6,6 +6,9 @@
  * Arguments:
  * 1: _whitelistedSides - Changed to support units/groups too.
  *
+ * Return Value:
+ * The same as original BIS_fnc_EGSpectator
+ *
  * Public: No
  */
 
