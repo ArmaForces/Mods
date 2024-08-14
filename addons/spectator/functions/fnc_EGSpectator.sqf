@@ -1,3 +1,14 @@
+#include "script_component.hpp"
+/*
+ * Author: 3Mydlo3
+ * Enhanced original BIS_fnc_EGSpectator to support array of units/groups as spectator targets instead of sides only.
+ *
+ * Arguments:
+ * 1: _whitelistedSides - Changed to support units/groups too.
+ *
+ * Public: No
+ */
+
 /*
 	Author:
 	Nelson Duarte
@@ -342,12 +353,15 @@ switch (_mode) do
 				simulationEnabled _x && {simulationEnabled vehicle _x} &&
 				{ !isObjectHidden _x && {!isObjectHidden vehicle _x} } &&
 				{ !(_x isKindOf SPECTATOR_CLASS) } &&
-				{ (_whitelistEmpty || { side group _x in _whitelist }) }
+                // Added '|| { group _x in _whitelist || {_x in _whitelist}}' to support unit/group
+				{ (_whitelistEmpty || { side group _x in _whitelist || { group _x in _whitelist || {_x in _whitelist}}}) }
 			) then
 			{
 				_validEntities pushBack _x;
 			};
 		} forEach _entities;
+
+        hint str _validEntities;
 
 		_validEntities;
 	};
@@ -377,10 +391,13 @@ switch (_mode) do
 		// Side and number of units filter
 		{
 			if ((_whitelistEmpty || { side _x in _whitelist }) && {{!(_x isKindOf SPECTATOR_CLASS)} count units _x > 0 }) then
+			// if ((_whitelistEmpty || { side _x in _whitelist || { _x in _whitelist || units _x findIf {_x in _whitelist} != -1 }}) && {{!(_x isKindOf SPECTATOR_CLASS)} count units _x > 0 }) then
 			{
 				_validGroups pushBack _x;
 			};
 		} forEach _groups;
+
+        // hint str _validGroups;
 
 		_validGroups;
 	};
