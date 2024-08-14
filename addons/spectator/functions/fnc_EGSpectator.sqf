@@ -12,6 +12,8 @@
 	["Initialize", [player]] call BIS_fnc_EGSpectator; 	// Initializes spectator for given player
 	["Terminate"] call BIS_fnc_EGSpectator; 			// Terminates spectator for given player
 */
+hint "DUPA";
+
 // Do not execute from within 3DEN
 if (count (supportInfo "n:is3DEN") > 0 && { is3DEN }) exitWith {};
 

@@ -1,5 +1,6 @@
 PREP(canSpectate);
 PREP(disable);
+PREP(EGSpectator); // This duplicated as BIS_fnc_EGSpectator in CfgFunctions so that BI scripts use updated version
 PREP(enable);
 PREP(reloadLocal);
 PREP(restart);
@@ -9,5 +10,3 @@ PREP(toggle);
 
 PREP(onDisplayLoad);
 PREP(addPlayerStatePanel);
-
-BIS_fnc_EGSpectator = compile preProcessFileLineNumbers 'PATHTO_SYS(PREFIX,COMPONENT_F,DOUBLES(fnc,EGSpectator))';
