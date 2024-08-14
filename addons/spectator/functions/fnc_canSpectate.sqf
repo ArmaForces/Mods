@@ -19,4 +19,5 @@ params [["_player", player]];
 
 !(alive _player)
 || {GVAR(allowUnconscious)
+&& GVAR(enabledUnconscious)
 && {[_player] call EFUNC(common,isUnconscious)}}
