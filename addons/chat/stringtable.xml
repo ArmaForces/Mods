@@ -2,8 +2,8 @@
 <Project name="AFM">
     <Package name="Chat">
         <Key ID="STR_AFM_Chat_DisplayName">
-            <English>ArmaForces - Spectator</English>
-            <Polish>ArmaForces - Obserwator</Polish>
+            <English>ArmaForces - Chat</English>
+            <Polish>ArmaForces - Czat</Polish>
         </Key>
         <Key ID="STR_AFM_Chat_AllowGlobalChat">
             <English>Allow global/side chat</English>
