@@ -1,5 +1,5 @@
 class RscDisplayEGSpectator
 {
-    scriptName = "rscdisplayegspectator"; // keep lowercase for compatibility with BI stuff
+    scriptName = "RscDisplayEGSpectator";
     scriptPath = QUOTE(ADDON);
 };
