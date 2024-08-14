@@ -24,19 +24,19 @@ if (_text == "") exitWith {false};
 
 if (GVAR(allowGlobalChat) || {!(_channel in [0, 1])}) exitWith {false};
 
-if (_sender isEqualTo player) exitWith {
-    systemChat LLSTRING(AllowGlobalChat_Warning);
-    playSound "3DEN_notificationWarning";
-
-    false // return, player always sees his own message
-};
-
 if (_sender getVariable [QEGVAR(common,isAdmin), false]) exitWith {
     [format ["(ADMIN) %1", _from], _text]
 };
 
 if (!isNull getAssignedCuratorLogic _sender) exitWith {
     [format ["(ZEUS) %1", _from], _text]
+};
+
+if (_sender isEqualTo player) exitWith {
+    systemChat LLSTRING(AllowGlobalChat_Warning);
+    playSound "3DEN_notificationWarning";
+
+    false // return, player always sees his own message
 };
 
 isNull getAssignedCuratorLogic player // show all messages to zeus
