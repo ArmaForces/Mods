@@ -36,7 +36,7 @@ scriptName "RscDisplayEGSpectator";
 
 // Params
 private ["_mode", "_params"];
-_mode 	= _this param [0, "", [""]];
+_mode   = _this param [0, "", [""]];
 _params = _this param [1, [], [[]]];
 
 if (_mode != "Update_PlayerList") exitWith {

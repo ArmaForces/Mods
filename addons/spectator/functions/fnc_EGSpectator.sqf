@@ -37,7 +37,7 @@ scriptName "BIS_fnc_EGSpectator";
 #include "\A3\Functions_F_Exp_A\EGSpectatorCommonDefines.inc"
 
 // Parameters
-private _mode 	= _this param [0, "", [""]];
+private _mode   = _this param [0, "", [""]];
 private _params = _this param [1, [], [[]]];
 
 if (_mode != "GetTargetEntities" && _mode != "GetTargetGroups") exitWith {
