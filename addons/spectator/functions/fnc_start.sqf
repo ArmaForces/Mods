@@ -38,6 +38,10 @@ private _whitelistedSides = switch _sides do {
     case 1: {[playerSide]};
     // All sides spectator
     case 2: {[WEST, INDEPENDENT, EAST]};
+    // Player group only
+    case 3: {[group player]};
+    // Player only
+    case 4: {[player]};
     default {playerSide call BIS_fnc_friendlySides};
 };
 

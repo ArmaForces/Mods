@@ -15,6 +15,7 @@ Terminating and reinitializing spectator almost does not bother player, as old p
 - Free camera
 - Third Person Perspective
 - Sides allowed for spectating (player side, friendly sides or all)
+- Supports spectating player group or player only
 - Civilian side spectating
 - AI spectating
 - All of above separate for unconscious players!
