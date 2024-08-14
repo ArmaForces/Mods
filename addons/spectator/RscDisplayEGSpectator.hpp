@@ -1,5 +1,5 @@
 class RscDisplayEGSpectator
 {
-    scriptName = "fnc_rscDisplayEGSpectator";
+    scriptName = "rscdisplayegspectator";
     scriptPath = "AFModsSpectatorGUI";
 };
