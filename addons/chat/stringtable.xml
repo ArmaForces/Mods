@@ -7,7 +7,7 @@
         </Key>
         <Key ID="STR_AFM_Chat_AllowGlobalChat">
             <English>Allow global/side chat</English>
-            <Polish>Zezwól na chat globalny/strony</Polish>
+            <Polish>Zezwól na czat globalny/strony</Polish>
         </Key>
         <Key ID="STR_AFM_Chat_AllowGlobalChat_Description">
             <English>Should players be allowed to chat on global and their side chat. If disabled chat messages from these channels will only be visible to admins and zeus players.</English>
