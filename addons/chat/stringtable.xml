@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="AFM">
+    <Package name="Chat">
+        <Key ID="STR_AFM_Chat_DisplayName">
+            <English>ArmaForces - Spectator</English>
+            <Polish>ArmaForces - Obserwator</Polish>
+        </Key>
+        <Key ID="STR_AFM_Chat_AllowGlobalChat">
+            <English>Allow global/side chat</English>
+            <Polish>Zezwól na chat globalny/strony</Polish>
+        </Key>
+        <Key ID="STR_AFM_Chat_AllowGlobalChat_Description">
+            <English>Should players be allowed to chat on global and their side chat. If disabled chat messages from these channels will only be visible to admins and zeus players.</English>
+            <Polish>Czy gracze mają mieć możliwość pisania na czacie globalnym i czacie swojej strony. Jeżeli wyłączone to wiadomości z tych kanałów będą widoczne tylko dla administratorów i zeusów.</Polish>
+        </Key>
+        <Key ID="STR_AFM_Chat_AllowGlobalChat_Warning">
+            <English>Global and side chat is disabled, your message is visible only to administrators and zeuses!</English>
+            <Polish>Czat globalny i strony jest wyłaczony, twoja wiadomość jest widoczna tylko dla administratorów i zeusów!</Polish>
+        </Key>
+    </Package>
+</Project>
