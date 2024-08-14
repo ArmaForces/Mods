@@ -36,56 +36,33 @@ parameters = [
 ]
 
 [hemtt.launch.ace]
+extends = "default"
 workshop = [
-    "450814997", # CBA_A3
-    "2369477168", # ADT
     "463939057", # ACE
 #    "766491311", # KKA3 ACE Extension
 ]
-parameters = [
-    "-name=dev",
-    "-window",
-]
 
 [hemtt.launch.cup]
+extends = "default"
 workshop = [
-    "450814997", # CBA_A3
-    "2369477168", # ADT
     "583496184", # CUP Terrains - Core
     "583544987", # CUP Terrains - Maps
 ]
-parameters = [
-    "-name=dev",
-    "-window",
-]
 
 [hemtt.launch.vn]
-workshop = [
-    "450814997", # CBA_A3
-    "2369477168", # ADT
-]
-parameters = [
-    "-name=dev",
-    "-window",
-]
+extends = "default"
 dlc = [
     "S.O.G. Prairie Fire",
 ]
 
 [hemtt.launch.ww2]
-workshop = [
-    "450814997", # CBA_A3
-    "2369477168", # ADT
-]
-parameters = [
-    "-name=dev",
-    "-window",
-]
+extends = "default"
 dlc = [
     "Spearhead 1944",
 ]
 
 [hemtt.launch.gm]
+extends = "default"
 dlc = [
     "Global Mobilization",
 ]
