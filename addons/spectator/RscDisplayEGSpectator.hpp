@@ -1,5 +1,5 @@
 class RscDisplayEGSpectator
 {
-    scriptName = "rscdisplayegspectator";
-    scriptPath = "AFModsSpectatorGUI";
+    scriptName = "rscdisplayegspectator"; // keep lowercase for compatibility with BI stuff
+    scriptPath = QUOTE(ADDON);
 };

@@ -14,7 +14,7 @@ class CfgFunctions
             };
             class RscDisplayEGSpectatorCore
             {
-                file = QUOTE(A3\Ui_F\Scripts\Gui\rscdisplayegspectator.sqfc);
+                file = QUOTE(A3\Ui_F\Scripts\Gui\rscdisplayegspectator.sqf);
             };
         };
     };

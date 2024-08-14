@@ -1,4 +1,4 @@
 class CfgScriptPaths
 {
-    AFModsSpectatorGUI = QPATHTOF(functions\);
+    ADDON = QPATHTOF(functions\);
 };
