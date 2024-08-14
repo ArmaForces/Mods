@@ -8,6 +8,10 @@ class CfgFunctions
             {
                 file = QPATHTOF(functions\DOUBLES(fnc,EGSpectator).sqf);
             };
+            class EGSpectatorCore
+            {
+                file = QUOTE(A3\Functions_F_Exp_A\EGSpectator\fn_EGSpectator.sqf);
+            };
         };
     };
 };
