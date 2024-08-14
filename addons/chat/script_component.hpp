@@ -12,3 +12,7 @@
 #endif
 
 #include "\z\afm\addons\main\script_macros.hpp"
+
+#define CHAT_CHANNEL_GLOBAL 0
+#define CHAT_CHANNEL_SIDE 1
+#define RESTRICTED_CHANNELS [CHAT_CHANNEL_GLOBAL, CHAT_CHANNEL_SIDE]

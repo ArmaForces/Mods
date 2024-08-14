@@ -22,7 +22,7 @@
 params [["_channel", -1], "", ["_from", ""], ["_text", ""], ["_sender", objNull]];
 if (_text == "") exitWith {false};
 
-if (GVAR(allowGlobalChat) || {!(_channel in [0, 1])}) exitWith {false};
+if (GVAR(allowGlobalChat) || {!(_channel in RESTRICTED_CHANNELS)}) exitWith {false};
 
 if (_sender getVariable [QEGVAR(common,isAdmin), false]) exitWith {
     [format ["(ADMIN) %1", _from], _text]
