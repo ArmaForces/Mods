@@ -5,8 +5,8 @@
  *
  * Arguments:
  * 0: Channel <NUMBER>
- * 1: N/A
- * 2: N/A
+ * 1: Owner id of message sender <NUMBER>
+ * 2: Display of whom sent the message <STRING>
  * 3: Sent text <STRING>
  * 4: Person sending the message <OBJECT>
  *
@@ -19,12 +19,12 @@
  * Public: No
  */
 
-params [["_channel", -1], "", ["_from", ""], ["_text", ""], ["_sender", objNull]];
+params [["_channel", -1], ["_ownerSender", -1], ["_from", ""], ["_text", ""], ["_sender", objNull]];
 if (_text == "") exitWith {false};
 
 if (GVAR(allowGlobalChat) || {!(_channel in RESTRICTED_CHANNELS)}) exitWith {false};
 
-if (_sender getVariable [QEGVAR(common,isAdmin), false]) exitWith {
+if (_ownerSender call EFUNC(common,isOwnerAdmin)) exitWith {
     [format ["(ADMIN) %1", _from], _text]
 };
 
@@ -40,4 +40,4 @@ if (_sender isEqualTo player) exitWith {
 };
 
 isNull getAssignedCuratorLogic player // show all messages to zeus
-&& !(player getVariable [QEGVAR(common,isAdmin), false]) // show all messages to admin
+&& !(clientOwner call EFUNC(common,isOwnerAdmin)) // show all messages to admin

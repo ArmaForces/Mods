@@ -1,27 +1,23 @@
 #include "script_component.hpp"
 
-if (hasInterface) then {
-    ["login", {
-        [{IS_ADMIN}, {
-            player setVariable [QGVAR(isAdmin), true, true];
-        }, nil, 5] call CBA_fnc_waitUntilAndExecute;
-    }, "all"] call CBA_fnc_registerChatCommand;
+if (isServer) then {
+    GVAR(admins) = allPlayers apply {owner _x} select {admin _x > 0};
+    if (hasInterface) then {GVAR(admins) pushBackUnique 2}; // "admin" command does not work on dedicated server
+    publicVariable QGVAR(admins);
 
-    ["logout", {
-        if (player getVariable [QGVAR(isAdmin), false]) then {
-            player setVariable [QGVAR(isAdmin), false, true];
-        };
-    }, "all"] call CBA_fnc_registerChatCommand;
+    addMissionEventHandler ["OnUserAdminStateChanged", {
+        params ["_networkId", "_loggedIn"];
 
-    ["unit", {
-        params ["_newPlayer", "_oldPlayer"];
+        private _userInfo = getUserInfo _networkId;
+        if (_userInfo isEqualTo []) exitWith {};
 
-        if (IS_ADMIN) then {
-            _newPlayer setVariable [QGVAR(isAdmin), true, true];
+        private _ownerId = _userInfo select 1;
+        if (_loggedIn) then {
+            GVAR(admins) pushBackUnique _ownerId;
+        } else {
+            GVAR(admins) deleteAt (GVAR(admins) find _ownerId);
         };
 
-        if (_oldPlayer getVariable [QGVAR(isAdmin), false]) then {
-            _oldPlayer setVariable [QGVAR(isAdmin), false, true];
-        };
-    }, true] call CBA_fnc_addPlayerEventHandler;
+        publicVariable QGVAR(admins);
+    }];
 };
