@@ -29,5 +29,6 @@ class GVAR(CfgLoadingScreen) {
         LOADING_SCREEN_CLASS(unsung_1,3Mydlo3);
         LOADING_SCREEN_CLASS(postapo_0,Monk[e]y);
         LOADING_SCREEN_CLASS(bunny,Jabar);
+        LOADING_SCREEN_CLASS(mirko,ARR_2(Bolec, WINDOWS_95_SE));
     };
 };
