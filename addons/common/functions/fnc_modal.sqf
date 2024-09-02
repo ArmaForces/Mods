@@ -105,7 +105,7 @@ private _composition = [];
         case 1: {"center"};
         case 2: {"right"};
         default {
-            ERROR_1("Invalid alignment!",_alignment);
+            ERROR_1("Invalid alignment! %1",_alignment);
             "center"
         };
     };
