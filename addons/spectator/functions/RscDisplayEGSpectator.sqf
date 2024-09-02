@@ -1,4 +1,5 @@
 #include "script_component.hpp"
+#include "\a3\Functions_F_Exp_A\EGSpectatorCommonDefines.inc"
 /*
  * Author: 3Mydlo3
  * Enhanced original RscDisplayEGSpectator to support showing only valid units from group on the list for selection instead of whole group.
@@ -33,9 +34,6 @@ disableSerialization;
 
 // Name this script
 scriptName "RscDisplayEGSpectator";
-
-// Common spectator defines
-#include "\A3\Functions_F_Exp_A\EGSpectatorCommonDefines.inc"
 
 // Params
 private ["_mode", "_params"];
@@ -115,7 +113,7 @@ switch _mode do
         // Whether an update to the list is required (really only if something changed)
         if !(_oldList isEqualTo _newList) then
         {
-            private _allElements = ["TreeGetAllElements"] call DISPLAY;
+            private _allElements = ["TreeGetAllElements"] call (uiNamespace getVariable ["RscDisplayEGSpectator_script", {}]);
             private _groupElements = _allElements select 1;
             private _unitElements = _allElements select 2;
 
@@ -152,7 +150,7 @@ switch _mode do
 
                 if (!_bExists) then
                 {
-                    ["TreeDeleteUnit", [_data]] call DISPLAY;
+                    ["TreeDeleteUnit", [_data]] call (uiNamespace getVariable ["RscDisplayEGSpectator_script", {}]);
                     //["   Unit %1 removed", _data] call BIS_fnc_error;
                 };
             }
@@ -184,7 +182,7 @@ switch _mode do
 
                 if (!_bExists) then
                 {
-                    ["TreeDeleteGroup", [_data]] call DISPLAY;
+                    ["TreeDeleteGroup", [_data]] call (uiNamespace getVariable ["RscDisplayEGSpectator_script", {}]);
                     //["Group %1 removed", _data] call BIS_fnc_error;
                 };
             }
@@ -228,7 +226,7 @@ switch _mode do
                     private _groupInfo = _x select 0;
                     private _unitsInfo = _x select 1;
                     private _group = _groupInfo select 0;
-                    private _i = ["TreeGetDataIndex", [str _group]] call DISPLAY;
+                    private _i = ["TreeGetDataIndex", [str _group]] call (uiNamespace getVariable ["RscDisplayEGSpectator_script", {}]);
                     private _groupIndex = if (count _i > 0) then {_i select 1} else {-1};
 
                     //["Group %1 with index %2 being checked", _group, _groupIndex] call BIS_fnc_error;
@@ -263,7 +261,7 @@ switch _mode do
 
                         private _text = if (isPlayer _unit) then { _name } else { format ["%1: %2", localize "str_player_ai", _name] };
                         private _tooltip = if (isPlayer _unit) then { format ["%1 - %2", _name, _groupId] } else { format ["%1: %2 - %3", localize "str_player_ai", _name, _groupId] };
-                        private _i = ["TreeGetDataIndex", [[_unit] call BIS_fnc_objectVar]] call DISPLAY;
+                        private _i = ["TreeGetDataIndex", [[_unit] call BIS_fnc_objectVar]] call (uiNamespace getVariable ["RscDisplayEGSpectator_script", {}]);
                         private _unitIndex = if (count _i > 0) then {_i select 1} else {-1};
                         private _unitIcon = getText (configfile >> "CfgVehicles" >> typeOf _unit >> "icon");
 
@@ -303,13 +301,13 @@ switch _mode do
         };
 
         // Current focused unit
-        private _focus = ["GetFocus"] call DISPLAY;
+        private _focus = ["GetFocus"] call (uiNamespace getVariable ["RscDisplayEGSpectator_script", {}]);
 
         // Update focus if required
         if (!isNull _focus && {count tvCurSel _ctrl < 3}) then
         {
             // Get index of current focus in the list
-            private _i = ["TreeGetDataIndex", [[_focus] call BIS_fnc_objectVar]] call DISPLAY;
+            private _i = ["TreeGetDataIndex", [[_focus] call BIS_fnc_objectVar]] call (uiNamespace getVariable ["RscDisplayEGSpectator_script", {}]);
 
             // If found, select it
             if !(_i isEqualTo []) then
