@@ -1,5 +1,5 @@
 [sqf.command_case]
-severity = "Error"
+severity = "Warning"
 options.ignore = [
     "AGLtoASL",
     "ASLtoAGL",
