@@ -1,0 +1,41 @@
+[default]
+workshop = [
+    "450814997", # CBA_A3
+    "2369477168", # ADT
+]
+parameters = [
+    "-name=dev",
+    "-window",
+]
+
+[ace]
+extends = "default"
+workshop = [
+    "463939057", # ACE
+#    "766491311", # KKA3 ACE Extension
+]
+
+[cup]
+extends = "default"
+workshop = [
+    "583496184", # CUP Terrains - Core
+    "583544987", # CUP Terrains - Maps
+]
+
+[vn]
+extends = "default"
+dlc = [
+    "S.O.G. Prairie Fire",
+]
+
+[ww2]
+extends = "default"
+dlc = [
+    "Spearhead 1944",
+]
+
+[gm]
+extends = "default"
+dlc = [
+    "Global Mobilization",
+]
