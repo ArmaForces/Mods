@@ -22,8 +22,8 @@ private _height = 256 * pixelH;
 
 private _picture = _display ctrlCreate ["RscPicture", -1];
 _picture ctrlSetPosition [
-    safezoneX,
-    safezoneY + safeZoneH - _height,
+    safeZoneX,
+    safeZoneY + safeZoneH - _height,
     _width, _height
 ];
 

@@ -4,7 +4,7 @@ class RscDisplayClient: RscStandardDisplay {
         class GVAR(serverStatus): RscControlsGroupNoScrollbars {
             onLoad = QUOTE(with uiNamespace do {call FUNC(serverStatusOnLoad)});
 
-                x = QUOTE(safezoneX + POS_W(1));
+                x = QUOTE(safeZoneX + POS_W(1));
                 y = QUOTE(safeZoneY + 3.5 * POS_H(1));
                 w = QUOTE(POS_W(SERVER_STATUS_W));
                 h = QUOTE(POS_H(SERVER_STATUS_H));
