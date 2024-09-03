@@ -23,20 +23,21 @@ jobs:
     - name: Check for BOM
       uses: arma-actions/bom-check@master
 
-  lint:
+  build-linux:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout the source code
-      uses: actions/checkout@master
-    - name: Lint (sqflint)
-      uses: arma-actions/sqflint@master
-      continue-on-error: true # No failure due to many false-positives
+      uses: actions/checkout@v4
+    - name: Setup HEMTT
+      uses: arma-actions/hemtt@v1
+    - name: Run HEMTT build
+      run: hemtt build
 
   build:
     runs-on: windows-2022
     steps:
     - name: Checkout the source code
-      uses: actions/checkout@master
+      uses: actions/checkout@v4
     - name: Pull Arma3Tools
       run: |
         echo ${{ secrets.CR_PAT }} | docker login -u ${{ secrets.CR_USER }} --password-stdin ghcr.io
