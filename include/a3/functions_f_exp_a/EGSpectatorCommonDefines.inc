@@ -5,7 +5,7 @@
 #include "\a3\ui_f\hpp\defineResinclDesign.inc"
 #include "\a3\ui_f\hpp\defineDIKCodes.inc"
 #include "\a3\ui_f\hpp\defineCommonGrids.inc"
-#include "\a3\ui_f_exp_a\UI\defineResinclDesign.inc"
+#include "\a3\ui_f_exp_a\ui\defineResinclDesign.inc"
 
 /**
  * Development

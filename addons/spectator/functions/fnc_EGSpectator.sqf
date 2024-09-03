@@ -1,4 +1,5 @@
 #include "script_component.hpp"
+#include "\a3\functions_f_exp_a\EGSpectatorCommonDefines.inc"
 /*
  * Author: 3Mydlo3
  * Enhanced original BIS_fnc_EGSpectator to support array of units/groups as spectator targets instead of sides only.
@@ -35,9 +36,6 @@ disableSerialization;
 
 // Name of this script
 scriptName "BIS_fnc_EGSpectator";
-
-// Common spectator defines
-#include "\a3\functions_f_exp_a\EGSpectatorCommonDefines.inc"
 
 // Parameters
 private _mode   = _this param [0, "", [""]];
