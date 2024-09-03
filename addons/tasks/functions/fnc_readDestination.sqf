@@ -37,7 +37,7 @@ if (_destination isEqualTo objNull && {_taskPosition isNotEqualTo []}) then {
     private _coordinatesCount = count _taskPosition;
     if (_coordinatesCount isEqualTo 3) exitWith {_destination = _taskPosition};
     if (_coordinatesCount isEqualTo 2) exitWith {_destination = _taskPosition; _destination pushBack 0};
-    WARNING_1("Position %1 is invalid!", _taskPosition);
+    WARNING_1("Position %1 is invalid!",_taskPosition);
 };
 
 _destination
