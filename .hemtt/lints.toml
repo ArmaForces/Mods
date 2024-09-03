@@ -6,6 +6,7 @@ options.ignore = [
     "WEST",
     "EAST",
     "INDEPENDENT",
+    "RESISTANCE",
     "CIVILIAN",
     "getVehicleTiPars",
     "setVehicleTiPars",
