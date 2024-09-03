@@ -37,7 +37,7 @@ disableSerialization;
 scriptName "BIS_fnc_EGSpectator";
 
 // Common spectator defines
-#include "\a3\Functions_F_Exp_A\EGSpectatorCommonDefines.inc"
+#include "\a3\functions_f_exp_a\EGSpectatorCommonDefines.inc"
 
 // Parameters
 private _mode   = _this param [0, "", [""]];

@@ -8,7 +8,7 @@ class CfgPatches {
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {
             "afm_common",
-            "A3_Functions_F_Exp_A"
+            "a3_functions_f_exp_a"
         };
         author = "ArmaForces";
         VERSION_CONFIG;

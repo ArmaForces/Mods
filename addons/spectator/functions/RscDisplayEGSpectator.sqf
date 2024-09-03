@@ -1,5 +1,5 @@
 #include "script_component.hpp"
-#include "\a3\Functions_F_Exp_A\EGSpectatorCommonDefines.inc"
+#include "\a3\functions_f_exp_a\EGSpectatorCommonDefines.inc"
 /*
  * Author: 3Mydlo3
  * Enhanced original RscDisplayEGSpectator to support showing only valid units from group on the list for selection instead of whole group.
