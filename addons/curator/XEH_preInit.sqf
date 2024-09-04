@@ -67,7 +67,7 @@ if (isServer) then {
         params ["_unit"];
         if !(isPlayer _unit) exitWith {};
 
-        INFO_1("Unassigning Zeus from '%1'", _unit);
+        INFO_1("Unassigning Zeus from '%1'",_unit);
 
         private _curatorModule = getAssignedCuratorLogic _unit;
         if (_curatorModule isEqualTo objNull) exitWith {};

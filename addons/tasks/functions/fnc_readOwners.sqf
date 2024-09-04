@@ -30,7 +30,7 @@ private _taskOwners = [];
         // Try to reach object
         private _object = missionNamespace getVariable [_x, objNull];
         if (isNull _object) exitWith {
-            WARNING_1("Missing object '%1' for task owner", _x);
+            WARNING_1("Missing object '%1' for task owner",_x);
         };
         _taskOwners pushBackUnique _object;
     };

@@ -26,7 +26,7 @@ private _basePositionRow2 = ctrlPosition (_display displayCtrl IDC_RSCDEBUGCONSO
 // Create buttons in bottom row
 {
     _x params ["_text", "_tooltip", "_code"];
-    TRACE_3("adding debug console button", _text, _tooltip, _code);
+    TRACE_3("adding debug console button",_text,_tooltip,_code);
 
 
     private _col = floor (_forEachIndex / ITEMS_PER_ROW);
