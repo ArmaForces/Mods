@@ -14,9 +14,9 @@
 params ["_display"];
 TRACE_1("Main display",_display);
 
-_display displayAddEventHandler ["mouseMoving", {with uiNamespace do {call FUNC(onLoad)}}];
-_display displayAddEventHandler ["mouseHolding",{with uiNamespace do {call FUNC(onLoad)}}];
-_display displayAddEventHandler ["childDestroyed",{with uiNamespace do {call FUNC(onUnload)}}];
+_display displayAddEventHandler ["MouseMoving", {with uiNamespace do {call FUNC(onLoad)}}];
+_display displayAddEventHandler ["MouseHolding",{with uiNamespace do {call FUNC(onLoad)}}];
+_display displayAddEventHandler ["ChildDestroyed",{with uiNamespace do {call FUNC(onUnload)}}];
 
 _display call FUNC(addServerStatusPanel);
 
