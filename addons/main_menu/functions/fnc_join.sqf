@@ -33,7 +33,7 @@ GVAR(serverPort) = "2302";
 GVAR(joinTimeout) = diag_tickTime + 5;
 
 // "Click" server browser from main menu
-ctrlActivate ((ctrlParent _button) displayctrl IDC_MAIN_MULTIPLAYER);
+ctrlActivate ((ctrlParent _button) displayCtrl IDC_MAIN_MULTIPLAYER);
 
 onEachFrame {
     onEachFrame {
