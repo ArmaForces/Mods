@@ -54,6 +54,6 @@ private _targetSide = [[_sourceSide], [WEST, EAST, INDEPENDENT, CIVILIAN]] selec
 
 } forEach _targetSide;
 
-INFO_1("Initialized %1 channel names.", str _targetSide);
+INFO_1("Initialized %1 channel names.",str _targetSide);
 
 nil

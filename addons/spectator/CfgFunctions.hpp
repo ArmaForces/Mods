@@ -10,11 +10,11 @@ class CfgFunctions
             };
             class EGSpectatorCore
             {
-                file = QUOTE(A3\Functions_F_Exp_A\EGSpectator\fn_EGSpectator.sqf);
+                file = QUOTE(a3\functions_f_exp_a\EGSpectator\fn_EGSpectator.sqf);
             };
             class RscDisplayEGSpectatorCore
             {
-                file = QUOTE(A3\Ui_F\Scripts\Gui\rscdisplayegspectator.sqf);
+                file = QUOTE(a3\ui_f\scripts\gui\rscdisplayegspectator.sqf);
             };
         };
     };

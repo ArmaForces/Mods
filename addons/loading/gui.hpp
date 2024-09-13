@@ -17,9 +17,9 @@ class RscPictureKeepAspect;
                     class GVAR(background): RscPictureKeepAspect { \
                         idc = IDC_LOADINGSTART_CUSTOM_BG; \
                         x = 0; \
-                        y = "-(0.5 * safezoneH)"; \
-                        w = "safezoneW"; \
-                        h = "2 * safezoneH"; \
+                        y = "-(0.5 * safeZoneH)"; \
+                        w = "safeZoneW"; \
+                        h = "2 * safeZoneH"; \
                     }; \
                     class Noise; \
                     class GVAR(lines): Noise {}; \
@@ -28,7 +28,7 @@ class RscPictureKeepAspect;
                     }; \
                     class GVAR(logo): Logo { \
                         idc = -1; \
-                        y = "0 * safezoneH"; \
+                        y = "0 * safeZoneH"; \
                     }; \
                 }; \
             }; \

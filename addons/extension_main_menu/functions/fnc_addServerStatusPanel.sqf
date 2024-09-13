@@ -20,7 +20,7 @@ uiNamespace setVariable [QGVAR(serverStatus), true];
 
 params ["_display"];
 
-private _ctrlSpotlightMain = _display displayctrl IDC_MAIN_SPOTLIGHT_GROUP_1;
+private _ctrlSpotlightMain = _display displayCtrl IDC_MAIN_SPOTLIGHT_GROUP_1;
 TRACE_1("Adding server status text",_ctrlSpotlightMain);
 
 // get dimensions from the center spotlight

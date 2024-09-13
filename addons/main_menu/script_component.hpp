@@ -24,16 +24,16 @@
 #define POS_H(N) ((N) * GUI_GRID_H)
 
 #define COLOR_BCG { \
-    "(profilenamespace getVariable ['GUI_BCG_RGB_R',0.13])", \
-    "(profilenamespace getVariable ['GUI_BCG_RGB_G',0.54])", \
-    "(profilenamespace getVariable ['GUI_BCG_RGB_B',0.21])", \
-    "(profilenamespace getVariable ['GUI_BCG_RGB_A',0.8])" \
+    "(profileNamespace getVariable ['GUI_BCG_RGB_R',0.13])", \
+    "(profileNamespace getVariable ['GUI_BCG_RGB_G',0.54])", \
+    "(profileNamespace getVariable ['GUI_BCG_RGB_B',0.21])", \
+    "(profileNamespace getVariable ['GUI_BCG_RGB_A',0.8])" \
 }
 
 #define COLOR_BCG_TRANS { \
-    "(profilenamespace getVariable ['GUI_BCG_RGB_R',0.13])", \
-    "(profilenamespace getVariable ['GUI_BCG_RGB_G',0.54])", \
-    "(profilenamespace getVariable ['GUI_BCG_RGB_B',0.21])", \
+    "(profileNamespace getVariable ['GUI_BCG_RGB_R',0.13])", \
+    "(profileNamespace getVariable ['GUI_BCG_RGB_G',0.54])", \
+    "(profileNamespace getVariable ['GUI_BCG_RGB_B',0.21])", \
     0.3 \
 }
 

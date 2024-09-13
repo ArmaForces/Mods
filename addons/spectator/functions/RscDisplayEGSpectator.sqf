@@ -1,5 +1,5 @@
 #include "script_component.hpp"
-#include "\a3\Functions_F_Exp_A\EGSpectatorCommonDefines.inc"
+#include "\a3\functions_f_exp_a\EGSpectatorCommonDefines.inc"
 /*
  * Author: 3Mydlo3
  * Enhanced original RscDisplayEGSpectator to support showing only valid units from group on the list for selection instead of whole group.
@@ -263,13 +263,13 @@ switch _mode do
                         private _tooltip = if (isPlayer _unit) then { format ["%1 - %2", _name, _groupId] } else { format ["%1: %2 - %3", localize "str_player_ai", _name, _groupId] };
                         private _i = ["TreeGetDataIndex", [[_unit] call BIS_fnc_objectVar]] call (uiNamespace getVariable ["RscDisplayEGSpectator_script", {}]);
                         private _unitIndex = if (count _i > 0) then {_i select 1} else {-1};
-                        private _unitIcon = getText (configfile >> "CfgVehicles" >> typeOf _unit >> "icon");
+                        private _unitIcon = getText (configFile >> "CfgVehicles" >> typeOf _unit >> "icon");
 
                         private _texture = switch (true) do
                         {
                             case (!_isAlive) :          { ICON_DEAD };
                             case (_isIncapacitated) :   { ICON_REVIVE };
-                            default                     { if (_unitIcon != "") then {getText (configfile >> "CfgVehicleIcons" >> _unitIcon)} else {""} };
+                            default                     { if (_unitIcon != "") then {getText (configFile >> "CfgVehicleIcons" >> _unitIcon)} else {""} };
                         };
 
                         if (_i isEqualTo []) then

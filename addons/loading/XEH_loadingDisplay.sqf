@@ -22,8 +22,8 @@ private _height = 256 * pixelH;
 
 private _picture = _display ctrlCreate ["RscPicture", -1];
 _picture ctrlSetPosition [
-    safezoneX,
-    safezoneY + safeZoneH - _height,
+    safeZoneX,
+    safeZoneY + safeZoneH - _height,
     _width, _height
 ];
 
@@ -45,7 +45,7 @@ switch (_month) do {
 };
 _picture ctrlCommit 0;
 
-private _ctrlBg = _display displayctrl IDC_LOADINGSTART_CUSTOM_BG;
+private _ctrlBg = _display displayCtrl IDC_LOADINGSTART_CUSTOM_BG;
 private _backgroundCfg = uiNamespace getVariable [QGVAR(backgroundCfg), configNull];
 if (isNull _backgroundCfg) then {
     if (_month == _easterMonth && {selectRandom [true, false]}) then {
@@ -60,7 +60,7 @@ if (isNull _backgroundCfg) then {
 _ctrlBg ctrlSetText getText (_backgroundCfg >> "path");
 _ctrlBg ctrlCommit 0;
 
-private _ctrlGrpLoadingStart = _display displayctrl IDC_LOADINGSTART_LOADINGSTART;
+private _ctrlGrpLoadingStart = _display displayCtrl IDC_LOADINGSTART_LOADINGSTART;
 private _loadingLabel = _display ctrlCreate ["RscStructuredText", -1, _ctrlGrpLoadingStart];
 _loadingLabel ctrlSetPosition [0, 0, 1, 1];
 _loadingLabel ctrlSetStructuredText parseText ([

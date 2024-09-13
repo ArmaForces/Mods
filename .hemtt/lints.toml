@@ -1,0 +1,18 @@
+[sqf.command_case]
+severity = "Warning"
+options.ignore = [
+    "AGLtoASL",
+    "ASLtoAGL",
+    "WEST",
+    "EAST",
+    "INDEPENDENT",
+    "RESISTANCE",
+    "CIVILIAN",
+    "getVehicleTiPars",
+    "setVehicleTiPars",
+]
+
+[sqf.banned_commands]
+options.banned = [
+    "execVM",
+]
