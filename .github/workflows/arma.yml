@@ -46,7 +46,7 @@ jobs:
       run: |
         docker run -v "$(pwd):c:/workdir" -e CI=$True ghcr.io/armaforces/arma3tools:v2 hemtt release
 
-    - uses: actions/upload-artifact@v2
+    - uses: actions/upload-artifact@v4
       with:
         name: armaforces_mods
         path: |
