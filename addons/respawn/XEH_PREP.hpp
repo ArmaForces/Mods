@@ -5,3 +5,5 @@ PREP(enable);
 PREP(onPlayerKilled);
 PREP(onPlayerRespawn);
 PREP(toggle);
+
+PREP(moduleRespawn);

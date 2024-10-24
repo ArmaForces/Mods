@@ -21,9 +21,9 @@ class EditorData
 	class Camera
 	{
 		pos[]={2127.4077,61.299213,5718.915};
-		dir[]={-0.31338736,-0.65491021,-0.68766344};
-		up[]={-0.27158761,0.75570667,-0.59594256};
-		aside[]={-0.90996075,0,0.41469443};
+		dir[]={-0.31839693,-0.64070541,-0.6986559};
+		up[]={-0.26569697,0.76778686,-0.58301681};
+		aside[]={-0.90996081,0,0.41469446};
 	};
 };
 binarizationWanted=0;
@@ -180,7 +180,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={2124.301,6.2714386,5664.3506};
-						angles[]={0,3.4975924,-0};
+						angles[]={0,3.4975924,0};
 					};
 					side="West";
 					flags=7;
@@ -232,7 +232,7 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={2085.3547,6.6999998,5638.6855};
+				position[]={2085.355,6.6999998,5638.686};
 			};
 			name="module_respawnWest";
 			id=79;
@@ -247,8 +247,8 @@ class Mission
 					{
 						class data
 						{
-							singleType="STRING";
-							value="1";
+							singleType="SCALAR";
+							value=1;
 						};
 					};
 				};
@@ -295,8 +295,8 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={2030.3116,9.3913212,5636.2998};
-				angles[]={6.2033563,0,0.0075011365};
+				position[]={2030.312,9.391324,5636.2998};
+				angles[]={6.2033539,0,0.0075049158};
 			};
 			name="module_respawnEast";
 			id=82;
@@ -311,8 +311,8 @@ class Mission
 					{
 						class data
 						{
-							singleType="STRING";
-							value="0";
+							singleType="SCALAR";
+							value=0;
 						};
 					};
 				};
