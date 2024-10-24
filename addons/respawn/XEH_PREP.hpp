@@ -5,5 +5,6 @@ PREP(enable);
 PREP(onPlayerKilled);
 PREP(onPlayerRespawn);
 PREP(toggle);
-
+// modules
+PREP(addZeusModules);
 PREP(moduleRespawn);

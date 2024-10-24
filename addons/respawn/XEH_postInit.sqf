@@ -37,4 +37,6 @@ if (hasInterface) then {
     [QGVAR(adjustTimeLocal), {
         _this call FUNC(adjustTimeLocal);
     }] call CBA_fnc_addEventHandler;
+
+    [] call FUNC(addZeusModules);
 };

@@ -8,7 +8,7 @@ class EditorData
 	toggles=1025;
 	class ItemIDProvider
 	{
-		nextID=83;
+		nextID=84;
 	};
 	class MarkerIDProvider
 	{
@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={2127.4077,61.299213,5718.915};
-		dir[]={-0.31839693,-0.64070541,-0.6986559};
-		up[]={-0.26569697,0.76778686,-0.58301681};
-		aside[]={-0.90996081,0,0.41469446};
+		pos[]={2115.6221,61.299213,5696.2256};
+		dir[]={-0.35770744,-0.57448208,-0.73621982};
+		up[]={-0.25105935,0.81851542,-0.51672125};
+		aside[]={-0.89945447,1.6298145e-09,0.43701831};
 	};
 };
 binarizationWanted=0;
@@ -31,13 +31,14 @@ sourceName="test";
 addons[]=
 {
 	"A3_Characters_F",
-	"afm_respawn"
+	"afm_respawn",
+	"A3_Modules_F_Curator_Curator"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=2;
+		items=3;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -50,6 +51,13 @@ class AddonsMetaData
 			className="afm_respawn";
 			name="AFM - respawn";
 			author="ArmaForces";
+		};
+		class Item2
+		{
+			className="A3_Modules_F_Curator";
+			name="Arma 3 Zeus Update - Scripted Modules";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
 		};
 	};
 };
@@ -103,7 +111,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=5;
+		items=6;
 		class Item0
 		{
 			dataType="Group";
@@ -330,6 +338,73 @@ class Mission
 					};
 				};
 				nAttributes=2;
+			};
+		};
+		class Item5
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={2030.7878,6.2922206,5623.8281};
+			};
+			id=83;
+			type="ModuleCurator_F";
+			atlOffset=-4.7683716e-07;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ModuleCurator_F_Owner";
+					expression="_this setVariable ['Owner',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ModuleCurator_F_Forced";
+					expression="_this setVariable ['Forced',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=0;
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="ModuleCurator_F_Name";
+					expression="_this setVariable ['Name',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="";
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="ModuleCurator_F_Addons";
+					expression="_this setVariable ['Addons',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=2;
+						};
+					};
+				};
+				nAttributes=4;
 			};
 		};
 	};
