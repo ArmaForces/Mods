@@ -1,0 +1,7 @@
+
+cba_settings_hasSettingsFile = 1;
+
+respawn = 3;
+respawnDelay = 1e10;
+respawnOnStart = -1;
+respawnTemplates[] = {"afm_respawn_default", "Counter"};

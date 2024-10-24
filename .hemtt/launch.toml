@@ -5,8 +5,10 @@ workshop = [
 ]
 parameters = [
     "-name=dev",
+    "-noPause",
     "-window",
 ]
+mission = "test.Stratis"
 
 [ace]
 extends = "default"
