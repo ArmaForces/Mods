@@ -16,7 +16,7 @@ class CfgVehicles {
     class GVAR(moduleRespawn): Module_F {
         scope = 2;
 
-        displayName = "$$$ RESPAWN $$$";
+        displayName = CSTRING(ModuleRespawn_DisplayName);
         category = QUOTE(PREFIX);
         icon = "\a3\Modules_f\data\iconRespawn_ca.paa";
         portrait = "\a3\Modules_f\data\portraitRespawn_ca.paa";
@@ -29,7 +29,7 @@ class CfgVehicles {
         class Attributes: AttributesBase {
 
             class GVAR(applyTo): Combo {
-                displayName = "Apply to";
+                displayName = CSTRING(ModuleRespawn_Attribute_ApplyTo_DisplayName);
 
                 property = QGVAR(applyTo);
                 typeName = "NUMBER";
@@ -52,8 +52,8 @@ class CfgVehicles {
             };
 
             class GVAR(filter): EGVAR(common,codeSmall) {
-                displayName = "Filter units code";
-                tooltip = "\nparams [""_unit""]";
+                displayName = CSTRING(ModuleRespawn_Attribute_Filter_DisplayName);
+                tooltip = "params [""_unit""]";
 
                 property = QGVAR(filter);
                 defaultValue = "'true'";
@@ -64,8 +64,8 @@ class CfgVehicles {
 
         class ModuleDescription: ModuleDescription {
             description[] = {
-                "Synchronize the module with a trigger to respawn players of the selected side once it's activated.",
-                "List of the players can be filtered with optional condition code."
+                CSTRING(ModuleRespawn_Description_0),
+                CSTRING(ModuleRespawn_Description_1),
             };
             sync[] = {"EmptyDetector"};
 

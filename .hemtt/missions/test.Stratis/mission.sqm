@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={2115.6221,61.299213,5696.2256};
-		dir[]={-0.35770744,-0.57448208,-0.73621982};
-		up[]={-0.25105935,0.81851542,-0.51672125};
-		aside[]={-0.89945447,1.6298145e-09,0.43701831};
+		pos[]={2103.7285,49.199692,5677.5742};
+		dir[]={-0.24344152,-0.74140024,-0.6253494};
+		up[]={-0.26895773,0.67106307,-0.69089508};
+		aside[]={-0.93187869,-1.4901161e-08,0.36276996};
 	};
 };
 binarizationWanted=0;
@@ -124,18 +124,18 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={2095.22,6.6758265,5649.3877};
+						position[]={2093.6479,6.6836753,5649.085};
 						angles[]={0,3.8437212,0};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
+						name="zeus";
 						isPlayer=1;
 					};
 					id=75;
 					type="B_Soldier_SL_F";
-					atlOffset=4.7683716e-07;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -173,7 +173,6 @@ class Mission
 				name="respawn_group";
 			};
 			id=74;
-			atlOffset=4.7683716e-07;
 		};
 		class Item1
 		{
@@ -345,11 +344,11 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={2030.7878,6.2922206,5623.8281};
+				position[]={2030.788,6.292222,5623.8281};
 			};
 			id=83;
 			type="ModuleCurator_F";
-			atlOffset=-4.7683716e-07;
+			atlOffset=4.7683716e-07;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -361,7 +360,7 @@ class Mission
 						class data
 						{
 							singleType="STRING";
-							value="";
+							value="zeus";
 						};
 					};
 				};
@@ -400,7 +399,7 @@ class Mission
 						class data
 						{
 							singleType="SCALAR";
-							value=2;
+							value=3;
 						};
 					};
 				};
