@@ -3,6 +3,12 @@
  * Author: veteran29
  * Adds custom modules to Zeus via Zeus Enhanced framework.
  *
+ * Arguments:
+ * None
+ *
+ * Return Value:
+ * None
+ *
  * Public: No
  */
 
