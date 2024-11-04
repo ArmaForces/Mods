@@ -36,10 +36,10 @@
             </Key>
             <Key ID="STR_AFM_Respawn_ModuleRespawn_Description_0">
                 <English>Synchronize the module with a trigger to respawn players of the selected side once it's activated.</English>
-                <Polish>Zsynchronizuj moduł z triggerem aby odrodzić graczy po jego aktywacji.</Polish>
+                <Polish>Zsynchronizuj moduł z triggerem aby odrodzić graczy wybranej strony po jego aktywacji.</Polish>
             </Key>
             <Key ID="STR_AFM_Respawn_ModuleRespawn_Description_1">
-                <English>List of the players can be filtered with filter code.</English>
+                <English>The list of players can be filtered with filter code.</English>
                 <Polish>Lista graczy może zostać odfiltrowana za pomocą kodu filtru.</Polish>
             </Key>
             <!---->
