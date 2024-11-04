@@ -18,8 +18,8 @@ if (hasInterface) then {
         if (_colorIndex == -1) exitWith {};
 
         private _marker = [_object, "side", _unit] call EFUNC(common,createPlayerMarker);
-        _marker setMarkerShape "ICON";
-        _marker setMarkerType "hd_dot";
+        _marker setMarkerShapeLocal "ICON";
+        _marker setMarkerTypeLocal "hd_dot";
         _marker setMarkerColor (MARKER_COLORS select _colorIndex);
 
     }] call CBA_fnc_addEventHandler;
