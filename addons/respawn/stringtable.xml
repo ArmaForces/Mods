@@ -21,5 +21,58 @@
             <English>How much time must pass before player will respawn (if respawn is enabled).</English>
             <Polish>Jak dużo czasu musi upłynąć by gracz mógł się odrodzić (jeśli odrodzenie jest włączone).</Polish>
         </Key>
+        <Container name="Modules">
+            <Key ID="STR_AFM_Respawn_ModuleRespawn_DisplayName">
+                <English>Force respawn</English>
+                <Polish>Wymuś odrodzenie</Polish>
+            </Key>
+            <Key ID="STR_AFM_Respawn_ModuleRespawn_Attribute_ApplyTo_DisplayName">
+                <English>Apply to</English>
+                <Polish>Zastosuj do</Polish>
+            </Key>
+            <Key ID="STR_AFM_Respawn_ModuleRespawn_Attribute_Filter_DisplayName">
+                <English>Filter units code</English>
+                <Polish>Kod filtru jednostek</Polish>
+            </Key>
+            <Key ID="STR_AFM_Respawn_ModuleRespawn_Description_0">
+                <English>Synchronize the module with a trigger to respawn players of the selected side once it's activated.</English>
+                <Polish>Zsynchronizuj moduł z triggerem aby odrodzić graczy wybranej strony po jego aktywacji.</Polish>
+            </Key>
+            <Key ID="STR_AFM_Respawn_ModuleRespawn_Description_1">
+                <English>The list of players can be filtered with filter code.</English>
+                <Polish>Lista graczy może zostać odfiltrowana za pomocą kodu filtru.</Polish>
+            </Key>
+            <!---->
+            <Key ID="STR_AFM_Respawn_ModuleRespawn_ZEN_Sides_DisplayName">
+                <English>Respawn sides</English>
+                <Polish>Odródź strony</Polish>
+            </Key>
+            <Key ID="STR_AFM_Respawn_ModuleRespawn_ZEN_Sides_AttributeSides_DisplayName">
+                <English>Sides to respawn</English>
+                <Polish>Strony do odrodzenia</Polish>
+            </Key>
+            <!-- -->
+            <Key ID="STR_AFM_Respawn_ModuleRespawn_ZEN_Player_DisplayName">
+                <English>Respawn player</English>
+                <Polish>Odródź gracza</Polish>
+            </Key>
+            <Key ID="STR_AFM_Respawn_ModuleRespawn_ZEN_Player_AttributeDead_DisplayName">
+                <English>Dead players:</English>
+                <Polish>Martwi gracze:</Polish>
+            </Key>
+            <!-- -->
+            <Key ID="STR_AFM_Respawn_ModuleRespawn_Notification_RespawningSingle">
+                <English>Respawning %1</English>
+                <Polish>Odradzanie %1</Polish>
+            </Key>
+            <Key ID="STR_AFM_Respawn_ModuleRespawn_Notification_RespawningMany">
+                <English>Respawning %1 players</English>
+                <Polish>Odradzanie %1 graczy</Polish>
+            </Key>
+            <Key ID="STR_AFM_Respawn_ModuleRespawn_Notification_NoDead">
+                <English>No dead players</English>
+                <Polish>Brak martwych graczy</Polish>
+            </Key>
+        </Container>
     </Package>
 </Project>

@@ -1,0 +1,431 @@
+version=54;
+class EditorData
+{
+	moveGridStep=1;
+	angleGridStep=0.2617994;
+	scaleGridStep=1;
+	autoGroupingDist=10;
+	toggles=1025;
+	class ItemIDProvider
+	{
+		nextID=84;
+	};
+	class MarkerIDProvider
+	{
+		nextID=8;
+	};
+	class LayerIndexProvider
+	{
+		nextID=18;
+	};
+	class Camera
+	{
+		pos[]={2103.7285,49.199692,5677.5742};
+		dir[]={-0.24344152,-0.74140024,-0.6253494};
+		up[]={-0.26895773,0.67106307,-0.69089508};
+		aside[]={-0.93187869,-1.4901161e-08,0.36276996};
+	};
+};
+binarizationWanted=0;
+sourceName="test";
+addons[]=
+{
+	"A3_Characters_F",
+	"afm_respawn",
+	"A3_Modules_F_Curator_Curator"
+};
+class AddonsMetaData
+{
+	class List
+	{
+		items=3;
+		class Item0
+		{
+			className="A3_Characters_F";
+			name="Arma 3 Alpha - Characters and Clothing";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item1
+		{
+			className="afm_respawn";
+			name="AFM - respawn";
+			author="ArmaForces";
+		};
+		class Item2
+		{
+			className="A3_Modules_F_Curator";
+			name="Arma 3 Zeus Update - Scripted Modules";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+	};
+};
+randomSeed=2670849;
+class ScenarioData
+{
+	author="veteran29";
+};
+class CustomAttributes
+{
+	class Category0
+	{
+		name="Scenario";
+		class Attribute0
+		{
+			property="cba_settings_hasSettingsFile";
+			expression="false";
+			class Value
+			{
+				class data
+				{
+					singleType="BOOL";
+					value=1;
+				};
+			};
+		};
+		nAttributes=1;
+	};
+};
+class Mission
+{
+	class Intel
+	{
+		timeOfChanges=1800.0002;
+		startWeather=0.30000001;
+		startWind=0.1;
+		startWaves=0.1;
+		forecastWeather=0.30000001;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		forecastLightnings=0.1;
+		wavesForced=1;
+		windForced=1;
+		year=2035;
+		month=7;
+		day=6;
+		hour=12;
+		minute=0;
+		startFogDecay=0.014;
+		forecastFogDecay=0.014;
+	};
+	class Entities
+	{
+		items=6;
+		class Item0
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2093.6479,6.6836753,5649.085};
+						angles[]={0,3.8437212,0};
+					};
+					side="West";
+					flags=7;
+					class Attributes
+					{
+						name="zeus";
+						isPlayer=1;
+					};
+					id=75;
+					type="B_Soldier_SL_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="Male11ENG";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=1;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+			};
+			class Attributes
+			{
+				name="respawn_group";
+			};
+			id=74;
+		};
+		class Item1
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2124.301,6.2714386,5664.3506};
+						angles[]={0,3.4975924,0};
+					};
+					side="West";
+					flags=7;
+					class Attributes
+					{
+						isPlayable=1;
+					};
+					id=78;
+					type="B_Soldier_SL_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="Male06ENG";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=1.01;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=77;
+		};
+		class Item2
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={2085.355,6.6999998,5638.686};
+			};
+			name="module_respawnWest";
+			id=79;
+			type="afm_respawn_moduleRespawn";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="afm_respawn_applyTo";
+					expression="_this setVariable ['afm_respawn_applyTo',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=1;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="afm_respawn_filter";
+					expression="_this setVariable ['afm_respawn_filter', compileFinal _value];";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="(_this#0) in units respawn_group";
+						};
+					};
+				};
+				nAttributes=2;
+			};
+		};
+		class Item3
+		{
+			dataType="Trigger";
+			position[]={2085.5859,6.6999946,5621.6021};
+			angle=0.21598445;
+			class Attributes
+			{
+				onActivation="systemChat ""Respawn trigger"";";
+				sizeA=33.768002;
+				sizeB=40.047001;
+				sizeC=5;
+				timeout[]={5,5,5};
+				interuptable=1;
+				activationType="NOT PRESENT";
+				activationBy="WEST";
+				isRectangle=1;
+				isServerOnly=1;
+			};
+			id=81;
+			type="EmptyDetectorArea10x10";
+			atlOffset=-0.026000023;
+		};
+		class Item4
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={2030.312,9.391324,5636.2998};
+				angles[]={6.2033539,0,0.0075049158};
+			};
+			name="module_respawnEast";
+			id=82;
+			type="afm_respawn_moduleRespawn";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="afm_respawn_applyTo";
+					expression="_this setVariable ['afm_respawn_applyTo',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=0;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="afm_respawn_filter";
+					expression="_this setVariable ['afm_respawn_filter', compileFinal _value];";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="true";
+						};
+					};
+				};
+				nAttributes=2;
+			};
+		};
+		class Item5
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={2030.788,6.292222,5623.8281};
+			};
+			id=83;
+			type="ModuleCurator_F";
+			atlOffset=4.7683716e-07;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ModuleCurator_F_Owner";
+					expression="_this setVariable ['Owner',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="zeus";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ModuleCurator_F_Forced";
+					expression="_this setVariable ['Forced',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=0;
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="ModuleCurator_F_Name";
+					expression="_this setVariable ['Name',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="";
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="ModuleCurator_F_Addons";
+					expression="_this setVariable ['Addons',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=3;
+						};
+					};
+				};
+				nAttributes=4;
+			};
+		};
+	};
+	class Connections
+	{
+		class LinkIDProvider
+		{
+			nextID=1;
+		};
+		class Links
+		{
+			items=1;
+			class Item0
+			{
+				linkID=0;
+				item0=81;
+				item1=79;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+		};
+	};
+};

@@ -2,6 +2,17 @@
 
 Respawn template with live customization available through CBA settings.
 
+### Enabling in a mission
+
+Following config needs to be added to a mission config to allow this system to work properly:
+
+```cpp
+respawn = 3;
+respawnDelay = 1e10;
+respawnOnStart = -1;
+respawnTemplates[] = {"afm_respawn_default", "Counter"};
+```
+
 ## Respawn delay change
 
 You can change respawn delay at any time during the mission. If someone was already waiting for respawn, his timer will get adjusted to account for already spent time waiting.
