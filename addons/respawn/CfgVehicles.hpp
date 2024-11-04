@@ -48,6 +48,10 @@ class CfgVehicles {
                         name = "$STR_A3_CfgGroups_Indep0";
                         value = 2;
                     };
+                    class CIVILIAN {
+                        name = "$STR_Civilian";
+                        value = 2;
+                    };
                 };
             };
 
