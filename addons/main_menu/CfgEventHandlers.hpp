@@ -25,4 +25,10 @@ class Extended_DisplayLoad_EventHandlers {
             ARR_2([_this select 0,'RscDisplayMultiplayerSetup']) call COMPILE_SCRIPT(XEH_multiplayerDisplay);\
         });
     };
+
+    class RscDisplayPassword {
+        ADDON = QUOTE(with uiNamespace do {\
+            [_this select 0] call COMPILE_SCRIPT(XEH_displayPassword);\
+        });
+    };
 };

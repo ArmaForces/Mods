@@ -5,7 +5,7 @@ class CfgMainMenuSpotlight {
         text = CSTRING(SpotlightJoin);
         textIsQuote = 0;
         picture = QUOTE(\z\afm\addons\main\ui\logo_sm_ca.paa);
-        action = QUOTE(_this call (uiNamespace getVariable QQFUNC(join)));
+        action = QUOTE(ARR_3([_this,'server.armaforces.com',2302]) call (uiNamespace getVariable QQFUNC(join)));
         actionText = CSTRING(SpotlightHeader);
         condition = QUOTE(true);
     };
