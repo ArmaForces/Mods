@@ -1,17 +1,13 @@
 #include "script_component.hpp"
 /*
- * Author: <author>
- * Function description
+ * Author: veteran29
+ * Handle initialization of message box. Disables auto password confirm if wrong password was provided.
  *
  * Arguments:
- * 0: Objects <ARRAY>
- * 1: All <BOOL>
+ * 0: RscMsgBox display [DISPLAY]
  *
  * Return Value:
  * None
- *
- * Example:
- * [[bob, ted], false] call afm_main_fnc_example
  *
  * Public: No
  */
