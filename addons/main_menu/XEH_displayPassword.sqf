@@ -14,11 +14,13 @@
 
 params ["_display"];
 
+if !(uiNamespace getVariable [QGVAR(autoConfirm), true]) exitWith {INFO("Auto password confirm disabled")};
+
 private _ctrlConfirm = _display displayCtrl IDC_OK;
 private _ctrlPassword = _display displayCtrl IDC_PASSWORD;
 
-if (ctrlText _ctrlPassword != "") then {
-    ctrlActivate _ctrlConfirm;
-};
+if (ctrlText _ctrlPassword == "") exitWith {};
+
+ctrlActivate _ctrlConfirm;
 
 nil
