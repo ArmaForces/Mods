@@ -1,14 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="AFM">
     <Package name="Map">
-        <Key ID="STR_AFM_Map_DisplayName">
-            <English>ArmaForces - Map</English>
-            <Polish>ArmaForces - Map</Polish>
-        </Key>
-        <Key ID="STR_AFM_Map_ColorRed">
-            <English>Red (Alpha)</English>
-            <Polish>Czerwony (Alpha)</Polish>
-        </Key>
         <Key ID="STR_AFM_Map_ColorBlue">
             <English>Blue (Bravo)</English>
             <Polish>Niebieski (Bravo)</Polish>
@@ -24,6 +16,14 @@
         <Key ID="STR_AFM_Map_ColorPink">
             <English>Pink (Support)</English>
             <Polish>Różowy (Wsparcie)</Polish>
+        </Key>
+        <Key ID="STR_AFM_Map_ColorRed">
+            <English>Red (Alpha)</English>
+            <Polish>Czerwony (Alpha)</Polish>
+        </Key>
+        <Key ID="STR_AFM_Map_DisplayName">
+            <English>ArmaForces - Map</English>
+            <Polish>ArmaForces - Map</Polish>
         </Key>
     </Package>
 </Project>

@@ -1,29 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="AFM">
     <Package name="Spectator">
-        <Key ID="STR_AFM_Spectator_DisplayName">
-            <English>ArmaForces - Spectator</English>
-            <Polish>ArmaForces - Obserwator</Polish>
+        <Key ID="STR_AFM_Spectator_AllowAI">
+            <English>Allow AI spectating</English>
+            <Polish>Pozwól obserwować AI</Polish>
         </Key>
-        <Key ID="STR_AFM_Spectator_Enabled">
-            <English>Enable spectator</English>
-            <Polish>Włącz obserwatora</Polish>
-        </Key>
-        <Key ID="STR_AFM_Spectator_Enabled_Description">
-            <English>Enables spectator for dead players</English>
-            <Polish>Włącza obserwatora martwym graczom</Polish>
-        </Key>
-        <Key ID="STR_AFM_Spectator_EnabledUnconscious">
-            <English>Enable spectator (CLIENT)</English>
-            <Polish>Włącz obserwatora (KLIENT)</Polish>
-        </Key>
-        <Key ID="STR_AFM_Spectator_EnabledUnconscious_Description">
-            <English>Enables spectator when unconscious if it's allowed by server setting.</English>
-            <Polish>Włącza obserwatora podczas nieprzytomności jeżeli ustawienia serwera pozwalają.</Polish>
-        </Key>
-        <Key ID="STR_AFM_Spectator_Unconscious">
-            <English>Unconscious</English>
-            <Polish>Nieprzytomni</Polish>
+        <Key ID="STR_AFM_Spectator_AllowAI_Description">
+            <English>Allows tracking AI units from whitelisted sides.</English>
+            <Polish>Pozwala obserwować jednostki AI z dozwolonych stron.</Polish>
         </Key>
         <Key ID="STR_AFM_Spectator_AllowUnconscious">
             <English>Allow spectator for unconscious</English>
@@ -33,21 +17,41 @@
             <English>Allows spectator also for unconscious players. Requires enabling spectator.</English>
             <Polish>Pozwala na obserwatora także nieprzytomnym graczom. Wymaga włączenia obserwatora.</Polish>
         </Key>
-        <Key ID="STR_AFM_Spectator_UnconsciousDelay">
-            <English>Unconscious spectator delay</English>
-            <Polish>Opóźnienie obserwatora dla nieprzytomnych</Polish>
+        <Key ID="STR_AFM_Spectator_CivilianSide">
+            <English>Allow civilian spectating</English>
+            <Polish>Pozwól obserwować cywili</Polish>
         </Key>
-        <Key ID="STR_AFM_Spectator_UnconsciousDelay_Description">
-            <English>How much time must pass before unconscious players get spectator.</English>
-            <Polish>Ile czasu musi upłynąć nim nieprzytomni gracze dostaną obserwatora.</Polish>
+        <Key ID="STR_AFM_Spectator_CivilianSide_Description">
+            <English>Allows tracking units from civilian side.</English>
+            <Polish>Pozwala obserwować jednostki strony cywilnej.</Polish>
         </Key>
-        <Key ID="STR_AFM_Spectator_Sides">
-            <English>Sides available for spectating</English>
-            <Polish>Dostępne strony do obserwowania</Polish>
+        <Key ID="STR_AFM_Spectator_DisplayName">
+            <English>ArmaForces - Spectator</English>
+            <Polish>ArmaForces - Obserwator</Polish>
         </Key>
-        <Key ID="STR_AFM_Spectator_Sides_Description">
-            <English>Spectator will be able to see and track units from given sides.</English>
-            <Polish>Obserwator będzie mógł widzieć i śledzić jednostki wybranych stron.</Polish>
+        <Key ID="STR_AFM_Spectator_Enabled">
+            <English>Enable spectator</English>
+            <Polish>Włącz obserwatora</Polish>
+        </Key>
+        <Key ID="STR_AFM_Spectator_EnabledUnconscious">
+            <English>Enable spectator (CLIENT)</English>
+            <Polish>Włącz obserwatora (KLIENT)</Polish>
+        </Key>
+        <Key ID="STR_AFM_Spectator_EnabledUnconscious_Description">
+            <English>Enables spectator when unconscious if it's allowed by server setting.</English>
+            <Polish>Włącza obserwatora podczas nieprzytomności jeżeli ustawienia serwera pozwalają.</Polish>
+        </Key>
+        <Key ID="STR_AFM_Spectator_Enabled_Description">
+            <English>Enables spectator for dead players</English>
+            <Polish>Włącza obserwatora martwym graczom</Polish>
+        </Key>
+        <Key ID="STR_AFM_Spectator_FreeCamera">
+            <English>Allow free camera</English>
+            <Polish>Pozwól na wolną kamerę</Polish>
+        </Key>
+        <Key ID="STR_AFM_Spectator_FreeCamera_Description">
+            <English>Allows spectator to move his camera freely.</English>
+            <Polish>Pozwala obserwatorowi dowolnie poruszać kamerą.</Polish>
         </Key>
         <Key ID="STR_AFM_Spectator_Friendly">
             <English>Friendly</English>
@@ -61,29 +65,21 @@
             <English>Player group</English>
             <Polish>Grupa gracza</Polish>
         </Key>
-        <Key ID="STR_AFM_Spectator_CivilianSide">
-            <English>Allow civilian spectating</English>
-            <Polish>Pozwól obserwować cywili</Polish>
+        <Key ID="STR_AFM_Spectator_Sides">
+            <English>Sides available for spectating</English>
+            <Polish>Dostępne strony do obserwowania</Polish>
         </Key>
-        <Key ID="STR_AFM_Spectator_CivilianSide_Description">
-            <English>Allows tracking units from civilian side.</English>
-            <Polish>Pozwala obserwować jednostki strony cywilnej.</Polish>
+        <Key ID="STR_AFM_Spectator_Sides_Description">
+            <English>Spectator will be able to see and track units from given sides.</English>
+            <Polish>Obserwator będzie mógł widzieć i śledzić jednostki wybranych stron.</Polish>
         </Key>
-        <Key ID="STR_AFM_Spectator_AllowAI">
-            <English>Allow AI spectating</English>
-            <Polish>Pozwól obserwować AI</Polish>
+        <Key ID="STR_AFM_Spectator_State_Alive">
+            <English>You're not dead (yet).</English>
+            <Polish>Nie jesteś martwy (jeszcze).</Polish>
         </Key>
-        <Key ID="STR_AFM_Spectator_AllowAI_Description">
-            <English>Allows tracking AI units from whitelisted sides.</English>
-            <Polish>Pozwala obserwować jednostki AI z dozwolonych stron.</Polish>
-        </Key>
-        <Key ID="STR_AFM_Spectator_FreeCamera">
-            <English>Allow free camera</English>
-            <Polish>Pozwól na wolną kamerę</Polish>
-        </Key>
-        <Key ID="STR_AFM_Spectator_FreeCamera_Description">
-            <English>Allows spectator to move his camera freely.</English>
-            <Polish>Pozwala obserwatorowi dowolnie poruszać kamerą.</Polish>
+        <Key ID="STR_AFM_Spectator_State_Dead">
+            <English>You're dead.</English>
+            <Polish>Jesteś martwy.</Polish>
         </Key>
         <Key ID="STR_AFM_Spectator_TPPCamera">
             <English>Allow TPP Camera</English>
@@ -93,13 +89,17 @@
             <English>Allows spectator to use third person camera.</English>
             <Polish>Pozwala obserwatorowi używać kamery trzecioosobowej.</Polish>
         </Key>
-        <Key ID="STR_AFM_Spectator_State_Alive">
-            <English>You're not dead (yet).</English>
-            <Polish>Nie jesteś martwy (jeszcze).</Polish>
+        <Key ID="STR_AFM_Spectator_Unconscious">
+            <English>Unconscious</English>
+            <Polish>Nieprzytomni</Polish>
         </Key>
-        <Key ID="STR_AFM_Spectator_State_Dead">
-            <English>You're dead.</English>
-            <Polish>Jesteś martwy.</Polish>
+        <Key ID="STR_AFM_Spectator_UnconsciousDelay">
+            <English>Unconscious spectator delay</English>
+            <Polish>Opóźnienie obserwatora dla nieprzytomnych</Polish>
+        </Key>
+        <Key ID="STR_AFM_Spectator_UnconsciousDelay_Description">
+            <English>How much time must pass before unconscious players get spectator.</English>
+            <Polish>Ile czasu musi upłynąć nim nieprzytomni gracze dostaną obserwatora.</Polish>
         </Key>
     </Package>
 </Project>

@@ -5,14 +5,6 @@
             <English>ArmaForces - Pointing</English>
             <Polish>ArmaForces - Wskazywanie</Polish>
         </Key>
-        <Key ID="STR_AFM_Pointing_Vehicle_Enabled">
-            <English>Enable pointing in vehicles</English>
-            <Polish>Włącz wskazywanie w pojazdach</Polish>
-        </Key>
-        <Key ID="STR_AFM_Pointing_Vehicle_Enabled_Description">
-            <English>Allows to point current camera direction in vehicles to rest of the crew.</English>
-            <Polish>Pozwala na wskazywanie aktualnego obrotu kamery reszcie załogi pojazdu.</Polish>
-        </Key>
         <Key ID="STR_AFM_Pointing_Key_PointVehicle">
             <English>Point direction (vehicle)</English>
             <Polish>Wskaż kierunek (w pojeździe)</Polish>
@@ -20,6 +12,14 @@
         <Key ID="STR_AFM_Pointing_Key_PointVehicle_Description">
             <English>Point direction to the rest of the current vehicle crew.</English>
             <Polish>Wskaż kierunek reszcie załogi aktualnego pojazdu.</Polish>
+        </Key>
+        <Key ID="STR_AFM_Pointing_Vehicle_Enabled">
+            <English>Enable pointing in vehicles</English>
+            <Polish>Włącz wskazywanie w pojazdach</Polish>
+        </Key>
+        <Key ID="STR_AFM_Pointing_Vehicle_Enabled_Description">
+            <English>Allows to point current camera direction in vehicles to rest of the crew.</English>
+            <Polish>Pozwala na wskazywanie aktualnego obrotu kamery reszcie załogi pojazdu.</Polish>
         </Key>
     </Package>
 </Project>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="AFM">
     <Package name="Extension_Main_Menu">
-        <Key ID="STR_AFM_Extension_Main_Menu_Status">
-            <English>STATUS</English>
-            <Polish>STATUS</Polish>
+        <Key ID="STR_AFM_Extension_Main_Menu_Map">
+            <English>MAP</English>
+            <Polish>MAPA</Polish>
         </Key>
         <Key ID="STR_AFM_Extension_Main_Menu_Modlist">
             <English>MODLIST</English>
@@ -13,9 +13,9 @@
             <English>PLAYERS</English>
             <Polish>GRACZY</Polish>
         </Key>
-        <Key ID="STR_AFM_Extension_Main_Menu_Map">
-            <English>MAP</English>
-            <Polish>MAPA</Polish>
+        <Key ID="STR_AFM_Extension_Main_Menu_Status">
+            <English>STATUS</English>
+            <Polish>STATUS</Polish>
         </Key>
     </Package>
 </Project>

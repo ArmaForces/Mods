@@ -1,13 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="AFM">
     <Package name="Curator">
-        <Key ID="STR_AFM_Curator_isZeus">
-            <English>Zeus</English>
-        </Key>
-        <Key ID="STR_AFM_Curator_isZeus_Description">
-            <English>Controls whether unit will have Zeus interface.</English>
-            <Polish>Ustala czy jednostka ma mieć dostęp do interfejsu Zeusa.</Polish>
-        </Key>
         <Key ID="STR_AFM_Curator_GetZeus">
             <English>Zeus</English>
             <Polish>Zeus</Polish>
@@ -15,6 +8,13 @@
         <Key ID="STR_AFM_Curator_GetZeus_Description">
             <English>Give yourself Zeus functinality.</English>
             <Polish>Daj sobie funkcjonalność Zeusa.</Polish>
+        </Key>
+        <Key ID="STR_AFM_Curator_isZeus">
+            <English>Zeus</English>
+        </Key>
+        <Key ID="STR_AFM_Curator_isZeus_Description">
+            <English>Controls whether unit will have Zeus interface.</English>
+            <Polish>Ustala czy jednostka ma mieć dostęp do interfejsu Zeusa.</Polish>
         </Key>
     </Package>
 </Project>
