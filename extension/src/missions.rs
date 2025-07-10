@@ -78,7 +78,7 @@ pub fn post_attendance(mission_id: &str, steam_id: &u64) -> Result<(), String> {
                 let resp = r
                     .json::<AttendanceResponse>()
                     .unwrap_or(AttendanceResponse {
-                        detail: format!("Unkown error - {}", s),
+                        detail: format!("Unkown error - {s}"),
                     });
                 Err(resp.detail)
             }
