@@ -20,7 +20,7 @@ if (hasInterface) then {
     [GVAR(babel), GVAR(perSideRadios)] call acre_api_fnc_setupMission;
 };
 
-if (GVAR(perSideRadios) && {GVAR(perSideChannelNames)}) then {
+if (GVAR(perSideRadios) && GVAR(perSideChannelNames)) then {
     INFO("Initializing channel names per side.");
     {
         [_x] call FUNC(initChannelsNames);

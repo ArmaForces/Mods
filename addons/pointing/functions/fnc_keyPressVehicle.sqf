@@ -14,7 +14,7 @@
 
 if (!alive ACE_player) exitWith {false};
 // Conditions: canInteract
-if !([ACE_player, ACE_player, ["isNotInside", "isNotSwimming"]] call EFUNC(common,canInteractWith)) exitWith {false};
+if !([ACE_player, ACE_player, ["isNotInside", "isNotSwimming"]] call ACEFUNC(common,canInteractWith)) exitWith {false};
 
 private _vehicle = vehicle ACE_player;
 // make sure player is in vehicle and not in a static weapon (inverse of ACE Finger check):

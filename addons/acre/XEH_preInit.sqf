@@ -10,7 +10,7 @@ PREP_RECOMPILE_END;
 #include "initSettings.inc.sqf"
 
 // Add arsenal category
-if (EGVAR(common,aceArsenal) && {GVAR(addArsenalCategory)}) then {
+if (EGVAR(common,aceArsenal) && GVAR(addArsenalCategory)) then {
     // Can't use WUAE as it won't run in 3DEN
     [] spawn {
         private _timeout = diag_tickTime + 5;

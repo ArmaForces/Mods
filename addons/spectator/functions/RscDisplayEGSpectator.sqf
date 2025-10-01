@@ -85,7 +85,7 @@ switch _mode do
             {
                 // Added '&& {_validUnits findIf {_x isEqualTo _unit} != -1}'
                 private _unit = _x;
-                if (simulationEnabled _x && {!isObjectHidden _x} && {simulationEnabled vehicle _x} && {!isObjectHidden vehicle _x} && {isPlayer _x || {_showAiGroups}} && {_validUnits findIf {_x isEqualTo _unit} != -1} && !(_x isKindOf SPECTATOR_CLASS)) then
+                if (simulationEnabled _x && {!isObjectHidden _x} && {simulationEnabled vehicle _x} && {!isObjectHidden vehicle _x} && {isPlayer _x || _showAiGroups} && {_validUnits findIf {_x isEqualTo _unit} != -1} && !(_x isKindOf SPECTATOR_CLASS)) then
                 {
                     _unitsInfo pushBack [_x, alive _x, alive _x && { _x getVariable [VAR_INCAPACITATED, false] }, [_x, true, NAME_MAX_CHARACTERS] call BIS_fnc_getName, _group];
                 };
@@ -111,8 +111,7 @@ switch _mode do
         private _newList = [_west, _east, _indep, _civ];
 
         // Whether an update to the list is required (really only if something changed)
-        if !(_oldList isEqualTo _newList) then
-        {
+        if (_oldList isNotEqualTo _newList) then {
             private _allElements = ["TreeGetAllElements"] call (uiNamespace getVariable ["RscDisplayEGSpectator_script", {}]);
             private _groupElements = _allElements select 1;
             private _unitElements = _allElements select 2;
@@ -263,7 +262,7 @@ switch _mode do
                         private _tooltip = if (isPlayer _unit) then { format ["%1 - %2", _name, _groupId] } else { format ["%1: %2 - %3", localize "str_player_ai", _name, _groupId] };
                         private _i = ["TreeGetDataIndex", [[_unit] call BIS_fnc_objectVar]] call (uiNamespace getVariable ["RscDisplayEGSpectator_script", {}]);
                         private _unitIndex = if (count _i > 0) then {_i select 1} else {-1};
-                        private _unitIcon = getText (configFile >> "CfgVehicles" >> typeOf _unit >> "icon");
+                        private _unitIcon = getText (configOf _unit >> "icon");
 
                         private _texture = switch (true) do
                         {
@@ -310,8 +309,7 @@ switch _mode do
             private _i = ["TreeGetDataIndex", [[_focus] call BIS_fnc_objectVar]] call (uiNamespace getVariable ["RscDisplayEGSpectator_script", {}]);
 
             // If found, select it
-            if !(_i isEqualTo []) then
-            {
+            if (_i isNotEqualTo []) then {
                 _ctrl tvSetCurSel _i;
             };
         };

@@ -15,8 +15,8 @@ class GVAR(Modal) {
     idd = -1;
     enableSimulation = 0;
 
-    onLoad = QUOTE(_this call FUNC(onModalOpen));
-    onUnload = QUOTE(_this call FUNC(onModalClose));
+    onLoad = QUOTE(call FUNC(onModalOpen));
+    onUnload = QUOTE(call FUNC(onModalClose));
 
     class ControlsBackground {
         class TitleBackground: RscText {

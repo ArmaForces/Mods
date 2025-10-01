@@ -12,7 +12,7 @@ PREP_RECOMPILE_END;
 
     [_player] call FUNC(lowerWeapon);
 
-    if (EGVAR(common,aceSafemode) && {GVAR(startLocked)}) then {
+    if (EGVAR(common,aceSafemode) && GVAR(startLocked)) then {
         [_player, currentWeapon _player, true] call ACEFUNC(safemode,setWeaponSafety);
     };
 }] call CBA_fnc_addEventHandler;

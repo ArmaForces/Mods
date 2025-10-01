@@ -5,7 +5,7 @@ PREP_RECOMPILE_START;
 #include "XEH_PREP.hpp"
 PREP_RECOMPILE_END;
 
-if (isServer && {EGVAR(extension,enabled)}) then {
+if (isServer && EGVAR(extension,enabled)) then {
 
     GVAR(currentMissionId) = "";
 
