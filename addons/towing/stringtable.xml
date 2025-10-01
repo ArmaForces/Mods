@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="AFM">
     <Package name="Towing">
-        <Key ID="STR_AFM_Towing_DisplayName">
-            <English>ArmaForces - Towing</English>
-            <Polish>ArmaForces - Holowanie</Polish>
+        <Key ID="STR_AFM_Towing_AddToCars">
+            <English>Add ropes to cars</English>
+            <Polish>Dodaj liny do samochodów</Polish>
+        </Key>
+        <Key ID="STR_AFM_Towing_AddToCars_Description">
+            <English>Enables adding ropes to inventories of cars.</English>
+            <Polish>Włącza dodawanie lin do samochodów.</Polish>
         </Key>
         <Key ID="STR_AFM_Towing_AddToHeavyDutyVehicles">
             <English>Add ropes to heavy duty vehicles</English>
@@ -13,13 +17,9 @@
             <English>Enables adding ropes to inventories of heavy duty vehicles such as MRAPs, IFVs, APCs and Tanks.</English>
             <Polish>Włącza dodawanie lin do ekwipunków ciężkich pojazdów takich jak MRAPy, transportery opancerzone, BWP oraz czołgów.</Polish>
         </Key>
-        <Key ID="STR_AFM_Towing_AddToCars">
-            <English>Add ropes to cars</English>
-            <Polish>Dodaj liny do samochodów</Polish>
-        </Key>
-        <Key ID="STR_AFM_Towing_AddToCars_Description">
-            <English>Enables adding ropes to inventories of cars.</English>
-            <Polish>Włącza dodawanie lin do samochodów.</Polish>
+        <Key ID="STR_AFM_Towing_DisplayName">
+            <English>ArmaForces - Towing</English>
+            <Polish>ArmaForces - Holowanie</Polish>
         </Key>
     </Package>
 </Project>

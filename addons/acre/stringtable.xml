@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="AFM">
     <Package name="Acre">
-        <Key ID="STR_AFM_Acre_DisplayName">
-            <English>ArmaForces - ACRE</English>
-            <Polish>ArmaForces - ACRE</Polish>
+        <Key ID="STR_AFM_Acre_AddArsenalCategory">
+            <English>Add arsenal category</English>
+            <Polish>Dodaj kategorie w arsenale</Polish>
+        </Key>
+        <Key ID="STR_AFM_Acre_AddArsenalCategory_Description">
+            <English>Add category with ACRE radios to ACE Arsenal.</English>
+            <Polish>Dodaj kategorię z radiami ACRE do arsenału ACE.</Polish>
+        </Key>
+        <Key ID="STR_AFM_Acre_ArsenalCategory">
+            <English>Radios</English>
+            <Polish>Radia</Polish>
         </Key>
         <Key ID="STR_AFM_Acre_Babel">
             <English>Babel</English>
@@ -12,6 +20,66 @@
         <Key ID="STR_AFM_Acre_Babel_Description">
             <English>Each side will have it's own babel language assigned and won't understand each other. Requires mission restart to change.</English>
             <Polish>Każda strona będzie miała swój język babel i nie będą się rozumieć. Zmiana wymaga restartu misji.</Polish>
+        </Key>
+        <Key ID="STR_AFM_Acre_ChannelName">
+            <English>Channel %1 name</English>
+            <Polish>Nazwa kanału %1</Polish>
+        </Key>
+        <Key ID="STR_AFM_Acre_ChannelName_Description">
+            <English>Channel %1 name. Requires mission restart to change.</English>
+            <Polish>Nazwa kanału %1. Zmiana wymaga restartu misji.</Polish>
+        </Key>
+        <Key ID="STR_AFM_Acre_CopyLeaderRadio">
+            <English>Copy leader radio settings</English>
+            <Polish>Skopiuj ustawienia radia od dowódcy</Polish>
+        </Key>
+        <Key ID="STR_AFM_Acre_DisplayName">
+            <English>ArmaForces - ACRE</English>
+            <Polish>ArmaForces - ACRE</Polish>
+        </Key>
+        <Key ID="STR_AFM_Acre_Loud">
+            <English>Loud</English>
+            <Polish>Głośno</Polish>
+        </Key>
+        <Key ID="STR_AFM_Acre_Normal">
+            <English>Normal</English>
+            <Polish>Normalnie</Polish>
+        </Key>
+        <Key ID="STR_AFM_Acre_PerSideChannelNames">
+            <English>Per Side Channel Names</English>
+            <Polish>Nazwy kanałów per strona</Polish>
+        </Key>
+        <Key ID="STR_AFM_Acre_PerSideChannelNames_Description">
+            <English>Each side will have it's own channel names. If disabled, CIVILIAN channel names are used. Requires Per Side Radios enabled. Requires mission restart to change.</English>
+            <Polish>Każda strona będzie miała swoje nazwy kanałów. Jeżeli wyłączone to używane są nazwy kanałów Cywili. Wymaga kanałów per strona. Zmiana wymaga restartu misji.</Polish>
+        </Key>
+        <Key ID="STR_AFM_Acre_PerSideRadios">
+            <English>Per Side Radios</English>
+            <Polish>Kanały per strona</Polish>
+        </Key>
+        <Key ID="STR_AFM_Acre_PerSideRadios_Description">
+            <English>Each side will have it's own frequency on radio and won't hear each other. Requires mission restart to change.</English>
+            <Polish>Każda strona będzie miała swoje częstotliwości i nie będą się słyszeć na radiu. Zmiana wymaga restartu misji.</Polish>
+        </Key>
+        <Key ID="STR_AFM_Acre_Quiet">
+            <English>Quiet</English>
+            <Polish>Cicho</Polish>
+        </Key>
+        <Key ID="STR_AFM_Acre_SetToChannel">
+            <English>Set to chn: %1</English>
+            <Polish>Ustaw kanał: %1</Polish>
+        </Key>
+        <Key ID="STR_AFM_Acre_SetToFrequency">
+            <English>Set to freq: %1 MHz</English>
+            <Polish>Ustaw częst.: %1 MHz</Polish>
+        </Key>
+        <Key ID="STR_AFM_Acre_Shout">
+            <English>Shout</English>
+            <Polish>Krzyk</Polish>
+        </Key>
+        <Key ID="STR_AFM_Acre_SideChannelNames">
+            <English>%1 Channel Names</English>
+            <Polish>Nazwy kanałów %1</Polish>
         </Key>
         <Key ID="STR_AFM_Acre_StartBppVolume">
             <English>Initial speech volume</English>
@@ -32,74 +100,6 @@
         <Key ID="STR_AFM_Acre_Whisper">
             <English>Whisper</English>
             <Polish>Szept</Polish>
-        </Key>
-        <Key ID="STR_AFM_Acre_Quiet">
-            <English>Quiet</English>
-            <Polish>Cicho</Polish>
-        </Key>
-        <Key ID="STR_AFM_Acre_Normal">
-            <English>Normal</English>
-            <Polish>Normalnie</Polish>
-        </Key>
-        <Key ID="STR_AFM_Acre_Loud">
-            <English>Loud</English>
-            <Polish>Głośno</Polish>
-        </Key>
-        <Key ID="STR_AFM_Acre_Shout">
-            <English>Shout</English>
-            <Polish>Krzyk</Polish>
-        </Key>
-        <Key ID="STR_AFM_Acre_PerSideRadios">
-            <English>Per Side Radios</English>
-            <Polish>Kanały per strona</Polish>
-        </Key>
-        <Key ID="STR_AFM_Acre_PerSideRadios_Description">
-            <English>Each side will have it's own frequency on radio and won't hear each other. Requires mission restart to change.</English>
-            <Polish>Każda strona będzie miała swoje częstotliwości i nie będą się słyszeć na radiu. Zmiana wymaga restartu misji.</Polish>
-        </Key>
-        <Key ID="STR_AFM_Acre_PerSideChannelNames">
-            <English>Per Side Channel Names</English>
-            <Polish>Nazwy kanałów per strona</Polish>
-        </Key>
-        <Key ID="STR_AFM_Acre_PerSideChannelNames_Description">
-            <English>Each side will have it's own channel names. If disabled, CIVILIAN channel names are used. Requires Per Side Radios enabled. Requires mission restart to change.</English>
-            <Polish>Każda strona będzie miała swoje nazwy kanałów. Jeżeli wyłączone to używane są nazwy kanałów Cywili. Wymaga kanałów per strona. Zmiana wymaga restartu misji.</Polish>
-        </Key>
-        <Key ID="STR_AFM_Acre_SideChannelNames">
-            <English>%1 Channel Names</English>
-            <Polish>Nazwy kanałów %1</Polish>
-        </Key>
-        <Key ID="STR_AFM_Acre_ChannelName">
-            <English>Channel %1 name</English>
-            <Polish>Nazwa kanału %1</Polish>
-        </Key>
-        <Key ID="STR_AFM_Acre_ChannelName_Description">
-            <English>Channel %1 name. Requires mission restart to change.</English>
-            <Polish>Nazwa kanału %1. Zmiana wymaga restartu misji.</Polish>
-        </Key>
-        <Key ID="STR_AFM_Acre_CopyLeaderRadio">
-            <English>Copy leader radio settings</English>
-            <Polish>Skopiuj ustawienia radia od dowódcy</Polish>
-        </Key>
-        <Key ID="STR_AFM_Acre_SetToChannel">
-            <English>Set to chn: %1</English>
-            <Polish>Ustaw kanał: %1</Polish>
-        </Key>
-        <Key ID="STR_AFM_Acre_SetToFrequency">
-            <English>Set to freq: %1 MHz</English>
-            <Polish>Ustaw częst.: %1 MHz</Polish>
-        </Key>
-        <Key ID="STR_AFM_Acre_AddArsenalCategory">
-            <English>Add arsenal category</English>
-            <Polish>Dodaj kategorie w arsenale</Polish>
-        </Key>
-        <Key ID="STR_AFM_Acre_AddArsenalCategory_Description">
-            <English>Add category with ACRE radios to ACE Arsenal.</English>
-            <Polish>Dodaj kategorię z radiami ACRE do arsenału ACE.</Polish>
-        </Key>
-        <Key ID="STR_AFM_Acre_ArsenalCategory">
-            <English>Radios</English>
-            <Polish>Radia</Polish>
         </Key>
     </Package>
 </Project>

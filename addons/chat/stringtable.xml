@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="AFM">
     <Package name="Chat">
-        <Key ID="STR_AFM_Chat_DisplayName">
-            <English>ArmaForces - Chat</English>
-            <Polish>ArmaForces - Czat</Polish>
-        </Key>
         <Key ID="STR_AFM_Chat_AllowGlobalChat">
             <English>Allow global/side chat</English>
             <Polish>Zezwól na czat globalny/strony</Polish>
@@ -16,6 +12,10 @@
         <Key ID="STR_AFM_Chat_AllowGlobalChat_Warning">
             <English>Global and side chat is disabled, your message is visible only to administrators and zeuses!</English>
             <Polish>Czat globalny i strony jest wyłączony, twoja wiadomość jest widoczna tylko dla administratorów i zeusów!</Polish>
+        </Key>
+        <Key ID="STR_AFM_Chat_DisplayName">
+            <English>ArmaForces - Chat</English>
+            <Polish>ArmaForces - Czat</Polish>
         </Key>
     </Package>
 </Project>
