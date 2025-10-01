@@ -262,7 +262,7 @@ switch _mode do
                         private _tooltip = if (isPlayer _unit) then { format ["%1 - %2", _name, _groupId] } else { format ["%1: %2 - %3", localize "str_player_ai", _name, _groupId] };
                         private _i = ["TreeGetDataIndex", [[_unit] call BIS_fnc_objectVar]] call (uiNamespace getVariable ["RscDisplayEGSpectator_script", {}]);
                         private _unitIndex = if (count _i > 0) then {_i select 1} else {-1};
-                        private _unitIcon = getText (configFile >> "CfgVehicles" >> typeOf _unit >> "icon");
+                        private _unitIcon = getText (configOf _unit >> "icon");
 
                         private _texture = switch (true) do
                         {
