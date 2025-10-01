@@ -29,7 +29,7 @@ private _pttAssign = [] call acre_api_fnc_getMultiPushToTalkAssignment;
 {
     private _baseRadio = [_x] call acre_api_fnc_getBaseRadio;
     private _leaderRadios = [_baseRadio, _targetLeader] call acre_api_fnc_getAllRadiosByType;
-    if !(_leaderRadios isEqualTo []) then {
+    if (_leaderRadios isNotEqualTo []) then {
         private _itemCfg = configFile >> "CfgWeapons" >> _baseRadio;
 
         private _displayName = [_x, _itemCfg] call FUNC(getRadioDisplayName);

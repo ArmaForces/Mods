@@ -111,8 +111,7 @@ switch _mode do
         private _newList = [_west, _east, _indep, _civ];
 
         // Whether an update to the list is required (really only if something changed)
-        if !(_oldList isEqualTo _newList) then
-        {
+        if (_oldList isNotEqualTo _newList) then {
             private _allElements = ["TreeGetAllElements"] call (uiNamespace getVariable ["RscDisplayEGSpectator_script", {}]);
             private _groupElements = _allElements select 1;
             private _unitElements = _allElements select 2;
@@ -310,8 +309,7 @@ switch _mode do
             private _i = ["TreeGetDataIndex", [[_focus] call BIS_fnc_objectVar]] call (uiNamespace getVariable ["RscDisplayEGSpectator_script", {}]);
 
             // If found, select it
-            if !(_i isEqualTo []) then
-            {
+            if (_i isNotEqualTo []) then {
                 _ctrl tvSetCurSel _i;
             };
         };
