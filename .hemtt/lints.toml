@@ -43,3 +43,6 @@ enabled = true
 
 [sqf.count_array_comp]
 enabled = false
+
+[config.config_this_call]
+enabled = true
