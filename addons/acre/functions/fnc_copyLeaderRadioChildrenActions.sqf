@@ -35,6 +35,8 @@ private _pttAssign = [] call acre_api_fnc_getMultiPushToTalkAssignment;
         private _displayName = [_x, _itemCfg] call FUNC(getRadioDisplayName);
 
         private _picture = getText (_itemCfg >> "picture");
+
+        #pragma hemtt ignore_variables ["_isActive"]
         private _isActive = _x isEqualTo _currentRadio;
 
         // Display radio keys in front of those which are bound
