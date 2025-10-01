@@ -12,9 +12,6 @@ options.ignore = [
     "setVehicleTiPars",
 ]
 
-[sqf]
-count_array_comp = false
-
 [sqf.banned_commands]
 options.banned = [
     "execVM",
@@ -40,3 +37,9 @@ enabled = false
 
 [sqf.not_private]
 enabled = true
+
+[sqf.short_circuit_bool_var]
+enabled = true
+
+[sqf.count_array_comp]
+enabled = false

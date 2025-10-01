@@ -24,7 +24,7 @@ private _conditionCodeEmpty = (_conditionCodeShowValue isEqualTo "true" || {_con
 private _conditionEventsShow = _taskNamespace getVariable ["conditionEventsShow", []];
 private _conditionEventsEmpty = _conditionEventsShow isEqualTo [];
 
-if (_conditionEventsEmpty && {_conditionCodeEmpty}) exitWith {
+if (_conditionEventsEmpty && _conditionCodeEmpty) exitWith {
     // Show task
     [{
         private _taskNamespace = _this;

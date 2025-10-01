@@ -85,7 +85,7 @@ switch _mode do
             {
                 // Added '&& {_validUnits findIf {_x isEqualTo _unit} != -1}'
                 private _unit = _x;
-                if (simulationEnabled _x && {!isObjectHidden _x} && {simulationEnabled vehicle _x} && {!isObjectHidden vehicle _x} && {isPlayer _x || {_showAiGroups}} && {_validUnits findIf {_x isEqualTo _unit} != -1} && !(_x isKindOf SPECTATOR_CLASS)) then
+                if (simulationEnabled _x && {!isObjectHidden _x} && {simulationEnabled vehicle _x} && {!isObjectHidden vehicle _x} && {isPlayer _x || _showAiGroups} && {_validUnits findIf {_x isEqualTo _unit} != -1} && !(_x isKindOf SPECTATOR_CLASS)) then
                 {
                     _unitsInfo pushBack [_x, alive _x, alive _x && { _x getVariable [VAR_INCAPACITATED, false] }, [_x, true, NAME_MAX_CHARACTERS] call BIS_fnc_getName, _group];
                 };
