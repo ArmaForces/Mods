@@ -2,7 +2,6 @@
 class CfgMovesBasic;
 class CfgMovesMaleSdr: CfgMovesBasic {
     class States {
-        class AmovPercMstpSnonWnonDnon;
         class CutSceneAnimationBase;
         class relax_44: CutSceneAnimationBase {
             actions = "CivilStandActions";
