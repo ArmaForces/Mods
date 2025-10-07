@@ -39,6 +39,8 @@ scriptName "BIS_fnc_EGSpectator";
 
 // Parameters
 private _mode   = _this param [0, "", [""]];
+
+#pragma hemtt ignore_variables ["_params"]
 private _params = _this param [1, [], [[]]];
 
 if (_mode != "GetTargetEntities" && _mode != "GetTargetGroups") exitWith {

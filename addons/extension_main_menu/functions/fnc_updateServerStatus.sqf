@@ -39,8 +39,8 @@ private _headerW = (format ["%1:  ", LLSTRING(Status)]) getTextWidth [_font, ctr
 private _maxW = ctrlPosition _ctrlText select 2;
 
 while {
-    _textW = _modlist getTextWidth [_font, ctrlFontHeight _ctrlText * 1.11];
-    _totalW = _headerW + _textW + MARGINS;
+    private _textW = _modlist getTextWidth [_font, ctrlFontHeight _ctrlText * 1.11];
+    private _totalW = _headerW + _textW + MARGINS;
 
     _totalW > _maxW
 } do {

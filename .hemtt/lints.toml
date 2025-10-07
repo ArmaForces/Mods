@@ -16,3 +16,33 @@ options.ignore = [
 options.banned = [
     "execVM",
 ]
+
+[sqf.banned_macros]
+options.release = [
+    "DISABLE_COMPILE_CACHE",
+    "ENABLE_PERFORMANCE_COUNTERS",
+    "DEBUG_MODE_FULL",
+]
+
+[sqf.undefined]
+enabled = true
+options.check_orphan_code = true
+
+[sqf.unused]
+enabled = true #many false positives without DEBUG_MODE_FULL
+options.check_params = false
+
+[sqf.shadowed]
+enabled = false
+
+[sqf.not_private]
+enabled = true
+
+[sqf.short_circuit_bool_var]
+enabled = true
+
+[sqf.count_array_comp]
+enabled = false
+
+[config.config_this_call]
+enabled = true
