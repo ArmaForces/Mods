@@ -9,7 +9,6 @@ class CfgVehicles {
 
         class ModuleDescription {
           class EmptyDetector;
-          class Condition;
         };
     };
 
