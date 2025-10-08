@@ -13,7 +13,7 @@ PREP_RECOMPILE_END;
 
 ["LandVehicle", "InitPost", {
     params ["_vehicle"];
-    if (isAllowedCrewInImmobile _vehicle) exitWith {};
+    if (isAllowedCrewInImmobile _vehicle || !local _vehicle) exitWith {};
     private _allow = random 1 < GVAR(stayInImmobileChance);
     _vehicle allowCrewInImmobile [_allow, _allow];
 }] call CBA_fnc_addClassEventHandler;
